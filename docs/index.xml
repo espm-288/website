@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ESPM 157: Data Science &amp; Global Change Ecology on ESPM 157</title>
+    <title>ESPM 288: Reproducible and Collaborative Data Science on ESPM 288</title>
     <link>/</link>
-    <description>Recent content in ESPM 157: Data Science &amp; Global Change Ecology on ESPM 157</description>
+    <description>Recent content in ESPM 288: Reproducible and Collaborative Data Science on ESPM 288</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 19 Apr 2017 00:00:00 +0000</lastBuildDate>
@@ -37,6 +37,17 @@ Instructional Methods As a flipped classroom, students are provided with either 
       
       <guid>/about/</guid>
       <description> ESPM 157 </description>
+    </item>
+    
+    <item>
+      <title>Climate Exercise</title>
+      <link>/assignments/climate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/assignments/climate/</guid>
+      <description>Unit I: Climate Change Module Warm-up exercise: Examining CO2 trends in R  Example from http://climate.nasa.gov/vital-signs/carbon-dioxide/ Raw data from ftp://aftp.cmdl.noaa.gov/products/trends/co2/co2_mm_mlo.txt  Which months are the CO2 values at the maximum? Minimum? Why is this?
+What rolling average is used in computing the “trend” line? How does the trend depend on the rolling average?
+  Exercise I: Temperature Data Last year, 2015, has now been confirmed as the warmest year on record.</description>
     </item>
     
     <item>
