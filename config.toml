@@ -1,7 +1,7 @@
-baseurl = "/espm-157"
+baseurl = "/espm-288"
 languageCode = "en-us"
 defaultContentLanguage = "en-us"
-title = "ESPM 157"
+title = "ESPM 288"
 theme = "material"
 #disqusShortname = ""
 # googleAnalytics = ""
@@ -65,7 +65,7 @@ publishDir = "docs"
   identifier = "GitHub"
   name = "Team Repos"
   pre = "<i class=\"button-icon fa fa-lg fa-github\"></i>"
-  url = "https://github.com/boettiger-lab/espm-157"
+  url = "https://github.com/ds421"
 [[menu.footer]]
   weight = 3
   identifier = "StackOverflow"
