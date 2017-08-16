@@ -8,7 +8,7 @@ theme = "material"
 paginate = 7
 relativeurls = true
 publishDir = "docs"
-
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [permalinks]
   post = "/:year/:month/:slug/"
@@ -80,5 +80,6 @@ publishDir = "docs"
 
 [params]
   dateFormat = "January 2, 2006"
-  background = "https://climate.nasa.gov/system/internal_resources/details/original/417_1263_banner-science-1600x500.jpg"
+  background = "https://www.climate.gov/sites/default/files/MethaneBubblesFrozenAbrahamLake_large.jpg"
+  #background = "https://climate.nasa.gov/system/internal_resources/details/original/417_1263_banner-science-1600x500.jpg"
 
