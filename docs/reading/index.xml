@@ -1,54 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ESPM 288: Reproducible and Collaborative Data Science on ESPM 288</title>
-    <link>/</link>
-    <description>Recent content in ESPM 288: Reproducible and Collaborative Data Science on ESPM 288</description>
+    <title>Readings on ESPM 288</title>
+    <link>/reading/</link>
+    <description>Recent content in Readings on ESPM 288</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 19 Apr 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/reading/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title></title>
-      <link>/syllabus/</link>
-      <pubDate>Wed, 19 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/syllabus/</guid>
-      <description>Date Lesson Reading Lecture Assignment    Introduction       Software Setup; Climate Change       No Class       Climate Change       Climate Change       Climate Change       Climate Change       Climate Change wrap-up       Reproducible Workflows       Population Dynamics       Population Dynamics       Population Dynamics       Writing R packages       Fisheries Collapse       Fisheries Collapse       Fisheries Collapse       Fisheries Collapse       Reproducibility exercise       Docker &amp;amp; Cloud Computing       Spatial Data       Spatial Data       Spatial Data       Spatial Data       Extinctions       Extinctions       Extinctions       Final Projects       Final Projects       No Class, RRR week       No Class, RRR week       Final Projects due before midnight!</description>
-    </item>
-    
-    <item>
-      <title>Policies</title>
-      <link>/policies/</link>
-      <pubDate>Thu, 13 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/policies/</guid>
-      <description>Prerequisites You should be generally numerically literate, and some prior programming experience will be helpful. Students new to programming might find Hands on Programming with R to be helpful. Students with significant experience in programming and statistical analysis should find themselves well prepared but should find plenty still to learn in each lesson.
-Instructional Methods As a flipped classroom, students are provided with either reading or video material that they are expected to view/read prior to class.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/about/</guid>
-      <description> ESPM 157 </description>
-    </item>
-    
-    <item>
-      <title>Climate Exercise</title>
-      <link>/assignments/climate/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/assignments/climate/</guid>
-      <description>Unit I: Climate Change Module Warm-up exercise: Examining CO2 trends in R  Example from http://climate.nasa.gov/vital-signs/carbon-dioxide/ Raw data from ftp://aftp.cmdl.noaa.gov/products/trends/co2/co2_mm_mlo.txt  Which months are the CO2 values at the maximum? Minimum? Why is this?
-What rolling average is used in computing the “trend” line? How does the trend depend on the rolling average?
-  Exercise I: Temperature Data Last year, 2015, has now been confirmed as the warmest year on record.</description>
-    </item>
     
     <item>
       <title>Geospatial Reading - I</title>
@@ -58,15 +18,6 @@ What rolling average is used in computing the “trend” line? How does the tre
       <guid>/reading/geospatial/</guid>
       <description>You&amp;rsquo;ve probably noticed that our textbook doesn&amp;rsquo;t have any section on geospatial data. Most exsiting resources on geospatial data in R still cover the older sp library, including the classic Applied Spatial Data Analysis in R (physical) textbook (by authors of sp and related packages, who are also authors of sf).
 The under-development version of an upcoming textbook, Geocomputation with R, aims to provide a more thorough treatment of the latest iteration on spatial data in R, including the sf package and tidyverse-style programming.</description>
-    </item>
-    
-    <item>
-      <title>Modules</title>
-      <link>/modules/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/modules/</guid>
-      <description>timeline Climate Change    bug_report Ecological simulation    my_location Spatial movement    directions_boat Overfishing    trending_down Mass Extinctions     Topics: CO2 concentration, Global mean temperature, Sea level rise, Land ice sheet melt, Arctic sea ice cover Skills: Data wrangling: plain text formats, Tidy data, Data visualization, Smoothing     Focal results: Coexistence, Bet hedging, Limit Cycles, Bifurcations, Deterministic Chaos Methods:     Technologies and data formats: Simple Features Access (ISO 19125) (used in GIS, geojson), Spatial rasters (e.</description>
     </item>
     
     <item>
@@ -179,15 +130,6 @@ While writing a minimal R package is really pretty simple, R packages are still 
       
       <guid>/reading/docker/</guid>
       <description>Install Docker (Community Edition, free &amp;amp; open source) for your laptop Launch the Docker command line, and run: docker pull rocker/tidyverse to download the image we&amp;rsquo;ll be using in class. This is a large download (689 MB), so please attempt this ahead of time since we won&amp;rsquo;t all be able to download it at once. If either of these steps do not work for you, don&amp;rsquo;t worry, we should be able to fix any special cases in class.</description>
-    </item>
-    
-    <item>
-      <title>Tools</title>
-      <link>/tools/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/tools/</guid>
-      <description>  GitHub     R    cloud Cloud computing     Docker               </description>
     </item>
     
   </channel>
