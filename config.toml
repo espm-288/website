@@ -42,13 +42,19 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   pre = "<i class=\"material-icons\">dashboard</i>"
   url = "/modules"
 [[menu.main]]
-  weight = 2
+  weight = 3
+  identifier = "tutorials"
+  name = "Tutorials"
+  pre = "<i class=\"material-icons\">build</i>"
+  url = "/tutorials"
+[[menu.main]]
+  weight = 4
   identifier = "syllabus"
   name = "Syllabus"
   pre = "<i class=\"material-icons\">date_range</i>"
   url = "/syllabus"
 [[menu.main]]
-  weight = 3
+  weight = 5
   identifier = "policies"
   name = "Policies"
   pre = "<i class=\"material-icons\">gavel</i>"
@@ -109,11 +115,48 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   name = "Geospatial"
   url = "#spatial"
  [[menu.sidebar]]
-weight = 4
+weight = 5
   pre = " <i class=\"material-icons\">trending_down</i>"
   name = "Mass Extinctions"
   url = "#extinction"
 
+
+
+[[menu.tools]]
+  weight = 1
+  name = "GitHub"
+  url = "#github"
+  pre = "<i class=\"fa fa-github\"></i>"
+[[menu.tools]]
+  weight = 2
+  name = "Travis-CI"
+  url = "#travis"
+  pre = "<i class=\"material-icons\">check_circle</i>"
+[[menu.tools]]
+  weight = 3
+  name = "RMarkdown"
+  url = "#rmarkdown"
+  pre = "<i class=\"icon-rlogo\"></i>"
+[[menu.tools]]
+  weight = 4
+  name = "R Packages"
+  url = "#packages"
+  pre = "<i class=\"fa fa-archive\"></i>"
+[[menu.tools]]
+  weight = 5
+  name = "Docker"
+  url = "#docker"
+  pre = "<i class=\"fa fa-docker\"></i>"
+[[menu.tools]]
+  weight = 6
+  name = "Cloud"
+  url = "#cloud"
+  pre = "<i class=\"fa fa-cloud\"></i>"  
+[[menu.tools]]
+  weight = 7
+  name = "Web design"
+  url = "#website"
+  pre = "<i class=\"fa fa-html5\"></i>"
 
 [params]
   dateFormat = "January 2, 2006"

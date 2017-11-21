@@ -100,144 +100,81 @@
 		<div class="main main-raised">
 	    <div class="container">
 	      <div class="section text-left">
-          <h2 class="title text-center">Modules</h2>
+          <h2 class="title text-center">Tutorials</h2>
           <div class = "nav-align-center">
               <ul class="nav nav-pills nav-pills-primary" role="tablist">
                   
                    <li class="nav-item">
-                      <a href="#climate" data-toggle="tab" role="tab">
-                        <i class="material-icons">timeline</i> Climate Change
+                      <a href="#github" data-toggle="tab" role="tab">
+                        <i class="fa fa-github"></i> GitHub
                       </a>
                     </li>
                   
                    <li class="nav-item">
-                      <a href="#fish" data-toggle="tab" role="tab">
-                        <i class='material-icons'>directions_boat</i> Overfishing
+                      <a href="#travis" data-toggle="tab" role="tab">
+                        <i class="material-icons">check_circle</i> Travis-CI
                       </a>
                     </li>
                   
                    <li class="nav-item">
-                      <a href="#popdyn" data-toggle="tab" role="tab">
-                         <i class="material-icons">bug_report</i> Ecological Simulation
+                      <a href="#rmarkdown" data-toggle="tab" role="tab">
+                        <i class="icon-rlogo"></i> RMarkdown
                       </a>
                     </li>
                   
                    <li class="nav-item">
-                      <a href="#spatial" data-toggle="tab" role="tab">
-                         <i class="material-icons">my_location</i> Geospatial
+                      <a href="#packages" data-toggle="tab" role="tab">
+                        <i class="fa fa-archive"></i> R Packages
                       </a>
                     </li>
                   
                    <li class="nav-item">
-                      <a href="#extinction" data-toggle="tab" role="tab">
-                         <i class="material-icons">trending_down</i> Mass Extinctions
+                      <a href="#docker" data-toggle="tab" role="tab">
+                        <i class="fa fa-docker"></i> Docker
+                      </a>
+                    </li>
+                  
+                   <li class="nav-item">
+                      <a href="#cloud" data-toggle="tab" role="tab">
+                        <i class="fa fa-cloud"></i> Cloud
+                      </a>
+                    </li>
+                  
+                   <li class="nav-item">
+                      <a href="#website" data-toggle="tab" role="tab">
+                        <i class="fa fa-html5"></i> Web design
                       </a>
                     </li>
                   
               </ul>
               <div class="tab-content gallery text-left">
-            	<div class="tab-pane active" id="climate">
-  <h2>Climate Change</h2>
-  <div class="row">
-    <div class="col-md-6">
-    <img src="../img/co2.png"  class="img-rounded img-responsive img-raised">  
-    </div>
-    <div class="col-md-6">
-      
-      <h3><i class="fa fa-table"></i> Tabular data</h3>
-      
-    <strong>What is the evidence for a changing climate?</strong> In this unit, we will examine some of the most important indicators of global climate change:  
-    including CO2 concentration, global mean temperature, sea level rise, land ice sheet melt, 
-    and arctic sea ice cover.  We will wrangle a wide range of tabular data file formats used by
-    NOAA and other agencies and introduce the fundamentals of data visualization with <code>ggplot2</code>
-    and data processing with basic functions from the <code>readr</code>, <code>tidyr</code>, and 
-    <code>dplyr</code> packages as we 
-    seek to replicate the principle results of climate change over the last decades and also the
-    past thousands of years. 
+            	<div class="tab-pane active" id="github">
+  <h3><i class="fa fa-github"></i> GitHub</h3>
+</div>
+
+<div class="tab-pane" id="travis">
+  <h3><i class="fa fa-check"></i> Travis CI</h3>
+</div>
   
-    </div>
-  </div>
+<div class="tab-pane" id="rmarkdown">
+  <h3><i class="icon-rlogo"></i> RMarkdown</h3>
 </div>
 
-
-<div class="tab-pane" id="fish">
-  <h2>Overfishing</h2>
-  <div class="row">
-    <div class="col-md-6">
-    <img src="../img/worm2006.jpg"  class="img-rounded img-responsive img-raised">  
-    From Worm <emph>et al.</emph> 2006, <a href="https://doi.org/10.1126/science.1132294">https://doi.org/10.1126/science.1132294</a>
-    </div>
-    <div class="col-md-6">
-      <h3><i class="fa fa-database"></i> Relational databases</h3>
-      
-      <strong>The last fish in the sea?</strong>
-      In a paper in <emph>Science</emph> in 2006, Boris Worm and colleagues seized international headlines
-      and fueled an ongoing scientific controversy when they documented the persistent declines
-      of fisheries on a global scale.  In this module, we will explore the evidence behind these
-      controvertial results using some of the best publicly available data from global fisheries
-      stock assessments.  This will introduce us to techniques for working with relational databases,
-      where the data we need is spread across multiple tables. We will get deeper into `dplyr` and
-      related tools.
-    </div>
-  </div>
+<div class="tab-pane" id="packages">
+  <h3><i class="fa fa-archive"></i> R Packages</h3>
 </div>
 
-<div class="tab-pane" id="popdyn">
-  <h2>Ecological Simulation</h2>
-  <div class="row">
-    <div class="col-md-6">
-      <img src="../img/chaos.png" class="img-rounded img-responsive img-raised">  
-    </div>
-    <div class="col-md-6">
-      <h3><i class="material-icons">memory</i> Simulated data</h3>
-      
-      One of the fastest growing sources of data comes not from measurements, but simulations.
-    </div>
-  </div>
+<div class="tab-pane" id="docker">
+  <h3><i class="fa fa-docker"></i> Docker</h3>
 </div>
 
-<div class="tab-pane" id="spatial">
-  <h2>Geospatial Analysis</h2>
-  <div class="row">
-    <div class="col-md-6">
-      <img src="../img/albatross.png" class="img-rounded img-responsive img-raised">  
-    </div>  
-    <div class="col-md-6">
-      <h3><i class="material-icons">satellite</i> Geospatial data</h3>
-      <strong>How will changing climate conditions drive species range shifts?</strong>
-      This module provides an introduction to the fundamentals of working with spatial vector and
-      raster data in R.  Our approach places an emphasis on the 
-      <a href="https://en.wikipedia.org/wiki/Simple_Features">Simple Features Access</a> standard
-      (ISO 19125) and tidyverse-style workflow using the <code>sf</code> package and emerging
-      ecosystem of <a href="https://r-spatial.org">r-spatial</a> tools.  
-    </div>
-  </div>
+<div class="tab-pane" id="cloud">
+  <h3><i class="fa fa-cloud"></i> Cloud</h3>
 </div>
 
-<div class="tab-pane" id="extinction">
-  <h2>Mass Extinctions</h2>
-  <div class="row">
-    <div class="col-md-6">
-      <img src="../img/extinctions.jpg"  class="img-rounded img-responsive img-raised">  
-      From Cerbellos et al., <a href="https://doi.org/10.1126/sciadv.1400253">https://doi.org/10.1126/sciadv.1400253</a>
-    </div>
-    <div class="col-md-6">
-      <h3><i class="material-icons">widgets</i> Non-rectangular data</h3>
-      <strong>Are we experiencing the sixth mass extinction?</strong> In this unit, we will
-      attempt to estimate the current rate of species extinctions across major taxa and compare
-      this against the background rate of extinctions in the fossil record; replicating seminal
-      work from a series of papers by Tony Barnosky and colleagues.  Though rectangular data frames
-      have formed the core unit of our analysis so far, to answer these questions we will learn to
-      work with non-rectangular data.  This module will introduce the fundamentals of working with
-      non-rectangular data in the JSON format returned by a REST API. We will also encounter the use
-      of Regular Expressions for extracting information from unstructured textual data. 
-    </div>
-  </div>
+<div class="tab-pane" id="website">
+  <h3><i class="fa fa-html5"></i> Web design</h3>
 </div>
-
-
-
-
 
               </div>
             </div>
