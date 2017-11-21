@@ -88,7 +88,31 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   pre = "<i class=\"material-icons\">video_library</i>"
   url = "https://www.datacamp.com/"
 
-
+[[menu.sidebar]]
+  weight = 1
+  pre = "<i class=\"material-icons\">timeline</i>"
+  name = "Climate Change"
+  url = "#climate"
+[[menu.sidebar]]
+  weight = 2
+  pre = "<i class=\"material-icons\">directions_boat</i>"
+  name = "Overfishing"
+  url = "#fish"
+[[menu.sidebar]]
+  weight = 3
+  pre = " <i class=\"material-icons\">bug_report</i>"
+  name = "Ecological Simulation"
+  url = "#popdyn"
+[[menu.sidebar]]
+  weight = 4
+  pre = " <i class=\"material-icons\">my_location</i>"
+  name = "Geospatial"
+  url = "#spatial"
+ [[menu.sidebar]]
+weight = 4
+  pre = " <i class=\"material-icons\">trending_down</i>"
+  name = "Mass Extinctions"
+  url = "#extinction"
 
 
 [params]

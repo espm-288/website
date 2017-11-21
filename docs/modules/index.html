@@ -85,77 +85,90 @@
     	</div>
     </nav>
   <div class="wrapper">
-    <div class="header header-filter" style="background-image: url('https://www.climate.gov/sites/default/files/MethaneBubblesFrozenAbrahamLake_large.jpg');">
-    </div>
+	  <div class="header header-filter" style="background-image: url('https://www.climate.gov/sites/default/files/MethaneBubblesFrozenAbrahamLake_large.jpg');">
+	  </div>
 		<div class="main main-raised">
-			<div class="container">
-		  	<div class="section text-center">
-		  	  <h2 class="title">Modules</h2>
-	                          <div class="profile-tabs">
-               <div class="nav-align-center">
-                  <ul class="nav nav-pills nav-pills-primary" role="tablist">
-                    <li class="active">
-                      <a href="#climate" role="tab" data-toggle="tab">
-                        <i class="material-icons">timeline</i>
-                        Climate Change
+	    <div class="container">
+	      <div class="section text-left">
+          <h2 class="title text-center">Modules</h2>
+          <div class = "nav-align-center">
+              <ul class="nav nav-pills nav-pills-primary" role="tablist">
+                  
+                   <li class="nav-item">
+                      <a href="#climate" data-toggle="tab" role="tab">
+                        <i class="material-icons">timeline</i> Climate Change
                       </a>
                     </li>
-                     <li>
-                      <a href="#simulation" role="tab" data-toggle="tab">
-                        <i class="material-icons">bug_report</i>
-                        Ecological simulation
+                  
+                   <li class="nav-item">
+                      <a href="#fish" data-toggle="tab" role="tab">
+                        <i class="material-icons">directions_boat</i> Overfishing
                       </a>
                     </li>
-                     <li>
-                      <a href="#spatial" role="tab" data-toggle="tab">
-                        <i class="material-icons">my_location</i>
-                        Spatial movement
+                  
+                   <li class="nav-item">
+                      <a href="#popdyn" data-toggle="tab" role="tab">
+                         <i class="material-icons">bug_report</i> Ecological Simulation
                       </a>
                     </li>
-                    <li>
-                      <a href="#overfishing" role="tab" data-toggle="tab">
-                        <i class="material-icons">directions_boat</i>
-                        Overfishing
-                       </a>
+                  
+                   <li class="nav-item">
+                      <a href="#spatial" data-toggle="tab" role="tab">
+                         <i class="material-icons">my_location</i> Geospatial
+                      </a>
                     </li>
-                   
-                    <li>
-                    <a href="#extinction" role="tab" data-toggle="tab">
-                      <i class="material-icons">trending_down</i>
-                      Mass Extinctions
-                    </a>
+                  
+                   <li class="nav-item">
+                      <a href="#extinction" data-toggle="tab" role="tab">
+                         <i class="material-icons">trending_down</i> Mass Extinctions
+                      </a>
                     </li>
-                    </ul>
+                  
+              </ul>
+              <div class="tab-content gallery">
+            	<div class="tab-pane active" id="climate">
+  <h2>Climate</h2>
+  <div class="row">
+    <div class="col-md-6">
+    <img src="../img/co2.png"  class="img-rounded img-responsive img-raised">  
+    </div>
+    <div class="col-md-6">
+    <strong>Topics</strong>:
+    CO2 concentration,
+    Global mean temperature,
+    Sea level rise,
+    Land ice sheet melt,
+    Arctic sea ice cover
+    
+    <strong>Skills</strong>:
+    Data wrangling: plain text formats,
+    Tidy data,
+    Data visualization,
+    Smoothing
+    </div>
+  </div>
+</div>
 
-                    <div class="tab-content gallery">
-                    <div class="tab-pane text-center active" id="climate">
-                      <div class="row">
-                        <div class="col-md-6">
-                        <img src="../img/co2.png"  class="img-rounded img-responsive img-raised">  
 
-                          
-                        </div>
-                        <div class="col-md-6">
-                          <strong>Topics</strong>:
-                            CO2 concentration,
-                            Global mean temperature,
-                            Sea level rise,
-                            Land ice sheet melt,
-                            Arctic sea ice cover
-                            
-                          <strong>Skills</strong>:
-                            Data wrangling: plain text formats,
-                            Tidy data,
-                            Data visualization,
-                            Smoothing
-                        </div>
-                      </div>
-                    </div>
-                   
-                    <div class="tab-pane text-center" id="simulation">
-                      <div class="row">
-                        <div class="col-md-6">
-                           <img src="../img/chaos.png"  class="img-rounded img-responsive img-raised">  
+<div class="tab-pane" id="fish">
+  <h2>Overfishing</h2>
+  <div class="row">
+    <div class="col-md-6">
+    <img src="../img/worm2006.jpg"  class="img-rounded img-responsive img-raised">  
+    From Worm <emph>et al.</emph> 2006, <a href="https://doi.org/10.1126/science.1132294">https://doi.org/10.1126/science.1132294</a>
+    </div>
+    <div class="col-md-6">
+      stuff
+    </div>
+  </div>
+</div>
+
+
+<div class="tab-pane" id="popdyn">
+<h2>Ecological Simulation</h2>
+<div class="row">
+  <div class="col-md-6">
+  <img src="../img/chaos.png" class="img-rounded img-responsive img-raised">  
                         </div>
                         <div class="col-md-6">
                           Focal results: Coexistence, Bet hedging, Limit Cycles, Bifurcations, Deterministic Chaos
@@ -163,39 +176,30 @@
                           Methods: 
                         </div>
                       </div>
-                    </div>
+</div>
+
+
+
+<div class="tab-pane" id="spatial">
+<h2>Geospatial</h2>
                     
-                    <div class="tab-pane text-center" id="spatial">
                       <div class="row">
                         <div class="col-md-6">
-                          <img src="../img/albatross.png"  class="img-rounded img-responsive img-raised">  
+                          <img src="img/albatross.png" class="img-rounded img-responsive img-raised">  
                         </div>  
                         <div class="col-md-6">
                         <strong>Technologies and data formats</strong>: <a href="https://en.wikipedia.org/wiki/Simple_Features">Simple Features Access</a> (ISO 19125) (used in GIS, geojson), Spatial rasters (e.g. geotiff, netcdf), interactive mapping.
                         </div>
                       </div>
-                    </div>
-                    
-                    <div class="tab-pane text-center" id="overfishing">
-                      <div class="row">
+</div>
+
+
+
+<div class="tab-pane" id="extinction">
+<h2>Mass Extinctions</h2>
+               <div class="row">
                         <div class="col-md-6">
-                          
-                        <img src="../img/worm2006.jpg"  class="img-rounded img-responsive img-raised">  
-                        From Worm <emph>et al.</emph> 2006, <a href="https://doi.org/10.1126/science.1132294">https://doi.org/10.1126/science.1132294</a>
-                        
-                        </div>
-                        <div class="col-md-6">
-                        
-                        </div>
-                      </div>
-                    </div>
-                    
-                     
-                    
-                    <div class="tab-pane text-center" id="extinction">
-                      <div class="row">
-                        <div class="col-md-6">
-                          <img src="../img/extinctions.jpg"  class="img-rounded img-responsive img-raised">  
+                          <img src="img/extinctions.jpg"  class="img-rounded img-responsive img-raised">  
 
                            From Cerbellos et al., <a href="https://doi.org/10.1126/sciadv.1400253">https://doi.org/10.1126/sciadv.1400253</a>
                           
@@ -204,17 +208,19 @@
                           Technologies & data formats: JSON, curl, REST APIs
                         </div>
                       </div>
-                    </div>
-                  </div>
-                </div>
+</div>
+
+
+
+
+
               </div>
-              
-
-
-	      </div>
-      </div>
-		</div>
-    <footer class="footer">
+            </div>
+          </div>
+	     </div>
+	  </div>
+  </div>
+  <footer class="footer">
   <div class="container">
 	  <nav class="pull-left">
 	    <ul>
@@ -268,7 +274,6 @@
 	  </div>
   </div>
 </footer>
-	</div>
 </body>
 
 			
