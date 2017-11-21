@@ -128,12 +128,12 @@ weight = 5
   url = "#github"
   pre = "<i class=\"fa fa-github\"></i>"
 [[menu.tools]]
-  weight = 2
+  weight = 3
   name = "Travis-CI"
   url = "#travis"
   pre = "<i class=\"material-icons\">check_circle</i>"
 [[menu.tools]]
-  weight = 3
+  weight = 2
   name = "RMarkdown"
   url = "#rmarkdown"
   pre = "<i class=\"icon-rlogo\"></i>"

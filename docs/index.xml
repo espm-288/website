@@ -196,7 +196,7 @@ While writing a minimal R package is really pretty simple, R packages are still 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/tutorials/</guid>
-      <description> GitHub   Travis CI   RMarkdown   R Packages   Docker   Cloud   Web design  </description>
+      <description> GitHub   RMarkdown   Travis CI   R Packages   Docker   Cloud   Web design  </description>
     </item>
     
   </channel>
