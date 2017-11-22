@@ -136,7 +136,7 @@ weight = 5
   weight = 2
   name = "RMarkdown"
   url = "#rmarkdown"
-  pre = "<i class=\"icon-rlogo\"></i>"
+  pre = "<br/><img src='/img/rmarkdown.png' alt='rmarkdown' width='36' height='36'><br/>"
 [[menu.tools]]
   weight = 4
   name = "R Packages"
@@ -157,6 +157,11 @@ weight = 5
   name = "Web design"
   url = "#website"
   pre = "<i class=\"fa fa-html5\"></i>"
+[[menu.tools]]
+  weight = 8
+  name = "Shiny"
+  url = "#shiny"
+  pre = "<br/><img src='/img/shiny.png' alt='shiny' width='36' height='36'><br/>"
 
 [params]
   dateFormat = "January 2, 2006"

@@ -196,11 +196,9 @@ While writing a minimal R package is really pretty simple, R packages are still 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/tutorials/</guid>
-      <description> &amp;nbsp;  GitHub
-header Almost everything we do will involve GitHub in some way.
-  RMarkdown  Markdown basics github_document html_document Slides pdf_document and LaTeX Tutorials in learnr     Travis CI Continuous Integration (CI) is an important concept data science practice has largely adopted from software engineering
-  R Packages 
- Docker   Cloud   Web design  </description>
+      <description>&amp;nbsp;  GitHub
+Almost everything we do will involve GitHub in some way. This tutorial will provide a brief introduction to our GitHub-based workflow and review common git patterns for resolving issues you may encounter in working collaboratively.
+  RMarkdown Notebooks Most of your work will take place inside an RMarkdown notebook. While we will rely primarily on the github_document format, RMarkdown supports a wide variety of output formats that you can use to create pdf documents (including particular journal formats) slideshows, websites, ebooks and interactive tutorials.</description>
     </item>
     
   </channel>
