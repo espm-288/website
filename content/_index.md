@@ -19,17 +19,7 @@ CCN        |  39303                                   |
 
 ## Overview
 
-This course provides an introduction to principles and tools for
-reproducible and collaborative data science; including data curation
-and cleaning, version control, virtual machines, scripted work flow,
-hypothesis-driven exploratory data analysis, data visualization,
-and communication. Students will be introduced to git and R, as well as
-SQL, JSON, RMarkdown, LaTeX, Docker, REST APIs, cloud computing and related
-tools and concepts. The class will navigate a series of problem-driven
-analyses, focused on case studies and independent projects, leading to
-reproducible products that allow updated analyses as new data become
-available. Projects by DS421 first year trainees will be presented at the
-Annual Symposium.
+This course is designed for graduate students regardless of prior experience. We aim to be accessible to those new to programming, but those who have been using R for years will find new material in this opinionated and fast moving area.  The course is project focused and centered around five [modules](/modules) reproducing important results in global change ecology.  A series of short [tutorials](/tutorials) will introduce relevant technology, but most concepts will be first introduced in reading outside of class, leaving class time to focus on the more complex examples encountered in the modules.  
 
 ## Approach
 
@@ -50,7 +40,6 @@ is preliminary and always subject to change.
 
 We will use [Grolemund and Wickham's *R For Data Science*](http://amzn.to/2aHLAQ1) 
 as the primary text for this course. A hard copy of the book is not
-required and the openly licensed full text can be found on the [author's website for this book](http://r4ds.had.co.nz/).
-
-Students will also be referred to sections in [Wickham's *Advanced R*](http://adv-r.had.co.nz/) for more on 
-fundamentals of R programming, as well as various other references as necessary.
+required and the openly licensed full text can be found on the [author's website for this book](http://r4ds.had.co.nz/). Additional reading material will be linked
+from the syllabus.  Please be sure to review the relevant reading prior to
+each class session.  
