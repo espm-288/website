@@ -87,7 +87,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   weight = 5
   name = "Travis-CI"
   pre = "<i class=\"material-icons\">check_circle</i>"
-  url = "http://travis.com/ds421/"
+  url = "http://travis-ci.com/ds421/"
 [[menu.footer]]
   weight = 6
   name = "DataCamp Lessons"
