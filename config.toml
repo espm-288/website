@@ -60,12 +60,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   pre = "<i class='material-icons'>gavel</i>"
   url = "/policies"
 
-[[menu.footer]]
-  weight = 1
-  identifier = "Berkeley"
-  name = "UC Berkeley"
-  pre = "<i class='material-icons'>pin_drop</i>"
-  url = "https://ds421.berkeley.edu"
+
 [[menu.footer]]
   weight = 2
   identifier = "GitHub"
@@ -90,7 +85,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   url = "http://travis-ci.com/ds421/"
 [[menu.footer]]
   weight = 6
-  name = "DataCamp Lessons"
+  name = "DataCamp"
   pre = "<i class='material-icons'>video_library</i>"
   url = "https://www.datacamp.com/groups/espm-288-reproducible-collaborative-data-science"
 
