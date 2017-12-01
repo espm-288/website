@@ -2,5 +2,24 @@
 title: "Reading for 2017-09-05"
 ---
 
-- Read [Section 2: Explore Intro](http://r4ds.had.co.nz/explore-intro.html)
-- Read Data Visualization Intro, First Steps, and Aesthetic Mappings: [Section 3.1](http://r4ds.had.co.nz/data-visualisation.html#introduction-1) - [Section 3.3](http://r4ds.had.co.nz/data-visualisation.html#aesthetic-mappings)
+
+Read:
+
+## Data Basics
+
+
+## Data Visualization Basics
+
+- Data Exploration [[r4ds-2](http://r4ds.had.co.nz/explore-intro.html)]
+- First Steps [[r4ds-3.2](http://r4ds.had.co.nz/data-visualisation.html#first-steps)]
+- Aesthetic mappings [[r4ds-3.3](http://r4ds.had.co.nz/data-visualisation.html#aesthetic-mappings)]
+- Common problems [[r4ds-3.4](http://r4ds.had.co.nz/data-visualisation.html#common-problems)]
+
+
+
+- Facets [r4ds-3.5](http://r4ds.had.co.nz/data-visualisation.html#facets)
+- Geometric objects [r4ds-3.6](http://r4ds.had.co.nz/data-visualisation.html#geometric-objects)
+
+
+- Data Visualization Cheat Sheet [cheatsheets-ggplot2-2.1](https://www.rstudio.com/wp-content/uploads/2016/11/ggplot2-cheatsheet-2.1.pdf)
+

@@ -19,7 +19,7 @@
       <guid>/syllabus/</guid>
       <description>Please note: syllabus subject to change.
  
- Date Lesson Reading Lecture Assignment    Introduction       Software Setup; Climate Change       No Class       Climate Change       Climate Change       Climate Change       Climate Change       Climate Change wrap-up       Reproducible Workflows       Population Dynamics       Population Dynamics       Population Dynamics       Writing R packages       Fisheries Collapse       Fisheries Collapse       Fisheries Collapse       Fisheries Collapse       Reproducibility exercise       Docker &amp;amp; Cloud Computing       Spatial Data       Spatial Data       Spatial Data       Spatial Data       Extinctions       Extinctions       Extinctions       Final Projects       Final Projects       No Class, RRR week       No Class, RRR week       Final Projects due before midnight!</description>
+ Date Lesson Reading Lecture Assignment   Wk 1 Introduction      Wk 2 climate       Wk 3  check_circle      Wk 4 climate       Wk 5 overfishing directions_boat      Wk 6 overfishing directions_boat      Wk 7 simulation bug_report      Wk 8 simulation bug_report      Wk 9  cloud      Wk 10 geospatial my_location      Wk 11 geospatial my_location      Wk 12 web design language      Wk 13 extinction trending_down      Wk 14 extinction trending_down      Wk 15 final project school        </description>
     </item>
     
     <item>
@@ -39,6 +39,39 @@ Instructional Methods As a flipped classroom, students are provided with either 
       
       <guid>/about/</guid>
       <description> ESPM 157 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/overview-notes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/overview-notes/</guid>
+      <description>Setup  GitHub RMarkdown Travis-CI  Intro:
+ Git in RStudio RStudio IDE, Part II, Chapter 2, Garrett Grolemund  Later:
+ Git from command line &amp;amp; GitHub, Greg Wilson
+ Reports with RMarkdown, Garrett Grolemund
+ RStudio IDE, Part I
+  Modules Climate  visualization basics ggplot2  packages: ggplot2, tidyr::gather, readr
+ (?) Dates &amp;amp; Times, r4ds 16
+ Data Visualization r4ds-3
+ Tibbles r4ds-10
+ Data Import, r4ds-11</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/reading/datacamp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/reading/datacamp/</guid>
+      <description> DataCamp Syllabus  Git, Greg Wilson
+ RStudio IDE, Part I, RStudio IDE, Part II
+ Reports with RMarkdown, Garrett Grolemund
+ Data wrangling, David Robinson
+ dplyr intro, Garrett Grolemund
+ Writing Functions in R, Hadley Wickham
+  </description>
     </item>
     
     <item>
@@ -63,6 +96,15 @@ The under-development version of an upcoming textbook, Geocomputation with R, ai
     </item>
     
     <item>
+      <title>Getting help</title>
+      <link>/reading/getting-help/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/reading/getting-help/</guid>
+      <description> R&amp;rsquo;s Documentation Getting Help Guide 1.6: Getting Help  </description>
+    </item>
+    
+    <item>
       <title>Modules</title>
       <link>/modules/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -72,12 +114,26 @@ The under-development version of an upcoming textbook, Geocomputation with R, ai
     </item>
     
     <item>
+      <title>R Markdown Basics</title>
+      <link>/reading/rmarkdown-basics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/reading/rmarkdown-basics/</guid>
+      <description> Watch  Reports with RMarkdown, Garrett Grolemund  Read:  Introduction [r4ds-27.1] R Markdown basics [r4ds-27.2] Code chunks [r4ds-27.4]  Reference  R Markdown Cheat Sheet R Markdown Reference Guide  </description>
+    </item>
+    
+    <item>
       <title>Reading for 2017-09-05</title>
       <link>/reading/climate1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/reading/climate1/</guid>
-      <description> Read Section 2: Explore Intro Read Data Visualization Intro, First Steps, and Aesthetic Mappings: Section 3.1 - Section 3.3  </description>
+      <description> Read:
+Data Basics Data Visualization Basics  Data Exploration [r4ds-2] First Steps [r4ds-3.2] Aesthetic mappings [r4ds-3.3] Common problems [r4ds-3.4]
+ Facets r4ds-3.5
+ Geometric objects r4ds-3.6
+ Data Visualization Cheat Sheet cheatsheets-ggplot2-2.1
+  </description>
     </item>
     
     <item>
@@ -86,7 +142,7 @@ The under-development version of an upcoming textbook, Geocomputation with R, ai
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/reading/climate2/</guid>
-      <description>In advance of Thursday’s class (2017-09-07), please read:
+      <description>In advance of Thursday&amp;rsquo;s class (2017-09-07), please read:
  Data Visualization Intro,Section 3.4 - Section 3.6  </description>
     </item>
     
@@ -96,8 +152,9 @@ The under-development version of an upcoming textbook, Geocomputation with R, ai
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/reading/climate4/</guid>
-      <description>In advance of Thursday’s class (2017-09-14), please read:
- Tidy data: 12.1 - 12.3.  Of particular interest is getting used to the “tidy structure” of fig 12.1, and the use of the gather() function.</description>
+      <description>In advance of Thursday&amp;rsquo;s class (2017-09-14), please read:
+ Tidy data: 12.1 - 12.3.
+  Of particular interest is getting used to the &amp;ldquo;tidy structure&amp;rdquo; of fig 12.1, and the use of the gather() function.</description>
     </item>
     
     <item>
@@ -106,7 +163,7 @@ The under-development version of an upcoming textbook, Geocomputation with R, ai
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/reading/workflows/</guid>
-      <description>For Thursday’s class, please read the following two short sections:
+      <description>For Thursday&amp;rsquo;s class, please read the following two short sections:
  6. Workflow: scripts, and 8. Workflow: projects  </description>
     </item>
     
@@ -116,7 +173,7 @@ The under-development version of an upcoming textbook, Geocomputation with R, ai
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/reading/popdyn1/</guid>
-      <description>For Tuesday’s class, please read Chapter 19.1 - 19.4 on Functions in R</description>
+      <description>For Tuesday&amp;rsquo;s class, please read Chapter 19.1 - 19.4 on Functions in R</description>
     </item>
     
     <item>
@@ -125,7 +182,7 @@ The under-development version of an upcoming textbook, Geocomputation with R, ai
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/reading/popdyn2/</guid>
-      <description>For Thursday’s class, please read Chapter 19.5 - 19.7 on Functions in R</description>
+      <description>For Thursday&amp;rsquo;s class, please read Chapter 19.5 - 19.7 on Functions in R</description>
     </item>
     
     <item>
@@ -181,6 +238,18 @@ While writing a minimal R package is really pretty simple, R packages are still 
       
       <guid>/reading/docker/</guid>
       <description>Install Docker (Community Edition, free &amp;amp; open source) for your laptop Launch the Docker command line, and run: docker pull rocker/tidyverse to download the image we&amp;rsquo;ll be using in class. This is a large download (689 MB), so please attempt this ahead of time since we won&amp;rsquo;t all be able to download it at once. If either of these steps do not work for you, don&amp;rsquo;t worry, we should be able to fix any special cases in class.</description>
+    </item>
+    
+    <item>
+      <title>Setup</title>
+      <link>/reading/setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/reading/setup/</guid>
+      <description> Prerequisites Running R code RStudio Cheat sheet (for reference)
+ Style guide Consistent style is an important element of communication and collaboration.
+Please review sections 1 Files and 2 Syntax. Most Syntax conventions can be automatically checked with lintr::lint(&amp;quot;assignment.Rmd&amp;quot;).
+  </description>
     </item>
     
     <item>

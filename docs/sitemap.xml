@@ -17,6 +17,14 @@
   </url>
   
   <url>
+    <loc>/overview-notes/</loc>
+  </url>
+  
+  <url>
+    <loc>/reading/datacamp/</loc>
+  </url>
+  
+  <url>
     <loc>/archives/</loc>
     <priority>0</priority>
   </url>
@@ -45,7 +53,15 @@
   </url>
   
   <url>
+    <loc>/reading/getting-help/</loc>
+  </url>
+  
+  <url>
     <loc>/modules/</loc>
+  </url>
+  
+  <url>
+    <loc>/reading/rmarkdown-basics/</loc>
   </url>
   
   <url>
@@ -99,6 +115,10 @@
   <url>
     <loc>/reading/</loc>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/reading/setup/</loc>
   </url>
   
   <url>

@@ -33,70 +33,72 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   weight = 1
   identifier = "home"
   name = "Home"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-home\"></i>"
+  pre = "<i class='sidebar-button-icon fa fa-lg fa-home'></i>"
   url = "/"
 [[menu.main]]
   weight = 2
   identifier = "modules"
   name = "Modules"
-  pre = "<i class=\"material-icons\">dashboard</i>"
+  pre = "<i class='material-icons'>dashboard</i>"
   url = "/modules"
 [[menu.main]]
   weight = 3
   identifier = "tutorials"
   name = "Tutorials"
-  pre = "<i class=\"material-icons\">build</i>"
+  pre = "<i class='material-icons'>build</i>"
   url = "/tutorials"
 [[menu.main]]
   weight = 4
   identifier = "syllabus"
   name = "Syllabus"
-  pre = "<i class=\"material-icons\">date_range</i>"
+  pre = "<i class='material-icons'>date_range</i>"
   url = "/syllabus"
 [[menu.main]]
   weight = 5
   identifier = "policies"
   name = "Policies"
-  pre = "<i class=\"material-icons\">gavel</i>"
+  pre = "<i class='material-icons'>gavel</i>"
   url = "/policies"
 
 [[menu.footer]]
   weight = 1
   identifier = "Berkeley"
   name = "UC Berkeley"
-  pre = "<i class=\"material-icons\">pin_drop</i>"
+  pre = "<i class='material-icons'>pin_drop</i>"
   url = "https://ds421.berkeley.edu"
 [[menu.footer]]
   weight = 2
   identifier = "GitHub"
   name = "Team Repos"
-  pre = "<i class=\"button-icon fa fa-2x fa-github\"></i>"
+  pre = "<i class='button-icon fa fa-2x fa-github'></i>"
   url = "https://github.com/ds421"
 [[menu.footer]]
   weight = 3
   identifier = "Piazza"
   name = "Forum"
-  pre = "<i class=\"material-icons\">forum</i>"
+  pre = "<i class='material-icons'>forum</i>"
   url = "https://github.com/ds421/discussion"
 [[menu.footer]]
   weight = 4
   name = "Textbook"
-  pre = "<i class=\"material-icons\">book</i>"
+  pre = "<i class='material-icons'>book</i>"
   url = "http://r4ds.had.co.nz/"
 [[menu.footer]]
   weight = 5
   name = "Travis-CI"
-  pre = "<i class=\"material-icons\">check_circle</i>"
+  pre = "<i class='material-icons'>check_circle</i>"
   url = "http://travis-ci.com/ds421/"
 [[menu.footer]]
   weight = 6
   name = "DataCamp Lessons"
-  pre = "<i class=\"material-icons\">video_library</i>"
+  pre = "<i class='material-icons'>video_library</i>"
   url = "https://www.datacamp.com/groups/espm-288-reproducible-collaborative-data-science"
+
+
 
 [[menu.sidebar]]
   weight = 1
-  pre = "<i class=\"material-icons\">timeline</i>"
+  pre = "<i class='material-icons'>timeline</i>"
   name = "Climate Change"
   url = "#climate"
 [[menu.sidebar]]
@@ -106,17 +108,17 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   url = "#fish"
 [[menu.sidebar]]
   weight = 3
-  pre = " <i class=\"material-icons\">bug_report</i>"
+  pre = " <i class='material-icons'>bug_report</i>"
   name = "Ecological Simulation"
   url = "#popdyn"
 [[menu.sidebar]]
   weight = 4
-  pre = " <i class=\"material-icons\">my_location</i>"
+  pre = " <i class='material-icons'>my_location</i>"
   name = "Geospatial"
   url = "#spatial"
  [[menu.sidebar]]
 weight = 5
-  pre = " <i class=\"material-icons\">trending_down</i>"
+  pre = " <i class='material-icons'>trending_down</i>"
   name = "Mass Extinctions"
   url = "#extinction"
 
@@ -126,12 +128,12 @@ weight = 5
   weight = 1
   name = "GitHub"
   url = "#github"
-  pre = "<i class=\"fa fa-github\"></i>"
+  pre = "<i class='fa fa-github'></i>"
 [[menu.tools]]
   weight = 3
   name = "Travis-CI"
   url = "#travis"
-  pre = "<i class=\"material-icons\">check_circle</i>"
+  pre = "<i class='material-icons'>check_circle</i>"
 [[menu.tools]]
   weight = 2
   name = "RMarkdown"
@@ -141,22 +143,22 @@ weight = 5
   weight = 4
   name = "R Packages"
   url = "#packages"
-  pre = "<i class=\"fa fa-archive\"></i>"
+  pre = "<i class='fa fa-archive'></i>"
 [[menu.tools]]
   weight = 5
   name = "Docker"
   url = "#docker"
-  pre = "<i class=\"fa fa-docker\"></i>"
+  pre = "<i class='fa fa-docker'></i>"
 [[menu.tools]]
   weight = 6
   name = "Cloud"
   url = "#cloud"
-  pre = "<i class=\"fa fa-cloud\"></i>"  
+  pre = "<i class='fa fa-cloud'></i>"  
 [[menu.tools]]
   weight = 7
   name = "Web design"
   url = "#website"
-  pre = "<i class=\"fa fa-html5\"></i>"
+  pre = "<i class='material-icons'>language</i>"
 [[menu.tools]]
   weight = 8
   name = "Shiny"

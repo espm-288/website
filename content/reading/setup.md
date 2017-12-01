@@ -6,4 +6,7 @@ title: Setup
 - [Running R code](http://r4ds.had.co.nz/introduction.html#running-r-code)
 - [RStudio Cheat sheet](https://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf) (for reference)
 
-- [Style guide](http://style.tidyverse.org/)  `lintr::lint("assignment.R")`
+
+- [Style guide](http://style.tidyverse.org/)  Consistent style is an important element of communication and collaboration.  
+  Please review sections **1 Files** and **2 Syntax**.  Most Syntax conventions can be automatically
+  checked with `lintr::lint("assignment.Rmd")`.
