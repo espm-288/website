@@ -92,7 +92,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   weight = 6
   name = "DataCamp Lessons"
   pre = "<i class=\"material-icons\">video_library</i>"
-  url = "https://www.datacamp.com/"
+  url = "https://www.datacamp.com/groups/espm-288-reproducible-collaborative-data-science"
 
 [[menu.sidebar]]
   weight = 1
