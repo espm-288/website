@@ -18,7 +18,7 @@
       
       <guid>/syllabus/</guid>
       <description>warning  clear  Please note: Syllabus under development, subject to change    
- Date Lesson Reading Lecture Assignment   Wk 1 Introduction      Wk 2 climate       Wk 3  check_circle      Wk 4 climate       Wk 5 overfishing directions_boat      Wk 6 overfishing directions_boat      Wk 7 simulation bug_report      Wk 8 simulation bug_report      Wk 9  cloud      Wk 10 geospatial my_location      Wk 11 geospatial my_location      Wk 12 web design language      Wk 13 extinction trending_down      Wk 14 extinction trending_down      Wk 15 final project school        </description>
+ Date Lesson Reading Lecture Assignment   Wk 1.1 Introduction      Wk 1.2 climate       Wk 2.1  check_circle      Wk 2.2 climate       Wk 3.1 overfishing directions_boat      Wk 3.2 overfishing directions_boat      Wk 4.</description>
     </item>
     
     <item>
@@ -46,16 +46,16 @@ Instructional Methods As a flipped classroom, students are provided with either 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/overview-notes/</guid>
-      <description>Setup  GitHub RMarkdown Travis-CI  Intro:
+      <description>All Readings, in order Intro  setup.md: RStudio IDE, Part I
+ Git in RStudio RStudio IDE, Part II, Chapter 2, Garrett Grolemund
+ getting-help.md
+ style
+ advanced git
+  Setup  GitHub RMarkdown Travis-CI  Intro:
  Git in RStudio RStudio IDE, Part II, Chapter 2, Garrett Grolemund  Later:
  Git from command line &amp;amp; GitHub, Greg Wilson
  Reports with RMarkdown, Garrett Grolemund
- RStudio IDE, Part I
-  Modules Climate  visualization basics ggplot2  packages: ggplot2, tidyr::gather, readr
- (?) Dates &amp;amp; Times, r4ds 16
- Data Visualization r4ds-3
- Tibbles r4ds-10
- Data Import, r4ds-11</description>
+   Modules Climate  visualization basics ggplot2  packages: ggplot2, tidyr::gather, readr</description>
     </item>
     
     <item>
@@ -245,7 +245,7 @@ While writing a minimal R package is really pretty simple, R packages are still 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/reading/setup/</guid>
-      <description> Prerequisites Running R code RStudio Cheat sheet (for reference)
+      <description> Watch  RStudio IDE, Part I, Garrett Grolemund  Read  Prerequisites Running R code RStudio Cheat sheet (for reference)
  Style guide Consistent style is an important element of communication and collaboration.
 Please review sections 1 Files and 2 Syntax. Most Syntax conventions can be automatically checked with lintr::lint(&amp;quot;assignment.Rmd&amp;quot;).
   </description>

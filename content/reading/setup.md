@@ -2,6 +2,12 @@
 title: Setup
 ---
 
+## Watch
+
+- [RStudio IDE, Part I](https://www.datacamp.com/courses/working-with-the-rstudio-ide-part-1), Garrett Grolemund
+
+## Read
+
 - [Prerequisites](http://r4ds.had.co.nz/introduction.html#prerequisites)
 - [Running R code](http://r4ds.had.co.nz/introduction.html#running-r-code)
 - [RStudio Cheat sheet](https://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf) (for reference)
