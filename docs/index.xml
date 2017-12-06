@@ -46,13 +46,12 @@ Instructional Methods As a flipped classroom, students are provided with either 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/overview-notes/</guid>
-      <description>All Readings, in order Intro  setup.md: RStudio IDE, Part I
- Git in RStudio RStudio IDE, Part II, Chapter 2, Garrett Grolemund
- getting-help.md
- style
- advanced git
-  Setup  GitHub RMarkdown Travis-CI  Intro:
- Git in RStudio RStudio IDE, Part II, Chapter 2, Garrett Grolemund  Later:
+      <description>Intro tutorial for Data Science Triad: GitHub, RMarkdown, Travis-CI
+intro.1 Watch: - RStudio IDE, Part I
+Read: readings/setup.md - Prerequisites - Running R code - RStudio Cheat sheet (for reference)
+intro.2  Git in RStudio RStudio IDE, Part II, Chapter 2, Garrett Grolemund  Read: reading/getting-help.md
+- style
+Setup Later:
  Git from command line &amp;amp; GitHub, Greg Wilson
  Reports with RMarkdown, Garrett Grolemund
    Modules Climate  visualization basics ggplot2  packages: ggplot2, tidyr::gather, readr</description>
