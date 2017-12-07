@@ -18,7 +18,7 @@
       
       <guid>/syllabus/</guid>
       <description>warning  clear  Please note: Syllabus under development, subject to change    
- Date Lesson Reading Lecture Assignment   Wk 1.1 Introduction      Wk 1.2 climate       Wk 2.1  check_circle      Wk 2.2 climate       Wk 3.1 overfishing directions_boat      Wk 3.2 overfishing directions_boat      Wk 4.</description>
+ Date Module Topics Reading Video Assignment   Wk 1.1 home Introduction &amp; setup      Wk 1.2 climate   Individual assessment      Wk 2.1  Workflow: GitHub, RMarkdown, Travis      Wk 2.2  Visualization basics      Wk 3.</description>
     </item>
     
     <item>
@@ -51,10 +51,9 @@ intro.1 Watch: - RStudio IDE, Part I
 Read: readings/setup.md - Prerequisites - Running R code - RStudio Cheat sheet (for reference)
 intro.2  Git in RStudio RStudio IDE, Part II, Chapter 2, Garrett Grolemund  Read: reading/getting-help.md
 - style
-Setup Later:
- Git from command line &amp;amp; GitHub, Greg Wilson
- Reports with RMarkdown, Garrett Grolemund
-   Modules Climate  visualization basics ggplot2  packages: ggplot2, tidyr::gather, readr</description>
+Modules Climate  visualization basics ggplot2  packages: ggplot2, tidyr::gather, readr
+ (?) Dates &amp;amp; Times, r4ds 16
+ Data Visualization r4ds-3</description>
     </item>
     
     <item>

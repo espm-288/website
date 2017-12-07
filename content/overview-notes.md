@@ -21,19 +21,6 @@ Read: reading/getting-help.md
   - style
   
 
-
-## Setup
-
-Later:
-
-- [Git from command line & GitHub](https://www.datacamp.com/courses/introduction-to-git-for-data-science), Greg Wilson
-
-- [Reports with RMarkdown](https://www.datacamp.com/courses/reporting-with-r-markdown), Garrett Grolemund
-
-
-- 
-
-
 # Modules
 
 ## Climate
@@ -53,7 +40,22 @@ packages: `ggplot2`, `tidyr::gather`, `readr`
 
 ## fish
 
+
+### fish.1
+
+Watch:
+ - [Tidyverse Chapter 1](https://www.datacamp.com/courses/introduction-to-the-tidyverse) David Robinson
+
+Read:
+
 - Data Transformation, r4ds-5,  (`dplyr` functions `select`, `fliter`, `arrange`, `mutate`)
+
+### fish.2
+
+Watch: 
+  - [Tidyverse ch]
+
+Read: 
 - Relational data,  r4ds-13    (`dplyr` `group_by`, `summarise`, and `*_join`)
 
 - [Missing Values](https://dcl-2017-04.github.io/curriculum/missing-values.html)
@@ -168,3 +170,12 @@ Read:
 
 
 - Graphics for Communication, r4ds-28 (Label, Annotation, Scales, Zooming, Themes)
+
+
+## Later Tutorial supplements:
+
+- [Git from command line & GitHub](https://www.datacamp.com/courses/introduction-to-git-for-data-science), Greg Wilson
+
+- [Reports with RMarkdown](https://www.datacamp.com/courses/reporting-with-r-markdown), Garrett Grolemund
+
+
