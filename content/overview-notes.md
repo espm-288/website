@@ -1,9 +1,6 @@
-
-## Intro
-
 tutorial for Data Science Triad: GitHub, RMarkdown, Travis-CI
 
-### intro.1
+### rstudio
 
 Watch: 
   - [RStudio IDE, Part I](https://www.datacamp.com/courses/working-with-the-rstudio-ide-part-1)
@@ -13,17 +10,44 @@ Read: readings/setup.md
   - [Running R code](http://r4ds.had.co.nz/introduction.html#running-r-code)
   - [RStudio Cheat sheet](https://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf) (for reference)
 
-### intro.2
+### rmarkdown
 
-- Git in RStudio [RStudio IDE, Part II, Chapter 2](https://www.datacamp.com/courses/working-with-the-rstudio-ide-part-2), Garrett Grolemund
+Watch:
 
-Read: reading/getting-help.md  
-  - style
-  
+- **[Reports with RMarkdown](https://www.datacamp.com/courses/reporting-with-r-markdown)** (by Garrett Grolemund)
 
-# Modules
+Read:
 
-## Climate
+- Introduction **[[r4ds-27.1](http://r4ds.had.co.nz/r-markdown.html#introduction-18)]**
+- R Markdown  **[[r4ds-27.2](http://r4ds.had.co.nz/r-markdown.html#r-markdown-basics)]**
+- Code chunks **[[r4ds-27.4](http://r4ds.had.co.nz/r-markdown.html#code-chunks)]**
+
+### git
+
+Watch:
+
+DataCamp Lesson: **[RStudio IDE, Part II, Chapter 2: Version Control](https://www.datacamp.com/courses/working-with-the-rstudio-ide-part-2)** (by Garrett Grolemund).
+
+### vis.1
+
+
+Watch:
+
+- **[Tidyverse Chapter 2: Data Visualization](https://www.datacamp.com/courses/introduction-to-the-tidyverse)** (David Robinson)
+
+(Yes, we're starting with Chapter 2, we'll go back to Chapter 1 soon).
+
+Read:
+
+- Data Exploration **[[r4ds-2](http://r4ds.had.co.nz/explore-intro.html)]**
+- First Steps **[[r4ds-3.2](http://r4ds.had.co.nz/data-visualisation.html#first-steps)]**
+- Aesthetic mappings **[[r4ds-3.3](http://r4ds.had.co.nz/data-visualisation.html#aesthetic-mappings)]**
+- Common problems **[[r4ds-3.4](http://r4ds.had.co.nz/data-visualisation.html#common-problems)]**
+- Facets **[r4ds-3.5](http://r4ds.had.co.nz/data-visualisation.html#facets)**
+- Geometric objects **[r4ds-3.6](http://r4ds.had.co.nz/data-visualisation.html#geometric-objects)**
+
+
+### dplyr-1
 
 - visualization basics `ggplot2`
 
@@ -177,5 +201,25 @@ Read:
 - [Git from command line & GitHub](https://www.datacamp.com/courses/introduction-to-git-for-data-science), Greg Wilson
 
 - [Reports with RMarkdown](https://www.datacamp.com/courses/reporting-with-r-markdown), Garrett Grolemund
+
+
+
+
+## DataCamp Syllabus
+
+- [Git](https://www.datacamp.com/courses/introduction-to-git-for-data-science), Greg Wilson
+
+- [RStudio IDE, Part I](https://www.datacamp.com/courses/working-with-the-rstudio-ide-part-1), [RStudio IDE, Part II](https://www.datacamp.com/courses/working-with-the-rstudio-ide-part-2)
+
+- [Reports with RMarkdown](https://www.datacamp.com/courses/reporting-with-r-markdown), Garrett Grolemund
+
+
+- [Data wrangling](https://www.datacamp.com/courses/introduction-to-the-tidyverse), David Robinson
+
+- [dplyr intro](https://www.datacamp.com/courses/dplyr-data-manipulation-r-tutorial), Garrett Grolemund
+
+
+- [Writing Functions in R](https://www.datacamp.com/courses/writing-functions-in-r), Hadley Wickham
+
 
 

@@ -21,7 +21,7 @@
   </url>
   
   <url>
-    <loc>/reading/datacamp/</loc>
+    <loc>/read/datacamp/</loc>
   </url>
   
   <url>
@@ -44,16 +44,44 @@
   </url>
   
   <url>
+    <loc>/read/dplyr-1/</loc>
+  </url>
+  
+  <url>
     <loc>/</loc>
     <lastmod>2017-04-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/reading/geospatial/</loc>
+    <loc>/read/functions/</loc>
   </url>
   
   <url>
-    <loc>/reading/getting-help/</loc>
+    <loc>/read/geospatial-1/</loc>
+  </url>
+  
+  <url>
+    <loc>/read/geospatial-io/</loc>
+  </url>
+  
+  <url>
+    <loc>/read/geospatial-raster/</loc>
+  </url>
+  
+  <url>
+    <loc>/read/geospatial-vector/</loc>
+  </url>
+  
+  <url>
+    <loc>/read/getting-help/</loc>
+  </url>
+  
+  <url>
+    <loc>/read/git-1/</loc>
+  </url>
+  
+  <url>
+    <loc>/read/dplyr-2/</loc>
   </url>
   
   <url>
@@ -61,64 +89,28 @@
   </url>
   
   <url>
-    <loc>/reading/rmarkdown-basics/</loc>
+    <loc>/read/rmarkdown-basics/</loc>
   </url>
   
   <url>
-    <loc>/reading/climate1/</loc>
+    <loc>/read/workflows/</loc>
   </url>
   
   <url>
-    <loc>/reading/climate2/</loc>
+    <loc>/read/docker/</loc>
   </url>
   
   <url>
-    <loc>/reading/climate4/</loc>
-  </url>
-  
-  <url>
-    <loc>/reading/workflows/</loc>
-  </url>
-  
-  <url>
-    <loc>/reading/popdyn1/</loc>
-  </url>
-  
-  <url>
-    <loc>/reading/popdyn2/</loc>
-  </url>
-  
-  <url>
-    <loc>/reading/popdyn3/</loc>
-  </url>
-  
-  <url>
-    <loc>/reading/r-pkgs/</loc>
-  </url>
-  
-  <url>
-    <loc>/reading/dplyr-1/</loc>
-  </url>
-  
-  <url>
-    <loc>/reading/dplyr-2/</loc>
-  </url>
-  
-  <url>
-    <loc>/reading/dplyr-3/</loc>
-  </url>
-  
-  <url>
-    <loc>/reading/docker/</loc>
-  </url>
-  
-  <url>
-    <loc>/reading/</loc>
+    <loc>/read/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/reading/setup/</loc>
+    <loc>/read/dplyr-3/</loc>
+  </url>
+  
+  <url>
+    <loc>/read/setup/</loc>
   </url>
   
   <url>
@@ -132,6 +124,14 @@
   
   <url>
     <loc>/tutorials/</loc>
+  </url>
+  
+  <url>
+    <loc>/read/ggplot-1/</loc>
+  </url>
+  
+  <url>
+    <loc>/read/r-pkgs/</loc>
   </url>
   
 </urlset>
