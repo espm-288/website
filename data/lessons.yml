@@ -88,7 +88,7 @@ lessons:
     
   - module: " "
     date: " "
-    topics: "<b>GEOSPATIAL DISPLACEMENT MODULE</b>"
+    topics: "<b>GEOSPATIAL CHANGE MODULE</b>"
   - module: "<i class='material-icons'>my_location</i>"  
     date: "Wk 10.1"
     datatype: '<i class="material-icons">satellite</i>'

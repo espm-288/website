@@ -21,10 +21,6 @@
   </url>
   
   <url>
-    <loc>/read/datacamp/</loc>
-  </url>
-  
-  <url>
     <loc>/archives/</loc>
     <priority>0</priority>
   </url>
