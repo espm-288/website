@@ -1,128 +1,62 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Data Science for Global Change Ecology</title>
-    <meta charset="utf-8">
-    <meta name="author" content="Carl Boettiger" />
-    <link href="libs/remark-css-0.0.1/example.css" rel="stylesheet" />
-  </head>
-  <body>
-    <textarea id="source">
-class: center, middle, inverse, title-slide
+---
+title: "Data Science for Global Change Ecology"
+author: "Carl Boettiger"
 
-# Data Science for Global Change Ecology
-### Carl Boettiger
-
+output:
+  xaringan::moon_reader:
+#    chakra: libs/remark-latest.min.js
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
 ---
 
 
-class: center, middle, inverse
 
-# What is data science?
+<p>class: center, middle, inverse</p>
+<div id="what-is-data-science" class="section level1">
+<h1>What is data science?</h1>
+<hr />
+<p>class: center, middle, inverse</p>
+</div>
+<div id="why-global-change" class="section level1">
+<h1>Why global change?</h1>
+<p>class: center</p>
+</div>
+<div id="fishery-collapse" class="section level1">
+<h1>Fishery Collapse?</h1>
+<p><img src="images/dimacs/worm2006.png", width="700"></p>
+<p><small> Worm+ (2006) <a href="doi:%5B10.1126/science.1132294%5D(http://doi.org/10.1126/science.1132294)" class="uri">doi:[10.1126/science.1132294](http://doi.org/10.1126/science.1132294)</a></small></p>
+<p>class: center</p>
+</div>
+<div id="remote-sensors" class="section level1">
+<h1>Remote sensors</h1>
+<p><img src="images/berkeley2014/landsat2.jpg" width="550"></p>
+<p><small>credit: NASA</small></p>
+<p>class: center</p>
+<div id="neon" class="section level2">
+<h2>NEON</h2>
+<p><img src="images/asn2014/neon.png" width="550"></p>
+<p><small> credit: Hopkin (2006) <a href="doi:%5B10.1038/444420a%5D(http://doi.org/10.1038/444420a)" class="uri">doi:[10.1038/444420a](http://doi.org/10.1038/444420a)</a> </small></p>
+<p>class: center</p>
+</div>
+</div>
+<div id="computer-simulations" class="section level1">
+<h1>Computer simulations</h1>
+<p><img src="img/jetstream-cpus.jpg" width="650"></p>
+<p><small> credit: NSF Cyverse / Jetstream </small></p>
+<!-- 9,984 cores 106 teraflops -->
+<p>class: center</p>
+</div>
+<div id="growth-of-climate-data-by-type" class="section level1">
+<h1>Growth of climate data by type</h1>
+<div class="figure">
+<img src="images/dimacs/growth-climate-data.png" />
 
----
-
-class: center, middle, inverse
-
-# Why global change?
-
-
-
-
----
-class: center
-
-# Global Change
-
-&lt;img src="images/dimacs/global-change.jpg" width="550"&gt;
-
-&lt;small&gt; Overpeck+ (2011) doi:[10.1126/science.1197869](http://doi.org/10.1126/science.1197869) &lt;/small&gt;
-
----
-class: center
-
-# Fishery Collapse?
-
-&lt;img src="images/dimacs/worm2006.png", width="700"&gt;
-
-&lt;small&gt; Worm+ (2006) doi:[10.1126/science.1132294](http://doi.org/10.1126/science.1132294)&lt;/small&gt;
-
----
-class: center
-
-# Tipping points?
-
-&lt;img src="images/berkeley2014/barnosky.png", width="600"&gt;
-
-&lt;small&gt; Barnoksy+ (2012) doi:[10.1038/nature11018](http://doi.org/10.1038/nature11018)&lt;/small&gt;
-
-&lt;!-- From linear to nonlinear thinking. Must deal with the uncertainty--&gt;
-
----
-class: center
-
-# Remote sensors
-
-&lt;img src="images/berkeley2014/landsat2.jpg" width="550"&gt;
-
-&lt;small&gt;credit: NASA&lt;/small&gt;
-
----
-class: center
-
-# micro sensors
-
-&lt;img src="images/berkeley2014/gps-zebra.jpg" width="500"&gt;
-
-&lt;small&gt;credit: NSF &lt;/small&gt;
-
----
-class: center
-
-## NEON
-
-&lt;img src="images/asn2014/neon.png" width="550"&gt;
-
-&lt;small&gt; credit: Hopkin (2006) doi:[10.1038/444420a](http://doi.org/10.1038/444420a) &lt;/small&gt;
-
----
-class: center
-
-## OOI
-
-&lt;img src="images/asn2014/ooi.png" width="900"&gt;
-
-&lt;small&gt; credit: Witze (2013) doi:[10.1038/501480a](http://doi.org/10.1038/501480a) &lt;/small&gt;
-
----
-class: center
-
-# Computer simulations
-
-&lt;img src="img/jetstream-cpus.jpg" width="650"&gt;
-
-&lt;small&gt; credit: NSF Cyverse / Jetstream &lt;/small&gt;
-
-&lt;!-- 9,984 cores 106 teraflops --&gt;
-
----
-class: center
-
-# Field-based study
-
-![](images/berkeley2014/icecore.jpg)
-
----
-class: center
-
-# Growth of climate data by type
-
-![](images/dimacs/growth-climate-data.png)
-
-&lt;small&gt; Overpeck+ (2011) doi:[10.1126/science.1197869](http://doi.org/10.1126/science.1197869) &lt;/small&gt;
-
-
-&lt;!--
+</div>
+<p><small> Overpeck+ (2011) <a href="doi:%5B10.1126/science.1197869%5D(http://doi.org/10.1126/science.1197869)" class="uri">doi:[10.1126/science.1197869](http://doi.org/10.1126/science.1197869)</a> </small></p>
+<!--
 
 # and growing fast
 
@@ -130,729 +64,434 @@ class: center
 - *in 2010 the world generated 1250 billion gigabytes of data.*
 - *in 2007 the world produced more data than could fit in all of the world’s storage*
 
-&lt;small&gt; Baraniuk (2011) doi:[10.1126/science.1197448](http://doi.org/10.1126/science.1197448) &lt;/small&gt;
+<small> Baraniuk (2011) doi:[10.1126/science.1197448](http://doi.org/10.1126/science.1197448) </small>
 
---&gt;
-
----
-class: center, middle, inverse
-
-# So when is it "Big Data?"
-
----
-class: center, middle, inverse
-
-# 100 MB?
-
----
-class: center, middle, inverse
-
-# 100 GB?
-
----
-class: center, middle, inverse
-
-# 100 PB?
-
----
-class: center, middle, inverse
-
-# Big enough to be a problem
-
----
-class: center
-
-# Engineering bottlenecks
-
-&lt;img src="images/dimacs/bottleneck.jpg" width="700"&gt;
-
-&lt;small&gt; Baraniuk (2011) doi:[10.1126/science.1197448](http://doi.org/10.1126/science.1197448) &lt;/small&gt;
-
----
-class: center
-
-# Science bottlenecks
-
-&lt;img src="images/dimacs/science-bottleneck.png"&gt;
-
-&lt;small&gt;adapted from Reichman+ (2011) doi:[10.1126/science.1197962](http://doi.org/10.1126/science.1197962)&lt;/small&gt;
-
----
-class: inverse, middle, center
-
-
-# Different ways to be "Big" 
-
-## Volume 
-## Variety 
-## Velocity 
-
-&lt;!-- Each of these can break our hardware (disks/algorithms/networks), but that's relatively generic problem.
+-->
+<p>class: center, middle, inverse</p>
+</div>
+<div id="mb" class="section level1">
+<h1>100 MB?</h1>
+<p>class: center, middle, inverse</p>
+</div>
+<div id="pb" class="section level1">
+<h1>100 PB?</h1>
+<p>class: center</p>
+</div>
+<div id="engineering-bottlenecks" class="section level1">
+<h1>Engineering bottlenecks</h1>
+<p><img src="images/dimacs/bottleneck.jpg" width="700"></p>
+<p><small> Baraniuk (2011) <a href="doi:%5B10.1126/science.1197448%5D(http://doi.org/10.1126/science.1197448)" class="uri">doi:[10.1126/science.1197448](http://doi.org/10.1126/science.1197448)</a> </small></p>
+<p>class: inverse, middle, center</p>
+</div>
+<div id="different-ways-to-be-big" class="section level1">
+<h1>Different ways to be “Big”</h1>
+<div id="volume" class="section level2">
+<h2>Volume</h2>
+</div>
+<div id="variety" class="section level2">
+<h2>Variety</h2>
+</div>
+<div id="velocity" class="section level2">
+<h2>Velocity</h2>
+<!-- Each of these can break our hardware (disks/algorithms/networks), but that's relatively generic problem.
 Particularly interested in how this breaks our _Science_, changes to the research process to that better address this.
 That is: the management and analysis of massive data in the context global change research
 Research that _scales_
 
---&gt;
-
----
-class: inverse, middle, center
-
-## Our focus will be on these
-
-# *Science Bottlenecks* 
-
----
-class: middle, center
-
-# Data Science
-
-![](img/drewconway.png)
-
----
-class: inverse
-
-# Donoho's Greater Data Science
-
-
-1. Data Exploration and Preparation*
-2. Data Representation and Transformation*
-3. Computing with Data
-4. Data Modeling
-5. Data Visualization and Presentation
-6. Science about Data Science*
-
-- ["50 years of data science"](https://dl.dropboxusercontent.com/u/23421017/50YearsDataScience.pdf)
-
-
----
-
-## Course Content: Data Science as Process
-
-![](http://r4ds.had.co.nz/diagrams/data-science-wrangle.png)
-
----
-
-## Data cleaning
-
-![](img/datacleaning.jpg)
-
----
-
-## Analysis &amp; Modeling
-
-- Formerly the 80%
-
---
-- Computational implementations have made this much easier
-
---
-- And led to an explosion of new methods &amp; tools
-
-
----
-class: inverse, middle, center
-
-# *Science Bottlenecks* 
-
-
-
----
-class: center, inverse, middle
-
-# Variety
-
-
----
-class: middle, left, inverse
-
-# data visualization
-
-&gt; today the visualization and analysis component has become a bottleneck
-
---
-
-- Visualization is time-consuming: becomes only an end-product
-
---
-
-- Web visualizations increasingly interactive, directly tied to data
-
---
-
-- Scientific visualization typically static images, divorced from data
-
-
-&lt;small&gt; Fox &amp; Hendler (2011) doi:[10.1126/science.1197654](http://doi.org/10.1126/science.1197654) &lt;/small&gt;
-
-
-
-&lt;!--
-
-&gt; A consequence of the major effort for visualization is that it becomes an end product of scientific analysis, rather than an exploration tool
-
-&gt; stop thinking of visualization as a necessary evil at the end of the scientific pipeline and use it as a tool in data comprehension.
-
-&gt; Many other data visualizations on the Web are becoming increasingly more sophisticated and interactive, while at the same time becoming easier to generate thanks to the prevalence of open Application Programming Interfaces ..
-
-&gt; Despite the increasing prevalence of these techniques on the Web, we are often looking at tables of numbers, best-fit curves, or other analytic results rather than being able to use visual means when we interact with the complex scientific data in many fields. Many of the visualization tools that are available to scientists do not allow live linking as do these Web-based tools. Once the visualization is created, it is no longer tied to the data ...
-
---&gt;
-
----
-class: center
-
-&lt;img src="images/dimacs/measurement-error.jpg" width="700"/&gt;
-
-# data visualization
-
-Something is wrong with this picture...
-
-&lt;small&gt; Fox &amp; Hendler (2011) doi:[10.1126/science.1197654](http://doi.org/10.1126/science.1197654) &lt;/small&gt;
-
----
-class: center, inverse, middle
-
-# Variety
-
----
-background-image: url(images/Bertrand/factory-farm.jpg)
-background-size: 100%
-background-position: center
-class: center, top, inverse
-
-# Factory Farm Data...
-
-
-&lt;small&gt;credit: Arthus-Bertrand&lt;/small&gt;
-
----
-background-image: url(images/Bertrand/organic-farm.png)
-background-size: 100%
-background-position: center
-class: center, middle, inverse
-
-# ... Organic, hand-crafted variety
-
-&lt;small&gt;credit: Arthus-Bertrand&lt;/small&gt;
-
-
----
-class: center, inverse
-
-# Vertically integrated data repositories
-
-&lt;img src="images/dimacs/tetris.png"&gt;
-
-
----
-class: center, inverse
-
-# Limitations to vertical integration
-
-![](images/dimacs/tetris-lose.png)
-
-
----
-class: middle, center
-
-# Unstructured data
-
-&lt;img src="img/embed-data-lake.jpg" width = "650"/&gt;
-
-
----
-class: center, middle, inverse
-
-# Velocity
-
----
-class: center, middle
-
-# Velocity: the need for Reproducibility
-
-&lt;img src="images/dimacs/growth-climate-data.png" width="350"/&gt;
-
-&lt;small&gt; Overpeck+ (2011) doi:[10.1126/science.1197869](http://doi.org/10.1126/science.1197869) &lt;/small&gt;
-
-## _Most data are yet to come_
-
----
-class: center
-
-# Example: Synthetic analysis of biodiversity loss
-
-&lt;img src="images/dimacs/diversity-fig1.png" width="700"&gt;
-
-Sythesizes over 140 data sets.
-
----
-class: center
-
-# Finds no evidence for systematic loss
-
-&lt;img src="images/dimacs/diversity-fig2.png" width="700"&gt;
-
-How easy would it be to update this to reflect new data?
-
----
-class: center, inverse, middle
-
-## In this course, we will reproduce, (and sometimes not), recent and critical scientific results.
-
----
-class: center, inverse, middle
-
-# Reproducibility: important for other reasons as well:
-
----
-background-image: url("images/economist/cover.jpg")
-
----
-background-image: url("images/economist/replicate.jpg")
-
----
-background-image: url("images/economist/rug.jpg")
-
-
----
-background-image: url("images/economist/trouble.jpg")
-
-
----
-class: center
-
-# Reproducible workflows: Dynamic documents
-
-&lt;img src="images/dimacs/spectrum.png"&gt;
-
-&lt;small&gt;Peng (2011) doi:[10.1126/science.1213847](http://doi.org/10.1126/science.1213847)&lt;/small&gt;
-
----
-class: inverse, center
-
-# This Course
-
---
-
-
----
-class: inverse
-
-# Real Data, Real Tools
-
---
-
-## Things will break
-
---
-
-## Things will change
-
---
-
-# Collaboration &amp; Communication
-
---
-
-## All work is teamwork
-
---
-
-## Presentation above all things!
-
----
-class: inverse, middle, center
-
-## Course motto
-
-&gt; Write code for people. Write data for computers
-&gt;
-&gt; -- [Vince Buffalo](http://www.vincebuffalo.com/), UC Davis c 2015
-
-
----
-class: inverse, middle, center
-
-## Pedagogy: this class will be different.
-
----
-class: inverse, middle
-
-## What do we know about how learning works?
-
-Learning:
-
-1. is an active process
-2. builds on prior knowledge
-3. must be situated in an authentic context
-4. occurs in complex social environment
-5. requires motivation and engagement
-
----
-class: inverse, top
-
-## Learning is always an active process!
-
-- Learning styles (auditory, visual, kinesthetic) thoroughly discredited.
-
-- (e.g. Dewey 1938, Piaget 1964, Vygotsky 1986, ....)
-
---
-
-- We learn by _doing_ and _reflecting_ (delibrate practice)
-
----
-class: inverse, top
-
-## Learning builds on prior knowledge
-
-- Ideas stick only when you have a scaffold to connect them to.
-
-- (e.g. Alexander 1996)
-
---
-
-- We will try to connect both to what you already know and what we have previously covered
-
-
----
-class: inverse, top
-
-## Situated in an authentic context
-
-- We learn best when we engage in specific ideas and concepts rather than abstract
-
-- (e.g. Greeno 2006; Kolonder 2006; Bryan 2015)
-
---
-
-- Our course is built around authentic scientific research questions rather than `foo` `bar` examples
-
---
-
-- Abstraction is important, but will follow rather than precede examples
-
-
----
-class: inverse, top
-
-## Occurs in a complex social environment
-
-- We learn most by talking / teaching / interacting with others.
-
-- (e.g. Bransford et al 2006; Rogofff 1998)
-
---
-
-- You will be working in pairs throughout the semester
-
---
-
-- [code of conduct](https://espm-288.carlboettiger.info/policies)
-
-
----
-class: inverse, top
-
-## Requires motivation and cognitive engagement
-
-- Motivation is connected to all of the above.
-
---
-
-- In some topics, we aim for mastery; in many others, we aim merely for motivation
-
---
-
-- knowing what's out there and what you can do with it
-
-
----
-class: inverse
-
-## Pedagogy:
-
-Some things in this course are in keeping with good / leading pedagogy
-
---
-
-- We will start with visualization
-- active learning
-- flipped classroom
-- peer instruction
-
---
-
-Some things aren't
-
---
-
-- Starting on the deep end
-- We will start with untidy data
-- unstructured training
-
-
-
----
-class: center, inverse, middle
-
-# Starting in the deep end
-
----
-class: center
-
-## Imposter Syndrome
-
-&lt;img src="img/imposter.png" width="600"/&gt;
-
----
-class: center
-
-## The Science vs The Memo
-
-&lt;img src="img/google_memo.png" width="500"/&gt;
-
-
----
-class: center, inverse, middle
-
-# Our Tools
-
----
-class: center
-
-# RMarkdown Notebooks
-
-&lt;img src="img/rmarkdown.png" width="450"&gt;
-
----
-
-# GitHub
-
-&lt;img src="img/github-espm-157.png"/&gt;
-
-
----
-
-# Continuous Integration
-
-&lt;img src="img/travis.png"/&gt;
-
----
-class: inverse
-
-## Language: Why R?
-
---
-- Not about the technical attributes
-
---
-- Pick your language based on what people in your area speak/code
-
---
-- Python vs R: closely analogous feature set; lots of interesting differences to discuss over beer
-
-
----
-class: inverse
-
-## Why tidyverse?
-
---
-- [tidyverse manifesto](https://cran.r-project.org/web/packages/tidyverse/vignettes/manifesto.html)
-
---
-- Consistent design, parallels tools in other languages (Python/pandas, SQL)
-
---
-- Significant adoption in the data science community
-
---
-- Pick your language based on what people in your area speak/code
-
-
----
-class: inverse
-
-## Why git?
-
---
-- GitHub.com
-
---
-- Pick your language based on what people in your area speak/code
-
---
-- Very powerful but often convoluted syntax, see &lt;http://stevelosh.com/blog/2013/04/git-koans/&gt;
-
---
-- Widely used == easier to get help
-
-
----
-class: inverse
-
-## Our textbook(s)
-
-- [R for Data Science](http://r4ds.had.co.nz/)
-- [Advanced R](http://adv-r.had.co.nz/) Mostly Chapters 1-6
-- Additional online resources &amp; scientific data repositories
-
-
----
-
-# The Road Ahead
-
-
----
-
-## A flipped format
-
-&lt;https://espm-288.carlboettiger.info/syllabus&gt;
-
-
-
----
-
-## Modules
-
-&lt;https://espm-288.carlboettiger.info/modules&gt;
-
-![](img/modules.png)
-
----
-
-## Module flow
-
-- Week 1: Introduction, live code examples, getting started
-- Week 2: Pair work on assignment; mini-tutorials
-- Week 3: Present / compare / discuss solutions
-
-
----
-
-## Tutorials
-
-&lt;https://espm-288.carlboettiger.info/tutorials&gt;
-
-![](img/tutorials.png)
-
-
----
-
-## Climate Change
-
-- Data parsing
-- Data visualization
-- Basic data wrangling
-- Workflow
-
----
-
-## Fisheries Collapse
-
-- Working with multiple tables/tibbles
-- SQL databases, relational data
-- reproducibility
-
-
----
-
-## Population Dynamics
-
-- programming: loops, conditionals, functions
-- ecological simulation
-- dynamical systems modeling, ODE &amp; SDE simulations, bifurcation analysis, chaos, bet hedging
-- writing packages
-
-
----
-
-
-## Spatial data
-
-- Vector &amp; Raster data
-- projections and transforms
-- Simple Features, formats
-- interactive mapping
-
----
-
-
-## Extinctions
-
-- IUCN Redlist, fossil record, taxonomy
-- Online data, REST APIs
-- JSON &amp; extensible data formats
-- Regular Expressions (RegEx)
-
----
-
-## Course Communication
-
-- GitHub
-- Course Website
-
----
-
-# Course Website
-
-## &lt;https://espm-288.carlboettiger.info&gt;
-
-- Syllabus: lectures, reading, assignments
-- Course policies
-- Helpful links
-
-
-
-
----
-class: inverse, center, middle
-
-# Questions?
-
----
-class: inverse
-
-# Your turn: Introductions
-
-- Name
-- Undergraduate Major
-- Current Department &amp; research group
-- Semesters of prior programming experience
-
-
----
-class: inverse
-
-# Forming Teams
-    </textarea>
-<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
-<script>var slideshow = remark.create({
-"highlightStyle": "github",
-"highlightLines": true,
-"countIncrementalSlides": false
-});
-if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {window.dispatchEvent(new Event('resize'));});
-(function() {var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler"); if (!r) return; s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }"; d.head.appendChild(s);})();</script>
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-  }
-});
-</script>
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-(function () {
-  var script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
-  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
-    script.src  = script.src.replace(/^https?:/, '');
-  document.getElementsByTagName('head')[0].appendChild(script);
-})();
-</script>
-  </body>
-</html>
+-->
+<p>class: middle, center</p>
+</div>
+</div>
+<div id="data-science" class="section level1">
+<h1>Data Science</h1>
+<div class="figure">
+<img src="img/drewconway.png" />
+
+</div>
+<div id="course-content-data-science-as-process" class="section level2">
+<h2>Course Content: Data Science as Process</h2>
+<div class="figure">
+<img src="http://r4ds.had.co.nz/diagrams/data-science-wrangle.png" />
+
+</div>
+<hr />
+</div>
+<div id="data-cleaning" class="section level2">
+<h2>Data cleaning</h2>
+<div class="figure">
+<img src="img/datacleaning.jpg" />
+
+</div>
+<hr />
+</div>
+<div id="analysis-modeling" class="section level2">
+<h2>Analysis &amp; Modeling</h2>
+<ul>
+<li>Formerly the 80%</li>
+</ul>
+<table style="width:3%;">
+<colgroup>
+<col width="2%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>- Computational implementations have made this much easier</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>- And led to an explosion of new methods &amp; tools</td>
+</tr>
+</tbody>
+</table>
+<p>class: inverse, middle, center</p>
+</div>
+</div>
+<div id="science-bottlenecks" class="section level1">
+<h1><em>Science Bottlenecks</em></h1>
+<p>class: middle, left, inverse</p>
+</div>
+<div id="data-visualization" class="section level1">
+<h1>data visualization</h1>
+<blockquote>
+<p>today the visualization and analysis component has become a bottleneck</p>
+</blockquote>
+<p>–</p>
+<ul>
+<li>Visualization is time-consuming: becomes only an end-product</li>
+</ul>
+<p>–</p>
+<ul>
+<li>Web visualizations increasingly interactive, directly tied to data</li>
+</ul>
+<p>–</p>
+<ul>
+<li>Scientific visualization typically static images, divorced from data</li>
+</ul>
+<p><small> Fox &amp; Hendler (2011) <a href="doi:%5B10.1126/science.1197654%5D(http://doi.org/10.1126/science.1197654)" class="uri">doi:[10.1126/science.1197654](http://doi.org/10.1126/science.1197654)</a> </small></p>
+<!--
+
+> A consequence of the major effort for visualization is that it becomes an end product of scientific analysis, rather than an exploration tool
+
+> stop thinking of visualization as a necessary evil at the end of the scientific pipeline and use it as a tool in data comprehension.
+
+> Many other data visualizations on the Web are becoming increasingly more sophisticated and interactive, while at the same time becoming easier to generate thanks to the prevalence of open Application Programming Interfaces ..
+
+> Despite the increasing prevalence of these techniques on the Web, we are often looking at tables of numbers, best-fit curves, or other analytic results rather than being able to use visual means when we interact with the complex scientific data in many fields. Many of the visualization tools that are available to scientists do not allow live linking as do these Web-based tools. Once the visualization is created, it is no longer tied to the data ...
+
+-->
+<p>class: center, inverse, middle</p>
+</div>
+<div id="variety-1" class="section level1">
+<h1>Variety</h1>
+<p>background-image: url(images/Bertrand/organic-farm.png) background-size: 100% background-position: center class: center, middle, inverse</p>
+</div>
+<div id="organic-hand-crafted-variety" class="section level1">
+<h1>… Organic, hand-crafted variety</h1>
+<p><small>credit: Arthus-Bertrand</small></p>
+<p>class: center, inverse</p>
+</div>
+<div id="limitations-to-vertical-integration" class="section level1">
+<h1>Limitations to vertical integration</h1>
+<div class="figure">
+<img src="images/dimacs/tetris-lose.png" />
+
+</div>
+<p>class: center, middle, inverse</p>
+</div>
+<div id="velocity-1" class="section level1">
+<h1>Velocity</h1>
+<p>class: center</p>
+</div>
+<div id="example-synthetic-analysis-of-biodiversity-loss" class="section level1">
+<h1>Example: Synthetic analysis of biodiversity loss</h1>
+<p><img src="images/dimacs/diversity-fig1.png" width="700"></p>
+<p>Sythesizes over 140 data sets.</p>
+<p>class: center, inverse, middle</p>
+<div id="in-this-course-we-will-reproduce-and-sometimes-not-recent-and-critical-scientific-results." class="section level2">
+<h2>In this course, we will reproduce, (and sometimes not), recent and critical scientific results.</h2>
+<p>background-image: url(“images/economist/cover.jpg”)</p>
+<p>background-image: url(“images/economist/rug.jpg”)</p>
+<p>class: center</p>
+</div>
+</div>
+<div id="reproducible-workflows-dynamic-documents" class="section level1">
+<h1>Reproducible workflows: Dynamic documents</h1>
+<p><img src="images/dimacs/spectrum.png"></p>
+<p><small>Peng (2011) <a href="doi:%5B10.1126/science.1213847%5D(http://doi.org/10.1126/science.1213847)" class="uri">doi:[10.1126/science.1213847](http://doi.org/10.1126/science.1213847)</a></small></p>
+<p>class: inverse</p>
+</div>
+<div id="real-data-real-tools" class="section level1">
+<h1>Real Data, Real Tools</h1>
+<p>–</p>
+<div id="things-will-break" class="section level2">
+<h2>Things will break</h2>
+<p>–</p>
+</div>
+<div id="things-will-change" class="section level2">
+<h2>Things will change</h2>
+<p>–</p>
+</div>
+</div>
+<div id="collaboration-communication" class="section level1">
+<h1>Collaboration &amp; Communication</h1>
+<p>–</p>
+<div id="all-work-is-teamwork" class="section level2">
+<h2>All work is teamwork</h2>
+<p>–</p>
+</div>
+<div id="presentation-above-all-things" class="section level2">
+<h2>Presentation above all things!</h2>
+<p>class: inverse, middle, center</p>
+</div>
+<div id="pedagogy-this-class-will-be-different." class="section level2">
+<h2>Pedagogy: this class will be different.</h2>
+<p>class: inverse, top</p>
+</div>
+<div id="learning-is-always-an-active-process" class="section level2">
+<h2>Learning is always an active process!</h2>
+<ul>
+<li><p>Learning styles (auditory, visual, kinesthetic) thoroughly discredited.</p></li>
+<li><p>(e.g. Dewey 1938, Piaget 1964, Vygotsky 1986, ….)</p></li>
+</ul>
+<p>–</p>
+<ul>
+<li>We learn by <em>doing</em> and <em>reflecting</em> (delibrate practice)</li>
+</ul>
+<p>class: inverse, top</p>
+</div>
+<div id="situated-in-an-authentic-context" class="section level2">
+<h2>Situated in an authentic context</h2>
+<ul>
+<li><p>We learn best when we engage in specific ideas and concepts rather than abstract</p></li>
+<li><p>(e.g. Greeno 2006; Kolonder 2006; Bryan 2015)</p></li>
+</ul>
+<p>–</p>
+<ul>
+<li>Our course is built around authentic scientific research questions rather than <code>foo</code> <code>bar</code> examples</li>
+</ul>
+<p>–</p>
+<ul>
+<li>Abstraction is important, but will follow rather than precede examples</li>
+</ul>
+<p>class: inverse, top</p>
+</div>
+<div id="requires-motivation-and-cognitive-engagement" class="section level2">
+<h2>Requires motivation and cognitive engagement</h2>
+<ul>
+<li>Motivation is connected to all of the above.</li>
+</ul>
+<p>–</p>
+<ul>
+<li>In some topics, we aim for mastery; in many others, we aim merely for motivation</li>
+</ul>
+<p>–</p>
+<ul>
+<li>knowing what’s out there and what you can do with it</li>
+</ul>
+<p>class: center, inverse, middle</p>
+</div>
+</div>
+<div id="starting-in-the-deep-end" class="section level1">
+<h1>Starting in the deep end</h1>
+<p>class: center</p>
+<div id="the-science-vs-the-memo" class="section level2">
+<h2>The Science vs The Memo</h2>
+<p><img src="img/google_memo.png" width="500"/></p>
+<p>class: center</p>
+</div>
+</div>
+<div id="rmarkdown-notebooks" class="section level1">
+<h1>RMarkdown Notebooks</h1>
+<p><img src="img/rmarkdown.png" width="450"></p>
+<hr />
+</div>
+<div id="github" class="section level1">
+<h1>GitHub</h1>
+<p><img src="img/github-espm-157.png"/></p>
+<hr />
+</div>
+<div id="continuous-integration" class="section level1">
+<h1>Continuous Integration</h1>
+<p><img src="img/travis.png"/></p>
+<p>class: inverse</p>
+<div id="why-tidyverse" class="section level2">
+<h2>Why tidyverse?</h2>
+<table style="width:3%;">
+<colgroup>
+<col width="2%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>- <a href="https://cran.r-project.org/web/packages/tidyverse/vignettes/manifesto.html">tidyverse manifesto</a></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>- Consistent design, parallels tools in other languages (Python/pandas, SQL)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Significant adoption in the data science community</li>
+</ul>
+<table style="width:4%;">
+<colgroup>
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>- Pick your language based on what people in your area speak/code</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>class: inverse</td>
+</tr>
+<tr class="even">
+<td>## Why git?</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>GitHub.com</li>
+</ul>
+<table style="width:3%;">
+<colgroup>
+<col width="2%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>- Pick your language based on what people in your area speak/code</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>- Very powerful but often convoluted syntax, see <a href="http://stevelosh.com/blog/2013/04/git-koans/" class="uri">http://stevelosh.com/blog/2013/04/git-koans/</a></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Widely used == easier to get help</li>
+</ul>
+</div>
+</div>
+<div id="the-road-ahead" class="section level1">
+<h1>The Road Ahead</h1>
+<hr />
+<div id="a-flipped-format" class="section level2">
+<h2>A flipped format</h2>
+<p><a href="https://espm-288.carlboettiger.info/syllabus" class="uri">https://espm-288.carlboettiger.info/syllabus</a></p>
+<hr />
+</div>
+<div id="modules" class="section level2">
+<h2>Modules</h2>
+<p><a href="https://espm-288.carlboettiger.info/modules" class="uri">https://espm-288.carlboettiger.info/modules</a></p>
+<div class="figure">
+<img src="img/modules.png" />
+
+</div>
+<hr />
+</div>
+<div id="module-flow" class="section level2">
+<h2>Module flow</h2>
+<ul>
+<li>Week 1: Introduction, live code examples, getting started</li>
+<li>Week 2: Pair work on assignment; mini-tutorials</li>
+<li>Week 3: Present / compare / discuss solutions</li>
+</ul>
+<hr />
+</div>
+<div id="tutorials" class="section level2">
+<h2>Tutorials</h2>
+<p><a href="https://espm-288.carlboettiger.info/tutorials" class="uri">https://espm-288.carlboettiger.info/tutorials</a></p>
+<div class="figure">
+<img src="img/tutorials.png" />
+
+</div>
+<hr />
+</div>
+<div id="climate-change" class="section level2">
+<h2>Climate Change</h2>
+<ul>
+<li>Data parsing</li>
+<li>Data visualization</li>
+<li>Basic data wrangling</li>
+<li>Workflow</li>
+</ul>
+<hr />
+</div>
+<div id="fisheries-collapse" class="section level2">
+<h2>Fisheries Collapse</h2>
+<ul>
+<li>Working with multiple tables/tibbles</li>
+<li>SQL databases, relational data</li>
+<li>reproducibility</li>
+</ul>
+<hr />
+</div>
+<div id="population-dynamics" class="section level2">
+<h2>Population Dynamics</h2>
+<ul>
+<li>programming: loops, conditionals, functions</li>
+<li>ecological simulation</li>
+<li>dynamical systems modeling, ODE &amp; SDE simulations, bifurcation analysis, chaos, bet hedging</li>
+<li>writing packages</li>
+</ul>
+<hr />
+</div>
+<div id="spatial-data" class="section level2">
+<h2>Spatial data</h2>
+<ul>
+<li>Vector &amp; Raster data</li>
+<li>projections and transforms</li>
+<li>Simple Features, formats</li>
+<li>interactive mapping</li>
+</ul>
+<hr />
+</div>
+<div id="extinctions" class="section level2">
+<h2>Extinctions</h2>
+<ul>
+<li>IUCN Redlist, fossil record, taxonomy</li>
+<li>Online data, REST APIs</li>
+<li>JSON &amp; extensible data formats</li>
+<li>Regular Expressions (RegEx)</li>
+</ul>
+<hr />
+</div>
+<div id="course-communication" class="section level2">
+<h2>Course Communication</h2>
+<ul>
+<li>GitHub</li>
+<li>Course Website</li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="course-website" class="section level1">
+<h1>Course Website</h1>
+<div id="httpsespm-288.carlboettiger.info" class="section level2">
+<h2><a href="https://espm-288.carlboettiger.info" class="uri">https://espm-288.carlboettiger.info</a></h2>
+<ul>
+<li>Syllabus: lectures, reading, assignments</li>
+<li>Course policies</li>
+<li>Helpful links</li>
+</ul>
+<p>class: inverse</p>
+</div>
+</div>
+<div id="your-turn-introductions" class="section level1">
+<h1>Your turn: Introductions</h1>
+<ul>
+<li>Name</li>
+<li>Undergraduate Major</li>
+<li>Current Department &amp; research group</li>
+<li>Semesters of prior programming experience</li>
+</ul>
+<hr />
+<p>class: inverse</p>
+</div>
+<div id="forming-teams" class="section level1">
+<h1>Forming Teams</h1>
+</div>

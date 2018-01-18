@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Intros on ESPM 288</title>
-    <link>/espm-288/intro/</link>
+    <link>/intro/</link>
     <description>Recent content in Intros on ESPM 288</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="/espm-288/intro/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/intro/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>/espm-288/intro/header/</link>
+      <link>/intro/header/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/espm-288/intro/header/</guid>
+      <guid>/intro/header/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Data Science for Global Change Ecology</title>
-      <link>/espm-288/intro/intro/</link>
+      <link>/intro/intro/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/espm-288/intro/intro/</guid>
+      <guid>/intro/intro/</guid>
       <description>class: center, middle, inverse
 What is data science? class: center, middle, inverse
  Why global change? class: center

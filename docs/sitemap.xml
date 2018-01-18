@@ -3,144 +3,144 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/espm-288/syllabus/</loc>
+    <loc>/syllabus/</loc>
     <lastmod>2017-04-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/espm-288/policies/</loc>
+    <loc>/policies/</loc>
     <lastmod>2017-04-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/espm-288/about/</loc>
+    <loc>/about/</loc>
   </url>
   
   <url>
-    <loc>/espm-288/intro/header/</loc>
+    <loc>/intro/header/</loc>
   </url>
   
   <url>
-    <loc>/espm-288/overview-notes/</loc>
+    <loc>/overview-notes/</loc>
   </url>
   
   <url>
-    <loc>/espm-288/archives/</loc>
+    <loc>/archives/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/espm-288/assignments/</loc>
+    <loc>/assignments/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/espm-288/categories/</loc>
+    <loc>/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/espm-288/assignments/climate/</loc>
+    <loc>/assignments/climate/</loc>
   </url>
   
   <url>
-    <loc>/espm-288/read/dplyr-1/</loc>
+    <loc>/read/dplyr-1/</loc>
   </url>
   
   <url>
-    <loc>/espm-288/intro/intro/</loc>
+    <loc>/intro/intro/</loc>
   </url>
   
   <url>
-    <loc>/espm-288/</loc>
+    <loc>/</loc>
     <lastmod>2017-04-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/espm-288/read/functions/</loc>
+    <loc>/read/functions/</loc>
   </url>
   
   <url>
-    <loc>/espm-288/read/geospatial-1/</loc>
+    <loc>/read/geospatial-1/</loc>
   </url>
   
   <url>
-    <loc>/espm-288/read/geospatial-io/</loc>
+    <loc>/read/geospatial-io/</loc>
   </url>
   
   <url>
-    <loc>/espm-288/read/geospatial-raster/</loc>
+    <loc>/read/geospatial-raster/</loc>
   </url>
   
   <url>
-    <loc>/espm-288/read/geospatial-vector/</loc>
+    <loc>/read/geospatial-vector/</loc>
   </url>
   
   <url>
-    <loc>/espm-288/read/getting-help/</loc>
+    <loc>/read/getting-help/</loc>
   </url>
   
   <url>
-    <loc>/espm-288/read/git-1/</loc>
+    <loc>/read/git-1/</loc>
   </url>
   
   <url>
-    <loc>/espm-288/read/dplyr-2/</loc>
+    <loc>/read/dplyr-2/</loc>
   </url>
   
   <url>
-    <loc>/espm-288/intro/</loc>
+    <loc>/intro/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/espm-288/modules/</loc>
+    <loc>/modules/</loc>
   </url>
   
   <url>
-    <loc>/espm-288/read/rmarkdown-basics/</loc>
+    <loc>/read/rmarkdown-basics/</loc>
   </url>
   
   <url>
-    <loc>/espm-288/read/workflows/</loc>
+    <loc>/read/workflows/</loc>
   </url>
   
   <url>
-    <loc>/espm-288/read/docker/</loc>
+    <loc>/read/docker/</loc>
   </url>
   
   <url>
-    <loc>/espm-288/read/</loc>
+    <loc>/read/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/espm-288/read/dplyr-3/</loc>
+    <loc>/read/dplyr-3/</loc>
   </url>
   
   <url>
-    <loc>/espm-288/read/setup/</loc>
+    <loc>/read/setup/</loc>
   </url>
   
   <url>
-    <loc>/espm-288/tags/</loc>
+    <loc>/tags/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/espm-288/tools/</loc>
+    <loc>/tools/</loc>
   </url>
   
   <url>
-    <loc>/espm-288/tutorials/</loc>
+    <loc>/tutorials/</loc>
   </url>
   
   <url>
-    <loc>/espm-288/read/ggplot-1/</loc>
+    <loc>/read/ggplot-1/</loc>
   </url>
   
   <url>
-    <loc>/espm-288/read/r-pkgs/</loc>
+    <loc>/read/r-pkgs/</loc>
   </url>
   
 </urlset>
