@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Intros on ESPM 288</title>
+    <link>/espm-288/intro/</link>
+    <description>Recent content in Intros on ESPM 288</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/espm-288/intro/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>/espm-288/intro/header/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/espm-288/intro/header/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Science for Global Change Ecology</title>
+      <link>/espm-288/intro/intro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/espm-288/intro/intro/</guid>
+      <description>class: center, middle, inverse
+What is data science? class: center, middle, inverse
+ Why global change? class: center
+ Fishery Collapse?  Worm+ (2006) doi:[10.1126/science.1132294](http://doi.org/10.1126/science.1132294)
+class: center
+ Remote sensors credit: NASA
+class: center
+NEON  credit: Hopkin (2006) doi:[10.1038/444420a](http://doi.org/10.1038/444420a) 
+class: center
+  Computer simulations  credit: NSF Cyverse / Jetstream 
+class: center
+ Growth of climate data by type   Overpeck+ (2011) doi:[10.1126/science.1197869](http://doi.org/10.1126/science.1197869) 
+Baraniuk (2011) doi:[10.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -3,131 +3,144 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/syllabus/</loc>
+    <loc>/espm-288/syllabus/</loc>
     <lastmod>2017-04-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/policies/</loc>
+    <loc>/espm-288/policies/</loc>
     <lastmod>2017-04-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/about/</loc>
+    <loc>/espm-288/about/</loc>
   </url>
   
   <url>
-    <loc>/overview-notes/</loc>
+    <loc>/espm-288/intro/header/</loc>
   </url>
   
   <url>
-    <loc>/archives/</loc>
+    <loc>/espm-288/overview-notes/</loc>
+  </url>
+  
+  <url>
+    <loc>/espm-288/archives/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/assignments/</loc>
+    <loc>/espm-288/assignments/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>/espm-288/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/assignments/climate/</loc>
+    <loc>/espm-288/assignments/climate/</loc>
   </url>
   
   <url>
-    <loc>/read/dplyr-1/</loc>
+    <loc>/espm-288/read/dplyr-1/</loc>
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>/espm-288/intro/intro/</loc>
+  </url>
+  
+  <url>
+    <loc>/espm-288/</loc>
     <lastmod>2017-04-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/read/functions/</loc>
+    <loc>/espm-288/read/functions/</loc>
   </url>
   
   <url>
-    <loc>/read/geospatial-1/</loc>
+    <loc>/espm-288/read/geospatial-1/</loc>
   </url>
   
   <url>
-    <loc>/read/geospatial-io/</loc>
+    <loc>/espm-288/read/geospatial-io/</loc>
   </url>
   
   <url>
-    <loc>/read/geospatial-raster/</loc>
+    <loc>/espm-288/read/geospatial-raster/</loc>
   </url>
   
   <url>
-    <loc>/read/geospatial-vector/</loc>
+    <loc>/espm-288/read/geospatial-vector/</loc>
   </url>
   
   <url>
-    <loc>/read/getting-help/</loc>
+    <loc>/espm-288/read/getting-help/</loc>
   </url>
   
   <url>
-    <loc>/read/git-1/</loc>
+    <loc>/espm-288/read/git-1/</loc>
   </url>
   
   <url>
-    <loc>/read/dplyr-2/</loc>
+    <loc>/espm-288/read/dplyr-2/</loc>
   </url>
   
   <url>
-    <loc>/modules/</loc>
-  </url>
-  
-  <url>
-    <loc>/read/rmarkdown-basics/</loc>
-  </url>
-  
-  <url>
-    <loc>/read/workflows/</loc>
-  </url>
-  
-  <url>
-    <loc>/read/docker/</loc>
-  </url>
-  
-  <url>
-    <loc>/read/</loc>
+    <loc>/espm-288/intro/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/read/dplyr-3/</loc>
+    <loc>/espm-288/modules/</loc>
   </url>
   
   <url>
-    <loc>/read/setup/</loc>
+    <loc>/espm-288/read/rmarkdown-basics/</loc>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>/espm-288/read/workflows/</loc>
+  </url>
+  
+  <url>
+    <loc>/espm-288/read/docker/</loc>
+  </url>
+  
+  <url>
+    <loc>/espm-288/read/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tools/</loc>
+    <loc>/espm-288/read/dplyr-3/</loc>
   </url>
   
   <url>
-    <loc>/tutorials/</loc>
+    <loc>/espm-288/read/setup/</loc>
   </url>
   
   <url>
-    <loc>/read/ggplot-1/</loc>
+    <loc>/espm-288/tags/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/read/r-pkgs/</loc>
+    <loc>/espm-288/tools/</loc>
+  </url>
+  
+  <url>
+    <loc>/espm-288/tutorials/</loc>
+  </url>
+  
+  <url>
+    <loc>/espm-288/read/ggplot-1/</loc>
+  </url>
+  
+  <url>
+    <loc>/espm-288/read/r-pkgs/</loc>
   </url>
   
 </urlset>
