@@ -42,15 +42,6 @@ Instructional Methods As a flipped classroom, students are provided with either 
     
     <item>
       <title></title>
-      <link>/intro/header/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/intro/header/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>/overview-notes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -84,27 +75,6 @@ What rolling average is used in computing the “trend” line? How does the tre
       
       <guid>/read/dplyr-1/</guid>
       <description> Watch  Tidyverse Chapter 1: Data Wrangling (David Robinson)  Read  dplyr basic verbs: filter, arrange, select, and mutate, [r4ds-5.1 - 5.5]  </description>
-    </item>
-    
-    <item>
-      <title>Data Science for Global Change Ecology</title>
-      <link>/intro/intro/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/intro/intro/</guid>
-      <description>class: center, middle, inverse
-What is data science? class: center, middle, inverse
- Why global change? class: center
- Fishery Collapse?  Worm+ (2006) doi:[10.1126/science.1132294](http://doi.org/10.1126/science.1132294)
-class: center
- Remote sensors credit: NASA
-class: center
-NEON  credit: Hopkin (2006) doi:[10.1038/444420a](http://doi.org/10.1038/444420a) 
-class: center
-  Computer simulations  credit: NSF Cyverse / Jetstream 
-class: center
- Growth of climate data by type   Overpeck+ (2011) doi:[10.1126/science.1197869](http://doi.org/10.1126/science.1197869) 
-Baraniuk (2011) doi:[10.</description>
     </item>
     
     <item>

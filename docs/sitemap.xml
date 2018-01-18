@@ -17,10 +17,6 @@
   </url>
   
   <url>
-    <loc>/intro/header/</loc>
-  </url>
-  
-  <url>
     <loc>/overview-notes/</loc>
   </url>
   
@@ -45,10 +41,6 @@
   
   <url>
     <loc>/read/dplyr-1/</loc>
-  </url>
-  
-  <url>
-    <loc>/intro/intro/</loc>
   </url>
   
   <url>
@@ -86,11 +78,6 @@
   
   <url>
     <loc>/read/dplyr-2/</loc>
-  </url>
-  
-  <url>
-    <loc>/intro/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
