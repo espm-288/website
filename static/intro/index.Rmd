@@ -1,5 +1,5 @@
 ---
-title: "Data Science for Global Change Ecology"
+title: "Reproducible and Collaborative Data Science"
 author: "Carl Boettiger"
 
 output:
