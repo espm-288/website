@@ -72,7 +72,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   identifier = "Piazza"
   name = "Forum"
   pre = "<i class='material-icons'>forum</i>"
-  url = "https://github.com/ds421/discussion"
+  url = "https://piazza.com/class/jcldsjdnq5a6g9"
 [[menu.footer]]
   weight = 4
   name = "Textbook"
@@ -163,5 +163,4 @@ weight = 5
 [params]
   dateFormat = "January 2, 2006"
   background = "https://www.climate.gov/sites/default/files/MethaneBubblesFrozenAbrahamLake_large.jpg"
-  #background = "https://climate.nasa.gov/system/internal_resources/details/original/417_1263_banner-science-1600x500.jpg"
 
