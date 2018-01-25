@@ -23,14 +23,14 @@ lessons:
     date: "2018-01-30"
     datatype: '<i class="fa fa-table"></i>'
     topics: "Visualization basics"
-    reading: "read/ggplot-1.md"
-    watch: "read/ggplot-1.md"
+    reading: "read/ggplot-1"
+    watch: "read/ggplot-1"
   - module: "<i class='fa fa-lg fa-thermometer-full'></i>"
     date: "2018-02-01"
     datatype: '<i class="fa fa-table"></i>'
     topics: "Manipulation basics"
-    reading: "read/dplyr-1.md"
-    watch: "read/dplyr-1.md"
+    reading: "read/dplyr-1"
+    watch: "read/dplyr-1"
 
 
   - module: " "
