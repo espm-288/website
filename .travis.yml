@@ -4,6 +4,7 @@ language: R
 sudo: false
 cache: packages
 script: 
+  - R -e "blogdown::install_hugo()" 
   - R -e "blogdown::build_site()"
 
 
