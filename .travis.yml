@@ -1,0 +1,32 @@
+# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+
+language: R
+sudo: false
+cache: packages
+script: 
+  - R -e "blogdown::build_site()"
+
+
+## Alternate recipe: use Docker instead of R travis
+#sudo: required
+#services:
+#  - docker
+#script:
+## Test on locked version
+#  - docker run -ti -v $(pwd):/home/rstudio/repo -w /home/rstudio/repo \
+#    rocker/verse:3.4.2 \
+#    R -e 'lapply(list.files(pattern=".*.Rmd", recursive=TRUE), rmarkdown::render)'
+
+## Test on current version
+#  - docker run -ti -v $(pwd):/home/rstudio/repo -w /home/rstudio/repo \
+#    rocker/verse:latest \
+#    R -e 'lapply(list.files(pattern=".*.Rmd", recursive=TRUE), rmarkdown::render)'
+
+## Test on devel 
+#  - docker run -ti -v $(pwd):/home/rstudio/repo -w /home/rstudio/repo \
+#    rocker/verse:devel \
+#    R -e 'lapply(list.files(pattern=".*.Rmd", recursive=TRUE), rmarkdown::render)'
+
+
+
+
