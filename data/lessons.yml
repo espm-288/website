@@ -4,27 +4,32 @@ lessons:
     date: "2018-01-18"
     reading: "read/setup"
     watch: "read/setup"
+    
   - module: " "
     date: " "
     topics: "<b>CLIMATE MODULE</b>"
+    
   - module: "<i class='fa fa-lg fa-thermometer-full'></i>"
     date: "2018-01-23"
     reading: "read/rmarkdown-basics"
     watch: "read/rmarkdown-basics"
     datatype: '<i class="fa fa-table"></i>'
     topics: "Individual assessment"
+    
   - module: "<i class='fa fa-lg fa-github'></i>"
     date: "2018-01-25"
     topics: "Workflow: GitHub, RMarkdown, Travis"
     reading: "read/git-1"
     watch: "read/git-1"
     assignment: ""
+    
   - module: "<i class='fa fa-lg fa-thermometer-full'></i>"
     date: "2018-01-30"
     datatype: '<i class="fa fa-table"></i>'
     topics: "Visualization basics"
     reading: "read/ggplot-1"
     watch: "read/ggplot-1"
+    
   - module: "<i class='fa fa-lg fa-thermometer-full'></i>"
     date: "2018-02-01"
     datatype: '<i class="fa fa-table"></i>'
@@ -32,79 +37,91 @@ lessons:
     reading: "read/dplyr-1"
     watch: "read/dplyr-1"
 
-
   - module: " "
     date: " "
     topics: "<b>OVERFISHING MODULE</b>"
+    
   - module: "<i class='material-icons'>directions_boat</i>"
-    date: "Wk 3.2"
+    date: "2018-02-06"
     datatype: '<i class="fa fa-database"></i>'
     topics: "Relational data: groups"
     reading: "read/dplyr-2"
     watch: "read/dplyr-2"
+    
   - module: " <i class='material-icons'>directions_boat</i>"  
-    date: "Wk 4.1"
+    date: "2018-02-08"
     datatype: "<i class='fa fa-database'></i>"
     topics: "Relational data: joins"
     reading: "read/dplyr-3"
     watch: "read/dplyr-3"
+    
   - module: " <i class='material-icons'>directions_boat</i>"
-    date: "Wk 4.2"
+    date: "2018-02-13"
     datatype: '<i class="fa fa-database"></i>'
     topics: "Missing values"
-  - module: " <i class='material-icons'>directions_boat</i>"  
-    date: "Wk 5.1"
-    datatype: '<i class="fa fa-database"></i>'
-    topics: "Reproducibility"
     
   - module: "<i class='material-icons'>language</i>"
     topics: "web design"
-    date: "Wk 5.2"
-
+    date: "2018-02-15"
+    
+  - module: " <i class='material-icons'>directions_boat</i>"  
+    date: "2018-02-20"
+    datatype: '<i class="fa fa-database"></i>'
+    topics: "Reproducibility"
+    
   - module: " "
     date: " "
     topics: "<b>POPULATION DYNAMICS MODULE</b>"
+    
   - module: "<i class='material-icons'>bug_report</i>"
-    date: "Wk 6.1"
+    date: "2018-02-22"
     datatype: '<i class="material-icons">memory</i>'
     topics: "Functions"
     reading: "read/functions"
     watch: "read/functions"
+    
   - module: " <i class='material-icons'>bug_report</i>"
     topics: "Vectors"
-    date: "Wk 6.2"  
+    date: "2018-02-27"  
     datatype: '<i class="material-icons">memory</i>'
+    
   - module: " <i class='material-icons'>bug_report</i>"  
-    date: "Wk 7.1"
+    date: "2018-03-01"
     datatype: '<i class="material-icons">memory</i>'
     topics: "Iteration"
+    
   - module: " <i class='material-icons'>bug_report</i>"
-    date: "Wk 7.2"
+    date: "2018-03-06"
     datatype: '<i class="material-icons">memory</i>'
     topics: "Pipes"
-
+    
   - module: " <i class='icon-rlogo'></i> <i class='fa fa-lg fa-gift'></i>"
-    date: "Wk 9.2"    
+    date: "2018-03-08"    
     topics: "Writing R packages"
+
     
   - module: " "
     date: " "
     topics: "<b>GEOSPATIAL CHANGE MODULE</b>"
+    
   - module: "<i class='material-icons'>my_location</i>"  
-    date: "Wk 10.1"
+    date: "2018-03-15"
     datatype: '<i class="material-icons">satellite</i>'
     topics: "geospatial intro, visualization"
     reading: "read/geospatial-1"
+    
   - module: "<i class='material-icons'>my_location</i>"
     date: "Wk 10.2"
     datatype: '<i class="material-icons">satellite</i>'
     topics: "vector data"
     reading: "read/geospatial-vector"
+    
   - module: "<i class='material-icons'>my_location</i>"
     date: "Wk 11.1"
     datatype: '<i class="material-icons">satellite</i>'
     topics: "raster data"
     reading: "read/geospatial-raster"
+    
   - module: "<i class='material-icons'>my_location</i>"
     date: "Wk 11.2"
     datatype: '<i class="material-icons">satellite</i>'
@@ -118,14 +135,17 @@ lessons:
   - module: " "
     date: " "
     topics: "<b>MASS EXTINCTIONS MODULE</b>"
+    
   - module: "<i class='material-icons'>trending_down</i>"
     date: "Wk 12.2"
     datatype: '<i class="material-icons">widgets</i>'
     topics: "REST APIs"
+    
   - module: " <i class='material-icons'>trending_down</i>"
     date: "Wk 13.1"
     datatype: '<i class="material-icons">widgets</i>'
     topics: "Regular Expressions"
+    
   - module: "<i class='material-icons'>trending_down</i>"
     date: "Wk 13.2"
     datatype: '<i class="material-icons">widgets</i>'
@@ -134,21 +154,26 @@ lessons:
   - module: " "
     date: " "
     topics: "<b>BIODIVERSITY MODULE</b>"
+    
   - module: "<i class='material-icons'>nature_people</i>" 
     datatype: "<i class='material-icons'>share</i>"
     date: "Wk 14.1"
     topics: "JSON-LD, graph queries"
+    
   - module: "<i class='material-icons'>nature_people</i>"
     datatype: "<i class='material-icons'>share</i>"
-    date: "Wk 14.2"
+    date: "2018-04-26"
     topics: "Semantic data"
+    
   - module: " "
     date: " "
-    topics: "<b>FINAL PROJECTS</b>"  
+    topics: "<b>FINAL PROJECTS</b>" 
+    
   - module: "<i class='material-icons'>school</i>"
-    date: "Wk 15.1"
+    date: "2018-05-01"
+
   - module: "<i class='material-icons'>school</i>"
-    date: "Wk 15.2"  
+    date: "2018-05-03"  
     
   
   
