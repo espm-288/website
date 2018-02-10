@@ -31,6 +31,10 @@
   </url>
   
   <url>
+    <loc>/read/fish/</loc>
+  </url>
+  
+  <url>
     <loc>/categories/</loc>
     <priority>0</priority>
   </url>

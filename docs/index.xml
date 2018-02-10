@@ -58,6 +58,16 @@ vis.1 Watch:
     </item>
     
     <item>
+      <title>Background on Fish Collapse Data</title>
+      <link>/read/fish/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/read/fish/</guid>
+      <description>The material for this session is a little different, aiming at background on the scientific issues rather than background on the method. Do take a moment to look over the papers and short documentary. Do also review the previous references to make sure you are comfortable with group_by() and summarize() patterns.
+Watch  Background abbreviated documentary, features many of the leading authors on both sides https://vimeo.com/44104959  Read  Original 2006 paper: Worm, B.</description>
+    </item>
+    
+    <item>
       <title>Climate Exercise</title>
       <link>/assignments/climate/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

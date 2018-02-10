@@ -59,6 +59,9 @@ lessons:
     date: "2018-02-13"
     datatype: '<i class="fa fa-database"></i>'
     topics: "Missing values"
+    reading: "read/fish"
+    watch: "read/fish"
+
     
   - module: "<i class='material-icons'>language</i>"
     topics: "web design"
