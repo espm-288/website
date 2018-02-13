@@ -10,5 +10,5 @@ _Yes, this whole lesson is useful to really cover joins. You'll get most of what
 
 ## Read
 
-- `group_by`, `summarize` and friends **[[r4ds-5.6 - 5.7](http://r4ds.had.co.nz/transform.html)]**
+- Relational Data (*_`join` functions) [r4ds-13.1 - 13.7](http://r4ds.had.co.nz/relational-data.html)
 
