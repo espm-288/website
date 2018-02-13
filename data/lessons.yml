@@ -62,26 +62,27 @@ lessons:
     reading: "read/fish"
     watch: "read/fish"
 
-    
-  - module: "<i class='material-icons'>language</i>"
-    topics: "web design"
-    date: "2018-02-15"
-    
   - module: " <i class='material-icons'>directions_boat</i>"  
-    date: "2018-02-20"
+    date: "2018-02-15"
     datatype: '<i class="fa fa-database"></i>'
     topics: "Reproducibility"
-    
+        
+
   - module: " "
     date: " "
     topics: "<b>POPULATION DYNAMICS MODULE</b>"
     
   - module: "<i class='material-icons'>bug_report</i>"
-    date: "2018-02-22"
+    date: "2018-02-20"
     datatype: '<i class="material-icons">memory</i>'
     topics: "Functions"
     reading: "read/functions"
     watch: "read/functions"
+
+  - module: "<i class='material-icons'>language</i>"
+    topics: "web design"
+    date: "2018-02-22"
+    
     
   - module: " <i class='material-icons'>bug_report</i>"
     topics: "Vectors"
