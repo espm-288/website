@@ -171,6 +171,15 @@ Read  Data Exploration [r4ds-2] First Steps [r4ds-3.2] Aesthetic mappings [r4ds-
     </item>
     
     <item>
+      <title>Websites</title>
+      <link>/read/websites/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/read/websites/</guid>
+      <description>This class will be a tutorial unit on making websites in R. Being familiar with the basic elements of web design (HTML, CSS, domain names) able being able to quickly build a lightweight website is an important skill for any data scientist, although rarely part of data science curriculum. Our goal will be to introduce some of the common platforms and strategies for building a website. Unlike our modules, tutorials are aimed more at exposure than mastery of any particular concepts or tools.</description>
+    </item>
+    
+    <item>
       <title>Writing R Packages</title>
       <link>/read/r-pkgs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
