@@ -93,7 +93,7 @@ What rolling average is used in computing the “trend” line? How does the tre
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/read/functions/</guid>
-      <description> Watch  DataCamp Lesson: Writing Functions in R, Chapter 1-2 (Hadley Wickham)  _Chapters 3-5 introduce the purrr package for functional programming, and are well worth the time. We&amp;rsquo;ll revisit these as we encounter purrr later in our lessons.
+      <description> Watch  DataCamp Lesson: Writing Functions in R, Chapter 1-2 (Hadley Wickham)  Chapters 3-5 introduce the purrr package for functional programming, which we&amp;rsquo;ll see more later in the unit.
 Read  R for Data Science textbook: [r4ds-19]  </description>
     </item>
     
