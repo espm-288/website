@@ -89,18 +89,21 @@ lessons:
     watch: "read/functions"
 
   - module: " <i class='material-icons'>bug_report</i>"
-    topics: "Vectors"
+    topics: "Iteration"
     date: "2018-03-01"  
     datatype: '<i class="material-icons">memory</i>'
-    
+
   - module: " <i class='material-icons'>bug_report</i>"
     date: "2018-03-06"
     datatype: '<i class="material-icons">memory</i>'
-    topics: "Pipes"
-    
+    topics: "Iteration"
+    reading: "read/iteration"
+    watch: "read/iteration"
+       
   - module: " <i class='icon-rlogo'></i> <i class='fa fa-lg fa-gift'></i>"
     date: "2018-03-08"    
     topics: "Writing R packages"
+    reading: "read/r-pkgs"
 
     
   - module: " "

@@ -110,6 +110,15 @@ Read  Git Setup: HappyGitWithR.com Data Import: [r4ds-11]  </description>
     </item>
     
     <item>
+      <title>Iteration</title>
+      <link>/read/iteration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/read/iteration/</guid>
+      <description>Watch  DataCamp Lesson: Functional Programming: Chapter 3 of Writing Functions in R.  Read  R for Data Science textbook on Iteration: [r4ds-21]  Note that simulations in time we are writing are an example of a sequential process, where each iteration depends on the previous iteration. These cannot be abstracted into apply or map functions. However, iterating over multiple parameters can!</description>
+    </item>
+    
+    <item>
       <title>R Markdown Basics</title>
       <link>/read/rmarkdown-basics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

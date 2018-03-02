@@ -18,7 +18,7 @@
       
       <guid>/syllabus/</guid>
       <description>warning  clear  Please note: Syllabus under development, subject to change    
- Date Module Data Topics Read Watch Assignment   2018-01-18 home  Introduction &amp; setup          CLIMATE MODULE      2018-01-23   Individual assessment      2018-01-25   Workflow: GitHub, RMarkdown, Travis      2018-01-30   Visualization basics      2018-02-01   Manipulation basics          OVERFISHING MODULE      2018-02-06 directions_boat  Relational data: groups      2018-02-08  directions_boat  Relational data: joins      2018-02-13  directions_boat  group_by and summarize      2018-02-15  directions_boat  Missing Values      2018-02-20  directions_boat  Reproducibility      2018-02-22 language  web design          POPULATION DYNAMICS MODULE      2018-02-27 bug_report memory Functions      2018-03-01  bug_report memory Vectors      2018-03-06  bug_report memory Pipes      2018-03-08     Writing R packages          GEOSPATIAL CHANGE MODULE      2018-03-15 my_location satellite geospatial intro, visualization      Wk 10.</description>
+ Date Module Data Topics Read Watch Assignment   2018-01-18 home  Introduction &amp; setup          CLIMATE MODULE      2018-01-23   Individual assessment      2018-01-25   Workflow: GitHub, RMarkdown, Travis      2018-01-30   Visualization basics      2018-02-01   Manipulation basics          OVERFISHING MODULE      2018-02-06 directions_boat  Relational data: groups      2018-02-08  directions_boat  Relational data: joins      2018-02-13  directions_boat  group_by and summarize      2018-02-15  directions_boat  Missing Values      2018-02-20  directions_boat  Reproducibility      2018-02-22 language  web design          POPULATION DYNAMICS MODULE      2018-02-27 bug_report memory Functions      2018-03-01  bug_report memory Iteration      2018-03-06  bug_report memory Iteration      2018-03-08     Writing R packages          GEOSPATIAL CHANGE MODULE      2018-03-15 my_location satellite geospatial intro, visualization      Wk 10.</description>
     </item>
     
     <item>
@@ -165,6 +165,15 @@ Read  Git Setup: HappyGitWithR.com Data Import: [r4ds-11]  </description>
       
       <guid>/read/dplyr-2/</guid>
       <description> Watch  Tidyverse Chapter 3: Grouping and Summarizing (David Robinson)  Read  group_by, summarize and friends [r4ds-5.6 - 5.7]  </description>
+    </item>
+    
+    <item>
+      <title>Iteration</title>
+      <link>/read/iteration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/read/iteration/</guid>
+      <description>Watch  DataCamp Lesson: Functional Programming: Chapter 3 of Writing Functions in R.  Read  R for Data Science textbook on Iteration: [r4ds-21]  Note that simulations in time we are writing are an example of a sequential process, where each iteration depends on the previous iteration. These cannot be abstracted into apply or map functions. However, iterating over multiple parameters can!</description>
     </item>
     
     <item>
