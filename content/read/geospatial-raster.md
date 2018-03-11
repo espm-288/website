@@ -14,3 +14,6 @@ Geospatial Textbook: **[Geocomputation with R](https://geocompr.robinlovelace.ne
 - **[Chapter 4.3: Raster spatial operations](https://geocompr.robinlovelace.net/spatial-operations.html#spatial-ras)**
 
 
+## Watch
+
+**[Spatial Analysis in R with `sf` and `raster`](https://www.datacamp.com/courses/spatial-analysis-in-r-with-sf-and-raster)** 

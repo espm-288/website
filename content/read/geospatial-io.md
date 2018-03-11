@@ -2,6 +2,9 @@
 title: "Geospatial Data Input/Output"
 ---
 
+## Watch
+
+**[Spatial Analysis in R with `sf` and `raster`](https://www.datacamp.com/courses/spatial-analysis-in-r-with-sf-and-raster)** Chapter 1.
 
 ## Reading
 

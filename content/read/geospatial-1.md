@@ -22,7 +22,11 @@ Also read over the following vignettes:
 ## Watch
 
 
-- Charlotte Wickham's DataCamp course, **[Working with Geospatial Data](https://www.datacamp.com/courses/working-with-geospatial-data-in-r)** doesn't cover the new/emerging spatial suite we will focus on, but still very relevant. Chapter 3, introducing the `raster` side of things, is (for the moment) the same one we will use. However, the `sf` package replaces the vector manipulation and mapping functions of `sp`, though many concepts carry over.  Least relevant are the older plotting strategies covered there, such as `ggmap`, where we will rely on newer `tmap`, `ggplot::geom_sf`, and `mapview` packages.
+### UPDATED
+
+- DataCamp now has a more modern course from Zev Ross, **[Spatial Analysis in R with `sf` and `raster`](https://www.datacamp.com/courses/spatial-analysis-in-r-with-sf-and-raster)** that more closely aligns with the tools we will be using in this module (matching the Geocomputation reading above).  
+
+- ~~Charlotte Wickham's DataCamp course, **[Working with Geospatial Data](https://www.datacamp.com/courses/working-with-geospatial-data-in-r)** doesn't cover the new/emerging spatial suite we will focus on, but still very relevant. Chapter 3, introducing the `raster` side of things, is (for the moment) the same one we will use. However, the `sf` package replaces the vector manipulation and mapping functions of `sp`, though many concepts carry over.  Least relevant are the older plotting strategies covered there, such as `ggmap`, where we will rely on newer `tmap`, `ggplot::geom_sf`, and `mapview` packages.~~
 
 
 ### References

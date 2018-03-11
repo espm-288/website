@@ -48,7 +48,7 @@ Read  R for Data Science textbook: [r4ds-19]  </description>
       <description>Reading Our geospatial module is meant only as an introduction to geospatial data, an already-rich area in R that is in mid-Renaissance right now, just as tabular data was in the past few years since the introduction of dplyr and the rest of tidyverse.
 GeoSpatial Textbook: Geocomputation with R (Lovelace, Nowosad, Muenchow)
  Chapter 1: Introduction  Basic Visualization tools Also read over the following vignettes:
- Static maps: tmap Vignette Interactive maps: mapview Vignette  Watch  Charlotte Wickham&amp;rsquo;s DataCamp course, Working with Geospatial Data doesn&amp;rsquo;t cover the new/emerging spatial suite we will focus on, but still very relevant.</description>
+ Static maps: tmap Vignette Interactive maps: mapview Vignette  Watch UPDATED  DataCamp now has a more modern course from Zev Ross, Spatial Analysis in R with sf and raster that more closely aligns with the tools we will be using in this module (matching the Geocomputation reading above).</description>
     </item>
     
     <item>
@@ -57,7 +57,8 @@ GeoSpatial Textbook: Geocomputation with R (Lovelace, Nowosad, Muenchow)
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/read/geospatial-io/</guid>
-      <description> Reading Geospatial Textbook: Geocomputation with R (Lovelace, Nowosad, Muenchow)
+      <description> Watch Spatial Analysis in R with sf and raster Chapter 1.
+Reading Geospatial Textbook: Geocomputation with R (Lovelace, Nowosad, Muenchow)
  Chapter 6: Geographic I/O  </description>
     </item>
     
@@ -67,8 +68,8 @@ GeoSpatial Textbook: Geocomputation with R (Lovelace, Nowosad, Muenchow)
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/read/geospatial-raster/</guid>
-      <description> Reading Geospatial Textbook: Geocomputation with R (Lovelace, Nowosad, Muenchow)
- Chapter 2.2: Raster Data Chapter 3.3: Manipulating raster objects Chapter 4.3: Raster spatial operations  </description>
+      <description>Reading Geospatial Textbook: Geocomputation with R (Lovelace, Nowosad, Muenchow)
+ Chapter 2.2: Raster Data Chapter 3.3: Manipulating raster objects Chapter 4.3: Raster spatial operations  Watch Spatial Analysis in R with sf and raster</description>
     </item>
     
     <item>
@@ -77,8 +78,8 @@ GeoSpatial Textbook: Geocomputation with R (Lovelace, Nowosad, Muenchow)
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/read/geospatial-vector/</guid>
-      <description> Reading Geospatial Textbook: Geocomputation with R (Lovelace, Nowosad, Muenchow)
- Chapter 2.1: Vector Data Chater 3.2: Vector attribute manipulation Chapter 4.2: Vector spatial operations  </description>
+      <description>Reading Geospatial Textbook: Geocomputation with R (Lovelace, Nowosad, Muenchow)
+ Chapter 2.1: Vector Data Chater 3.2: Vector attribute manipulation Chapter 4.2: Vector spatial operations  Watch Spatial Analysis in R with sf and raster.</description>
     </item>
     
     <item>

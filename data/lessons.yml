@@ -115,24 +115,29 @@ lessons:
     datatype: '<i class="material-icons">satellite</i>'
     topics: "geospatial intro, visualization"
     reading: "read/geospatial-1"
+    watch: "read/geospatial-1"
     
   - module: "<i class='material-icons'>my_location</i>"
     date: "Wk 10.2"
     datatype: '<i class="material-icons">satellite</i>'
     topics: "vector data"
     reading: "read/geospatial-vector"
+    watch: "read/geospatial-vector"
+
     
   - module: "<i class='material-icons'>my_location</i>"
     date: "Wk 11.1"
     datatype: '<i class="material-icons">satellite</i>'
     topics: "raster data"
     reading: "read/geospatial-raster"
+    watch: "read/geospatial-raster"
     
   - module: "<i class='material-icons'>my_location</i>"
     date: "Wk 11.2"
     datatype: '<i class="material-icons">satellite</i>'
     topics: "geospatial I/O"
     reading: "read/geospatial-io"
+    watch: "read/geospatial-io"
 
   - module: "<i class='fa fa-2x fa-docker'></i> <i class='material-icons'>cloud</i>"
     topics: "Tutorial: Docker & Cloud computing"
