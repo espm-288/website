@@ -73,6 +73,21 @@ Reading Geospatial Textbook: Geocomputation with R (Lovelace, Nowosad, Muenchow)
     </item>
     
     <item>
+      <title>Geospatial Raster and Vector Data</title>
+      <link>/read/geospatial-raster-vector/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/read/geospatial-raster-vector/</guid>
+      <description>Reading Geospatial Textbook: Geocomputation with R (Lovelace, Nowosad, Muenchow)
+ Chapter 2.1: Vector Data Chapter 2.2: Raster Data
+ Chater 3.2: Vector attribute manipulation
+ Chapter 3.3: Manipulating raster objects
+ Chapter 4.2: Vector spatial operations
+ Chapter 4.3: Raster spatial operations
+  Watch Spatial Analysis in R with sf and raster</description>
+    </item>
+    
+    <item>
       <title>Geospatial Vector Data</title>
       <link>/read/geospatial-vector/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
