@@ -136,49 +136,62 @@ lessons:
     topics: "Tutorial: Docker & Cloud computing"
     date: "2018-03-22"
 
+  - module: "  "
+    date: "2018-04-03"
+    datatype: ' '
+    topics: "Open session"
+    
 
   - module: " "
     date: " "
     topics: "<b>MASS EXTINCTIONS MODULE</b>"
+
     
   - module: "<i class='material-icons'>trending_down</i>"
-    date: "Wk 12.2"
+    date: "2018-04-05"
     datatype: '<i class="material-icons">widgets</i>'
     topics: "REST APIs"
     
   - module: " <i class='material-icons'>trending_down</i>"
-    date: "Wk 13.1"
+    date: "2018-04-10"
     datatype: '<i class="material-icons">widgets</i>'
     topics: "Regular Expressions"
     
   - module: "<i class='material-icons'>trending_down</i>"
-    date: "Wk 13.2"
+    date: "2018-04-12"
+    datatype: '<i class="material-icons">widgets</i>'
+    topics: "Data rectangling"
+  
+  - module: "<i class='material-icons'>trending_down</i>"
+    date: "2018-04-17"
     datatype: '<i class="material-icons">widgets</i>'
     topics: "Data rectangling"
   
   - module: " "
     date: " "
-    topics: "<b>BIODIVERSITY MODULE</b>"
+    topics: "<b>BIODIVERSITY MODULE / FINAL PROJECTS</b>"
     
   - module: "<i class='material-icons'>nature_people</i>" 
     datatype: "<i class='material-icons'>share</i>"
-    date: "Wk 14.1"
+    date: "2018-04-19"
     topics: "JSON-LD, graph queries"
+
+  - module: "<i class='material-icons'>school</i>"
+    date: "2018-04-24"
+    topics: "Final Projects"
     
   - module: "<i class='material-icons'>nature_people</i>"
     datatype: "<i class='material-icons'>share</i>"
     date: "2018-04-26"
-    topics: "Semantic data"
-    
-  - module: " "
-    date: " "
-    topics: "<b>FINAL PROJECTS</b>" 
-    
+    topics: "Data publishing"
+
   - module: "<i class='material-icons'>school</i>"
     date: "2018-05-01"
+    topics: "Final Projects"
 
   - module: "<i class='material-icons'>school</i>"
     date: "2018-05-03"  
+    topics: "Final Projects"
     
   
   
