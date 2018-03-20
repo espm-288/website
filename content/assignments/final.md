@@ -3,6 +3,11 @@ title: "Final Project: Proposal"
 
 ---
 
+Projects should essentially look like any of our modules, but with you identifying the dataset and questions rather than working from a template. You may choose to replicate a figure from an existing study, but are also encouraged to use this opportunity to perform some exploratory analysis on data you may be using in your DS421 team projects or your own dissertation research.  Remember that as with modules, finals will be graded on workflow and presentation rather than particular conclusions.  Statistical analysis is not necessary, but any project should demonstrate a suite of skills selected from the list in the final project rubric.  
+
+
+
+## Proposals
 
 Please prepare a short proposal on your final project idea. The proposal should include:
 
@@ -13,7 +18,6 @@ Please prepare a short proposal on your final project idea. The proposal should 
 
 *You may choose to work with your partner or independently on the final project. Please indicate which clearly in your proposal.*
 
-Replicating results of an existing study and exploring the impact of alternative assumptions in the data preparation, statistical methods chosen etc can provide an excellent template for an analysis (you'll see more of this in units 3 & 4)
 
 
 Please create your proposal in a markdown file called `proposal.md` in the root directory of the final project repo.  
