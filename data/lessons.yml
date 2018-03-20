@@ -137,11 +137,10 @@ lessons:
     reading: "read/docker"
     date: "2018-03-22"
 
-  - module: "  "
+  - module: "<i class='material-icons'>school</i>"
     date: "2018-04-03"
-    datatype: ' '
-    topics: "Open session"
-    
+    topics: "Final Project Proposals"
+    reading: "assignments/final"
 
   - module: " "
     date: " "
