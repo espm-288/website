@@ -93,6 +93,10 @@
   </url>
   
   <url>
+    <loc>/read/purrr-1/</loc>
+  </url>
+  
+  <url>
     <loc>/read/iteration/</loc>
   </url>
   
@@ -102,6 +106,10 @@
   
   <url>
     <loc>/read/rmarkdown-basics/</loc>
+  </url>
+  
+  <url>
+    <loc>/read/httr/</loc>
   </url>
   
   <url>
@@ -123,6 +131,10 @@
   
   <url>
     <loc>/read/setup/</loc>
+  </url>
+  
+  <url>
+    <loc>/read/strings-regex/</loc>
   </url>
   
   <url>

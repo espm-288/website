@@ -151,21 +151,27 @@ lessons:
     date: "2018-04-05"
     datatype: '<i class="material-icons">widgets</i>'
     topics: "REST APIs"
+    watch: "read/httr"
     
   - module: " <i class='material-icons'>trending_down</i>"
     date: "2018-04-10"
     datatype: '<i class="material-icons">widgets</i>'
     topics: "Regular Expressions"
+    reading: "read/strings-regex"
+    watch: "read/strings-regex"
     
   - module: "<i class='material-icons'>trending_down</i>"
     date: "2018-04-12"
     datatype: '<i class="material-icons">widgets</i>'
     topics: "Data rectangling"
+    reading: "read/purrr-1"
+    watch: "read/purrr-1"
   
   - module: "<i class='material-icons'>trending_down</i>"
     date: "2018-04-17"
     datatype: '<i class="material-icons">widgets</i>'
     topics: "Data rectangling"
+    read: ""
   
   - module: " "
     date: " "

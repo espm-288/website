@@ -126,6 +126,15 @@ Read  Git Setup: HappyGitWithR.com Data Import: [r4ds-11]  </description>
     </item>
     
     <item>
+      <title>Iterate using purrr</title>
+      <link>/read/purrr-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/read/purrr-1/</guid>
+      <description>Watch Chapters 3 &amp;amp; 4 of Writing Functions in R. Theste two chapters are focused on purrr and it&amp;rsquo;s use in iteration, particulaly the map() family. It may seem surprising that these tools for iteration are buried in the second half of a course on writing functions, but as you will see, these concepts are closely linked through a style known as functional programming, which is particularly relevant to much data science type analyses.</description>
+    </item>
+    
+    <item>
       <title>Iteration</title>
       <link>/read/iteration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -142,6 +151,15 @@ Read  Git Setup: HappyGitWithR.com Data Import: [r4ds-11]  </description>
       <guid>/read/rmarkdown-basics/</guid>
       <description>Watch  Reports with RMarkdown (by Garrett Grolemund)  Focus is on chapter 1 and chapter 2, though aside from a few hints most of this is self-explanatory. Feel free to check out chapters 3 and 4 for more information on some of the other output formats and advanced features of RMarkdown. Please note that we will mostly be using the github_document format and not the html_document format.
 Read  Introduction [r4ds-27.</description>
+    </item>
+    
+    <item>
+      <title>REST APIs and web queries</title>
+      <link>/read/httr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/read/httr/</guid>
+      <description>Watch Working with Web Data in R</description>
     </item>
     
     <item>
@@ -184,6 +202,16 @@ Read  Relational Data (*_join functions) r4ds-13.1 - 13.7  </description>
  Style guide Consistent style is an important element of communication and collaboration.
 Please review sections 1. Files and 2. Syntax. Most Syntax conventions can be automatically checked with lintr::lint(&amp;quot;assignment.Rmd&amp;quot;).
   </description>
+    </item>
+    
+    <item>
+      <title>Strings and regex</title>
+      <link>/read/strings-regex/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/read/strings-regex/</guid>
+      <description> Watch String Manipulation in R
+Reading  Read the opening sections of chapter 13 on Strings and working with Regular Expressions: Sections 14.1 - 14.3.  References </description>
     </item>
     
     <item>
