@@ -21,22 +21,12 @@ Watch  Background abbreviated documentary, features many of the leading authors 
     </item>
     
     <item>
-      <title>Data Manipulation Basics</title>
-      <link>/read/dplyr-1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/read/dplyr-1/</guid>
-      <description> Watch  Tidyverse Chapter 1: Data Wrangling (David Robinson)  Read  dplyr basic verbs: filter, arrange, select, and mutate, [r4ds-5.1 - 5.5]  </description>
-    </item>
-    
-    <item>
       <title>Functions</title>
       <link>/read/functions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/read/functions/</guid>
-      <description> Watch  DataCamp Lesson: Writing Functions in R, Chapter 1-2 (Hadley Wickham)  Chapters 3-5 introduce the purrr package for functional programming, which we&amp;rsquo;ll see more later in the unit.
-Read  R for Data Science textbook: [r4ds-19]  </description>
+      <description> Watch  DataCamp Lesson: Writing Functions in R, Chapter 1-3 (Hadley Wickham)  Read  R for Data Science textbook: [r4ds-19]  </description>
     </item>
     
     <item>
@@ -45,6 +35,26 @@ Read  R for Data Science textbook: [r4ds-19]  </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/read/geospatial-1/</guid>
+      <description>DataCamp Chapters 1 &amp;amp; 2 in Spatial Analysis in R with sf &amp;amp; raster
+Reading Read from GeoComputation in R: Ch 1, 2.1, 2.2, 3.2, 3.3</description>
+    </item>
+    
+    <item>
+      <title>Geospatial Data &amp; Visualization</title>
+      <link>/read/geospatial-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/read/geospatial-2/</guid>
+      <description>DataCamp Chapters 3 &amp;amp; 4 in Spatial Analysis in R with sf &amp;amp; raster
+Reading Read from GeoComputation in R: Ch 3.3, 4.2, 4.3, ch 8.1 and 8.2</description>
+    </item>
+    
+    <item>
+      <title>Geospatial Data &amp; Visualization</title>
+      <link>/read/geospatial-orig/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/read/geospatial-orig/</guid>
       <description>Reading Our geospatial module is meant only as an introduction to geospatial data, an already-rich area in R that is in mid-Renaissance right now, just as tabular data was in the past few years since the introduction of dplyr and the rest of tidyverse.
 GeoSpatial Textbook: Geocomputation with R (Lovelace, Nowosad, Muenchow)
  Chapter 1: Introduction  Basic Visualization tools Also read over the following vignettes:
@@ -112,8 +122,9 @@ Reading Geospatial Textbook: Geocomputation with R (Lovelace, Nowosad, Muenchow)
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/read/git-1/</guid>
-      <description> Watch  DataCamp Lesson: RStudio IDE, Part II, Chapter 2: Version Control (by Garrett Grolemund).  Yes, we&amp;rsquo;re starting with Chapter 2 on Version Control, you&amp;rsquo;ll encounter making your own Packages later on.
-Read  Git Setup: HappyGitWithR.com Data Import: [r4ds-11]  </description>
+      <description> Watch  DataCamp Lesson: RStudio IDE, Part I, Chapter 1: &amp;ldquo;Orientation&amp;rdquo; (by Garrett Grolemund).
+ DataCamp Lesson: RStudio IDE, Part II, Chapter 2: Version Control (by Garrett Grolemund).
+  Reading &amp;amp; Reference  Git Setup: HappyGitWithR.com Data Import: [r4ds-11]  </description>
     </item>
     
     <item>
@@ -135,6 +146,16 @@ Read  Git Setup: HappyGitWithR.com Data Import: [r4ds-11]  </description>
     </item>
     
     <item>
+      <title>Iterate using purrr</title>
+      <link>/read/purrr-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/read/purrr-2/</guid>
+      <description> Watch Chapters 4 &amp;amp; 5 of Writing Functions in R. (&amp;ldquo;Advanced input &amp;amp; output&amp;rdquo;, and &amp;ldquo;Robust functions&amp;rdquo;)
+Reading  R4DS 21.5: The map functions R4DS 21.6: Dealing with failure R4DS 21.7: Mapping over multiple arguments  </description>
+    </item>
+    
+    <item>
       <title>Iteration</title>
       <link>/read/iteration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -149,27 +170,27 @@ Read  Git Setup: HappyGitWithR.com Data Import: [r4ds-11]  </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/read/rmarkdown-basics/</guid>
-      <description>Watch  Reports with RMarkdown (by Garrett Grolemund)  Focus is on chapter 1 and chapter 2, though aside from a few hints most of this is self-explanatory. Feel free to check out chapters 3 and 4 for more information on some of the other output formats and advanced features of RMarkdown. Please note that we will mostly be using the github_document format and not the html_document format.
-Read  Introduction [r4ds-27.</description>
+      <description> Watch  Chapter 1: Authoring RMarkdown Reports (by Garrett Grolemund)  You should just complete the first chapter in this lesson.
+Reading  Introduction [r4ds-27.1] R Markdown [r4ds-27.2] Code chunks [r4ds-27.4]  Reference  R Markdown Cheat Sheet R Markdown Reference Guide  </description>
     </item>
     
     <item>
       <title>REST APIs and web queries</title>
-      <link>/read/httr/</link>
+      <link>/read/httr-1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/read/httr/</guid>
-      <description>Watch Working with Web Data in R</description>
+      <guid>/read/httr-1/</guid>
+      <description>Watch Working with Web Data in R, chapters 1 &amp;amp; 2.</description>
     </item>
     
     <item>
-      <title>Reading for 2017-09-21</title>
-      <link>/read/workflows/</link>
+      <title>REST APIs and web queries</title>
+      <link>/read/httr-2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/read/workflows/</guid>
-      <description>For Thursday&amp;rsquo;s class, please read the following two short sections:
- 6. Workflow: scripts, and 8. Workflow: projects  </description>
+      <guid>/read/httr-2/</guid>
+      <description>Watch Working with Web Data in R, chapter 3.
+NOTE Also, please have your final project repo created and fill out proposal.md with your proposed project idea!</description>
     </item>
     
     <item>
@@ -193,12 +214,21 @@ Read  Relational Data (*_join functions) r4ds-13.1 - 13.7  </description>
     </item>
     
     <item>
+      <title>Relational Data</title>
+      <link>/read/dplyr-4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/read/dplyr-4/</guid>
+      <description> Watch  DataCamp Lessons: First three chapters of Working with Data in the Tidyverse  </description>
+    </item>
+    
+    <item>
       <title>Setup</title>
       <link>/read/setup/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/read/setup/</guid>
-      <description> Watch  DataCamp Lesson: RStudio IDE, Part I (by Garrett Grolemund).  Read  Prerequisites Running R code RStudio Cheat sheet (for reference)
+      <description> Watch  DataCamp Lesson: RStudio IDE, Part I, Chapter 1: &amp;ldquo;Orientation&amp;rdquo; (by Garrett Grolemund).  Read  Prerequisites Running R code RStudio Cheat sheet (for reference)
  Style guide Consistent style is an important element of communication and collaboration.
 Please review sections 1. Files and 2. Syntax. Most Syntax conventions can be automatically checked with lintr::lint(&amp;quot;assignment.Rmd&amp;quot;).
   </description>
@@ -220,8 +250,7 @@ Reading  Read the opening sections of chapter 13 on Strings and working with Reg
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/read/ggplot-1/</guid>
-      <description> Watch  Tidyverse Chapter 2: Data Visualization (David Robinson)  (Yes, we&amp;rsquo;re starting with Chapter 2, we&amp;rsquo;ll go back to Chapter 1 soon).
-Read  Data Exploration [r4ds-2] First Steps [r4ds-3.2] Aesthetic mappings [r4ds-3.3] Common problems [r4ds-3.4] Facets r4ds-3.5 Geometric objects r4ds-3.6  Reference  Data Visualization Cheat Sheet cheatsheets-ggplot2-2.1  </description>
+      <description> Watch  Tidyverse Chapter 1: Data Wrangling (David Robinson) Tidyverse Chapter 2: Data Visualization (David Robinson)  Read Plotting  Data Exploration [r4ds-2] First Steps [r4ds-3.2] Aesthetic mappings [r4ds-3.3] Common problems [r4ds-3.4] Facets r4ds-3.5 Geometric objects r4ds-3.6  Reference  Data Visualization Cheat Sheet cheatsheets-ggplot2-2.1  </description>
     </item>
     
     <item>
@@ -231,6 +260,25 @@ Read  Data Exploration [r4ds-2] First Steps [r4ds-3.2] Aesthetic mappings [r4ds-
       
       <guid>/read/websites/</guid>
       <description>This class will be a tutorial unit on making websites in R. Being familiar with the basic elements of web design (HTML, CSS, domain names) able being able to quickly build a lightweight website is an important skill for any data scientist, although rarely part of data science curriculum. Our goal will be to introduce some of the common platforms and strategies for building a website. Unlike our modules, tutorials are aimed more at exposure than mastery of any particular concepts or tools.</description>
+    </item>
+    
+    <item>
+      <title>Workflows</title>
+      <link>/read/workflows/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/read/workflows/</guid>
+      <description>Please read the following two short sections:
+ 6. Workflow: scripts, and 8. Workflow: projects  </description>
+    </item>
+    
+    <item>
+      <title>Wrapping up Climate Module</title>
+      <link>/read/dplyr-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/read/dplyr-1/</guid>
+      <description> Watch  Tidyverse Chapter 1: Data Wrangling (David Robinson)  Read  dplyr basic verbs: filter, arrange, select, and mutate, [r4ds-5.1 - 5.5]  </description>
     </item>
     
     <item>

@@ -162,5 +162,6 @@ weight = 5
 
 [params]
   dateFormat = "January 2, 2006"
-  background = "https://www.climate.gov/sites/default/files/MethaneBubblesFrozenAbrahamLake_large.jpg"
+  background = "/img/methane_bubbles.jpg"
+#  background = "https://www.climate.gov/sites/default/files/MethaneBubblesFrozenAbrahamLake_large.jpg"
 

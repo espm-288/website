@@ -44,7 +44,7 @@
   </url>
   
   <url>
-    <loc>/read/dplyr-1/</loc>
+    <loc>/rubrics/climate/</loc>
   </url>
   
   <url>
@@ -57,11 +57,23 @@
   </url>
   
   <url>
+    <loc>/rubrics/fish/</loc>
+  </url>
+  
+  <url>
     <loc>/read/functions/</loc>
   </url>
   
   <url>
     <loc>/read/geospatial-1/</loc>
+  </url>
+  
+  <url>
+    <loc>/read/geospatial-2/</loc>
+  </url>
+  
+  <url>
+    <loc>/read/geospatial-orig/</loc>
   </url>
   
   <url>
@@ -97,7 +109,15 @@
   </url>
   
   <url>
+    <loc>/read/purrr-2/</loc>
+  </url>
+  
+  <url>
     <loc>/read/iteration/</loc>
+  </url>
+  
+  <url>
+    <loc>/module-table/</loc>
   </url>
   
   <url>
@@ -109,11 +129,11 @@
   </url>
   
   <url>
-    <loc>/read/httr/</loc>
+    <loc>/read/httr-1/</loc>
   </url>
   
   <url>
-    <loc>/read/workflows/</loc>
+    <loc>/read/httr-2/</loc>
   </url>
   
   <url>
@@ -130,7 +150,20 @@
   </url>
   
   <url>
+    <loc>/read/dplyr-4/</loc>
+  </url>
+  
+  <url>
+    <loc>/rubrics/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/read/setup/</loc>
+  </url>
+  
+  <url>
+    <loc>/rubrics/spatial/</loc>
   </url>
   
   <url>
@@ -156,6 +189,14 @@
   
   <url>
     <loc>/read/websites/</loc>
+  </url>
+  
+  <url>
+    <loc>/read/workflows/</loc>
+  </url>
+  
+  <url>
+    <loc>/read/dplyr-1/</loc>
   </url>
   
   <url>
