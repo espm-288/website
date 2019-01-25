@@ -77,7 +77,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   weight = 4
   name = "Textbook"
   pre = "<i class='material-icons'>book</i>"
-  url = "http://r4ds.had.co.nz/"
+  url = "https://r4ds.had.co.nz/"
 [[menu.footer]]
   weight = 5
   name = "Travis-CI"
