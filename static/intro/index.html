@@ -4,7 +4,8 @@
     <title>Reproducible and Collaborative Data Science</title>
     <meta charset="utf-8">
     <meta name="author" content="Carl Boettiger" />
-    <link href="libs/remark-css-0.0.1/example.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
   </head>
   <body>
     <textarea id="source">
@@ -50,11 +51,19 @@ class: center
 ---
 class: center
 
-# Tipping points?
+# Shifting habitat?
 
-&lt;img src="images/berkeley2014/barnosky.png", width="600"&gt;
+&lt;img src="img/rayshader.png", width="700"&gt;
 
-&lt;small&gt; Barnoksy+ (2012) doi:[10.1038/nature11018](http://doi.org/10.1038/nature11018)&lt;/small&gt;
+
+---
+class: center
+
+# Sixth mass extinction?
+
+&lt;img src="img/extinctions.jpg", width="700"&gt;
+
+&lt;small&gt; From Cerbellos et al., &lt;a href="https://doi.org/10.1126/sciadv.1400253"&gt;https://doi.org/10.1126/sciadv.1400253&lt;/a&gt; &lt;/small&gt;
 
 &lt;!-- From linear to nonlinear thinking. Must deal with the uncertainty--&gt;
 
@@ -432,7 +441,35 @@ class: inverse, center
 
 # This Course
 
+
+---
+class: inverse, center
+
+# Course Format:
+
 --
+
+## Active Learning Classroom
+
+--
+
+## Flipped classroom
+
+--
+
+## Real world experiences
+
+
+---
+ 
+## Active Learning Classroom? 
+ 
+![](img/reactor.jpg)
+
+--
+
+## Microsoft Reactor Space, Seattle, WA
+
 
 
 ---
@@ -629,7 +666,7 @@ class: center
 
 # GitHub
 
-&lt;img src="img/github-espm-157.png"/&gt;
+&lt;img src="img/ds421-github.png"/&gt;
 
 
 ---
@@ -756,15 +793,6 @@ class: inverse
 - reproducibility
 
 
----
-
-## Population Dynamics
-
-- programming: loops, conditionals, functions
-- ecological simulation
-- dynamical systems modeling, ODE &amp; SDE simulations, bifurcation analysis, chaos, bet hedging
-- writing packages
-
 
 ---
 
@@ -820,12 +848,10 @@ class: inverse
 - Undergraduate Major
 - Current Department &amp; research group
 - Semesters of prior programming experience
-
+- What you hope to get out of the course
 
 ---
 class: inverse
-
-# Forming Teams
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
@@ -833,22 +859,40 @@ class: inverse
 "highlightLines": true,
 "countIncrementalSlides": false
 });
-if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {window.dispatchEvent(new Event('resize'));});
-(function() {var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler"); if (!r) return; s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }"; d.head.appendChild(s);})();</script>
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-  }
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
 });
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
 </script>
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
 (function () {
   var script = document.createElement('script');
   script.type = 'text/javascript';
-  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
   if (location.protocol !== 'file:' && /^https?:/.test(script.src))
     script.src  = script.src.replace(/^https?:/, '');
   document.getElementsByTagName('head')[0].appendChild(script);

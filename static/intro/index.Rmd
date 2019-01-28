@@ -46,11 +46,19 @@ class: center
 ---
 class: center
 
-# Tipping points?
+# Shifting habitat?
 
-<img src="images/berkeley2014/barnosky.png", width="600">
+<img src="img/rayshader.png", width="700">
 
-<small> Barnoksy+ (2012) doi:[10.1038/nature11018](http://doi.org/10.1038/nature11018)</small>
+
+---
+class: center
+
+# Sixth mass extinction?
+
+<img src="img/extinctions.jpg", width="700">
+
+<small> From Cerbellos et al., <a href="https://doi.org/10.1126/sciadv.1400253">https://doi.org/10.1126/sciadv.1400253</a> </small>
 
 <!-- From linear to nonlinear thinking. Must deal with the uncertainty-->
 
@@ -428,7 +436,35 @@ class: inverse, center
 
 # This Course
 
+
+---
+class: inverse, center
+
+# Course Format:
+
 --
+
+## Active Learning Classroom
+
+--
+
+## Flipped classroom
+
+--
+
+## Real world experiences
+
+
+---
+ 
+## Active Learning Classroom? 
+ 
+![](img/reactor.jpg)
+
+--
+
+## Microsoft Reactor Space, Seattle, WA
+
 
 
 ---
@@ -625,7 +661,7 @@ class: center
 
 # GitHub
 
-<img src="img/github-espm-157.png"/>
+<img src="img/ds421-github.png"/>
 
 
 ---
@@ -752,15 +788,6 @@ class: inverse
 - reproducibility
 
 
----
-
-## Population Dynamics
-
-- programming: loops, conditionals, functions
-- ecological simulation
-- dynamical systems modeling, ODE & SDE simulations, bifurcation analysis, chaos, bet hedging
-- writing packages
-
 
 ---
 
@@ -816,10 +843,9 @@ class: inverse
 - Undergraduate Major
 - Current Department & research group
 - Semesters of prior programming experience
-
+- What you hope to get out of the course
 
 ---
 class: inverse
 
-# Forming Teams
 
