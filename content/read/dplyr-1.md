@@ -17,4 +17,4 @@ Allison Hill is a Data Scientist & Professional Educator at RStudio, and previou
 
 -  [Data Import](https://r4ds.had.co.nz/data-import.html) (`readr`)
 
-- [Tidy data](https://r4ds.had.co.nz/tidy-data.html) `tidyr` 
+- [Tidy data](https://r4ds.had.co.nz/tidy-data.html) (`tidyr`) 
