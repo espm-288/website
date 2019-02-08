@@ -11,6 +11,7 @@ title: "Visualization Basics"
 
 ## Read
 
+
 ### Plotting
 
 - Data Exploration **[[r4ds-2](http://r4ds.had.co.nz/explore-intro.html)]**
@@ -20,12 +21,11 @@ title: "Visualization Basics"
 - Facets **[r4ds-3.5](http://r4ds.had.co.nz/data-visualisation.html#facets)**
 - Geometric objects **[r4ds-3.6](http://r4ds.had.co.nz/data-visualisation.html#geometric-objects)**
 
-<!--
+
 ### Wrangling
 
 -  `dplyr` basic verbs: `filter`, `arrange`, `select`, and `mutate`, **[[r4ds-5.1 - 5.5](http://r4ds.had.co.nz/transform.html)]**
 
--->
 
 ### Reference
 

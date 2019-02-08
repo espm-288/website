@@ -250,7 +250,7 @@ Reading  Read the opening sections of chapter 13 on Strings and working with Reg
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/read/ggplot-1/</guid>
-      <description> Watch  Tidyverse Chapter 1: Data Wrangling (David Robinson) Tidyverse Chapter 2: Data Visualization (David Robinson)  Read Plotting  Data Exploration [r4ds-2] First Steps [r4ds-3.2] Aesthetic mappings [r4ds-3.3] Common problems [r4ds-3.4] Facets r4ds-3.5 Geometric objects r4ds-3.6  Reference  Data Visualization Cheat Sheet cheatsheets-ggplot2-2.1  </description>
+      <description> Watch  Tidyverse Chapter 1: Data Wrangling (David Robinson) Tidyverse Chapter 2: Data Visualization (David Robinson)  Read Plotting  Data Exploration [r4ds-2] First Steps [r4ds-3.2] Aesthetic mappings [r4ds-3.3] Common problems [r4ds-3.4] Facets r4ds-3.5 Geometric objects r4ds-3.6  Wrangling  dplyr basic verbs: filter, arrange, select, and mutate, [r4ds-5.1 - 5.5]  Reference  Data Visualization Cheat Sheet cheatsheets-ggplot2-2.1  </description>
     </item>
     
     <item>
@@ -278,7 +278,7 @@ Reading  Read the opening sections of chapter 13 on Strings and working with Reg
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/read/dplyr-1/</guid>
-      <description> Watch  Tidyverse Chapter 1: Data Wrangling (David Robinson)  Read  dplyr basic verbs: filter, arrange, select, and mutate, [r4ds-5.1 - 5.5]  </description>
+      <description>Watch Working With Data in the Tidyverse (Allison Hill)  Ch 1: Explore Your Data Ch 2: Tame Your Data Ch 3: Tidy Your Data  Allison Hill is a Data Scientist &amp;amp; Professional Educator at RStudio, and previously a professor at Oregan Health &amp;amp; Science University with a background in psychology and quantitative methods. Her introduction builds on David Robinson&amp;rsquo;s, focusing on some of the more subtle corners of readr and introducing the basics of cleaning and reshaping data with tidyr.</description>
     </item>
     
     <item>
