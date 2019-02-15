@@ -49,21 +49,21 @@ lessons:
   - module: "<i class='material-icons'>directions_boat</i>"
     date: "2019-02-21"
     datatype: '<i class="fa fa-database"></i>'
-    topics: "Relational data: groups"
-    reading: "read/dplyr-2"
-    watch: "read/dplyr-2"
-    
-  - module: " <i class='material-icons'>directions_boat</i>"  
-    date: "2019-02-25"
-    datatype: "<i class='fa fa-database'></i>"
     topics: "Relational data: joins"
     reading: "read/dplyr-3"
     watch: "read/dplyr-3"
     
+  - module: " <i class='material-icons'>directions_boat</i>"  
+    date: "2019-02-25"
+    datatype: "<i class='fa fa-database'></i>"
+    topics: "Relational data: grouping operations"
+    reading: "read/dplyr-2"
+    watch: "read/dplyr-2"
+    
   - module: " <i class='material-icons'>directions_boat</i>"
     date: "2019-02-28"
     datatype: '<i class="fa fa-database"></i>'
-    topics: "group_by and summarize"
+    topics: "more group & summarize"
     reading: "read/fish"
     watch: "read/fish"
 
