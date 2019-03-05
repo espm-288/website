@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Livecodes on ESPM 288</title>
+    <link>/livecode/</link>
+    <description>Recent content in Livecodes on ESPM 288</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/livecode/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>popdyn livecode examples</title>
+      <link>/livecode/popdyn-examples/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/livecode/popdyn-examples/</guid>
+      <description>library(tidyverse) We want to simulate a basic population dynamics process.
+\[X_{t+1} = X_t + r X_t \left(1 - \frac{X_t}{K} \right) = f(X_t)\]
+logistic &amp;lt;- function(x, r = 1, K = 100){ x + r * x * (1 - x / K) } We wrap our simulation up in a function, so we can pass different r values. We pass the population function as an argument.
+simulate &amp;lt;- function(r, f = logistic){ Tmax &amp;lt;- 300 x0 &amp;lt;- 10 df &amp;lt;- tibble(x = x0, t = 0) for(t in 1:Tmax){ x_t &amp;lt;- df[t,&amp;quot;x&amp;quot;][[1]] x_t1 &amp;lt;- f(x_t, r) df &amp;lt;- bind_rows(df, tibble(x = x_t1, t = t)) } ## Let&amp;#39;s discard the early points in the time series so we get the long-term behavior.</description>
+    </item>
+    
+  </channel>
+</rss>

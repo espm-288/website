@@ -5,7 +5,7 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-  <title>Wrapping up Climate Module | ESPM 288</title>
+  <title>popdyn livecode examples | ESPM 288</title>
 
 	 
  <meta name="generator" content="Hugo 0.53" />                                                                   
@@ -107,28 +107,54 @@
 		<div class="main main-raised">
 			<div class="container">
 		  	<div class="section text=">
-		  	  <h2 class="title">Wrapping up Climate Module</h2>
+		  	  <h2 class="title">popdyn livecode examples</h2>
 	            
 
-<h2 id="watch">Watch</h2>
 
-<h3 id="working-with-data-in-the-tidyverse-https-www-datacamp-com-courses-working-with-data-in-the-tidyverse-allison-hill-https-alison-rbind-io"><a href="https://www.datacamp.com/courses/working-with-data-in-the-tidyverse">Working With Data in the Tidyverse</a> (<a href="https://alison.rbind.io/">Allison Hill</a>)</h3>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<p>We want to simulate a basic population dynamics process.</p>
+<p><span class="math display">\[X_{t+1} = X_t + r X_t \left(1 - \frac{X_t}{K} \right) = f(X_t)\]</span></p>
+<pre class="r"><code>logistic &lt;- function(x, r = 1, K = 100){
+  x + r * x * (1 - x / K)
+}</code></pre>
+<p>We wrap our simulation up in a function, so we can pass different <code>r</code> values. We pass the population function as an argument.</p>
+<pre class="r"><code>simulate &lt;- function(r, f = logistic){
+  Tmax &lt;-  300
+  x0 &lt;- 10
+  df &lt;- tibble(x = x0, t = 0)
+  
+  for(t in 1:Tmax){
+    
+    x_t &lt;- df[t,&quot;x&quot;][[1]]
+    x_t1 &lt;- f(x_t, r)
+    
+    df &lt;- bind_rows(df,
+                    tibble(x = x_t1, t = t))
+  }
+  ## Let&#39;s discard the early points in the time series so we get the long-term behavior.
+  df %&gt;% filter(t &gt; 200)
+}
 
-<ul>
-<li>Ch 1: <a href="https://campus.datacamp.com/courses/working-with-data-in-the-tidyverse/explore-your-data">Explore Your Data</a></li>
-<li>Ch 2: <a href="https://campus.datacamp.com/courses/working-with-data-in-the-tidyverse/tame-your-data">Tame Your Data</a></li>
-<li>Ch 3: <a href="https://campus.datacamp.com/courses/working-with-data-in-the-tidyverse/tidy-your-data">Tidy Your Data</a></li>
-</ul>
+simulate(2.7) %&gt;%  ggplot(aes(t, x)) + geom_line()</code></pre>
+<p><img src="../../livecode/popdyn-examples_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Now let’s use another <code>for</code> loop to iterate over a whole bunch of <code>r</code> values, creating a “Bifurcation Diagram”:</p>
+<pre class="r"><code>r_values &lt;- seq(1.1, 3, length.out =  400)
+sim_results &lt;- tibble(x = 100, t = 0, r_value = 1.1)
+for (r in r_values){
+  
+  tmp &lt;- simulate(r)
+  tmp$r_value &lt;- r
+  sim_results &lt;- bind_rows(sim_results,
+                           tmp
+                          )
+  
+}
 
-<p>Allison Hill is a Data Scientist &amp; Professional Educator at RStudio, and previously a professor at Oregan Health &amp; Science University with a background in psychology and quantitative methods.  Her introduction builds on David Robinson&rsquo;s, focusing on some of the more subtle corners of <code>readr</code> and introducing the basics of cleaning and reshaping data with <code>tidyr</code>.</p>
-
-<h2 id="read">Read</h2>
-
-<ul>
-<li><p><a href="https://r4ds.had.co.nz/data-import.html">Data Import</a> (<code>readr</code>)</p></li>
-
-<li><p><a href="https://r4ds.had.co.nz/tidy-data.html">Tidy data</a> (<code>tidyr</code>)</p></li>
-</ul>
+sim_results %&gt;% ggplot(aes(r_value, x)) + geom_point(size=.1)</code></pre>
+<p><img src="../../livecode/popdyn-examples_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Compare this to experimental manipulations of laboratory populations of flour beetles which demonstrating chaotic dynamics:</p>
+<p><img src="../../img/beetle-chaos.png" width="700px"></img></p>
+<p>From: Costantino, R. F., Desharnais, R. A., Cushing, J. M., &amp; Dennis, B. (1997). Chaotic Dynamics in an Insect Population. Science, 275(5298), 389–391. <a href="https://doi.org/10.1126/science.275.5298.389" class="uri">https://doi.org/10.1126/science.275.5298.389</a></p>
 
 	      </div>
       </div>
@@ -186,6 +212,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    <script async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
     
 	</div>
 </body>

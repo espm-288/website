@@ -70,7 +70,7 @@ lessons:
   - module: "<i class='material-icons'>bug_report</i>"
     date: "2019-03-04"
     datatype: '<i class="material-icons">memory</i>'
-    topics: "Functions"
+    topics: "Functions. <b><a href='/livecode/popdyn-examples'>livecode link</a></b>"
 
     
 #  - module: " "
