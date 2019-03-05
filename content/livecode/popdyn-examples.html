@@ -1,0 +1,51 @@
+---
+title: "popdyn livecode examples"
+math: true
+---
+
+
+
+<pre class="r"><code>library(tidyverse)</code></pre>
+<p>We want to simulate a basic population dynamics process.</p>
+<p><span class="math display">\[X_{t+1} = X_t + r X_t \left(1 - \frac{X_t}{K} \right) = f(X_t)\]</span></p>
+<pre class="r"><code>logistic &lt;- function(x, r = 1, K = 100){
+  x + r * x * (1 - x / K)
+}</code></pre>
+<p>We wrap our simulation up in a function, so we can pass different <code>r</code> values. We pass the population function as an argument.</p>
+<pre class="r"><code>simulate &lt;- function(r, f = logistic){
+  Tmax &lt;-  300
+  x0 &lt;- 10
+  df &lt;- tibble(x = x0, t = 0)
+  
+  for(t in 1:Tmax){
+    
+    x_t &lt;- df[t,&quot;x&quot;][[1]]
+    x_t1 &lt;- f(x_t, r)
+    
+    df &lt;- bind_rows(df,
+                    tibble(x = x_t1, t = t))
+  }
+  ## Let&#39;s discard the early points in the time series so we get the long-term behavior.
+  df %&gt;% filter(t &gt; 200)
+}
+
+simulate(2.7) %&gt;%  ggplot(aes(t, x)) + geom_line()</code></pre>
+<p><img src="/livecode/popdyn-examples_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Now let’s use another <code>for</code> loop to iterate over a whole bunch of <code>r</code> values, creating a “Bifurcation Diagram”:</p>
+<pre class="r"><code>r_values &lt;- seq(1.1, 3, length.out =  400)
+sim_results &lt;- tibble(x = 100, t = 0, r_value = 1.1)
+for (r in r_values){
+  
+  tmp &lt;- simulate(r)
+  tmp$r_value &lt;- r
+  sim_results &lt;- bind_rows(sim_results,
+                           tmp
+                          )
+  
+}
+
+sim_results %&gt;% ggplot(aes(r_value, x)) + geom_point(size=.1)</code></pre>
+<p><img src="/livecode/popdyn-examples_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Compare this to experimental manipulations of laboratory populations of flour beetles which demonstrating chaotic dynamics:</p>
+<p><img src="/img/beetle-chaos.png" width="700px"></img></p>
+<p>From: Costantino, R. F., Desharnais, R. A., Cushing, J. M., &amp; Dennis, B. (1997). Chaotic Dynamics in an Insect Population. Science, 275(5298), 389–391. <a href="https://doi.org/10.1126/science.275.5298.389" class="uri">https://doi.org/10.1126/science.275.5298.389</a></p>
