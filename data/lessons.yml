@@ -68,7 +68,7 @@ lessons:
     watch: "read/fish"
 
   - module: "<i class='material-icons'>bug_report</i>"
-    date: "2019-03-14"
+    date: "2019-03-04"
     datatype: '<i class="material-icons">memory</i>'
     topics: "Functions"
 
