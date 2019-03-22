@@ -107,37 +107,31 @@ lessons:
     reading: "read/geospatial-2"
     watch: "read/geospatial-2"
     
-  - module: "<i class='material-icons'>my_location</i>"  
-    date: "2019-03-18"
+  - module: "<i class='material-icons'>my_location</i>"
+    date: "2019-03-14"
     datatype: '<i class="material-icons">satellite</i>'
-    topics: "functional programming"
-    reading: "read/functions"
-    watch: "read/functions"
+    topics: "geospatial visualization"
 
   - module: "<i class='material-icons'>satellite</i>"
     topics: "web design"
     reading: "read/websites"
-    date: "2019-03-21"
+    date: "2019-03-18"
     datatype: '<i class="material-icons">language</i>'
-
     
   - module: "<i class='material-icons'>my_location</i>"
+    date: "2019-03-21"
+    datatype: '<i class="material-icons">satellite</i>'
+    topics: "Finding geospatial datasets"
+
+  - module: "<i class='fa fa-2x fa-database'></i>"
     date: "2019-04-01"
-    datatype: '<i class="material-icons">satellite</i>'
+    datatype: '<i class="fa fa-database"></i>'
+    topics: 'Relational databases/SQL'
 
-
-  - module: "<i class='material-icons'>my_location</i>"
+  - module: "<i class='fa fa-2x fa-docker'></i> <i class='material-icons'>cloud</i>"
+    topics: "Tutorial: Docker & Cloud computing"
+    reading: "read/docker"
     date: "2019-04-04"
-    datatype: '<i class="material-icons">satellite</i>'
-
-  - module: "<i class='material-icons'>my_location</i>"
-    date: "2019-04-08"
-    datatype: '<i class="material-icons">satellite</i>'
-
-  #- module: "<i class='fa fa-2x fa-docker'></i> <i class='material-icons'>cloud</i>"
-  #  topics: "Tutorial: Docker & Cloud computing"
-  #  reading: "read/docker"
-  #  date: "2019-11-02"
 
 #  - module: "<i class='material-icons'>school</i>"
 #    date: "2019-11-05"
@@ -149,36 +143,32 @@ lessons:
     topics: "<b>MASS EXTINCTIONS MODULE</b>"
     
   - module: "<i class='material-icons'>trending_down</i>"
+    date: "2019-04-08"
+    datatype: '<i class="material-icons">widgets</i>'
+    topics: "Functional Programming"
+    reading: "read/purr-1"
+    watch: "read/purr-1"
+
+  - module: "<i class='material-icons'>trending_down</i>"
     date: "2019-04-11"
     datatype: '<i class="material-icons">widgets</i>'
     topics: "REST APIs"
+    reading: "read/httr-1"
     watch: "read/httr-1"
-
-  - module: "<i class='material-icons'>trending_down</i>"
-    date: "2019-04-15"
-    datatype: '<i class="material-icons">widgets</i>'
-    topics: "REST APIs"
-    watch: "read/httr-2"
     
   - module: "<i class='material-icons'>trending_down</i>"
-    date: "2019-04-18"
+    date: "2019-04-15"
     datatype: '<i class="material-icons">widgets</i>'
     topics: "Regular Expressions"
     reading: "read/strings-regex"
     watch: "read/strings-regex"  
     
   - module: "<i class='material-icons'>trending_down</i>"
-    date: "2019-04-22"
+    date: "2019-04-18"
     datatype: '<i class="material-icons">widgets</i>'
     topics: "Data rectangling"
     reading: "read/purrr-2"
     watch: "read/purrr-2"
-    
-  - module: " <i class='material-icons'>trending_down</i>"
-    date: "2019-04-25"
-    datatype: '<i class="material-icons">widgets</i>'
-    topics: "Reproducibility & Data sources"
-  
   - module: " "
     date: " "
     topics: "<b>FINAL PROJECTS</b>"
@@ -187,10 +177,18 @@ lessons:
 #    datatype: "<i class='material-icons'>share</i>"
 #    date: "2019-11-26"
 #    topics: "JSON-LD, graph queries"
+
+  - module: "<i class='material-icons'>school</i>"
+    date: "2019-04-22"  
+    topics: "Final Projects"
+    
+  - module: "<i class='material-icons'>school</i>"
+    date: "2019-04-25"  
+    topics: "Final Projects"
     
   - module: "<i class='material-icons'>school</i>"
     date: "2019-04-29"  
-    topics: "Final Projects"
+    topics: "Final Projects" 
     
   - module: "<i class='material-icons'>school</i>"
     date: "2019-05-02"  
