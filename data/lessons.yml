@@ -128,10 +128,7 @@ lessons:
     datatype: '<i class="fa fa-database"></i>'
     topics: 'Relational databases/SQL'
 
-  - module: "<i class='fa fa-2x fa-docker'></i> <i class='material-icons'>cloud</i>"
-    topics: "Tutorial: Docker & Cloud computing"
-    reading: "read/docker"
-    date: "2019-04-04"
+
 
 #  - module: "<i class='material-icons'>school</i>"
 #    date: "2019-11-05"
@@ -143,11 +140,16 @@ lessons:
     topics: "<b>MASS EXTINCTIONS MODULE</b>"
     
   - module: "<i class='material-icons'>trending_down</i>"
-    date: "2019-04-08"
+    date: "2019-04-04"
     datatype: '<i class="material-icons">widgets</i>'
     topics: "Functional Programming"
     reading: "read/purr-1"
     watch: "read/purr-1"
+    
+  - module: "<i class='fa fa-2x fa-docker'></i> <i class='material-icons'>cloud</i>"
+    topics: "Tutorial: Docker & Cloud computing"
+    reading: "read/docker"
+    date: "2019-04-08"    
 
   - module: "<i class='material-icons'>trending_down</i>"
     date: "2019-04-11"
