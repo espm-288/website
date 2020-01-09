@@ -1,9 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
     <loc>/syllabus/</loc>
+    <lastmod>2017-04-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
     <lastmod>2017-04-19T00:00:00+00:00</lastmod>
   </url>
   
@@ -14,20 +19,20 @@
   
   <url>
     <loc>/about/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/overview-notes/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/archives/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/assignments/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -36,7 +41,6 @@
   
   <url>
     <loc>/categories/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -45,11 +49,6 @@
   
   <url>
     <loc>/rubrics/climate/</loc>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2017-04-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -81,11 +80,11 @@
   </url>
   
   <url>
-    <loc>/read/geospatial-raster/</loc>
+    <loc>/read/geospatial-raster-vector/</loc>
   </url>
   
   <url>
-    <loc>/read/geospatial-raster-vector/</loc>
+    <loc>/read/geospatial-raster/</loc>
   </url>
   
   <url>
@@ -118,7 +117,6 @@
   
   <url>
     <loc>/livecode/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -130,15 +128,11 @@
   </url>
   
   <url>
+    <loc>/livecode/popdyn-examples/</loc>
+  </url>
+  
+  <url>
     <loc>/read/rmarkdown-basics/</loc>
-  </url>
-  
-  <url>
-    <loc>/read/httr-1/</loc>
-  </url>
-  
-  <url>
-    <loc>/read/httr-2/</loc>
   </url>
   
   <url>
@@ -147,7 +141,6 @@
   
   <url>
     <loc>/read/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -159,8 +152,15 @@
   </url>
   
   <url>
+    <loc>/read/httr-1/</loc>
+  </url>
+  
+  <url>
+    <loc>/read/httr-2/</loc>
+  </url>
+  
+  <url>
     <loc>/rubrics/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -177,7 +177,6 @@
   
   <url>
     <loc>/tags/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -206,10 +205,6 @@
   
   <url>
     <loc>/read/r-pkgs/</loc>
-  </url>
-  
-  <url>
-    <loc>/livecode/popdyn-examples/</loc>
   </url>
   
 </urlset>

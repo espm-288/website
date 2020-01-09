@@ -66,7 +66,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   identifier = "GitHub"
   name = "Team Repos"
   pre = "<i class='button-icon fa fa-2x fa-github'></i>"
-  url = "https://github.com/ds421"
+  url = "https://github.com/espm-288"
 [[menu.footer]]
   weight = 3
   identifier = "campuswire"
@@ -82,7 +82,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   weight = 5
   name = "Travis-CI"
   pre = "<i class='material-icons'>check_circle</i>"
-  url = "http://travis-ci.com/ds421/"
+  url = "http://travis-ci.com/espm-288/"
 [[menu.footer]]
   weight = 6
   name = "DataCamp"
