@@ -10,10 +10,9 @@ markup: "mmark"
  <span></span>     | <span></span>
 -----------|-------------------------------------------------------------------
 Instructor | [Carl Boettiger](http://carlboettiger.info) <a href="mailto:cboettig@berkeley.edu" title="email"><i class="fa fa-envelope"></i></a><a href="https://twitter.com/cboettig" title="Twitter"> <i class="fa fa-twitter"></i></a> <a href="https://github.com/cboettig" title="GitHub"><i class="fa fa-github"></i></a> |  
-GSI        | Matt Kling <a href="mattkling@berkeley.edu:" title="email"><i class="fa fa-envelope"></i></a> <a href="https://github.com/matthewkling" title="GitHub"><i class="fa fa-github"></i></a> |  
-Location   |  Barrows 110                               |   
-Times      | **M 5:00P - 6:30P, Th 5:00P - 6:30P**     |  
-CCN        |  27590                                |  
+Location   |  103 Mulford                              |   
+Times      | **MW 1:00P - 2:30P**     |  
+CCN        |  26429                                |  
 
 
 
