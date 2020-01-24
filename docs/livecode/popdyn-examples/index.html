@@ -101,10 +101,7 @@
 			<div class="container">
 		  	<div class="section text=">
 		  	  <h2 class="title">popdyn livecode examples</h2>
-	            
-
-
-<pre class="r"><code>library(tidyverse)</code></pre>
+	            <pre class="r"><code>library(tidyverse)</code></pre>
 <p>We want to simulate a basic population dynamics process.</p>
 <p><span class="math display">\[X_{t+1} = X_t + r X_t \left(1 - \frac{X_t}{K} \right) = f(X_t)\]</span></p>
 <pre class="r"><code>logistic &lt;- function(x, r = 1, K = 100){
