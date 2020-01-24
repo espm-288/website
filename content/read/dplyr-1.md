@@ -1,20 +1,15 @@
 ---
-title: "Wrapping up Climate Module"
+title: "Climate Module: Working with Data"
 ---
 
-## Watch
+## Tutorial
 
-### [Working With Data in the Tidyverse](https://www.datacamp.com/courses/working-with-data-in-the-tidyverse) ([Allison Hill](https://alison.rbind.io/))
-
-- Ch 1: [Explore Your Data](https://campus.datacamp.com/courses/working-with-data-in-the-tidyverse/explore-your-data)
-- Ch 2: [Tame Your Data](https://campus.datacamp.com/courses/working-with-data-in-the-tidyverse/tame-your-data)
-- Ch 3: [Tidy Your Data](https://campus.datacamp.com/courses/working-with-data-in-the-tidyverse/tidy-your-data)
-
-Allison Hill is a Data Scientist & Professional Educator at RStudio, and previously a professor at Oregan Health & Science University with a background in psychology and quantitative methods.  Her introduction builds on David Robinson's, focusing on some of the more subtle corners of `readr` and introducing the basics of cleaning and reshaping data with `tidyr`.  
-
+- [Working with Data](https://rstudio.cloud/learn/primers/2.1)
 
 ## Read
 
--  [Data Import](https://r4ds.had.co.nz/data-import.html) (`readr`)
+-  `dplyr` basic verbs: `filter`, `arrange`, `select`, and `mutate`, **[[r4ds-5.1 - 5.5](http://r4ds.had.co.nz/transform.html)]**
 
-- [Tidy data](https://r4ds.had.co.nz/tidy-data.html) (`tidyr`) 
+##  DataCamp
+
+- **[Tidyverse Chapter 1: Data Wrangling](https://www.datacamp.com/courses/introduction-to-the-tidyverse)** (David Robinson)
