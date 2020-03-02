@@ -57,14 +57,14 @@ lessons:
     watch: "read/dplyr-2"
     
   - module: " <i class='material-icons'>directions_boat</i>"
-    date: "2020-02-24"
+    date: "2020-03-02"
     datatype: '<i class="fa fa-database"></i>'
     topics: "more group & summarize"
     reading: "read/fish"
     watch: "read/fish"
 
   - module: "<i class='material-icons'>bug_report</i>"
-    date: "2020-03-02"
+    date: "2020-03-04"
     datatype: '<i class="material-icons">memory</i>'
     topics: "Functions. <b><a href='/livecode/popdyn-examples'>livecode link</a></b>"
 
@@ -90,37 +90,37 @@ lessons:
     topics: "<b>GEOSPATIAL CHANGE MODULE</b>"
  
   - module: "<i class='material-icons'>my_location</i>"  
-    date: "2020-03-04"
+    date: "2020-03-09"
     datatype: '<i class="material-icons">satellite</i>'
     topics: "geospatial intro, visualization"
     reading: "read/geospatial-1"
     watch: "read/geospatial-1"
     
   - module: "<i class='material-icons'>my_location</i>"
-    date: "2020-03-09"
+    date: "2020-03-11"
     datatype: '<i class="material-icons">satellite</i>'
     topics: "vector data"
     reading: "read/geospatial-2"
     watch: "read/geospatial-2"
     
   - module: "<i class='material-icons'>my_location</i>"
-    date: "2020-03-11"
+    date: "2020-03-16"
     datatype: '<i class="material-icons">satellite</i>'
     topics: "geospatial visualization"
 
   - module: "<i class='material-icons'>satellite</i>"
     topics: "web design"
     reading: "read/websites"
-    date: "2020-03-16"
+    date: "2020-03-18"
     datatype: '<i class="material-icons">language</i>'
     
   - module: "<i class='material-icons'>my_location</i>"
-    date: "2020-03-18"
+    date: "2020-03-23"
     datatype: '<i class="material-icons">satellite</i>'
     topics: "Finding geospatial datasets"
 
   - module: "<i class='fa fa-2x fa-database'></i>"
-    date: "2020-03-23"
+    date: "2020-03-25"
     datatype: '<i class="fa fa-database"></i>'
     topics: 'Relational databases/SQL'
 
@@ -135,7 +135,7 @@ lessons:
     topics: "<b>MASS EXTINCTIONS MODULE</b>"
     
   - module: "<i class='material-icons'>trending_down</i>"
-    date: "2020-03-25"
+    date: "2020-03-30"
     datatype: '<i class="material-icons">widgets</i>'
     topics: "Functional Programming"
     reading: "read/purrr-1"
@@ -144,24 +144,24 @@ lessons:
   - module: "<i class='fa fa-2x fa-docker'></i> <i class='material-icons'>cloud</i>"
     topics: "Tutorial: Docker & Cloud computing"
     reading: "read/docker"
-    date: "2020-03-30"    
+    date: "2020-04-01"    
 
   - module: "<i class='material-icons'>trending_down</i>"
-    date: "2020-04-01"
+    date: "2020-04-06"
     datatype: '<i class="material-icons">widgets</i>'
     topics: "REST APIs"
     reading: "read/httr-1"
     watch: "read/httr-1"
     
   - module: "<i class='material-icons'>trending_down</i>"
-    date: "2020-04-06"
+    date: "2020-04-08"
     datatype: '<i class="material-icons">widgets</i>'
     topics: "Regular Expressions"
     reading: "read/strings-regex"
     watch: "read/strings-regex"  
     
   - module: "<i class='material-icons'>trending_down</i>"
-    date: "2020-04-08"
+    date: "2020-04-13"
     datatype: '<i class="material-icons">widgets</i>'
     topics: "Data rectangling"
     reading: "read/purrr-2"
@@ -176,19 +176,15 @@ lessons:
 #    topics: "JSON-LD, graph queries"
 
   - module: "<i class='material-icons'>school</i>"
-    date: "2020-04-13"  
-    topics: "Final Projects"
-    
-  - module: "<i class='material-icons'>school</i>"
     date: "2020-04-15"  
     topics: "Final Projects"
     
   - module: "<i class='material-icons'>school</i>"
     date: "2020-04-20"  
-    topics: "Final Projects" 
+    topics: "Final Projects"
     
   - module: "<i class='material-icons'>school</i>"
-    date: "2020-05-22"  
+    date: "2020-04-22"  
     topics: "Final Projects" 
     
   - module: "<i class='material-icons'>school</i>"
@@ -197,7 +193,8 @@ lessons:
     
   - module: "<i class='material-icons'>school</i>"
     date: "2020-05-29"  
-    topics: "Final Projects"
+    topics: "Final Projects" 
+
     
 #  - module: "<i class='material-icons'>nature_people</i>"
 #    datatype: "<i class='material-icons'>share</i>"
