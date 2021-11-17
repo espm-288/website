@@ -1,3 +1,0 @@
-Package: compendium
-Version: 0.1.0
-Depends: blogdown, rmarkdown, tidyverse

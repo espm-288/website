@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ESPM 288: Reproducible and Collaborative Data Science on ESPM 288</title>
+    <title>ESPM 157: Data Science for Global Change Ecology on ESPM 288</title>
     <link>/</link>
-    <description>Recent content in ESPM 288: Reproducible and Collaborative Data Science on ESPM 288</description>
+    <description>Recent content in ESPM 157: Data Science for Global Change Ecology on ESPM 288</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 19 Apr 2017 00:00:00 +0000</lastBuildDate>
@@ -17,7 +17,7 @@
       <pubDate>Wed, 19 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>/syllabus/</guid>
-      <description>warning  clear  Please note: Syllabus under development, subject to change      Date Module Data Topics Read   2020-01-22 home  Introduction &amp; setup        CLIMATE MODULE    2020-01-27   Individual assessment    2020-01-29   Workflow: GitHub, RMarkdown, Travis    2020-02-03   Visualization basics    2020-02-05   Manipulation basics    2020-02-10   Module wrap-up        OVERFISHING MODULE    2020-02-12 directions_boat  Relational data: joins    2020-02-19  directions_boat  Relational data: grouping operations    2020-03-02  directions_boat  more group &amp; summarize    2020-03-04 bug_report memory Functions.</description>
+      <description> warning  clear  Please note: Syllabus under development, subject to change      Date Module Data Topics Read   2021-08-25 home  Introduction &amp; setup       CLIMATE MODULE    2021-08-30   Workflow: GitHub, RMarkdown, Travis    2021-09-01   Programming and visualization basics    2021-09-08   Visualization basics    2021-09-13   Manipulation basics    2021-09-15   Module wrap-up        OVERFISHING MODULE    2021-09-20 directions_boat  Relational data: groups    2021-09-27  directions_boat  Relational data: joins    2021-09-29  directions_boat  group_by and summarize    2021-10-04  directions_boat  Missing Values    2021-10-06  directions_boat  Forecasting Mini-module        GEOSPATIAL CHANGE MODULE    2021-10-11 my_location satellite geospatial intro, visualization    2021-10-13 my_location satellite more on vector &amp; raster data    2021-10-18 my_location satellite spatial data manipulation    2021-10-20 my_location satellite Reproducible publishing    2021-10-25 my_location satellite wrap-up    2021-10-27 school  Final Project Proposals        MASS EXTINCTIONS MODULE    2021-11-01 trending_down widgets REST APIs    2021-11-03 trending_down widgets REST APIs    2021-11-08 trending_down widgets Regular Expressions    2021-11-10 trending_down widgets Data rectangling    2021-11-15 trending_down widgets Functional Programming    2021-11-17  trending_down widgets Module wrap-up        FINAL PROJECTS     school  Final Projects    2021-11-22 school  Final Projects    2021-11-29 school  Final Projects    2021-12-01 school  Final Projects     school  RRR week -- no attendance required     school  RRR week -- no attendance required    2021-12-13 school  Final Projects DUE      </description>
     </item>
     
     <item>
@@ -54,6 +54,15 @@ rstudio Watch:
 DataCamp Lesson: RStudio IDE, Part II, Chapter 2: Version Control (by Garrett Grolemund).
 vis.1 Watch:
  Tidyverse Chapter 2: Data Visualization (David Robinson)  (Yes, we&amp;rsquo;re starting with Chapter 2, we&amp;rsquo;ll go back to Chapter 1 soon).</description>
+    </item>
+    
+    <item>
+      <title>2018-09-07 Class Notes</title>
+      <link>/livecode/2018-09-07-class-notes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/livecode/2018-09-07-class-notes/</guid>
+      <description> Reminders  Focus on reading, exercises – Great work! open-ended questions, not always covered Piazza discussion forum pair coding   Overview  GitHub  Collaboration rmarkdown -&amp;gt; markdown  Travis  What, why? Debugging  R  readr separators ggplot2 – Grammar?? dplyr Syntax  Naming things Style   </description>
     </item>
     
     <item>
@@ -97,12 +106,15 @@ What rolling average is used in computing the “trend” line? How does the tre
     </item>
     
     <item>
-      <title>ESPM 288: Reproducible and Collaborative Data Science</title>
-      <link>/old_index/</link>
+      <title>Extinctions Unit</title>
+      <link>/livecode/2019-11-01-extinction-api-intro/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/old_index/</guid>
-      <description>Instructor Carl Boettiger     Location 103 Mulford   Times MW 1:00P - 2:30P   CCN 26429    Overview This course is designed for graduate students regardless of prior experience. We aim to be accessible to those new to programming, but those who have been using R for years will find new material in this opinionated and fast moving area.</description>
+      <guid>/livecode/2019-11-01-extinction-api-intro/</guid>
+      <description>Extinctions Module Are we experiencing the sixth great extinction?
+What is the current pace of extinction? Is it accelerating? How does it compare to background extinction rates?
+ Background  Section Intro Video Ceballos et al (2015)  Our focal task will be to reproduce the result from Ceballos and colleagues showing the recent increase in extinction rates relative to the background rate:
+ Computational Topics  Accessing data from a RESTful API Error handling JSON data format Regular expressions Working with missing values   Additional references:  http://www.</description>
     </item>
     
     <item>
@@ -239,22 +251,23 @@ Reading Geospatial Textbook: Geocomputation with R (Lovelace, Nowosad, Muenchow)
     </item>
     
     <item>
+      <title>Habitat Analysis of the Pacific Spiny Lumpsucker</title>
+      <link>/livecode/spatial-tidy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/livecode/spatial-tidy/</guid>
+      <description>We map potential areas of marine aquaculture for the super cute Pacific spiny lumpsucker (Eumicrotremus orbis)
+library(tidyverse) library(mapview) library(raster) library(sf) library(units) library(tmap) library(USAboundaries) Key information for optimal growth:
+ Sea surface temperatures between 12 and 18 degrees Celsius Net Primary Productivity between 2.6 and 3 mgC/m2/day  ## Loading the data west_coast &amp;lt;- st_read(&amp;quot;shapefiles/mpas_westcoast.shp&amp;quot;, quiet = TRUE) sst &amp;lt;- stack( list.files(&#39;rasters&#39;, pattern = &#39;average_&#39;, full.names = T) ) npp &amp;lt;- raster(&#39;rasters/annual_npp.</description>
+    </item>
+    
+    <item>
       <title>Iterate using purrr</title>
       <link>/read/purrr-1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/read/purrr-1/</guid>
       <description>Reading  R4DS 21.5: The map functions R4DS 21.6: Dealing with failure R4DS 21.7: Mapping over multiple arguments  </description>
-    </item>
-    
-    <item>
-      <title>Iterate using purrr</title>
-      <link>/read/purrr-2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/read/purrr-2/</guid>
-      <description>Watch Chapters 4 &amp;amp; 5 of Writing Functions in R. (&amp;ldquo;Advanced input &amp;amp; output&amp;rdquo;, and &amp;ldquo;Robust functions&amp;rdquo;)
-Reading  R4DS 21.5: The map functions R4DS 21.6: Dealing with failure R4DS 21.7: Mapping over multiple arguments  </description>
     </item>
     
     <item>
@@ -272,7 +285,7 @@ Reading  R4DS 21.5: The map functions R4DS 21.6: Dealing with failure R4DS 21.7:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/module-table/</guid>
-      <description>Module Candidate paper Data Format Technical skills   timeline Climate Change Petit et al. (1999)  Tabular data   Parsing tabular data, visualization (readr, ggplot2)   directions_boat Overfishing   Worm et al. (2006)  Relational databases  groups, joins, filters. SQL (dplyr, tidyr)   bug_report Ecological Simulations  May (1974)  memory Simulated data Functional programming, (purrr)   my_location Range shifts Pinsky et al.</description>
+      <description>Module Candidate paper Data Format Technical skills   timeline Climate Change Petit et al. (1999)  Tabular data   Parsing tabular data, visualization (readr, ggplot2)   directions_boat Overfishing   Worm et al. (2006)  Relational databases  groups, joins, filters. SQL (dplyr, tidyr)   my_location Range shifts Pinsky et al. (2013) satellite Geospatial data Raster &amp; vector data, (sf, raster, mapview, tmap)   trending_down Mass Extinctions  Ceballos et al.</description>
     </item>
     
     <item>
@@ -282,18 +295,6 @@ Reading  R4DS 21.5: The map functions R4DS 21.6: Dealing with failure R4DS 21.7:
       
       <guid>/modules/</guid>
       <description>Climate Change   Tabular data What is the evidence for a changing climate? In this unit, we will examine some of the most important indicators of global climate change: including CO2 concentration, global mean temperature, sea level rise, land ice sheet melt, and arctic sea ice cover. We will wrangle a wide range of tabular data file formats used by NOAA and other agencies and introduce the fundamentals of data visualization with ggplot2 and data processing with basic functions from the readr, tidyr, and dplyr packages as we seek to replicate the principle results of climate change over the last decades and also the past thousands of years.</description>
-    </item>
-    
-    <item>
-      <title>popdyn livecode examples</title>
-      <link>/livecode/popdyn-examples/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/livecode/popdyn-examples/</guid>
-      <description>library(tidyverse) We want to simulate a basic population dynamics process.
-\[X_{t+1} = X_t + r X_t \left(1 - \frac{X_t}{K} \right) = f(X_t)\]
-logistic &amp;lt;- function(x, r = 1, K = 100){ x + r * x * (1 - x / K) } We wrap our simulation up in a function, so we can pass different r values. We pass the population function as an argument.
-simulate &amp;lt;- function(r, f = logistic){ Tmax &amp;lt;- 300 x0 &amp;lt;- 10 df &amp;lt;- tibble(x = x0, t = 0) for(t in 1:Tmax){ x_t &amp;lt;- df[t,&amp;quot;x&amp;quot;][[1]] x_t1 &amp;lt;- f(x_t, r) df &amp;lt;- bind_rows(df, tibble(x = x_t1, t = t)) } ## Let&amp;#39;s discard the early points in the time series so we get the long-term behavior.</description>
     </item>
     
     <item>
@@ -330,8 +331,9 @@ simulate &amp;lt;- function(r, f = logistic){ Tmax &amp;lt;- 300 x0 &amp;lt;- 10
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/read/dplyr-3/</guid>
-      <description>Watch  DataCamp Lesson: Joining Data with dplyr  Yes, this whole lesson is useful to really cover joins. You&amp;rsquo;ll get most of what you need for the module with chapter 1, but take a look at the topics and videos of the later chapters as well.
-Read  Relational Data (*_join functions) r4ds-13.1 - 13.7  Explore  A nice visual summary of each of the types of joins can be found in this R package https://github.</description>
+      <description>Watch   RStudio Primer: Joins
+  DataCamp Lesson: Joining Data with dplyr
+  Read  Relational Data (*_join functions) r4ds-13.1 - 13.7  Explore  A nice visual summary of each of the types of joins can be found in this R package https://github.com/gadenbuie/tidyexplain. See the README and animated GIFs for examples.  </description>
     </item>
     
     <item>
@@ -340,7 +342,7 @@ Read  Relational Data (*_join functions) r4ds-13.1 - 13.7  Explore  A nice visua
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/read/dplyr-4/</guid>
-      <description>Watch  Tidyverse Chapter 3: Grouping and Summarizing (David Robinson)  </description>
+      <description>Watch  Tidyverse Chapter 3: Grouping and Summarizing (David Robinson)  Read R4DS Chapter 5.6: grouped summaries</description>
     </item>
     
     <item>
@@ -390,6 +392,18 @@ Reading  Read the opening sections of chapter 13 on Strings and working with Reg
     </item>
     
     <item>
+      <title>Teaming activities</title>
+      <link>/team-building/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/team-building/</guid>
+      <description>Team-building questions, as a spectrum   Dogs or Cats (https://www.williamrchase.com/post/is-hadley-wickham-a-cat-or-dog-person-a-twitter-tidytext-analysis/)
+  Do you prefer to learn from &amp;ldquo;official documentation&amp;rdquo;&amp;rdquo; or go right to some examples?
+  Expertise in programming or domain knowledge?
+  </description>
+    </item>
+    
+    <item>
       <title>Tools</title>
       <link>/tools/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -404,8 +418,8 @@ Reading  Read the opening sections of chapter 13 on Strings and working with Reg
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/tutorials/</guid>
-      <description>GitHub Almost everything we do will involve GitHub in some way. This tutorial will provide a brief introduction to our GitHub-based workflow and review common git patterns for resolving issues you may encounter in working collaboratively.
-  RMarkdown Notebooks Most of your work will take place inside an RMarkdown notebook. While we will rely primarily on the github_document format, RMarkdown supports a wide variety of output formats that you can use to create pdf documents (including particular journal formats) slideshows, websites, ebooks and interactive tutorials.</description>
+      <description>Almost everything we do will involve GitHub in some way. This tutorial will provide a brief introduction to our GitHub-based workflow and review common git patterns for resolving issues you may encounter in working collaboratively.
+RMarkdown Notebooks Most of your work will take place inside an RMarkdown notebook. While we will rely primarily on the github_document format, RMarkdown supports a wide variety of output formats that you can use to create pdf documents (including particular journal formats) slideshows, websites, ebooks and interactive tutorials.</description>
     </item>
     
     <item>
@@ -434,6 +448,19 @@ Reading  Read the opening sections of chapter 13 on Strings and working with Reg
       <guid>/read/workflows/</guid>
       <description>Please read the following two short sections:
  6. Workflow: scripts, and 8. Workflow: projects  </description>
+    </item>
+    
+    <item>
+      <title>Writing functions in R</title>
+      <link>/livecode/2018-10-08-functions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/livecode/2018-10-08-functions/</guid>
+      <description>library(tidyverse) Today we will be learning to write our own functions in R. Consider the discrete Logistic growth function:
+\[x_{t+1} = x_t + r x_t \left(1 - \frac{x_t}{K} \right)\]
+Here we exress this function in R:
+growth &amp;lt;- function(xt, r, K){ r * xt * (1 - xt / K) } We can simulate the function as follows:
+simulate &amp;lt;- function(max_time, x0, r, K){ x &amp;lt;- numeric(max_time) x[1] &amp;lt;- x0 for (t in 1:(max_time - 1)) { x[t + 1] &amp;lt;- x[t] + growth(x[t], r = r, K) } pop_data &amp;lt;- data_frame(time = 1:max_time, pop_size = x) pop_data } We can perform a few simulations with different values of r:</description>
     </item>
     
     <item>

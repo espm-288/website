@@ -1,4 +1,4 @@
-baseurl = ""
+baseurl = "/espm-288"
 languageCode = "en-us"
 defaultContentLanguage = "en-us"
 title = "ESPM 288"
@@ -8,10 +8,7 @@ theme = "material"
 paginate = 7
 relativeurls = true
 publishDir = "docs"
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "\\.knit\\.md$", "\\.utf8\\.md$", "_cache$"]
-
-[markup.goldmark.renderer] 
-  unsafe= true
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [permalinks]
   post = "/:year/:month/:slug/"
@@ -39,6 +36,24 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "\\.knit\\.md$", "\\.utf8\\.md$", "_c
   pre = "<i class='sidebar-button-icon fa fa-lg fa-home'></i>"
   url = "/"
 [[menu.main]]
+  weight = 2
+  identifier = "modules"
+  name = "Modules"
+  pre = "<i class='material-icons'>dashboard</i>"
+  url = "/modules"
+[[menu.main]]
+  weight = 3
+  identifier = "tutorials"
+  name = "Tutorials"
+  pre = "<i class='material-icons'>build</i>"
+  url = "/tutorials"
+[[menu.main]]
+  weight = 4
+  identifier = "syllabus"
+  name = "Syllabus"
+  pre = "<i class='material-icons'>date_range</i>"
+  url = "/syllabus"
+[[menu.main]]
   weight = 5
   identifier = "policies"
   name = "Policies"
@@ -51,18 +66,18 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "\\.knit\\.md$", "\\.utf8\\.md$", "_c
   identifier = "GitHub"
   name = "Team Repos"
   pre = "<i class='button-icon fa fa-2x fa-github'></i>"
-  url = "https://github.com/espm-288"
+  url = "https://github.com/espm-157"
 [[menu.footer]]
   weight = 3
-  identifier = "slack"
-  name = "Slack"
+  identifier = "Slack"
+  name = "Forum"
   pre = "<i class='material-icons'>forum</i>"
-  url = "https://espm-288.slack.com"
+  url = "https://espm157-fall2021.slack.com"
 [[menu.footer]]
   weight = 4
   name = "Textbook"
   pre = "<i class='material-icons'>book</i>"
-  url = "https://r4ds.had.co.nz/"
+  url = "http://r4ds.had.co.nz/"
 
 
 
@@ -76,11 +91,6 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "\\.knit\\.md$", "\\.utf8\\.md$", "_c
   pre = "<i class='material-icons'>directions_boat</i>"
   name = "Overfishing"
   url = "#fish"
-[[menu.sidebar]]
-  weight = 3
-  pre = " <i class='material-icons'>bug_report</i>"
-  name = "Ecological Simulation"
-  url = "#popdyn"
 [[menu.sidebar]]
   weight = 4
   pre = " <i class='material-icons'>my_location</i>"
@@ -137,5 +147,5 @@ weight = 5
 
 [params]
   dateFormat = "January 2, 2006"
-  background = "https://espm-288.carlboettiger.info/img/methane_bubbles.jpg"
-
+  background = "/img/methane_bubbles.jpg"
+  math = "true"

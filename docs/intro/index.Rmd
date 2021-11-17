@@ -1,10 +1,10 @@
 ---
-title: "Reproducible and Collaborative Data Science"
+title: "Data Science for Global Change Ecology"
 author: "Carl Boettiger"
 
 output:
   xaringan::moon_reader:
-#    chakra: libs/remark-latest.min.js
+    #chakra: libs/remark-latest.min.js
     lib_dir: libs
     nature:
       highlightStyle: github
@@ -30,7 +30,7 @@ class: center
 
 # Global Change
 
-<img src="images/dimacs/global-change.jpg" width="550">
+<img src="img/dimacs/global-change.jpg" width="550">
 
 <small> Overpeck+ (2011) doi:[10.1126/science.1197869](http://doi.org/10.1126/science.1197869) </small>
 
@@ -39,26 +39,18 @@ class: center
 
 # Fishery Collapse?
 
-<img src="images/dimacs/worm2006.png", width="700">
+<img src="img/dimacs/worm2006.png", width="700">
 
 <small> Worm+ (2006) doi:[10.1126/science.1132294](http://doi.org/10.1126/science.1132294)</small>
 
 ---
 class: center
 
-# Shifting habitat?
+# Tipping points?
 
-<img src="img/rayshader.png", width="700">
+<img src="img/berkeley2014/barnosky.png", width="600">
 
-
----
-class: center
-
-# Sixth mass extinction?
-
-<img src="img/extinctions.jpg", width="700">
-
-<small> From Cerbellos et al., <a href="https://doi.org/10.1126/sciadv.1400253">https://doi.org/10.1126/sciadv.1400253</a> </small>
+<small> Barnoksy+ (2012) doi:[10.1038/nature11018](http://doi.org/10.1038/nature11018)</small>
 
 <!-- From linear to nonlinear thinking. Must deal with the uncertainty-->
 
@@ -67,7 +59,7 @@ class: center
 
 # Remote sensors
 
-<img src="images/berkeley2014/landsat2.jpg" width="550">
+<img src="img/berkeley2014/landsat2.jpg" width="550">
 
 <small>credit: NASA</small>
 
@@ -76,7 +68,7 @@ class: center
 
 # micro sensors
 
-<img src="images/berkeley2014/gps-zebra.jpg" width="500">
+<img src="img/berkeley2014/gps-zebra.jpg" width="500">
 
 <small>credit: NSF </small>
 
@@ -85,7 +77,7 @@ class: center
 
 ## NEON
 
-<img src="images/asn2014/neon.png" width="550">
+<img src="img/asn2014/neon.png" width="550">
 
 <small> credit: Hopkin (2006) doi:[10.1038/444420a](http://doi.org/10.1038/444420a) </small>
 
@@ -94,7 +86,7 @@ class: center
 
 ## OOI
 
-<img src="images/asn2014/ooi.png" width="900">
+<img src="img/asn2014/ooi.png" width="900">
 
 <small> credit: Witze (2013) doi:[10.1038/501480a](http://doi.org/10.1038/501480a) </small>
 
@@ -114,14 +106,14 @@ class: center
 
 # Field-based study
 
-![](images/berkeley2014/icecore.jpg)
+![](img/berkeley2014/icecore.jpg)
 
 ---
 class: center
 
 # Growth of climate data by type
 
-![](images/dimacs/growth-climate-data.png)
+![](img/dimacs/growth-climate-data.png)
 
 <small> Overpeck+ (2011) doi:[10.1126/science.1197869](http://doi.org/10.1126/science.1197869) </small>
 
@@ -168,7 +160,7 @@ class: center
 
 # Engineering bottlenecks
 
-<img src="images/dimacs/bottleneck.jpg" width="700">
+<img src="img/dimacs/bottleneck.jpg" width="700">
 
 <small> Baraniuk (2011) doi:[10.1126/science.1197448](http://doi.org/10.1126/science.1197448) </small>
 
@@ -177,7 +169,7 @@ class: center
 
 # Science bottlenecks
 
-<img src="images/dimacs/science-bottleneck.png">
+<img src="img/dimacs/science-bottleneck.png">
 
 <small>adapted from Reichman+ (2011) doi:[10.1126/science.1197962](http://doi.org/10.1126/science.1197962)</small>
 
@@ -305,7 +297,7 @@ class: middle, left, inverse
 ---
 class: center
 
-<img src="images/dimacs/measurement-error.jpg" width="700"/>
+<img src="img/dimacs/measurement-error.jpg" width="700"/>
 
 # data visualization
 
@@ -319,7 +311,7 @@ class: center, inverse, middle
 # Variety
 
 ---
-background-image: url(images/Bertrand/factory-farm.jpg)
+background-image: url(img/Bertrand/factory-farm.jpg)
 background-size: 100%
 background-position: center
 class: center, top, inverse
@@ -330,7 +322,7 @@ class: center, top, inverse
 <small>credit: Arthus-Bertrand</small>
 
 ---
-background-image: url(images/Bertrand/organic-farm.png)
+background-image: url(img/Bertrand/organic-farm.png)
 background-size: 100%
 background-position: center
 class: center, middle, inverse
@@ -345,7 +337,7 @@ class: center, inverse
 
 # Vertically integrated data repositories
 
-<img src="images/dimacs/tetris.png">
+<img src="img/dimacs/tetris.png">
 
 
 ---
@@ -353,7 +345,7 @@ class: center, inverse
 
 # Limitations to vertical integration
 
-![](images/dimacs/tetris-lose.png)
+![](img/dimacs/tetris-lose.png)
 
 
 ---
@@ -374,7 +366,7 @@ class: center, middle
 
 # Velocity: the need for Reproducibility
 
-<img src="images/dimacs/growth-climate-data.png" width="350"/>
+<img src="img/dimacs/growth-climate-data.png" width="350"/>
 
 <small> Overpeck+ (2011) doi:[10.1126/science.1197869](http://doi.org/10.1126/science.1197869) </small>
 
@@ -385,7 +377,7 @@ class: center
 
 # Example: Synthetic analysis of biodiversity loss
 
-<img src="images/dimacs/diversity-fig1.png" width="700">
+<img src="img/dimacs/diversity-fig1.png" width="700">
 
 Sythesizes over 140 data sets.
 
@@ -394,7 +386,7 @@ class: center
 
 # Finds no evidence for systematic loss
 
-<img src="images/dimacs/diversity-fig2.png" width="700">
+<img src="img/dimacs/diversity-fig2.png" width="700">
 
 How easy would it be to update this to reflect new data?
 
@@ -409,17 +401,17 @@ class: center, inverse, middle
 # Reproducibility: important for other reasons as well:
 
 ---
-background-image: url("images/economist/cover.jpg")
+background-image: url("img/economist/cover.jpg")
 
 ---
-background-image: url("images/economist/replicate.jpg")
+background-image: url("img/economist/replicate.jpg")
 
 ---
-background-image: url("images/economist/rug.jpg")
+background-image: url("img/economist/rug.jpg")
 
 
 ---
-background-image: url("images/economist/trouble.jpg")
+background-image: url("img/economist/trouble.jpg")
 
 
 ---
@@ -427,7 +419,7 @@ class: center
 
 # Reproducible workflows: Dynamic documents
 
-<img src="images/dimacs/spectrum.png">
+<img src="img/dimacs/spectrum.png">
 
 <small>Peng (2011) doi:[10.1126/science.1213847](http://doi.org/10.1126/science.1213847)</small>
 
@@ -435,6 +427,18 @@ class: center
 class: inverse, center
 
 # This Course
+
+--
+
+connecting to...
+
+--
+
+# Berkeley's emerging Data Science Curriculum
+
+## Data Science Major
+
+## Data Science Minor
 
 
 ---
@@ -465,8 +469,6 @@ class: inverse, center
 
 ## Microsoft Reactor Space, Seattle, WA
 
-
-
 ---
 class: inverse
 
@@ -490,7 +492,8 @@ class: inverse
 
 --
 
-## Presentation above all things!
+## Presentation matters
+
 
 ---
 class: inverse, middle, center
@@ -502,115 +505,19 @@ class: inverse, middle, center
 > -- [Vince Buffalo](http://www.vincebuffalo.com/), UC Davis c 2015
 
 
----
-class: inverse, middle, center
-
-## Pedagogy: this class will be different.
-
----
-class: inverse, middle
-
-## What do we know about how learning works?
-
-Learning:
-
-1. is an active process
-2. builds on prior knowledge
-3. must be situated in an authentic context
-4. occurs in complex social environment
-5. requires motivation and engagement
-
----
-class: inverse, top
-
-## Learning is always an active process!
-
-- Learning styles (auditory, visual, kinesthetic) thoroughly discredited.
-
-- (e.g. Dewey 1938, Piaget 1964, Vygotsky 1986, ....)
-
---
-
-- We learn by _doing_ and _reflecting_ (delibrate practice)
-
----
-class: inverse, top
-
-## Learning builds on prior knowledge
-
-- Ideas stick only when you have a scaffold to connect them to.
-
-- (e.g. Alexander 1996)
-
---
-
-- We will try to connect both to what you already know and what we have previously covered
-
-
----
-class: inverse, top
-
-## Situated in an authentic context
-
-- We learn best when we engage in specific ideas and concepts rather than abstract
-
-- (e.g. Greeno 2006; Kolonder 2006; Bryan 2015)
-
---
-
-- Our course is built around authentic scientific research questions rather than `foo` `bar` examples
-
---
-
-- Abstraction is important, but will follow rather than precede examples
-
-
----
-class: inverse, top
-
-## Occurs in a complex social environment
-
-- We learn most by talking / teaching / interacting with others.
-
-- (e.g. Bransford et al 2006; Rogofff 1998)
-
---
-
-- You will be working in pairs throughout the semester
-
---
-
-- [code of conduct](https://espm-288.carlboettiger.info/policies)
-
-
----
-class: inverse, top
-
-## Requires motivation and cognitive engagement
-
-- Motivation is connected to all of the above.
-
---
-
-- In some topics, we aim for mastery; in many others, we aim merely for motivation
-
---
-
-- knowing what's out there and what you can do with it
-
 
 ---
 class: inverse
 
-## Pedagogy:
+## Pedagogy
+
 
 Some things in this course are in keeping with good / leading pedagogy
 
 --
 
-- We will start with visualization
-- active learning
-- flipped classroom
+- We will start with graphs first
+- active learning, flipped classroom
 - peer instruction
 
 --
@@ -622,7 +529,6 @@ Some things aren't
 - Starting on the deep end
 - We will start with untidy data
 - unstructured training
-
 
 
 ---
@@ -648,6 +554,11 @@ class: center
 ---
 class: center, inverse, middle
 
+## Deliberate practice
+
+---
+class: center, inverse, middle
+
 # Our Tools
 
 ---
@@ -661,7 +572,7 @@ class: center
 
 # GitHub
 
-<img src="img/ds421-github.png"/>
+<img src="img/github-espm-157.png"/>
 
 
 ---
@@ -732,27 +643,24 @@ class: inverse
 
 
 ---
+class: inverse
 
 # The Road Ahead
 
 
 ---
-
-## A flipped format
-
-<https://espm-288.carlboettiger.info/syllabus>
-
-
-
----
+class: inverse
 
 ## Modules
 
-<https://espm-288.carlboettiger.info/modules>
-
-![](img/modules.png)
+- Global Climate Change (Data exploration & visualization)
+- Popluation Dynamics (Programming: functions, loops)
+- Fisheries Collapse (databases)
+- Extinctions (APIs, regex)
+- Final project
 
 ---
+class: inverse
 
 ## Module flow
 
@@ -760,17 +668,8 @@ class: inverse
 - Week 2: Pair work on assignment; mini-tutorials
 - Week 3: Present / compare / discuss solutions
 
-
 ---
-
-## Tutorials
-
-<https://espm-288.carlboettiger.info/tutorials>
-
-![](img/tutorials.png)
-
-
----
+class: inverse
 
 ## Climate Change
 
@@ -780,6 +679,7 @@ class: inverse
 - Workflow
 
 ---
+class: inverse
 
 ## Fisheries Collapse
 
@@ -788,11 +688,24 @@ class: inverse
 - reproducibility
 
 
+<!--
+---
+class: inverse
+
+
+## Population Dynamics
+
+- programming: loops, conditionals, functions
+- ecological simulation
+- dynamical systems modeling, ODE & SDE simulations, bifurcation analysis, chaos, bet hedging
+- writing packages
+-->
 
 ---
+class: inverse
 
 
-## Spatial data
+## Spatial data: climate envelopes
 
 - Vector & Raster data
 - projections and transforms
@@ -800,6 +713,7 @@ class: inverse
 - interactive mapping
 
 ---
+class: inverse
 
 
 ## Extinctions
@@ -810,22 +724,49 @@ class: inverse
 - Regular Expressions (RegEx)
 
 ---
+class: inverse
 
 ## Course Communication
 
 - GitHub
+- Piazza 
 - Course Website
 
 ---
+class: inverse
 
 # Course Website
 
-## <https://espm-288.carlboettiger.info>
+## <espm-157.carlboettiger.info>
 
 - Syllabus: lectures, reading, assignments
 - Course policies
 - Helpful links
 
+
+---
+class: inverse, center, middle
+
+# DataCamp
+
+---
+
+![](img/datacamp.png)
+
+---
+
+![](img/datacamp-noam.png)
+
+
+
+---
+
+
+![](img/datacamp-computerworld.png)
+
+---
+
+![](img/datacamp-buzzfeed.png)
 
 
 
@@ -840,12 +781,19 @@ class: inverse
 # Your turn: Introductions
 
 - Name
-- Undergraduate Major
-- Current Department & research group
-- Semesters of prior programming experience
-- What you hope to get out of the course
+- Major, year
+- Why are you here?
+- Semesters of prior programming experience, languages?
+- Where do you see yourself in 5 years? (industry? government? academia? law? healthcare?)
+
+(On Piazza)
+
 
 ---
 class: inverse
+
+# Setup: Get RStudio Talking to Git
+
+<http://happygitwithr.com>
 
 

@@ -1,201 +1,219 @@
 lessons:
   - module: "<i class='material-icons'>home</i>"
     topics: "Introduction & setup"
-    date: "2020-01-22"
+    date: ""
+    reading: "read/setup"
+    watch: "read/setup"
     
-  - module: " "
-    date: " "
+  - module: ""
+    date: ""
     topics: "<b>CLIMATE MODULE</b>"
     
   - module: "<i class='fa fa-lg fa-thermometer-full'></i>"
-    date: "2020-01-27"
-    reading: "read/setup"
+    date: ""
+    reading: "read/rmarkdown-basics"
+    watch: "read/rmarkdown-basics"
     datatype: '<i class="fa fa-table"></i>'
-    topics: "Individual assessment"
+    topics: "Workflow: GitHub, RMarkdown, Travis"
     
   - module: "<i class='fa fa-lg fa-github'></i>"
-    date: "2020-01-29"
-    topics: "Workflow: GitHub, RMarkdown, Travis"
-    reading: "read/rmarkdown-basics"
+    date: ""
+    topics: "Programming and visualization basics"
+    datatype: '<i class="fa fa-table"></i>'
+    reading: "read/basics"
     assignment: ""
     
   - module: "<i class='fa fa-lg fa-thermometer-full'></i>"
-    date: "2020-02-03"
+    date: ""
     datatype: '<i class="fa fa-table"></i>'
     topics: "Visualization basics"
     reading: "read/ggplot-1"
-    watch: "read/ggplot-1"
-    
+
   - module: "<i class='fa fa-lg fa-thermometer-full'></i>"
-    date: "2020-02-05"
+    date: ""
     datatype: '<i class="fa fa-table"></i>'
     topics: "Manipulation basics"
-
+    reading: "read/dplyr-1"
+    watch: "read/dplyr-1"
 
   - module: "<i class='fa fa-lg fa-thermometer-full'></i>"
-    date: "2020-02-10"
-    reading: "read/dplyr-1"
+    date: ""
     datatype: '<i class="fa fa-table"></i>'
+    reading: "read/dplyr-2"
     topics: "Module wrap-up"
 
   - module: " "
-    date: " "
+    date: ""
     topics: "<b>OVERFISHING MODULE</b>"
     
   - module: "<i class='material-icons'>directions_boat</i>"
-    date: "2020-02-12"
+    date: ""
     datatype: '<i class="fa fa-database"></i>'
+    topics: "Relational data: groups"
+    reading: "read/fish"
+    watch: "read/fish"
+    
+  - module: " <i class='material-icons'>directions_boat</i>"  
+    date: ""
+    datatype: "<i class='fa fa-database'></i>"
     topics: "Relational data: joins"
     reading: "read/dplyr-3"
     watch: "read/dplyr-3"
     
-  - module: " <i class='material-icons'>directions_boat</i>"  
-    date: "2020-02-19"
-    datatype: "<i class='fa fa-database'></i>"
-    topics: "Relational data: grouping operations"
-    reading: "read/dplyr-2"
-    watch: "read/dplyr-2"
-    
   - module: " <i class='material-icons'>directions_boat</i>"
-    date: "2020-03-02"
+    date: ""
     datatype: '<i class="fa fa-database"></i>'
-    topics: "more group & summarize"
-    reading: "read/fish"
-    watch: "read/fish"
+    topics: "group_by and summarize"
+    reading: "read/dplyr-4"
 
-  - module: "<i class='material-icons'>bug_report</i>"
-    date: "2020-03-04"
-    datatype: '<i class="material-icons">memory</i>'
-    topics: "Functions. <b><a href='/livecode/popdyn-examples'>livecode link</a></b>"
+  - module: " <i class='material-icons'>directions_boat</i>"  
+    date: ""
+    datatype: '<i class="fa fa-database"></i>'
+    topics: "Missing Values"
+    reading: 
 
-    
-#  - module: " "
-#    date: " "
-#    topics: "<b>POPULATION DYNAMICS MODULE</b>"
+  - module: " <i class='material-icons'>directions_boat</i>"  
+    date: ""
+    datatype: '<i class="fa fa-database"></i>'
+    topics: "Forecasting Mini-module"
  
-
-
-# - module: " <i class='material-icons'>bug_report</i>"
-#    topics: "Iteration"
-#    datatype: '<i class="material-icons">memory</i>'
-#  - module: " <i class='material-icons'>bug_report</i>"
-#    datatype: '<i class="material-icons">memory</i>'
-#    topics: "Iteration"
-#  - module: " <i class='icon-rlogo'></i> <i class='fa fa-lg fa-gift'></i>"
-#    topics: "Writing R packages"
-#    reading: "read/r-pkgs"
     
+ # - module: " <i class='material-icons'>directions_boat</i>"  
+#    date: ""
+#    datatype: '<i class="fa fa-database"></i>'
+#    topics: "wrap-up & External DBs"
+
+#  - module: " <i class='material-icons'>directions_boat</i>"  
+#    date: ""
+#    datatype: '<i class="fa fa-database"></i>'
+#    topics: "wrap-up"
+
+
   - module: " "
-    date: " "
+    date: ""
     topics: "<b>GEOSPATIAL CHANGE MODULE</b>"
- 
+    
   - module: "<i class='material-icons'>my_location</i>"  
-    date: "2020-03-09"
+    date: ""
     datatype: '<i class="material-icons">satellite</i>'
     topics: "geospatial intro, visualization"
+    
+  - module: "<i class='material-icons'>my_location</i>"
+    date: ""
+    datatype: '<i class="material-icons">satellite</i>'
+    topics: "more on vector & raster data"
     reading: "read/geospatial-1"
     watch: "read/geospatial-1"
-    
+
   - module: "<i class='material-icons'>my_location</i>"
-    date: "2020-03-11"
+    date: ""
     datatype: '<i class="material-icons">satellite</i>'
-    topics: "vector data"
+    topics: "spatial data manipulation"
     reading: "read/geospatial-2"
     watch: "read/geospatial-2"
-    
-  - module: "<i class='material-icons'>my_location</i>"
-    date: "2020-03-16"
-    datatype: '<i class="material-icons">satellite</i>'
-    topics: "geospatial visualization"
 
-  - module: "<i class='material-icons'>satellite</i>"
-    topics: "web design"
+
+  - module: "<i class='material-icons'>my_location</i>"
+    date: ""
+    datatype: '<i class="material-icons">satellite</i>'
+    topics: "Reproducible publishing"
     reading: "read/websites"
-    date: "2020-03-18"
-    datatype: '<i class="material-icons">language</i>'
-    
+
   - module: "<i class='material-icons'>my_location</i>"
-    date: "2020-03-23"
+    date: ""
     datatype: '<i class="material-icons">satellite</i>'
-    topics: "Finding geospatial datasets"
+    topics: "wrap-up"
+    reading: ""
+    
+  #- module: "<i class='fa fa-2x fa-docker'></i> <i class='material-icons'>cloud</i>"
+  #  topics: "Tutorial: Docker & Cloud computing"
+  #  reading: "read/docker"
+  #  date: ""
 
-  - module: "<i class='fa fa-2x fa-database'></i>"
-    date: "2020-03-25"
-    datatype: '<i class="fa fa-database"></i>'
-    topics: 'Relational databases/SQL'
-
-
-
-#  - module: "<i class='material-icons'>school</i>"
-#    topics: "Final Project Proposals"
-#    reading: "assignments/final"
+  - module: "<i class='material-icons'>school</i>"
+    date: ""
+    topics: "Final Project Proposals"
+    reading: "assignments/final"
 
   - module: " "
-    date: " "
+    date: ""
     topics: "<b>MASS EXTINCTIONS MODULE</b>"
     
   - module: "<i class='material-icons'>trending_down</i>"
-    date: "2020-03-30"
+    date: ""
     datatype: '<i class="material-icons">widgets</i>'
-    topics: "Functional Programming"
-    reading: "read/purrr-1"
-    watch: "read/purrr-1"
+    topics: "REST APIs"
     
-  - module: "<i class='fa fa-2x fa-docker'></i> <i class='material-icons'>cloud</i>"
-    topics: "Tutorial: Docker & Cloud computing"
-    reading: "read/docker"
-    date: "2020-04-01"    
 
   - module: "<i class='material-icons'>trending_down</i>"
-    date: "2020-04-06"
+    date: ""
     datatype: '<i class="material-icons">widgets</i>'
     topics: "REST APIs"
     reading: "read/httr-1"
-    watch: "read/httr-1"
     
   - module: "<i class='material-icons'>trending_down</i>"
-    date: "2020-04-08"
+    date: ""
     datatype: '<i class="material-icons">widgets</i>'
     topics: "Regular Expressions"
     reading: "read/strings-regex"
-    watch: "read/strings-regex"  
-    
+
   - module: "<i class='material-icons'>trending_down</i>"
-    date: "2020-04-13"
+    date: ""
     datatype: '<i class="material-icons">widgets</i>'
     topics: "Data rectangling"
-    reading: "read/purrr-2"
-    watch: "read/purrr-2"
+    reading: "read/purrr-1"
+
+  - module: "<i class='material-icons'>trending_down</i>"
+    date: ""
+    datatype: '<i class="material-icons">widgets</i>'
+    topics: "Functional Programming"
+    reading: ""
+
+  - module: " <i class='material-icons'>trending_down</i>"
+    date: ""
+    datatype: '<i class="material-icons">widgets</i>'
+    topics: "Module wrap-up"
+
+  
   - module: " "
-    date: " "
+    date: ""
     topics: "<b>FINAL PROJECTS</b>"
     
 #  - module: "<i class='material-icons'>nature_people</i>" 
 #    datatype: "<i class='material-icons'>share</i>"
-#    date: "2020-11-26"
 #    topics: "JSON-LD, graph queries"
+    
+  - module: "<i class='material-icons'>school</i>"
+    date: ""
+    topics: "Final Projects" 
+    
+  - module: "<i class='material-icons'>school</i>"
+    date: ""
+    topics: "Final Projects" 
 
   - module: "<i class='material-icons'>school</i>"
-    date: "2020-04-15"  
+    date: ""
+    topics: "Final Projects" 
+    
+  - module: "<i class='material-icons'>school</i>"
+    date: ""
     topics: "Final Projects"
     
   - module: "<i class='material-icons'>school</i>"
-    date: "2020-04-20"  
-    topics: "Final Projects"
+    date: ""
+    topics: "RRR week -- no attendance required" 
     
   - module: "<i class='material-icons'>school</i>"
-    date: "2020-04-22"  
-    topics: "Final Projects" 
-    
-  - module: "<i class='material-icons'>school</i>"
-    date: "2020-05-27"  
-    topics: "Final Projects" 
-    
-  - module: "<i class='material-icons'>school</i>"
-    date: "2020-05-29"  
-    topics: "Final Projects" 
+    date: ""
+    topics: "RRR week -- no attendance required"
 
+  - module: "<i class='material-icons'>school</i>"
+    date: ""
+    topics: "Final Projects DUE "
     
+        
+    
+
 #  - module: "<i class='material-icons'>nature_people</i>"
 #    datatype: "<i class='material-icons'>share</i>"
 #    date: ""

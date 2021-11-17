@@ -28,6 +28,10 @@
   </url>
   
   <url>
+    <loc>/livecode/2018-09-07-class-notes/</loc>
+  </url>
+  
+  <url>
     <loc>/archives/</loc>
   </url>
   
@@ -56,7 +60,7 @@
   </url>
   
   <url>
-    <loc>/old_index/</loc>
+    <loc>/livecode/2019-11-01-extinction-api-intro/</loc>
   </url>
   
   <url>
@@ -112,11 +116,11 @@
   </url>
   
   <url>
-    <loc>/read/purrr-1/</loc>
+    <loc>/livecode/spatial-tidy/</loc>
   </url>
   
   <url>
-    <loc>/read/purrr-2/</loc>
+    <loc>/read/purrr-1/</loc>
   </url>
   
   <url>
@@ -133,10 +137,6 @@
   
   <url>
     <loc>/modules/</loc>
-  </url>
-  
-  <url>
-    <loc>/livecode/popdyn-examples/</loc>
   </url>
   
   <url>
@@ -192,6 +192,10 @@
   </url>
   
   <url>
+    <loc>/team-building/</loc>
+  </url>
+  
+  <url>
     <loc>/tools/</loc>
   </url>
   
@@ -209,6 +213,10 @@
   
   <url>
     <loc>/read/workflows/</loc>
+  </url>
+  
+  <url>
+    <loc>/livecode/2018-10-08-functions/</loc>
   </url>
   
   <url>

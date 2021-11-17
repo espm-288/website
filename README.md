@@ -1,24 +1,22 @@
-# espm-288
+# website
 
-Source Code for <https://espm-288.carlboettiger.info>.  
+The course website is automatically generated using the [blogdown](https://github.com/rstudio/blogdown) R package:
 
+```r
+blogdown::serve_site()
+```
 
 ## Overview
 
-This site is built using the R package [blogdown](https://github.com/yihui/blogdown),
-which itself is based around the popular static site generator [Hugo](https://gohugo.io).
-As in any Hugo site, content sources are all found in `contents/` directory, which
-can be either Markdown (`.md`) or R-markdown (`.Rmd`).  
+`blogdown` sites use the popular static site generator [Hugo](https://gohugo.io),
+which dictates the organizational structure of this repository.  
+Markdown (and/or `.Rmd`) source files for the pages can be found in `content/`.  
 
 Rendered site files are found in `docs/` and hosted using [Netlify](https://www.netlify.com)
-at <https://espm-288.carlboettiger.info>.
+at <https://espm-157.carlboettiger.info>.
 
 This site is built using [Material Kit](https://github.com/creativetimofficial/material-kit)
 which implements Google's Material Design using [Bootstrap](https://getbootstrap.com) CSS.
-
-## Background image
-
-Methane bubbles trapped in the frozen lake. _NOAA image, public domain_. <https://www.climate.gov/sites/default/files/MethaneBubblesFrozenAbrahamLake_large.jpg> 
 
 ## License
 
