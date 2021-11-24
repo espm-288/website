@@ -10,10 +10,8 @@ markup: "mmark"
  <span></span>     | <span></span>
 -----------|-------------------------------------------------------------------
 Instructor | [Carl Boettiger](http://carlboettiger.info) <a href="mailto:cboettig@berkeley.edu" title="email"><i class="fa fa-envelope"></i></a><a href="https://twitter.com/cboettig" title="Twitter"> <i class="fa fa-twitter"></i></a> <a href="https://github.com/cboettig" title="GitHub"><i class="fa fa-github"></i></a> |  
-GSI        | TBD <a href="" title="email"><i class="fa fa-envelope"></i></a> <a href="https://github.com/tbd" title="GitHub"><i class="fa fa-github"></i></a> |  
-Location   |  TBD                               |   
-Times      | **TBD**     |  
-CCN        |                                     |  
+Location   |  122 Social Sciences Building      |   
+Times      | **M/W 10:10a - 12:00p**              |  
 
 
 
