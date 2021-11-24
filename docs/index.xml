@@ -5,12 +5,7 @@
     <link>/</link>
     <description>Recent content in ESPM 288: Reproducible and Collaborative Data Science on ESPM 288</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 19 Apr 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
       <link>/syllabus/</link>
@@ -398,7 +393,7 @@ Reading  Read the opening sections of chapter 13 on Strings and working with Reg
       
       <guid>/team-building/</guid>
       <description>Team-building questions, as a spectrum   Dogs or Cats (https://www.williamrchase.com/post/is-hadley-wickham-a-cat-or-dog-person-a-twitter-tidytext-analysis/)
-  Do you prefer to learn from &amp;ldquo;official documentation&amp;rdquo;&amp;rdquo; or go right to some examples?
+  Do you prefer to learn from &amp;ldquo;official documentation&amp;rdquo;&amp;quot; or go right to some examples?
   Expertise in programming or domain knowledge?
   </description>
     </item>
