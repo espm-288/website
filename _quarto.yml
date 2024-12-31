@@ -1,0 +1,101 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - "*.qmd"
+    - "*.ipynb"
+    - "*.md"
+    - "!drafts/"
+  resources: static
+execute:
+  freeze: auto
+
+website:
+  repo-url: https://github.com/espm-288/website
+  repo-actions: [edit, issue]
+  page-navigation: true
+  navbar:
+    background: primary
+    foreground: white
+    search: true
+    right:
+      - file: index.qmd
+        icon: house
+        text: Home
+      - text: Platforms
+        icon: pc-display-horizontal
+        menu:
+        - text: Codespaces
+          icon: github
+          href: https://codespaces.new/espm-288/website?quickstart=1
+        - text: GitPod
+          icon: app
+          href: https://gitpod.io/#https://github.com/espm-288/website
+        - text: Containers
+          icon: box
+          href: https://github.com/orgs/boettiger-lab/packages?repo_name=espm-288
+      - text: Data Catalog
+        icon: book
+        href: https://radiantearth.github.io/stac-browser/#/external/raw.githubusercontent.com/schmidtDSE/biodiversity-catalog/main/stac/v1/catalog.json?.language=en
+      - icon: github
+        href: https://github.com/espm-288
+  sidebar:
+    style: floating
+    contents:
+      - file: index.qmd
+        icon: house
+        text: Home
+      - text: "---"
+      - section: 'Tutorials in R'
+        icon: mortarboard-fill
+        contents:
+          - auto: "tutorials/R/*"
+      - text: "---"
+      - section: 'Tutorials in Python'
+        icon: mortarboard-fill
+        contents:
+          - auto: "tutorials/python/*"
+      - text: "---"
+      - section: Recipes
+      - text: "---"
+      - section: Platforms
+        icon: pc-display-horizontal
+        contents:
+        - href: tutorials/computing-environment.qmd
+        - text: Codespaces
+          icon: github
+          href: https://codespaces.new/espm-288/website?quickstart=1
+        - text: GitPod
+          icon: app
+          href: https://gitpod.io/#https://github.com/espm-288/website
+        - text: Containers
+          icon: box
+          href: https://github.com/orgs/espm-288/packages
+      - text: Data Catalog
+        icon: book
+        href: https://radiantearth.github.io/stac-browser/#/external/raw.githubusercontent.com/schmidtDSE/biodiversity-catalog/main/stac/v1/catalog.json?.language=en
+      - icon: github
+        href: https://github.com/espm-288 
+  page-footer:
+    right: 
+      - icon: github
+        href: https://github.com/espm-288/website
+      - icon: globe-americas 
+        href: https://carlboettiger.info  
+
+
+format:
+  html:
+    page-layout: article # change to full for narrower layout, see https://quarto.org/docs/output-formats/page-layout.html
+    css:
+      - assets/css/nucleo-icons.css
+      - assets/css/quarto-material-kit.css
+      - assets/css/custom.css
+    include-after-body: [assets/html/footer.html]
+    title-block-banner: assets/img/methane_bubbles.jpg
+    title-block-mask: '<span class="mask bg-gradient-light opacity-2"></span>'
+    template: assets/partials/html.template
+    grid:
+      body-width: 1800px
+      margin-width: 300px
+      gutter-width: 1.5rem
