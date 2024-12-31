@@ -1,0 +1,11 @@
+{
+	  "image": "ghcr.io/espm-288/website:latest",
+	  "runArgs": [ "--security-opt", "seccomp=unconfined" ],
+	  "name": "ESPM-288 Environment",
+	  //"build": {
+	  //	"dockerfile": "Dockerfile"
+	  //},
+	  //"waitFor": "onCreateCommand",
+	  //"postCreateCommand": "bash .devcontainer/setup.sh",
+	  //"postAttachCommand": "sudo rstudio-server start &> /dev/null && bash .devcontainer/welcome.sh"
+}
