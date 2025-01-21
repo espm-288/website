@@ -15,8 +15,7 @@ website:
   repo-actions: [edit, issue]
   page-navigation: true
   navbar:
-    background: primary
-    foreground: white
+    background: "#333333"
     search: true
     right:
       - file: index.qmd
@@ -34,9 +33,9 @@ website:
         - text: Containers
           icon: box
           href: https://github.com/orgs/boettiger-lab/packages?repo_name=espm-288
-      - text: Data Catalog
-        icon: book
-        href: https://radiantearth.github.io/stac-browser/#/external/raw.githubusercontent.com/schmidtDSE/biodiversity-catalog/main/stac/v1/catalog.json?.language=en
+      - text: Forum
+        icon: chat
+        href: https://espm-288.zulipchat.com
       - icon: github
         href: https://github.com/espm-288
   sidebar:
@@ -56,8 +55,6 @@ website:
         contents:
           - auto: "tutorials/python/*"
       - text: "---"
-      - section: Recipes
-      - text: "---"
       - section: Platforms
         icon: pc-display-horizontal
         contents:
@@ -71,9 +68,9 @@ website:
         - text: Containers
           icon: box
           href: https://github.com/orgs/espm-288/packages
-      - text: Data Catalog
-        icon: book
-        href: https://radiantearth.github.io/stac-browser/#/external/raw.githubusercontent.com/schmidtDSE/biodiversity-catalog/main/stac/v1/catalog.json?.language=en
+      - text: Forum
+        icon: chat
+        href: https://espm-288.zulipchat.com
       - icon: github
         href: https://github.com/espm-288 
   page-footer:
