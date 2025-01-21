@@ -4,5 +4,5 @@
 *.zip
 *.xlsx
 blogdown
-
+.ipynb_checkpoints
 /.quarto/
