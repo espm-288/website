@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><meta charset="utf-8">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../2025/tutorials/python/06-ibis-2.html" rel="next">
+<link href="../../../2025/tutorials/python/04b-gh-actions.html" rel="prev">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Computing Environments</title>
+  <title>ibis Single Table Verbs</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -66,9 +68,9 @@
     pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
     }
   </style>
-  <link rel="stylesheet" href="../assets/css/nucleo-icons.css">
-  <link rel="stylesheet" href="../assets/css/quarto-material-kit.css">
-  <link rel="stylesheet" href="../assets/css/custom.css">
+  <link rel="stylesheet" href="../../../assets/css/nucleo-icons.css">
+  <link rel="stylesheet" href="../../../assets/css/quarto-material-kit.css">
+  <link rel="stylesheet" href="../../../assets/css/custom.css">
   <script id="quarto-search-options" type="application/json">{
     "location": "navbar",
     "copy-button": false,
@@ -92,10 +94,13 @@
   <style>
 
         .quarto-title-block .quarto-title-banner {
-          background-image: url(../assets/img/methane_bubbles.jpg);
+          background-image: url(../../../assets/img/methane_bubbles.jpg);
   background-size: cover;
         }
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -115,7 +120,7 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../index.html" rel="" target="" aria-current="page"><i class="bi bi-house" role="img">
+    <a class="nav-link active" href="../../../index.html" rel="" target="" aria-current="page"><i class="bi bi-house" role="img">
 </i> 
  <span class="menu-text">Home</span></a>
   </li>  
@@ -164,7 +169,7 @@
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/computing-environment.html">Platforms</a></li><li class="breadcrumb-item"><a href="../tutorials/computing-environment.html">Computing Environments</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../2025/index.html">📁 2025 Archive</a></li><li class="breadcrumb-item"><a href="../../../2025/tutorials/python/00-preface.html">Tutorials in Python</a></li><li class="breadcrumb-item"><a href="../../../2025/tutorials/python/05-ibis-1.html"><code>ibis</code> Single Table Verbs</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -172,12 +177,12 @@
 </header>
 <!-- content -->
 <header id="title-block-header" class="bg-gradient-dark">
-<div class="page-header min-vh-85" style="background-image: url(../assets/img/methane_bubbles.jpg);">
+<div class="page-header min-vh-85" style="background-image: url(../../../assets/img/methane_bubbles.jpg);">
 <span class="mask bg-gradient-dark opacity-3"></span>
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-lg-8 text-center mx-auto my-auto">
-<h1 class="text-white">Computing Environments</h1>
+<h1 class="text-white"><code>ibis</code> Single Table Verbs</h1>
 <p class="lead mb-4 text-white opacity-8"></p>
 </div>
 </div>
@@ -189,7 +194,7 @@
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-house" role="img">
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-house" role="img">
 </i> 
  <span class="menu-text">Home</span></a>
   </div>
@@ -207,7 +212,7 @@
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../2026/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2026/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -222,7 +227,7 @@
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../2026/tabular-data/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2026/tabular-data/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -239,7 +244,7 @@
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../2026/local-llms/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2026/local-llms/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -256,7 +261,7 @@
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../2026/spatial-data/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2026/spatial-data/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -273,7 +278,7 @@
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../2026/cloud-compute/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2026/cloud-compute/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -294,7 +299,7 @@
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../2025/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -309,13 +314,13 @@
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../2025/tutorials/R/1-intro-R.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/R/1-intro-R.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../2025/tutorials/R/2-earthdata.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/R/2-earthdata.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">NASA EarthData</span></a>
   </div>
 </li>
@@ -323,100 +328,100 @@
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
  <span class="menu-text">Tutorials in Python</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../2025/tutorials/python/00-preface.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/00-preface.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../2025/tutorials/python/01-github-jupyter.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/01-github-jupyter.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Intro to GitHub &amp; JupyterHub</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../2025/tutorials/python/02-visualization-basics.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/02-visualization-basics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualization Basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../2025/tutorials/python/03-data-access.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/03-data-access.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Accessing Real World Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../2025/tutorials/python/04-transform.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/04-transform.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Transforming Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../2025/tutorials/python/04b-gh-actions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/04b-gh-actions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GitHub Actions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../2025/tutorials/python/05-ibis-1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/05-ibis-1.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><code>ibis</code> Single Table Verbs</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../2025/tutorials/python/06-ibis-2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/06-ibis-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><code>ibis</code> Table Joins</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../2025/tutorials/python/06-ibis-3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/06-ibis-3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><code>ibis</code> mutates and aggregates</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../2025/tutorials/python/07-ibis-4.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/07-ibis-4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><code>ibis</code> + <code>seaborn.objects</code>: Data Exploration</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../2025/tutorials/python/spatial-1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/spatial-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Intro to Spatial Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../2025/tutorials/python/spatial-2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/spatial-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Mapping 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../2025/tutorials/python/spatial-3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/spatial-3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Processing Satellite Imagery</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../2025/tutorials/python/spatial-4.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/spatial-4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Zonal Statistics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../2025/tutorials/python/spatial-5.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/spatial-5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Mapping and publishing</span></a>
   </div>
 </li>
@@ -437,7 +442,7 @@
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/computing-environment.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../tutorials/computing-environment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Computing Environments</span></a>
   </div>
 </li>
@@ -490,42 +495,383 @@
 <div class="container">
 <div class="row">
 <div class="col-12 mx-auto">
-<section id="portable-reproducibility" class="level2">
-<h2 class="anchored" data-anchor-id="portable-reproducibility">Portable Reproducibility</h2>
-<p>Good reproducibility is like an onion – it comes in many layers. There’s a purpose to containerized environments deployed on cloud-hosted virtual machines. And we believe students should be able to leverage those things, easily and rapidly deploying cloud-hosted images, and will get to that here. But most of the time, we just want to copy-paste a few lines of code and expect it to work. Many layers of the onion can be found between these two extremes – from package dependencies and system dependencies to containers, orchestration, metadata, even hardware requirements.</p>
-<p>In the examples here, copy-pasting the code blocks into your preferred environment should work in most cases. Sometimes it may be necessary to install specific libraries or specific versions of those libraries. And for fastest setup and maximum reproducibility, users can deploy the fully containerized environment. It should be as easy as possible to grab the whole onion and take it where you want it – be that a local VSCode editor on your laptop, or an RStudio Server instance running up on Microsoft Azure cloud.</p>
+<p>We will be focusing on how to use the <code>ibis</code> package, a successor to the popular <code>pandas</code> package, for manipulating tabular data. We begin by importing the <code>ibis</code> package. (We include two additional imports from the package which are commonly referred to using their short names, the table placeholder <code>_</code> instead of <code>ibis._</code>, and the selectors methods as <code>s</code> instead of the verbose <code>ibis.selectors</code>. We will see these in action later).</p>
+<section id="learning-goals" class="level3">
+<h3 class="anchored" data-anchor-id="learning-goals">Learning Goals</h3>
+<ul>
+<li>establish a connection with <code>duckdb.connect()</code></li>
+<li>use <code>head()</code> and <code>excute()</code> to preview large data</li>
+<li>use <code>select()</code>, <code>distinct()</code>, <code>filter()</code> to explore data.</li>
+</ul>
 </section>
-<section id="notebooks-on-github" class="level2">
-<h2 class="anchored" data-anchor-id="notebooks-on-github">Notebooks on GitHub</h2>
-<p>Each of the recipes on this site correspond to a Quarto or Jupyter notebook in a GitHub repository (see <code>contents/</code> directory or footer links). Such notebooks form the basis of technical documentation and publishing to a wide array of formats. A <code>_quarto.yml</code> configuration file in the repository root determines the <a href="https://quarto.org/docs/websites/">website layout</a>. Notebooks can be run interactively in any appropriate environment (RStudio, JupyterLab, VSCode, etc, see below for free online platforms). Type <code>quarto render</code> from the bash command line or use <code>quarto::quarto_preview()</code> from the R console to preview the entire site.</p>
+<section id="getting-started" class="level3">
+<h3 class="anchored" data-anchor-id="getting-started">Getting started</h3>
+<p>To use <code>ibis</code>, we must also select a backend. We will always be using the quite new and very powerful <code>duckdb</code> backend for all of our tasks. We select a backend by creating a “connection”. The details here are not important for us, we can treat this first block as “boilerplate” starting code.</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ibis</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ibis <span class="im">import</span> _</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ibis.selectors <span class="im">as</span> s</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>con <span class="op">=</span> ibis.duckdb.<span class="ex">connect</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We are now ready to read in our data. We will begin by reading the metrics table from the direct access link, as indicated in the URL below. <code>con.read_csv()</code> is quite similar to the <code>pandas.read_csv()</code> we saw in module 1, though the optional arguments get some different names and are not quite as flexibile. One important option for our purposes will be the how to indicate missing values. In the past, we’ve seen negative values like <code>-99</code> be used to indicate missing values. That convention reflects limitations of early software, which had no natural concept of “missing”. More modern conventions indicating missing values as “NULL” or “NA”. We indicate the data has chosen the latter:</p>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>metrics_url <span class="op">=</span> <span class="st">"https://huggingface.co/datasets/cboettig/ram_fisheries/resolve/main/v4.65/tsmetrics.csv"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>tsmetrics <span class="op">=</span> con.read_csv(metrics_url, nullstr<span class="op">=</span><span class="st">"NA"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="a-portable-compute-environment" class="level2">
-<h2 class="anchored" data-anchor-id="a-portable-compute-environment">A Portable compute environment</h2>
+<section id="previewing-data-head-and-execute" class="level3">
+<h3 class="anchored" data-anchor-id="previewing-data-head-and-execute">Previewing data: <code>head()</code> and <code>execute()</code></h3>
+<p>Let’s take a look at our new table:</p>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tsmetrics</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">DatabaseTable: ibis_read_csv_lnkh36a47bbdhi4vbfj7tetgry
+  tscategory   string
+  tsshort      string
+  tslong       string
+  tsunitsshort string
+  tsunitslong  string
+  tsunique     string
+</pre>
+</div>
+</div>
+<p>This doesn’t look like a pretty pandas table! Where are the values? Actually, as we become more familiar with <code>ibis</code> we learn to appreciate the display choice here. <code>ibis</code> is designed for working with very big data. An important part of this is something called <em>lazy evaluation</em>. Even downloading a very large fle might take a long time, and trying to load a large dataset into python all at once can exceed available RAM and crash the kernel. Instead, <code>ibis</code> merely “peeks” at the data over the remote connection – without even downloading it! It tells us the names of each column and the data type (e.g.&nbsp;string, or numeric, etc) that the read_csv method has ‘guessed’ for the data. As we will see, this is often the most useful information anway.</p>
+<p>If we we do want to see a few example rows, we can use the method <code>head()</code> on the table, <code>tsmetrics.head()</code>, to say we want only want to see the top of the data frame. Optionally we can specify how many rows we want to preview, e.g.&nbsp;<code>tsmetrics.head(10)</code> to see 10 (the default is 5). Let’s try it:</p>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>tsmetrics.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">r0 := DatabaseTable: ibis_read_csv_lnkh36a47bbdhi4vbfj7tetgry
+  tscategory   string
+  tsshort      string
+  tslong       string
+  tsunitsshort string
+  tsunitslong  string
+  tsunique     string
+
+Limit[r0, n=5]
+</pre>
+</div>
+</div>
+<p>That’s not the top of 5 rows! Once again, <code>ibis</code> is being lazy. We see the same definition of the table as before, only this time it has a name <code>r0</code>, and we see a “plan of execution”, that ibis will return the first 5 rows <code>Limit[r0, 5]</code>. We can force it to execute this plan with <code>execute()</code> :</p>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tsmetrics.head().execute()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">tscategory</th>
+<th data-quarto-table-cell-role="th">tsshort</th>
+<th data-quarto-table-cell-role="th">tslong</th>
+<th data-quarto-table-cell-role="th">tsunitsshort</th>
+<th data-quarto-table-cell-role="th">tsunitslong</th>
+<th data-quarto-table-cell-role="th">tsunique</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>OTHER TIME SERIES DATA</td>
+<td>AQ</td>
+<td>Aquaculture</td>
+<td>MT</td>
+<td>metric tons</td>
+<td>AQ-MT</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>OTHER TIME SERIES DATA</td>
+<td>ASP</td>
+<td>Annual surplus production</td>
+<td>MT</td>
+<td>Metric tons</td>
+<td>ASP-MT</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>TOTAL BIOMASS</td>
+<td>BdivBmgtpref</td>
+<td>General biomass time series preferentially rel...</td>
+<td>dimensionless</td>
+<td>dimensionless</td>
+<td>BdivBmgtpref-dimensionless</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>TOTAL BIOMASS</td>
+<td>BdivBmgttouse</td>
+<td>General biomass time series relative to manage...</td>
+<td>dimensionless</td>
+<td>dimensionless</td>
+<td>BdivBmgttouse-dimensionless</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>TOTAL BIOMASS</td>
+<td>BdivBmsypref</td>
+<td>General biomass time series preferentially rel...</td>
+<td>dimensionless</td>
+<td>dimensionless</td>
+<td>BdivBmsypref-dimensionless</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>At last, we are starting to see what the data really looks like. Data tables can quickly become much to large to explore by simply trying to eyeball every row. For instance, we notice the first column, <code>tscategory</code>, shows a few different possible categories for the various metrics in the database. So, how many distinct categories are there?</p>
 </section>
-<section id="on-the-cloud-gitpod-or-codespaces" class="level2">
-<h2 class="anchored" data-anchor-id="on-the-cloud-gitpod-or-codespaces">On the cloud: Gitpod or Codespaces</h2>
-<p><a href="https://gitpod.io/#https://github.com/boettiger-lab/nasa-topst-env-justice"><img src="https://gitpod.io/button/open-in-gitpod.svg" class="img-fluid" alt="Open in Gitpod"></a> <a href="https://codespaces.new/espm-157/nasa-topst-env-justice?quickstart=1"><img src="https://github.com/codespaces/badge.svg" class="img-fluid" alt="Open in GitHub Codespaces"></a></p>
-<p>Both <a href="https://github.com/codespaces">GitHub Codespaces</a> and <a href="https://gitpod.io/about">Gitpod</a> provide a fast and simple way to enter into integrated development environments such as VSCode, RStudio, or JupyterLab on free, cloud-based virtual machines. Codespaces has a free tier of 60 hours/month, Gitpod of 50 hours a month, both offer paid plans for additional use and larger compute instances. Small codespace instances are also <a href="https://docs.github.com/en/education/manage-coursework-with-github-classroom/integrate-github-classroom-with-an-ide/using-github-codespaces-with-github-classroom">free to instructors</a></p>
-<p>By clicking on one of the buttons in GitHub, users will be placed into a free cloud-based virtual machine running a VSCode editor in their web browser. The first setup can take a few minutes to complete.</p>
-<p>Additionally, this also provides access to an RStudio environment on an embedded port for users who prefer that editor to VSCode. Once the Codespace has fully completed loading, it will include a link in a second welcome message in the Terminal to access RStudio like so:</p>
-<p><img align="right" src="img/vscode-welcome.png" width="500"></p>
-<p>The RStudio link can also always be accessed from the Ports tab under the port labeled “Rstudio” (8787). (Gitpod will show a pop-up message to open this port instead.)</p>
-<p>Both Codespaces and Gitpod can be configured with custom compute environments by supplying a docker image. Both the VSCode and RStudio editors run in the same underlying custom Docker container. This repository includes a Dockerfile defining this compute environment which includes specific versions of R and python packages, the latest releases of the OSGeo C libraries GDAL, PROJ, and GEOS that power many spatial operations in both languages. These elements are pre-compiled in a Docker container based on the latest Ubuntu LTS release (22.04 at the time of writing), which itself is build according to the <a href="https://github.com/boettiger-lab/nasa-topst-env-justice/blob/main/.devcontainer/Dockerfile">Dockerfile</a> found in this repository using <a href="https://github.com/boettiger-lab/nasa-topst-env-justice/actions/workflows/docker-image.yml">a GitHub Action</a>. The <a href="https://github.com/boettiger-lab/nasa-topst-env-justice/blob/main/.devcontainer/devcontainer.json">devcontainer.json configuration</a> will also set up relevant VSCode extensions for both both Jupyter and Quarto notebooks, with each supporting both R and Python.</p>
+<section id="select-and-distinct" class="level3">
+<h3 class="anchored" data-anchor-id="select-and-distinct"><code>select()</code> and <code>distinct()</code></h3>
+<p>To answer this, we will introduce a few more methods of data table manipulation. <code>select()</code> selects one or more <em>columns</em> of a given table, while <code>distinct()</code> returns only distinct (unique) rows of the table. Note that both of these methods share a common pattern – they both apply to a table (not some piece of a table, like a row or column or cell), and they both return a new table as well that is some subset of the old table. table in, table out. This design is very intentional – by having methods designed specificially to operate on tables and return tables, we can easily stack or chain these together, (also true of <code>head()</code> and execute()`. So let’s try and see distinct categories:</p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>(tsmetrics</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a> .select(<span class="st">"tscategory"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a> .distinct()</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a> .head(<span class="dv">10</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a> .execute()</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">tscategory</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>OTHER TIME SERIES DATA</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>SPAWNING STOCK BIOMASS or CPUE</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>PRODUCTION</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>TOTAL BIOMASS</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>RECRUITS (NOTE: RECRUITS ARE OFFSET IN TIME SE...</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>TIME UNITS</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>CATCH or LANDINGS</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>FISHING MORTALITY</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>Note that we have stacked these methods together with each step on it’s own line by wrapping the whole thing inside <code>()</code> parentheses. This can make a long “chain” of commands easier to read. While we have asked for no more that 10 values, we have gotten back only 8 – so we now know there are only 8 categories.</p>
 </section>
-<section id="locally-vscode" class="level2">
-<h2 class="anchored" data-anchor-id="locally-vscode">Locally: VSCode</h2>
-<p>Open this repository in a local <a href="https://code.visualstudio.com/">Visual Studio Code editor</a> on a Mac, Linux, or Windows laptop and you will probably be prompted “Do you want to open this in project in a Dev Container?” If you agree, VSCode will attempt to use a local Docker installation to pull a container with much of the required software already installed. This uses the same Docker container and enables all the same extensions in VSCode, including RStudio server on the embedded port.</p>
-<p>Of course, users can open this project in a local VSCode or any other favorite editor without opening in the devcontainer. The user assumes responsibility to install necessary software, i.e.&nbsp;the packages listed in <code>requirements.txt</code> or <code>install.R</code>. Note that doing so does not ensure that the same version of system libraries like GDAL, PROJ, or GEOS will necessarily be used. For most operations this should not matter, but users on older versions of GDAL may encounter worse performance or other difficulties.</p>
+<section id="filter" class="level3">
+<h3 class="anchored" data-anchor-id="filter"><code>filter()</code></h3>
+<p>What are the different unit types within, say, the “CATCH or LANDINGS” category? This requires a subset of <em>rows</em> (a <em>filter</em>), rather than a subset of columns (<code>select()</code>):</p>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>(tsmetrics</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a> .<span class="bu">filter</span>(_.tscategory <span class="op">==</span> <span class="st">"CATCH or LANDINGS"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a> .distinct()</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a> .head(<span class="dv">14</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a> .execute()</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">tscategory</th>
+<th data-quarto-table-cell-role="th">tsshort</th>
+<th data-quarto-table-cell-role="th">tslong</th>
+<th data-quarto-table-cell-role="th">tsunitsshort</th>
+<th data-quarto-table-cell-role="th">tsunitslong</th>
+<th data-quarto-table-cell-role="th">tsunique</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>CATCH or LANDINGS</td>
+<td>CdivMSY-conv</td>
+<td>Catch divided by MSY calculated from converted...</td>
+<td>ratio</td>
+<td>ratio</td>
+<td>CdivMSY-conv-ratio</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>CATCH or LANDINGS</td>
+<td>CdivMSY</td>
+<td>Catch divided by MSY</td>
+<td>ratio</td>
+<td>ratio</td>
+<td>CdivMSY-ratio</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>CATCH or LANDINGS</td>
+<td>TAC-A2</td>
+<td>Total allowable catch In subarea</td>
+<td>MT</td>
+<td>Metric tons</td>
+<td>TAC-A2-MT</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>CATCH or LANDINGS</td>
+<td>TC-3</td>
+<td>Total catch. Use only when there is more than ...</td>
+<td>E03</td>
+<td>Thousands</td>
+<td>TC-3-E03</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>CATCH or LANDINGS</td>
+<td>TL-1</td>
+<td>Total landings. Use only when there is more th...</td>
+<td>E03MT</td>
+<td>Thousands of metric tons</td>
+<td>TL-1-E03MT</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>CATCH or LANDINGS</td>
+<td>TL-A1</td>
+<td>Total landings in subarea</td>
+<td>MT</td>
+<td>Metric tons</td>
+<td>TL-A1-MT</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>CATCH or LANDINGS</td>
+<td>TL-A3</td>
+<td>Total landings in subarea</td>
+<td>MT</td>
+<td>Metric tons</td>
+<td>TL-A3-MT</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>CATCH or LANDINGS</td>
+<td>CdivMSY-est</td>
+<td>Catch divided by MSY calculated from model-est...</td>
+<td>ratio</td>
+<td>ratio</td>
+<td>CdivMSY-est-ratio</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>CATCH or LANDINGS</td>
+<td>TAC</td>
+<td>Total allowable catch</td>
+<td>MT</td>
+<td>Metric tons</td>
+<td>TAC-MT</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>CATCH or LANDINGS</td>
+<td>TC-2</td>
+<td>Total catch (i.e. landings + discards. Add lan...</td>
+<td>MT</td>
+<td>Metric tons</td>
+<td>TC-2-MT</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">10</td>
+<td>CATCH or LANDINGS</td>
+<td>TC</td>
+<td>Total catch (i.e. landings + discards. Add lan...</td>
+<td>E06</td>
+<td>Millions</td>
+<td>TC-E06</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">11</td>
+<td>CATCH or LANDINGS</td>
+<td>TL-2</td>
+<td>Total landings. Use only when there is more th...</td>
+<td>MT</td>
+<td>Metric tons</td>
+<td>TL-2-MT</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">12</td>
+<td>CATCH or LANDINGS</td>
+<td>TL-A4</td>
+<td>Total landings in subarea</td>
+<td>MT</td>
+<td>Metric tons</td>
+<td>TL-A4-MT</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">13</td>
+<td>CATCH or LANDINGS</td>
+<td>CdivMSY-dvmb</td>
+<td>Catch divided by MSY calculated from reference...</td>
+<td>ratio</td>
+<td>ratio</td>
+<td>CdivMSY-dvmb-ratio</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>This syntax to subset rows (filter) is more complicated than columns (select) – to find rows containing “CATCH or LANDINGS” we have to indicate <em>which</em> column to look for.</p>
+<section id="column-selection-and-." class="level4">
+<h4 class="anchored" data-anchor-id="column-selection-and-.">column selection and <code>.</code></h4>
+<p>For python to know that we are looking for the column called “tscategory”, we use the column selection <code>_.tscategory</code>. This is actually a shorthand for the pattern <code>tsmetrics.tscategory</code> – the <code>_</code> is a placeholder for “the current table” in our chain. Extracting a single column with <code>.</code> is itself something of a shorthand, it is equivalent to using the selector <code>[</code>, as <code>tsmetrics["category"]</code>. When a column name is also the name of a table method, we may need to fall back on the square bracket convention. So why use a dot at all? In addition to taking two less characters to write, the <code>.</code> method allows “tab completion” of the column name, which helps us avoid typos. Note that our <code>select()</code> method recognizes either syntax, you can do: <code>tsmetrics.select(_.tscategory)</code>. This looks slightly more cryptic, but benefits from autocomplete and matches the sytnax of other functions.</p>
 </section>
-<section id="anywhere-docker" class="level2">
-<h2 class="anchored" data-anchor-id="anywhere-docker">Anywhere: Docker</h2>
-<p>We can sidesteps elements specific to the VSCode editor defined in the <a href="https://github.com/boettiger-lab/nasa-topst-env-justice/blob/main/.devcontainer/devcontainer.json"><code>devcontainer.json</code> configuration</a> while still leveraging the same system libraries and pre-built packages. For example, a user could also choose to run (or extend) the underlying docker container independently, e.g.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">--rm</span> <span class="at">-ti</span> ghcr.io/boettiger-lab/nasa-tops:latest bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>which opens a bash terminal inside the container. This approach is also compatible with most HPC setups using <a href="https://rocker-project.org/use/singularity.html">singularity</a> instead of docker.</p>
-<p>Some users may not be familiar with editing and running code entirely from a bash shell, so the container also includes RStudio server and thus can be run to launch RStudio in an open port instead,</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-d</span> <span class="at">-p</span> 8787:8787 <span class="at">--user</span> root <span class="at">-e</span> DISABLE_AUTH=true <span class="dt">\</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  ghcr.io/boettiger-lab/nasa-tops:latest</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>and visit <code>http://localhost:8787</code> to connect.</p>
+<section id="not" class="level4">
+<h4 class="anchored" data-anchor-id="not"><code>==</code> not <code>=</code></h4>
+<p>Another common mistake is to use a single <code>=</code> sign rather than <code>==</code> in filter. Recall that <code>=</code> is used in variable assignment, <code>a = 1</code> sets the value of <code>a</code> as 1. Double-equals is a “boolean operator”, that tests if the statement is True or False:</p>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">==</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>True</code></pre>
+</div>
+</div>
+<p>Other boolean operators include <code>&gt;</code>, <code>&gt;=</code>, <code>!=</code> (not equal) and so forth. The important thing is to know that we can do boolean comparisons, this syntax is easy to look up.</p>
+</section>
+</section>
+<section id="next-steps" class="level3">
+<h3 class="anchored" data-anchor-id="next-steps">Next steps</h3>
+<p>Explore the datasets in this collection using <code>select()</code>, <code>distinct()</code> and <code>filter()</code>. We will return to this list of Catch units after we become more aquainted with the remaining tables.</p>
+<p>This syntax is harder than <code>select()</code> – we can’t just filter for “CATCH or LANDINGS” without indicating which column we are looking in. To signal that <code>tscategory</code> is a column name and not just a piece of text, we use the subsetting notation, <code>_.tscategory</code>. This is merely a shorthand for the more verbose:</p>
 
 
 </section>
@@ -536,7 +882,7 @@
 </div>
 
 </main> <!-- /main -->
-<script src="../assets/js/material-kit.js"></script>
+<script src="../../../assets/js/material-kit.js"></script>
 <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -771,6 +1117,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../../2025/tutorials/python/04b-gh-actions.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">GitHub Actions</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../../2025/tutorials/python/06-ibis-2.html" class="pagination-link">
+        <span class="nav-page-text"><code>ibis</code> Table Joins</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -779,7 +1138,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/espm-288/website/edit/main/tutorials/computing-environment.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/espm-288/website/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
+    <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/espm-288/website/blob/main/2025/tutorials/python/05-ibis-1.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/espm-288/website/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
