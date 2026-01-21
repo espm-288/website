@@ -97,6 +97,15 @@ website:
                 icon: box
                 href: https://github.com/orgs/espm-288/packages
       - text: "---"
+      - section: '2024 Archive'
+        icon: archive
+        contents:
+          - file: 2024/index.qmd
+            text: Overview
+          - section: 'Contents'
+            contents:
+              - auto: "2024/contents/*"
+      - text: "---"
       - text: Forum
         icon: chat
         href: https://espm-288.zulipchat.com
