@@ -1,0 +1,65 @@
+---
+title: "Computing Setup (2026)"
+---
+
+This guide covers the initial setup for our 2026 computing environment, focusing on VS Code, GitHub Copilot, and R.
+
+### 1. Create a GitHub Account
+If you don't already have one, sign up at [github.com/signup](https://github.com/signup).
+
+### 2. Enable Two-Factor Authentication
+Required before applying for the Student Developer Pack.
+1. Go to [github.com/settings/security](https://github.com/settings/security)
+2. Enable two-factor authentication (2FA).
+3. Use an authenticator app (like Google Authenticator) or SMS.
+
+### 3. Add Your Name & Address to Billing
+This helps verify your identity — no payment info required.
+1. Go to [github.com/settings/billing/payment_information](https://github.com/settings/billing/payment_information)
+2. Add your name as it appears on your student ID.
+3. For address, you can use the university address:
+   `Wellman Hall, Berkeley, CA 94720`
+
+### 4. Apply for GitHub Student Developer Pack
+The Student Developer Pack gives you free access to GitHub Copilot and other tools.
+Apply at: [education.github.com/pack](https://education.github.com/pack)
+
+##### Berkeley-Specific Tips
+- **School**: Select "UC Berkeley" from the list.
+- **Email**: Use your `@berkeley.edu` address.
+- **Location**: Enable location sharing when prompted.
+- **Browser**: Use Firefox or Chrome (Safari often blocks location sharing).
+- **Student ID photo**: As long as your billing info name matches your ID, you'll be approved.
+
+### 5. Install VS Code
+Download from [code.visualstudio.com](https://code.visualstudio.com/) and install it for your operating system.
+
+### 6. Install Extensions
+
+#### GitHub Copilot
+Once your Student Developer Pack is approved:
+1. Open VS Code.
+2. Press `Ctrl+Shift+X` (Windows/Linux) or `Cmd+Shift+X` (Mac) to open Extensions.
+3. Search for "GitHub Copilot" and click **Install**.
+4. Sign in with your GitHub account when prompted.
+
+#### R Extension
+To work with R in VS Code:
+1. Search for "R" in the Extensions view (by Yuki Ueda).
+2. Click **Install**.
+3. It's also recommended to install the `languageserver` package in R:
+   ```r
+   install.packages("languageserver")
+   ```
+
+### 7. R Setup
+Ensure you have R installed on your machine. You can download it from [cran.r-project.org](https://cran.r-project.org/).
+
+### Summary Checklist
+- [ ] GitHub account created
+- [ ] 2FA enabled
+- [ ] Billing info updated
+- [ ] Student Developer Pack application submitted
+- [ ] VS Code installed
+- [ ] GitHub Copilot extension installed
+- [ ] R and R extension installed
