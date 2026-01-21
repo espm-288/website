@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><meta charset="utf-8">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../2025/tutorials/python/spatial-1.html" rel="next">
+<link href="../../../2025/tutorials/python/06-ibis-3.html" rel="prev">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>ESPM-288: Reproducible &amp; Collaborative Data Science</title>
+  <title>ibis-4</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -31,10 +33,44 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
   </style>
-  <link rel="stylesheet" href="assets/css/nucleo-icons.css">
-  <link rel="stylesheet" href="assets/css/quarto-material-kit.css">
-  <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel="stylesheet" href="../../../assets/css/nucleo-icons.css">
+  <link rel="stylesheet" href="../../../assets/css/quarto-material-kit.css">
+  <link rel="stylesheet" href="../../../assets/css/custom.css">
   <script id="quarto-search-options" type="application/json">{
     "location": "navbar",
     "copy-button": false,
@@ -65,10 +101,14 @@
   <style>
 
         .quarto-title-block .quarto-title-banner {
-          background-image: url(assets/img/methane_bubbles.jpg);
+          background-image: url(../../../assets/img/methane_bubbles.jpg);
   background-size: cover;
         }
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+  
+  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+  <script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -87,7 +127,7 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> <i class="bi bi-house" role="img">
+    <a class="nav-link active" href="../../../index.html" aria-current="page"> <i class="bi bi-house" role="img">
 </i> 
 <span class="menu-text">Home</span></a>
   </li>  
@@ -136,7 +176,7 @@
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Home</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../2025/index.html">📁 2025 Archive</a></li><li class="breadcrumb-item"><a href="../../../2025/tutorials/python/00-preface.html">Tutorials in Python</a></li><li class="breadcrumb-item"><a href="../../../2025/tutorials/python/07-ibis-4.html"><code>ibis</code> + <code>seaborn.objects</code>: Data Exploration</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -144,12 +184,12 @@
 </header>
 <!-- content -->
 <header id="title-block-header" class="bg-gradient-dark">
-<div class="page-header min-vh-85" style="background-image: url(assets/img/methane_bubbles.jpg);">
+<div class="page-header min-vh-85" style="background-image: url(../../../assets/img/methane_bubbles.jpg);">
 <span class="mask bg-gradient-dark opacity-3"></span>
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-lg-8 text-center mx-auto my-auto">
-<h1 class="text-white">ESPM-288: Reproducible &amp; Collaborative Data Science</h1>
+<h1 class="text-white"></h1>
 <p class="lead mb-4 text-white opacity-8"></p>
 </div>
 </div>
@@ -161,7 +201,7 @@
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><i class="bi bi-house" role="img">
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-house" role="img">
 </i> 
  <span class="menu-text">Home</span></a>
   </div>
@@ -179,7 +219,7 @@
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2026/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2026/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -194,7 +234,7 @@
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2026/tabular-data/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2026/tabular-data/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -211,7 +251,7 @@
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2026/local-llms/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2026/local-llms/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -228,7 +268,7 @@
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2026/spatial-data/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2026/spatial-data/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -245,7 +285,7 @@
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2026/cloud-compute/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2026/cloud-compute/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -266,7 +306,7 @@
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -281,13 +321,13 @@
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/R/1-intro-R.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/R/1-intro-R.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/R/2-earthdata.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/R/2-earthdata.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">NASA EarthData</span></a>
   </div>
 </li>
@@ -295,100 +335,100 @@
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
  <span class="menu-text">Tutorials in Python</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/00-preface.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/00-preface.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/01-github-jupyter.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/01-github-jupyter.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Intro to GitHub &amp; JupyterHub</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/02-visualization-basics.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/02-visualization-basics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualization Basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/03-data-access.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/03-data-access.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Accessing Real World Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/04-transform.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/04-transform.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Transforming Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/04b-gh-actions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/04b-gh-actions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GitHub Actions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/05-ibis-1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/05-ibis-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><code>ibis</code> Single Table Verbs</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/06-ibis-2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/06-ibis-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><code>ibis</code> Table Joins</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/06-ibis-3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/06-ibis-3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><code>ibis</code> mutates and aggregates</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/07-ibis-4.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/07-ibis-4.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><code>ibis</code> + <code>seaborn.objects</code>: Data Exploration</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/spatial-1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/spatial-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Intro to Spatial Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/spatial-2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/spatial-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Mapping 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/spatial-3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/spatial-3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Processing Satellite Imagery</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/spatial-4.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/spatial-4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Zonal Statistics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/spatial-5.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/spatial-5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Mapping and publishing</span></a>
   </div>
 </li>
@@ -409,7 +449,7 @@
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tutorials/computing-environment.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../tutorials/computing-environment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Computing Environments</span></a>
   </div>
 </li>
@@ -462,50 +502,142 @@
 <div class="container">
 <div class="row">
 <div class="col-12 mx-auto">
-<p><img align="right" src="./assets/img/espm-288.png" width="150" alt="logo"></p>
-<hr>
-<section id="spring-2026" class="level2">
-<h2 class="anchored" data-anchor-id="spring-2026">Spring 2026</h2>
-<table class="table">
-<thead>
-<tr class="header">
-<th>Logistics</th>
-<th>ℹ️</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>👤 Instructor</td>
-<td><a href="https://carlboettiger.info">Carl Boettiger</a></td>
-</tr>
-<tr class="even">
-<td>🏛 Location</td>
-<td>TBD</td>
-</tr>
-<tr class="odd">
-<td>📅 Days</td>
-<td>TBD</td>
-</tr>
-<tr class="even">
-<td>⏰ Time</td>
-<td>TBD</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>Welcome to ESPM-288: Reproducible &amp; Collaborative Data Science!</p>
-<p>Course materials for Spring 2026 are coming soon. Check the <a href="./2026/index.html">2026 section</a> for updates.</p>
-<hr>
-</section>
-<section id="previous-years" class="level2">
-<h2 class="anchored" data-anchor-id="previous-years">Previous Years</h2>
-<ul>
-<li><a href="./2025/index.html">Spring 2025 Archive</a> - Introduction to Python, LLMs in data science, git/GitHub, relational databases, and geospatial data</li>
-</ul>
+<section id="ibis-seaborn.objects-data-exploration" class="level1">
+<h1><code>ibis</code> + <code>seaborn.objects</code>: Data Exploration</h1>
+<section id="learning-goals" class="level3">
+<h3 class="anchored" data-anchor-id="learning-goals">Learning Goals</h3>
+<p>We are now ready to start assembling the information we have learned from our initial exploration and bring together our skills with <code>ibis</code> and <code>seaborn.objects</code>.</p>
+<div id="5cd06032" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ibis</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ibis <span class="im">import</span> _</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ibis.selectors <span class="im">as</span> s</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn.objects <span class="im">as</span> so </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>con <span class="op">=</span> ibis.duckdb.<span class="ex">connect</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="dc151e13-fcd6-4520-88a4-ff82360e1a08" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>base_url <span class="op">=</span> <span class="st">"https://huggingface.co/datasets/cboettig/ram_fisheries/resolve/main/v4.65/"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>stock <span class="op">=</span> con.read_csv(base_url <span class="op">+</span> <span class="st">"stock.csv"</span>, nullstr<span class="op">=</span><span class="st">"NA"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>timeseries <span class="op">=</span> con.read_csv(base_url <span class="op">+</span> <span class="st">"timeseries.csv"</span>, nullstr<span class="op">=</span><span class="st">"NA"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Last time we reached the conclusion that we wanted to average across multiple assessments:</p>
+<div id="18e6469a-0599-4e91-8adc-cac2dcb39767" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cod_stocks <span class="op">=</span> (</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  timeseries</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  .join(stock, <span class="st">"stockid"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  .<span class="bu">filter</span>(_.tsid <span class="op">==</span> <span class="st">"TCbest-MT"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  .<span class="bu">filter</span>(_.commonname <span class="op">==</span> <span class="st">"Atlantic cod"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  .group_by(_.tsyear, _.stockid, _.primary_country, _.primary_FAOarea)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  .agg(catch <span class="op">=</span> _.tsvalue.mean())</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This is great, but even after aggregating the assessments, we have a lot of individual cod stocks in various locations:</p>
+<div id="794d3124-2390-4cad-ac11-6b25c5481cea" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    so.Plot(cod_stocks, </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> <span class="st">"tsyear"</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>            y<span class="op">=</span><span class="st">"catch"</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>            color <span class="op">=</span> <span class="st">"stockid"</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    .add(so.Lines(linewidth<span class="op">=</span><span class="dv">3</span>))</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    .layout(size<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"6c5f624c5df04d878f5988cc4e1a11b5","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<div>
+<figure class="figure">
+<p><img src="07-ibis-4_files/figure-html/cell-5-output-2.png" width="1123" height="658" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Our good friend, the <code>COD2J3KL</code> series shows up with it’s remarkable declines, but what’s going on with those highly variable but very large catches? This will obviously impact our assessment of whether or not the species as a whole has collapsed. This is too many stocks to easily explore, let’s try breaking this out by at the by country:</p>
+<div id="47b9762a-42d3-4ee9-b3bd-08644f67df82" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    so.Plot(cod_stocks, </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>            x <span class="op">=</span> <span class="st">"tsyear"</span>, </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>            y<span class="op">=</span><span class="st">"catch"</span>, </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>            color <span class="op">=</span> <span class="st">"stockid"</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>            group <span class="op">=</span> <span class="st">"primary_country"</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    .add(so.Lines(linewidth<span class="op">=</span><span class="dv">3</span>))</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    .facet(<span class="st">"primary_country"</span>, wrap <span class="op">=</span> <span class="dv">6</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    .layout(size<span class="op">=</span>(<span class="dv">16</span>, <span class="dv">10</span>))</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"4e9d4d25a22f4476af83029a114514f6","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<div>
+<figure class="figure">
+<p><img src="07-ibis-4_files/figure-html/cell-6-output-2.png" width="1678" height="945" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Note in the country-based graphs, several countries have multiple stocks. Norway and Canada stand out for the largest harvests. The ‘grammar of graphics’ in Seaborn objects makes it easy to quickly visually explore the data along different dimensions. For instance, we can divide stocks by primary FAO Area instead of country with a single change:</p>
+<div id="76352589-0aea-4315-b7c3-e1bdea529b8b" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    so.Plot(cod_stocks, </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>            x <span class="op">=</span> <span class="st">"tsyear"</span>, </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>            y<span class="op">=</span><span class="st">"catch"</span>, </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>            color <span class="op">=</span> <span class="st">"stockid"</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>            group <span class="op">=</span> <span class="st">"primary_FAOarea"</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    .add(so.Lines(linewidth<span class="op">=</span><span class="dv">3</span>))</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    .facet(<span class="st">"primary_FAOarea"</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    .layout(size<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">8</span>))</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"188d400fc755424695af42d178f9667f","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<div>
+<figure class="figure">
+<p><img src="07-ibis-4_files/figure-html/cell-7-output-2.png" width="1311" height="753" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We have visually grouped the data into the two parts of the globe where Atlantic Cod are found: “Western North-Atlantic” (FAO area 21) and “Eastern North-Atlantic” (area 27). While we see declines in some Eastern stocks, the pattern in the West is much more dramatic. If we want to consider the fate of Western Atlantic Cod as a whole, we can add up all these individual stocks to get a picture for the entire FAO Region. We call the resulting table <code>cod_fao</code> because now it no longer reflects individual stocks, we have summed all the individual stocks up when we aggregated to the level of entire FAO regions.</p>
+<div id="77be09db-d78a-47c5-847c-6a2f6425cffc" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>cod_fao <span class="op">=</span> (cod_stocks</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>   .group_by(_.tsyear, _.primary_FAOarea)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>   .agg(catch <span class="op">=</span> _.catch.<span class="bu">sum</span>())</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="4b14801b-2ac9-41f8-8ef5-2f3d440e2f34" class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>Once again we can get a visual sense of the resulting aggrecations.  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="abfa3fe5-c761-47e6-af33-8c2ca2e362b3" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    so.Plot(cod_fao, </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>            x <span class="op">=</span> <span class="st">"tsyear"</span>, </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>            y<span class="op">=</span><span class="st">"catch"</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    .add(so.Lines(linewidth<span class="op">=</span><span class="dv">3</span>))</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    .facet(<span class="st">"primary_FAOarea"</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"f582757d4688472e9f3ab514208a8193","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<div>
+<figure class="figure">
+<p><img src="07-ibis-4_files/figure-html/cell-10-output-2.png" width="599" height="445" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
+</section>
 </section>
 </div>
 </div>
@@ -514,7 +646,7 @@
 </div>
 
 </main> <!-- /main -->
-<script src="./assets/js/material-kit.js"></script>
+<script src="../../../assets/js/material-kit.js"></script>
 <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -925,6 +1057,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../../2025/tutorials/python/06-ibis-3.html" class="pagination-link" aria-label="`ibis` mutates and aggregates">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><code>ibis</code> mutates and aggregates</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../../2025/tutorials/python/spatial-1.html" class="pagination-link" aria-label="Intro to Spatial Data">
+        <span class="nav-page-text">Intro to Spatial Data</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -933,7 +1077,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/espm-288/website/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/espm-288/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.dev/espm-288/website/blob/main/2025/tutorials/python/07-ibis-4.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/espm-288/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

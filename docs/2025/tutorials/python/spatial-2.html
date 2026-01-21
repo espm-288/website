@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><meta charset="utf-8">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../2025/tutorials/python/spatial-3.html" rel="next">
+<link href="../../../2025/tutorials/python/spatial-1.html" rel="prev">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>ESPM-288: Reproducible &amp; Collaborative Data Science</title>
+  <title>Mapping 1</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -31,10 +33,44 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
   </style>
-  <link rel="stylesheet" href="assets/css/nucleo-icons.css">
-  <link rel="stylesheet" href="assets/css/quarto-material-kit.css">
-  <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel="stylesheet" href="../../../assets/css/nucleo-icons.css">
+  <link rel="stylesheet" href="../../../assets/css/quarto-material-kit.css">
+  <link rel="stylesheet" href="../../../assets/css/custom.css">
   <script id="quarto-search-options" type="application/json">{
     "location": "navbar",
     "copy-button": false,
@@ -65,10 +101,14 @@
   <style>
 
         .quarto-title-block .quarto-title-banner {
-          background-image: url(assets/img/methane_bubbles.jpg);
+          background-image: url(../../../assets/img/methane_bubbles.jpg);
   background-size: cover;
         }
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+  
+  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+  <script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -87,7 +127,7 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> <i class="bi bi-house" role="img">
+    <a class="nav-link active" href="../../../index.html" aria-current="page"> <i class="bi bi-house" role="img">
 </i> 
 <span class="menu-text">Home</span></a>
   </li>  
@@ -136,7 +176,7 @@
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Home</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../2025/index.html">📁 2025 Archive</a></li><li class="breadcrumb-item"><a href="../../../2025/tutorials/python/00-preface.html">Tutorials in Python</a></li><li class="breadcrumb-item"><a href="../../../2025/tutorials/python/spatial-2.html">Mapping 1</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -144,12 +184,12 @@
 </header>
 <!-- content -->
 <header id="title-block-header" class="bg-gradient-dark">
-<div class="page-header min-vh-85" style="background-image: url(assets/img/methane_bubbles.jpg);">
+<div class="page-header min-vh-85" style="background-image: url(../../../assets/img/methane_bubbles.jpg);">
 <span class="mask bg-gradient-dark opacity-3"></span>
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-lg-8 text-center mx-auto my-auto">
-<h1 class="text-white">ESPM-288: Reproducible &amp; Collaborative Data Science</h1>
+<h1 class="text-white">Mapping 1</h1>
 <p class="lead mb-4 text-white opacity-8"></p>
 </div>
 </div>
@@ -161,7 +201,7 @@
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><i class="bi bi-house" role="img">
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-house" role="img">
 </i> 
  <span class="menu-text">Home</span></a>
   </div>
@@ -179,7 +219,7 @@
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2026/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2026/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -194,7 +234,7 @@
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2026/tabular-data/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2026/tabular-data/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -211,7 +251,7 @@
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2026/local-llms/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2026/local-llms/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -228,7 +268,7 @@
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2026/spatial-data/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2026/spatial-data/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -245,7 +285,7 @@
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2026/cloud-compute/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2026/cloud-compute/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -266,7 +306,7 @@
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -281,13 +321,13 @@
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/R/1-intro-R.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/R/1-intro-R.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/R/2-earthdata.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/R/2-earthdata.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">NASA EarthData</span></a>
   </div>
 </li>
@@ -295,100 +335,100 @@
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
  <span class="menu-text">Tutorials in Python</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/00-preface.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/00-preface.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/01-github-jupyter.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/01-github-jupyter.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Intro to GitHub &amp; JupyterHub</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/02-visualization-basics.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/02-visualization-basics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualization Basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/03-data-access.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/03-data-access.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Accessing Real World Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/04-transform.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/04-transform.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Transforming Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/04b-gh-actions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/04b-gh-actions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GitHub Actions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/05-ibis-1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/05-ibis-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><code>ibis</code> Single Table Verbs</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/06-ibis-2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/06-ibis-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><code>ibis</code> Table Joins</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/06-ibis-3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/06-ibis-3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><code>ibis</code> mutates and aggregates</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/07-ibis-4.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/07-ibis-4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><code>ibis</code> + <code>seaborn.objects</code>: Data Exploration</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/spatial-1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/spatial-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Intro to Spatial Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/spatial-2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/spatial-2.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Mapping 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/spatial-3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/spatial-3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Processing Satellite Imagery</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/spatial-4.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/spatial-4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Zonal Statistics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/spatial-5.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/spatial-5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Mapping and publishing</span></a>
   </div>
 </li>
@@ -409,7 +449,7 @@
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tutorials/computing-environment.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../tutorials/computing-environment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Computing Environments</span></a>
   </div>
 </li>
@@ -462,50 +502,291 @@
 <div class="container">
 <div class="row">
 <div class="col-12 mx-auto">
-<p><img align="right" src="./assets/img/espm-288.png" width="150" alt="logo"></p>
-<hr>
-<section id="spring-2026" class="level2">
-<h2 class="anchored" data-anchor-id="spring-2026">Spring 2026</h2>
-<table class="table">
-<thead>
-<tr class="header">
-<th>Logistics</th>
-<th>ℹ️</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>👤 Instructor</td>
-<td><a href="https://carlboettiger.info">Carl Boettiger</a></td>
-</tr>
-<tr class="even">
-<td>🏛 Location</td>
-<td>TBD</td>
-</tr>
-<tr class="odd">
-<td>📅 Days</td>
-<td>TBD</td>
-</tr>
-<tr class="even">
-<td>⏰ Time</td>
-<td>TBD</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>Welcome to ESPM-288: Reproducible &amp; Collaborative Data Science!</p>
-<p>Course materials for Spring 2026 are coming soon. Check the <a href="./2026/index.html">2026 section</a> for updates.</p>
-<hr>
-</section>
-<section id="previous-years" class="level2">
-<h2 class="anchored" data-anchor-id="previous-years">Previous Years</h2>
+<p>Now that we’ve been able to import our first type of spatial data and begin manipulating it using our familiar libraries, we want to put it on a map!</p>
+<p>We begin with the code we developed last time for accessing the redlining data for a single city as a geopandas object:</p>
+<p>::: {#51269dee-9bbf-48cf-a1d3-f54bf7d6b664 .cell 0=‘h’ 1=‘i’ 2=‘d’ 3=‘e’ execution_count=16}</p>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> IFrame</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>:::</p>
+<div id="48b9cd7b-9470-45c8-8fb5-34dc03086fed" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ibis</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ibis <span class="im">import</span> _</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>con <span class="op">=</span> ibis.duckdb.<span class="ex">connect</span>()</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>city <span class="op">=</span> (con</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    .read_geo(<span class="st">"/vsicurl/https://dsl.richmond.edu/panorama/redlining/static/mappinginequality.gpkg"</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    .<span class="bu">filter</span>(_.city <span class="op">==</span> <span class="st">"New Haven"</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    .execute()</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We will be using <code>leafmap</code> to create interactive maps. There are a wide range of mapping packages that have been developed for python (e.g.&nbsp;bokeh, kepler, folium, pydeck, lonboard, pymaplibre-gl), most of which wrap around javascript mapping libraries designed for interactive web-based maps. Just as the <code>ibis</code> package provides an interface to a host of different database engines that can be used as ‘backends’, leafmap wraps around most of the common mapping engines with a friendly and mostly consistent user interface. In <code>ibis</code> we have focused on the <code>duckdb</code> backend as the most powerful, flexible and performant option for all our purposes. With <code>leafmap</code>, we will likewise focus on the most recent and generally most powerful backend option, <a href="https://maplibre.org/maplibre-gl-js/docs/"><code>maplibregl</code></a> - an open source implementation of the powerful and widely used commericial javascript platform, <a href="https://mapbox.com">Mapbox</a>.</p>
+<div id="2bf26499-f8f4-457f-a15c-c584d0865894" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> leafmap.maplibregl <span class="im">as</span> leafmap</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>::: {#fe0906fd-60f1-455e-a184-012dbf328cec .cell 0=‘h’ 1=‘i’ 2=‘d’ 3=‘e’ 4=‘-’ 5=‘o’ 6=‘u’ 7=‘t’ 8=‘p’ 9=‘u’ 10=‘t’ execution_count=19}</p>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> leafmap.Map(style<span class="op">=</span><span class="st">"positron"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>m.add_gdf(city)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"acb383047d234c6a889d5f0fce6aa04a","version_major":2,"version_minor":1,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<p>:::</p>
+<p>Because our map is an interactive javascript applet, putting <code>m</code> at the end of the a cell will allow it to display inline in Jupyter, but not in ‘static’ documentation such as the course website or a GitHub rendering of the notebook. To share our map, we can export it to an HTML file. This allows any web browser to view and interact with the map without having to install <code>jupyter</code> or <code>python</code>.</p>
+<div id="f7bbe798-585f-4ec7-9099-a836b25b6be2" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>m.to_html(<span class="st">"../data/nh1.html"</span>, overwrite<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>::: {#8a433141-72bd-4b8c-8e46-ed4c86aeb12d .cell 0=‘h’ 1=‘i’ 2=‘d’ 3=‘e’ 4=‘-’ 5=‘i’ 6=‘n’ 7=‘p’ 8=‘u’ 9=‘t’ scrolled=‘true’ execution_count=21}</p>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># display map on course website by using an iframe to the output URL </span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>IFrame(src<span class="op">=</span><span class="st">'https://espm-157.github.io/static-maps/nh1.html'</span>, width<span class="op">=</span><span class="dv">700</span>, height<span class="op">=</span><span class="dv">400</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
+
+        <iframe width="700" height="400" src="https://espm-157.github.io/static-maps/nh1.html" frameborder="0" allowfullscreen=""></iframe>
+        
+</div>
+<p>:::</p>
+<p><a href="../data/nh1.html">rendered map fullscreen</a></p>
+<section id="map-styling" class="level2">
+<h2 class="anchored" data-anchor-id="map-styling">Map styling</h2>
+<p>Leafmap allows us to add many <em>layers</em> to our map from various data sources, and gives us a rich set of tools for styling the look and feel of most of those data layers. The example below illustrates some more complex patterns for generating a rich map.</p>
 <ul>
-<li><a href="./2025/index.html">Spring 2025 Archive</a> - Introduction to Python, LLMs in data science, git/GitHub, relational databases, and geospatial data</li>
+<li>We introduce a basemap with <code>add_basemap()</code>. This is just a background image, that is tiled to re-draw to the appropriate zoom and window. However, note that basemaps are just background images, we cannot extract actual data from these sources.</li>
+<li>We have added source data by pointing to a remote URL. This provides much better performance than embedding the JSON data directly, especially when the data become very large. This requires the data is hosted at a highly available provider, such as GitHub or another cloud service. The original host source won’t work unfortunately.<br>
+</li>
+<li>We have used a custom filter inside the source data to select our city of interest. This could be omitted.</li>
+<li>We have colored our polygons according to grade given in the data. Specifically, we noticed that the column “fill” already contains color codes in HEX format corresponding to the redlining “grade” associated with each layer.</li>
+<li>We have added a final layer of text labels based on the “label” column.</li>
 </ul>
+<div id="82852946-0439-4dfc-8cdd-750817b2fe86" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>geojson <span class="op">=</span> json.loads(city.to_json())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="2198d392-6c4c-48de-bf89-743431fa2ec8" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> leafmap.Map(center<span class="op">=</span>[<span class="op">-</span><span class="fl">72.9</span>, <span class="fl">41.3</span>], zoom<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>source <span class="op">=</span> {</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"type"</span>: <span class="st">"geojson"</span>, </span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">#    'data': geojson,</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'data'</span>: <span class="st">'https://data.source.coop/cboettig/us-boundaries/mappinginequality.json'</span>,</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'filter'</span>: [<span class="st">'=='</span>, [<span class="st">'get'</span>, <span class="st">'city'</span>], <span class="st">'New Haven'</span>]</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>layer <span class="op">=</span> {</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"id"</span>: <span class="st">"geojson-layer"</span>,</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"type"</span>: <span class="st">"fill"</span>,</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"source"</span>: <span class="st">"geojson"</span>,</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>     <span class="st">'paint'</span>: {</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">"fill-color"</span>: [<span class="st">"get"</span>, <span class="st">"fill"</span>], <span class="co"># color by the column called "fill"</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">"fill-opacity"</span>: <span class="fl">0.8</span>,</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>text_layer <span class="op">=</span> {</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">"id"</span>: <span class="st">"labels"</span>,</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">"type"</span>: <span class="st">"symbol"</span>,</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">"source"</span>: <span class="st">"geojson"</span>,</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    <span class="st">"layout"</span>: {</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">"text-field"</span>: [<span class="st">"get"</span>, <span class="st">"label"</span>],</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>        <span class="st">"text_size"</span>: <span class="dv">14</span>,</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">'text-font'</span>: [<span class="st">'Open Sans Bold'</span>],</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>        <span class="st">"text-anchor"</span>: <span class="st">"center"</span>,</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>     <span class="st">'paint'</span>: { <span class="st">'text-color'</span>: <span class="st">'#ffffff'</span>}</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>m.add_basemap(<span class="st">"USGS.USTopo"</span>)</span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>m.add_source(<span class="st">"geojson"</span>, source)</span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>m.add_layer(layer)</span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>m.add_layer(text_layer)</span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>m.add_layer_control()</span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>m.to_html(<span class="st">"../data/nh2.html"</span>, overwrite<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"8a9583e0b4e44fc8b39df9e22a8ad0ab","version_major":2,"version_minor":1,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+</div>
+<p><a href="../data/nh2.html">rendered map fullscreen</a></p>
+<p>::: {#7aa49687-4c6f-466c-811c-e57637ce1bb7 .cell 0=‘h’ 1=‘i’ 2=‘d’ 3=‘e’ 4=‘-’ 5=‘i’ 6=‘n’ 7=‘p’ 8=‘u’ 9=‘t’ execution_count=24}</p>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># display map on course website by using an iframe to the output URL </span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>IFrame(src<span class="op">=</span><span class="st">'https://espm-157.github.io/static-maps/nh2.html'</span>, width<span class="op">=</span><span class="dv">700</span>, height<span class="op">=</span><span class="dv">400</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
+
+        <iframe width="700" height="400" src="https://espm-157.github.io/static-maps/nh2.html" frameborder="0" allowfullscreen=""></iframe>
+        
+</div>
+<p>:::</p>
+<div id="b17a5c05-d69b-423b-b9ff-d94a645279f8" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">## list all basemaps known to leafmap</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(leafmap.basemaps.keys())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="25">
+<pre><code>['OpenStreetMap',
+ 'Google Maps',
+ 'Google Satellite',
+ 'Google Terrain',
+ 'Google Hybrid',
+ 'FWS NWI Wetlands',
+ 'FWS NWI Wetlands Raster',
+ 'NLCD 2021 CONUS Land Cover',
+ 'NLCD 2019 CONUS Land Cover',
+ 'NLCD 2016 CONUS Land Cover',
+ 'NLCD 2013 CONUS Land Cover',
+ 'NLCD 2011 CONUS Land Cover',
+ 'NLCD 2008 CONUS Land Cover',
+ 'NLCD 2006 CONUS Land Cover',
+ 'NLCD 2004 CONUS Land Cover',
+ 'NLCD 2001 CONUS Land Cover',
+ 'USGS NAIP Imagery',
+ 'USGS NAIP Imagery False Color',
+ 'USGS NAIP Imagery NDVI',
+ 'USGS Hydrography',
+ 'USGS 3DEP Elevation',
+ 'USGS 3DEP Elevation Index',
+ 'ESA Worldcover 2020',
+ 'ESA Worldcover 2020 S2 FCC',
+ 'ESA Worldcover 2020 S2 TCC',
+ 'ESA Worldcover 2021',
+ 'ESA Worldcover 2021 S2 FCC',
+ 'ESA Worldcover 2021 S2 TCC',
+ 'BaseMapDE.Color',
+ 'BaseMapDE.Grey',
+ 'BasemapAT.basemap',
+ 'BasemapAT.grau',
+ 'BasemapAT.highdpi',
+ 'BasemapAT.orthofoto',
+ 'BasemapAT.overlay',
+ 'BasemapAT.surface',
+ 'BasemapAT.terrain',
+ 'CartoDB.DarkMatter',
+ 'CartoDB.DarkMatterNoLabels',
+ 'CartoDB.DarkMatterOnlyLabels',
+ 'CartoDB.Positron',
+ 'CartoDB.PositronNoLabels',
+ 'CartoDB.PositronOnlyLabels',
+ 'CartoDB.Voyager',
+ 'CartoDB.VoyagerLabelsUnder',
+ 'CartoDB.VoyagerNoLabels',
+ 'CartoDB.VoyagerOnlyLabels',
+ 'CyclOSM',
+ 'Esri.AntarcticBasemap',
+ 'Esri.AntarcticImagery',
+ 'Esri.ArcticImagery',
+ 'Esri.ArcticOceanBase',
+ 'Esri.ArcticOceanReference',
+ 'Esri.NatGeoWorldMap',
+ 'Esri.OceanBasemap',
+ 'Esri.WorldGrayCanvas',
+ 'Esri.WorldImagery',
+ 'Esri.WorldPhysical',
+ 'Esri.WorldShadedRelief',
+ 'Esri.WorldStreetMap',
+ 'Esri.WorldTerrain',
+ 'Esri.WorldTopoMap',
+ 'FreeMapSK',
+ 'Gaode.Normal',
+ 'Gaode.Satellite',
+ 'HikeBike.HikeBike',
+ 'HikeBike.HillShading',
+ 'JusticeMap.americanIndian',
+ 'JusticeMap.asian',
+ 'JusticeMap.black',
+ 'JusticeMap.hispanic',
+ 'JusticeMap.income',
+ 'JusticeMap.multi',
+ 'JusticeMap.nonWhite',
+ 'JusticeMap.plurality',
+ 'JusticeMap.white',
+ 'MtbMap',
+ 'NASAGIBS.ASTER_GDEM_Greyscale_Shaded_Relief',
+ 'NASAGIBS.BlueMarble',
+ 'NASAGIBS.BlueMarble3031',
+ 'NASAGIBS.BlueMarble3413',
+ 'NASAGIBS.BlueMarbleBathymetry3031',
+ 'NASAGIBS.BlueMarbleBathymetry3413',
+ 'NASAGIBS.MEaSUREsIceVelocity3031',
+ 'NASAGIBS.MEaSUREsIceVelocity3413',
+ 'NASAGIBS.ModisAquaBands721CR',
+ 'NASAGIBS.ModisAquaTrueColorCR',
+ 'NASAGIBS.ModisTerraAOD',
+ 'NASAGIBS.ModisTerraBands367CR',
+ 'NASAGIBS.ModisTerraBands721CR',
+ 'NASAGIBS.ModisTerraChlorophyll',
+ 'NASAGIBS.ModisTerraLSTDay',
+ 'NASAGIBS.ModisTerraSnowCover',
+ 'NASAGIBS.ModisTerraTrueColorCR',
+ 'NASAGIBS.ViirsEarthAtNight2012',
+ 'NASAGIBS.ViirsTrueColorCR',
+ 'OPNVKarte',
+ 'OneMapSG.Default',
+ 'OneMapSG.Grey',
+ 'OneMapSG.LandLot',
+ 'OneMapSG.Night',
+ 'OneMapSG.Original',
+ 'OpenAIP',
+ 'OpenFireMap',
+ 'OpenRailwayMap',
+ 'OpenSeaMap',
+ 'OpenSnowMap.pistes',
+ 'OpenStreetMap.BZH',
+ 'OpenStreetMap.BlackAndWhite',
+ 'OpenStreetMap.CH',
+ 'OpenStreetMap.DE',
+ 'OpenStreetMap.HOT',
+ 'OpenStreetMap.Mapnik',
+ 'OpenTopoMap',
+ 'SafeCast',
+ 'Stadia.AlidadeSatellite',
+ 'Stadia.AlidadeSmooth',
+ 'Stadia.AlidadeSmoothDark',
+ 'Stadia.OSMBright',
+ 'Stadia.Outdoors',
+ 'Stadia.StamenTerrain',
+ 'Stadia.StamenTerrainBackground',
+ 'Stadia.StamenTerrainLabels',
+ 'Stadia.StamenTerrainLines',
+ 'Stadia.StamenToner',
+ 'Stadia.StamenTonerBackground',
+ 'Stadia.StamenTonerLabels',
+ 'Stadia.StamenTonerLines',
+ 'Stadia.StamenTonerLite',
+ 'Stadia.StamenWatercolor',
+ 'Strava.All',
+ 'Strava.Ride',
+ 'Strava.Run',
+ 'Strava.Water',
+ 'Strava.Winter',
+ 'SwissFederalGeoportal.JourneyThroughTime',
+ 'SwissFederalGeoportal.NationalMapColor',
+ 'SwissFederalGeoportal.NationalMapGrey',
+ 'SwissFederalGeoportal.SWISSIMAGE',
+ 'TopPlusOpen.Color',
+ 'TopPlusOpen.Grey',
+ 'USGS.USImagery',
+ 'USGS.USImageryTopo',
+ 'USGS.USTopo',
+ 'WaymarkedTrails.cycling',
+ 'WaymarkedTrails.hiking',
+ 'WaymarkedTrails.mtb',
+ 'WaymarkedTrails.riding',
+ 'WaymarkedTrails.skating',
+ 'WaymarkedTrails.slopes',
+ 'nlmaps.grijs',
+ 'nlmaps.luchtfoto',
+ 'nlmaps.pastel',
+ 'nlmaps.standaard',
+ 'nlmaps.water']</code></pre>
+</div>
+</div>
+<section id="performance" class="level3">
+<h3 class="anchored" data-anchor-id="performance">Performance</h3>
+<p>Visualizing data on an interactive map is a challenging technical task because of the potential size of the data: To show the user data while they pan and zoom around the map across scales from city to planet-wide can involve trillions of pixels that must be loaded, plotted and styled. Clever software takes advantage of the users’s current zoom and field of view to render only the data the user can currently see, loading more data ‘on demand’ as the user moves the map. Careful preparation of data layers into “tiles” pre-computed at different “zooms”, data compression, and data chunking can dramatically improve the map’s ability to render massive datasets smoothly.</p>
 
 
+</section>
 </section>
 </div>
 </div>
@@ -514,7 +795,7 @@
 </div>
 
 </main> <!-- /main -->
-<script src="./assets/js/material-kit.js"></script>
+<script src="../../../assets/js/material-kit.js"></script>
 <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -925,6 +1206,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../../2025/tutorials/python/spatial-1.html" class="pagination-link" aria-label="Intro to Spatial Data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Intro to Spatial Data</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../../2025/tutorials/python/spatial-3.html" class="pagination-link" aria-label="Processing Satellite Imagery">
+        <span class="nav-page-text">Processing Satellite Imagery</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -933,7 +1226,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/espm-288/website/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/espm-288/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.dev/espm-288/website/blob/main/2025/tutorials/python/spatial-2.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/espm-288/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

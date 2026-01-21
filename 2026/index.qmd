@@ -1,0 +1,29 @@
+---
+title: "ESPM-288: Spring 2026"
+format: html
+---
+
+<img align="right" src="/assets/img/espm-288.png" width="150" alt="logo">
+
+---
+
+## Spring 2026
+
+Logistics     | ℹ️ 
+--------------|-----------------------------------------------
+👤 Instructor | [Carl Boettiger](https://carlboettiger.info)
+🏛 Location   | TBD
+📅 Days       | TBD
+⏰ Time       | TBD
+
+## Overview
+
+Welcome to the Spring 2026 semester of ESPM-288: Reproducible & Collaborative Data Science!
+
+*Course materials coming soon.*
+
+### Course Materials
+
+- Overview (coming soon)
+- Schedule (coming soon)
+- Syllabus (coming soon)

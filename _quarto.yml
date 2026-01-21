@@ -45,15 +45,39 @@ website:
         icon: house
         text: Home
       - text: "---"
-      - section: 'Tutorials in R'
-        icon: mortarboard-fill
+      - section: '📅 2026 (Current)'
+        icon: calendar-check
         contents:
-          - auto: "tutorials/R/*"
+          - file: 2026/index.qmd
+            text: Overview
+          - section: '📊 Tabular Data'
+            contents:
+              - file: 2026/tabular-data/index.qmd
+                text: Overview
+          - section: '🤖 Local LLMs'
+            contents:
+              - file: 2026/local-llms/index.qmd
+                text: Overview
+          - section: '🗺️ Spatial Data'
+            contents:
+              - file: 2026/spatial-data/index.qmd
+                text: Overview
+          - section: '☁️ Cloud Compute'
+            contents:
+              - file: 2026/cloud-compute/index.qmd
+                text: Overview
       - text: "---"
-      - section: 'Tutorials in Python'
-        icon: mortarboard-fill
+      - section: '📁 2025 Archive'
+        icon: archive
         contents:
-          - auto: "tutorials/python/*"
+          - file: 2025/index.qmd
+            text: Overview
+          - section: 'Tutorials in R'
+            contents:
+              - auto: "2025/tutorials/R/*"
+          - section: 'Tutorials in Python'
+            contents:
+              - auto: "2025/tutorials/python/*"
       - text: "---"
       - section: Platforms
         icon: pc-display-horizontal

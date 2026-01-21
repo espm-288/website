@@ -11,32 +11,25 @@ format: html
 
 ---
 
-## Spring 2025
-
+## Spring 2026
 
 Logistics     | ℹ️ 
 --------------|-----------------------------------------------
 👤 Instructor | [Carl Boettiger](https://carlboettiger.info)
-🏛 Location   | Mulford 103
-📅 Days       | Mon / Weds
-⏰ Time       | 10:10a - 11:30a
-
+🏛 Location   | TBD
+📅 Days       | TBD
+⏰ Time       | TBD
 
 
 
 ## Overview
 
-This Spring semester, ESPM 288 Reproducible & Collaborative Data Science will be providing an introduction to Python and explore reliable, responsible, and reproducible use of Large Language Models (LLMs) in the data science context.  
+Welcome to ESPM-288: Reproducible & Collaborative Data Science!
 
-Our approach to Python will closely parallel tidyverse concepts and best practices (dplyr and ggplot-esque syntax) and emphasize simple, semantic code and scalable solutions appropriate for small or large data.  We will cover git/GitHub, Relational database concepts, cloud native data, and geospatial data use.  
+Course materials for Spring 2026 are coming soon. Check the [2026 section](2026/index.qmd) for updates.
 
+---
 
-LLMs are here and beginning to impact our profession, for better & worse. Critics and proponents alike discuss ideas like "the impact of AI" -- but as our S&E colleagues already know the message of Langdon Winner's warning 4 decades ago against "naive technological determinism"
+## Previous Years
 
-> the idea that technology develops as the sole result of an internal dynamic, and then, unmediated by any other influence, molds society to fit its patterns. Those who have not recognized the ways in which technologies are shaped by social and economic forces have not gotten very far.
-
-Yet Winner also encouraged us to examine the technology itself, as he memorably put it "Do artifacts have politics?"  We shall attempt to take him up on both accounts.  The social and economic forces shaping LLMs built here at UC Berkeley are not the same as those behind the doors of OpenAI or Microsoft, and the artifacts each has created are different.  
-
-Through hands-on experiences, we will seek a more nuanced understanding of how this technology works and fails, and explore some of the carefully constrained and innovative ways that some LLMs can be combined with existing programming tools to generate reliable, reproducible, secure, and energy-efficient applications.  
-
-ESPM-288 uses a self-paced course design that encourages students to practice the skills we introduce in the context of their own research interests and questions.  We aim for material that should be accessible to new programmers but also something new even to experienced programmers.  This year's syllabus is experimental and will at times go pear-shaped.   (almost all that we do in python will have simple translation to R, including LLM use via https://elmer.tidyverse.org/)
+- [Spring 2025 Archive](2025/index.qmd) - Introduction to Python, LLMs in data science, git/GitHub, relational databases, and geospatial data

@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><meta charset="utf-8">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../2025/tutorials/python/04b-gh-actions.html" rel="next">
+<link href="../../../2025/tutorials/python/03-data-access.html" rel="prev">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>ESPM-288: Reproducible &amp; Collaborative Data Science</title>
+  <title>Transforming Data</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -31,10 +33,44 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
   </style>
-  <link rel="stylesheet" href="assets/css/nucleo-icons.css">
-  <link rel="stylesheet" href="assets/css/quarto-material-kit.css">
-  <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel="stylesheet" href="../../../assets/css/nucleo-icons.css">
+  <link rel="stylesheet" href="../../../assets/css/quarto-material-kit.css">
+  <link rel="stylesheet" href="../../../assets/css/custom.css">
   <script id="quarto-search-options" type="application/json">{
     "location": "navbar",
     "copy-button": false,
@@ -65,10 +101,13 @@
   <style>
 
         .quarto-title-block .quarto-title-banner {
-          background-image: url(assets/img/methane_bubbles.jpg);
+          background-image: url(../../../assets/img/methane_bubbles.jpg);
   background-size: cover;
         }
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+  
+  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -87,7 +126,7 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> <i class="bi bi-house" role="img">
+    <a class="nav-link active" href="../../../index.html" aria-current="page"> <i class="bi bi-house" role="img">
 </i> 
 <span class="menu-text">Home</span></a>
   </li>  
@@ -136,7 +175,7 @@
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Home</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../2025/index.html">📁 2025 Archive</a></li><li class="breadcrumb-item"><a href="../../../2025/tutorials/python/00-preface.html">Tutorials in Python</a></li><li class="breadcrumb-item"><a href="../../../2025/tutorials/python/04-transform.html">Transforming Data</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -144,12 +183,12 @@
 </header>
 <!-- content -->
 <header id="title-block-header" class="bg-gradient-dark">
-<div class="page-header min-vh-85" style="background-image: url(assets/img/methane_bubbles.jpg);">
+<div class="page-header min-vh-85" style="background-image: url(../../../assets/img/methane_bubbles.jpg);">
 <span class="mask bg-gradient-dark opacity-3"></span>
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-lg-8 text-center mx-auto my-auto">
-<h1 class="text-white">ESPM-288: Reproducible &amp; Collaborative Data Science</h1>
+<h1 class="text-white">Transforming Data</h1>
 <p class="lead mb-4 text-white opacity-8"></p>
 </div>
 </div>
@@ -161,7 +200,7 @@
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><i class="bi bi-house" role="img">
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-house" role="img">
 </i> 
  <span class="menu-text">Home</span></a>
   </div>
@@ -179,7 +218,7 @@
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2026/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2026/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -194,7 +233,7 @@
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2026/tabular-data/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2026/tabular-data/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -211,7 +250,7 @@
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2026/local-llms/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2026/local-llms/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -228,7 +267,7 @@
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2026/spatial-data/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2026/spatial-data/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -245,7 +284,7 @@
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2026/cloud-compute/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2026/cloud-compute/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -266,7 +305,7 @@
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -281,13 +320,13 @@
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/R/1-intro-R.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/R/1-intro-R.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/R/2-earthdata.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/R/2-earthdata.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">NASA EarthData</span></a>
   </div>
 </li>
@@ -295,100 +334,100 @@
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
  <span class="menu-text">Tutorials in Python</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/00-preface.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/00-preface.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/01-github-jupyter.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/01-github-jupyter.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Intro to GitHub &amp; JupyterHub</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/02-visualization-basics.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/02-visualization-basics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualization Basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/03-data-access.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/03-data-access.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Accessing Real World Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/04-transform.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/04-transform.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Transforming Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/04b-gh-actions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/04b-gh-actions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GitHub Actions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/05-ibis-1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/05-ibis-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><code>ibis</code> Single Table Verbs</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/06-ibis-2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/06-ibis-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><code>ibis</code> Table Joins</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/06-ibis-3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/06-ibis-3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><code>ibis</code> mutates and aggregates</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/07-ibis-4.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/07-ibis-4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><code>ibis</code> + <code>seaborn.objects</code>: Data Exploration</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/spatial-1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/spatial-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Intro to Spatial Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/spatial-2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/spatial-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Mapping 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/spatial-3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/spatial-3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Processing Satellite Imagery</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/spatial-4.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/spatial-4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Zonal Statistics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/spatial-5.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/spatial-5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Mapping and publishing</span></a>
   </div>
 </li>
@@ -409,7 +448,7 @@
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tutorials/computing-environment.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../tutorials/computing-environment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Computing Environments</span></a>
   </div>
 </li>
@@ -462,59 +501,258 @@
 <div class="container">
 <div class="row">
 <div class="col-12 mx-auto">
-<p><img align="right" src="./assets/img/espm-288.png" width="150" alt="logo"></p>
-<hr>
-<section id="spring-2026" class="level2">
-<h2 class="anchored" data-anchor-id="spring-2026">Spring 2026</h2>
-<table class="table">
+<section id="tidy-data" class="level3">
+<h3 class="anchored" data-anchor-id="tidy-data">Tidy Data</h3>
+<p>Analysis-ready data, or ‘tidy data’, is a central concept in data science. The term was coined by Hadley Wickham<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> to describe best practices long known in the relational database community, specifically, conventions around formatting tabular data known as <a href="https://en.wikipedia.org/wiki/Third_normal_form">Cobb’s Third Normal Form</a>. In this form, each row represents an observation and each column represents a variable. These conventions allow us to leverage powerful software and techniques for data analysis and visualization more easily, as many such tools are designed with tidy data structures in mind. However, wild-caught data often does not follow these rules. Consider this example of NASA data on land ice mass:</p>
+<div id="7731e7bc" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"http://climate.nasa.gov/system/internal_resources/details/original/499_GRN_ANT_mass_changes.csv"</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>                skiprows<span class="op">=</span><span class="dv">10</span>, names<span class="op">=</span>[<span class="st">'date'</span>, <span class="st">'greenland'</span>, <span class="st">'antarctica'</span>])</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div>
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
-<th>Logistics</th>
-<th>ℹ️</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">date</th>
+<th data-quarto-table-cell-role="th">greenland</th>
+<th data-quarto-table-cell-role="th">antarctica</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>👤 Instructor</td>
-<td><a href="https://carlboettiger.info">Carl Boettiger</a></td>
+<td data-quarto-table-cell-role="th">0</td>
+<td>2002.29</td>
+<td>1490.68</td>
+<td>967.20</td>
 </tr>
 <tr class="even">
-<td>🏛 Location</td>
-<td>TBD</td>
+<td data-quarto-table-cell-role="th">1</td>
+<td>2002.35</td>
+<td>1485.69</td>
+<td>978.55</td>
 </tr>
 <tr class="odd">
-<td>📅 Days</td>
-<td>TBD</td>
+<td data-quarto-table-cell-role="th">2</td>
+<td>2002.62</td>
+<td>1286.84</td>
+<td>512.02</td>
 </tr>
 <tr class="even">
-<td>⏰ Time</td>
-<td>TBD</td>
+<td data-quarto-table-cell-role="th">3</td>
+<td>2002.71</td>
+<td>1257.85</td>
+<td>858.85</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>2002.79</td>
+<td>1257.17</td>
+<td>693.87</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">135</td>
+<td>2014.45</td>
+<td>-1672.08</td>
+<td>-1021.70</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">136</td>
+<td>2014.62</td>
+<td>-1985.59</td>
+<td>-1067.84</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">137</td>
+<td>2014.71</td>
+<td>-2024.82</td>
+<td>-780.87</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">138</td>
+<td>2014.79</td>
+<td>-1973.96</td>
+<td>-904.38</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">139</td>
+<td>2014.88</td>
+<td>-1911.78</td>
+<td>-1009.80</td>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>Welcome to ESPM-288: Reproducible &amp; Collaborative Data Science!</p>
-<p>Course materials for Spring 2026 are coming soon. Check the <a href="./2026/index.html">2026 section</a> for updates.</p>
-<hr>
-</section>
-<section id="previous-years" class="level2">
-<h2 class="anchored" data-anchor-id="previous-years">Previous Years</h2>
-<ul>
-<li><a href="./2025/index.html">Spring 2025 Archive</a> - Introduction to Python, LLMs in data science, git/GitHub, relational databases, and geospatial data</li>
-</ul>
+
+<p>140 rows × 3 columns</p>
+</div>
+</div>
+</div>
+</div>
+<p>The column heading we have called ‘greenland’ is not a single variable (feature) being observed, but in fact a mashup of two different variables – the ice mass (in gigatons) on the location of Greenland. (In the original data file it has the name <code>Greenland mass (Gt)</code>, which more clearly indicates this mash-up but does not follow our naming conventions. Likewise the column called ‘antarctica’ again measures land ice mass, but at a different location. A “tidy” version of this data would use one column to indicate location (Greenland or Antarctica) and another column to indicate ice mass at that location.</p>
+<p>To fix this, we need to <em>pivot</em> the data table into a “long” form, with a single column for ice mass and a single column for location. While there are many ways to do this, we will rely on the <code>ibis</code> framework which provides one of the most consistent and powerful interfaces for tabular data operations. We begin by loading the ibis library and establishing a “connection” to a backend engine.</p>
+<div id="58f33e03" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ibis</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ibis <span class="im">import</span> selectors <span class="im">as</span> s</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>con <span class="op">=</span> ibis.duckdb.<span class="ex">connect</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We add our pandas table to the ibis connection using the method <code>create_table</code>. This allows us to manipulate the table using ibis methods rather than pandas. We will later see other ways to create <code>ibis</code> tables directly from a wide range of data other than pandas data.frames.</p>
+<p>We then use the <code>pivot_longer()</code> method to transform our data. We use the <code>ibis.selectors</code> methods to indicate which columns we are aggregating in the pivot. Optionally, we indicate the name of the new column that will contain the previous column names (greenland, antarctica) and the name of the column that will contain the cell values (the ice mass).</p>
+<div id="71085679" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>land_ice <span class="op">=</span> (con</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a> .create_table(<span class="st">"land_ice"</span>, df, overwrite<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a> .pivot_longer(s.any_of(<span class="st">'greenland'</span>, <span class="st">'antarctica'</span>),</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>               names_to<span class="op">=</span> <span class="st">"location"</span>, values_to <span class="op">=</span> <span class="st">"ice_mass"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>land_ice.execute()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div>
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">date</th>
+<th data-quarto-table-cell-role="th">location</th>
+<th data-quarto-table-cell-role="th">ice_mass</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>2002.29</td>
+<td>greenland</td>
+<td>1490.68</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2002.29</td>
+<td>antarctica</td>
+<td>967.20</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2002.35</td>
+<td>greenland</td>
+<td>1485.69</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>2002.35</td>
+<td>antarctica</td>
+<td>978.55</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>2002.62</td>
+<td>greenland</td>
+<td>1286.84</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">275</td>
+<td>2014.71</td>
+<td>antarctica</td>
+<td>-780.87</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">276</td>
+<td>2014.79</td>
+<td>greenland</td>
+<td>-1973.96</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">277</td>
+<td>2014.79</td>
+<td>antarctica</td>
+<td>-904.38</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">278</td>
+<td>2014.88</td>
+<td>greenland</td>
+<td>-1911.78</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">279</td>
+<td>2014.88</td>
+<td>antarctica</td>
+<td>-1009.80</td>
+</tr>
+</tbody>
+</table>
+
+<p>280 rows × 3 columns</p>
+</div>
+</div>
+</div>
+</div>
+<p>Note the use of <code>.execute()</code> at the end of the ibis command to see the results. <code>ibis</code> uses a sophisticated strategy called “lazy evaluation”, in which it does not actually run the code we provide until absolutely necessary. While this feels cumbersome now, these small extra steps will pay big dividends for us when we move to big data sources that historically courses have needed to teach entirely different tools for.</p>
+<p>Now that are data is ‘tidy’, some operations are much easier. For instance, plotting two lines, with a legend, merely requires the single aesthetic mapping of color to the location column: <code>color = "location"</code></p>
+<div id="68620a4e" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn.objects <span class="im">as</span> so</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> (so.Plot(land_ice, </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>             x <span class="op">=</span> <span class="st">"date"</span>, </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>             y <span class="op">=</span> <span class="st">"ice_mass"</span>, </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>             color <span class="op">=</span> <span class="st">"location"</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>     .add(so.Line())</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<div>
+<figure class="figure">
+<p><img src="04-transform_files/figure-html/cell-5-output-1.png" width="738" height="445" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We can map this additional column to different aesthetics just as easily. This illustrates the value of well-structured data and abstract grammar for operating on it. For instance, having subplots (facets) based on this data:</p>
+<div id="bb1996f5" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>p.facet(<span class="st">"location"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<div>
+<figure class="figure">
+<p><img src="04-transform_files/figure-html/cell-6-output-1.png" width="738" height="445" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
 </section>
+
 </div>
 </div>
 </div>
 </section>
 </div>
 
-</main> <!-- /main -->
-<script src="./assets/js/material-kit.js"></script>
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Wickham (2014). Tidy data. Journal of Statistical Software 14(10) DOI:10.18637/jss.v059.i10 https://vita.had.co.nz/papers/tidy-data.pdf<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script src="../../../assets/js/material-kit.js"></script>
 <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -925,6 +1163,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../../2025/tutorials/python/03-data-access.html" class="pagination-link" aria-label="Accessing Real World Data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Accessing Real World Data</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../../2025/tutorials/python/04b-gh-actions.html" class="pagination-link" aria-label="GitHub Actions">
+        <span class="nav-page-text">GitHub Actions</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -933,7 +1183,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/espm-288/website/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/espm-288/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.dev/espm-288/website/blob/main/2025/tutorials/python/04-transform.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/espm-288/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

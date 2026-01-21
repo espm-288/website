@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><meta charset="utf-8">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../2025/tutorials/python/02-visualization-basics.html" rel="next">
+<link href="../../../2025/tutorials/python/00-preface.html" rel="prev">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>ESPM-288: Reproducible &amp; Collaborative Data Science</title>
+  <title>github-jupyter</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -32,9 +34,9 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="assets/css/nucleo-icons.css">
-  <link rel="stylesheet" href="assets/css/quarto-material-kit.css">
-  <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel="stylesheet" href="../../../assets/css/nucleo-icons.css">
+  <link rel="stylesheet" href="../../../assets/css/quarto-material-kit.css">
+  <link rel="stylesheet" href="../../../assets/css/custom.css">
   <script id="quarto-search-options" type="application/json">{
     "location": "navbar",
     "copy-button": false,
@@ -65,7 +67,7 @@
   <style>
 
         .quarto-title-block .quarto-title-banner {
-          background-image: url(assets/img/methane_bubbles.jpg);
+          background-image: url(../../../assets/img/methane_bubbles.jpg);
   background-size: cover;
         }
   </style>
@@ -87,7 +89,7 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> <i class="bi bi-house" role="img">
+    <a class="nav-link active" href="../../../index.html" aria-current="page"> <i class="bi bi-house" role="img">
 </i> 
 <span class="menu-text">Home</span></a>
   </li>  
@@ -136,7 +138,7 @@
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Home</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../2025/index.html">📁 2025 Archive</a></li><li class="breadcrumb-item"><a href="../../../2025/tutorials/python/00-preface.html">Tutorials in Python</a></li><li class="breadcrumb-item"><a href="../../../2025/tutorials/python/01-github-jupyter.html">Intro to GitHub &amp; JupyterHub</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -144,12 +146,12 @@
 </header>
 <!-- content -->
 <header id="title-block-header" class="bg-gradient-dark">
-<div class="page-header min-vh-85" style="background-image: url(assets/img/methane_bubbles.jpg);">
+<div class="page-header min-vh-85" style="background-image: url(../../../assets/img/methane_bubbles.jpg);">
 <span class="mask bg-gradient-dark opacity-3"></span>
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-lg-8 text-center mx-auto my-auto">
-<h1 class="text-white">ESPM-288: Reproducible &amp; Collaborative Data Science</h1>
+<h1 class="text-white"></h1>
 <p class="lead mb-4 text-white opacity-8"></p>
 </div>
 </div>
@@ -161,7 +163,7 @@
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><i class="bi bi-house" role="img">
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-house" role="img">
 </i> 
  <span class="menu-text">Home</span></a>
   </div>
@@ -179,7 +181,7 @@
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2026/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2026/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -194,7 +196,7 @@
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2026/tabular-data/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2026/tabular-data/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -211,7 +213,7 @@
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2026/local-llms/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2026/local-llms/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -228,7 +230,7 @@
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2026/spatial-data/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2026/spatial-data/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -245,7 +247,7 @@
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2026/cloud-compute/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2026/cloud-compute/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -266,7 +268,7 @@
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -281,13 +283,13 @@
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/R/1-intro-R.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/R/1-intro-R.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/R/2-earthdata.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/R/2-earthdata.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">NASA EarthData</span></a>
   </div>
 </li>
@@ -295,100 +297,100 @@
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
  <span class="menu-text">Tutorials in Python</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/00-preface.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/00-preface.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/01-github-jupyter.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/01-github-jupyter.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Intro to GitHub &amp; JupyterHub</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/02-visualization-basics.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/02-visualization-basics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualization Basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/03-data-access.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/03-data-access.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Accessing Real World Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/04-transform.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/04-transform.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Transforming Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/04b-gh-actions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/04b-gh-actions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GitHub Actions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/05-ibis-1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/05-ibis-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><code>ibis</code> Single Table Verbs</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/06-ibis-2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/06-ibis-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><code>ibis</code> Table Joins</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/06-ibis-3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/06-ibis-3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><code>ibis</code> mutates and aggregates</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/07-ibis-4.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/07-ibis-4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><code>ibis</code> + <code>seaborn.objects</code>: Data Exploration</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/spatial-1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/spatial-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Intro to Spatial Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/spatial-2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/spatial-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Mapping 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/spatial-3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/spatial-3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Processing Satellite Imagery</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/spatial-4.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/spatial-4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Zonal Statistics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/spatial-5.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/spatial-5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Mapping and publishing</span></a>
   </div>
 </li>
@@ -409,7 +411,7 @@
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tutorials/computing-environment.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../tutorials/computing-environment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Computing Environments</span></a>
   </div>
 </li>
@@ -462,50 +464,49 @@
 <div class="container">
 <div class="row">
 <div class="col-12 mx-auto">
-<p><img align="right" src="./assets/img/espm-288.png" width="150" alt="logo"></p>
-<hr>
-<section id="spring-2026" class="level2">
-<h2 class="anchored" data-anchor-id="spring-2026">Spring 2026</h2>
-<table class="table">
-<thead>
-<tr class="header">
-<th>Logistics</th>
-<th>ℹ️</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>👤 Instructor</td>
-<td><a href="https://carlboettiger.info">Carl Boettiger</a></td>
-</tr>
-<tr class="even">
-<td>🏛 Location</td>
-<td>TBD</td>
-</tr>
-<tr class="odd">
-<td>📅 Days</td>
-<td>TBD</td>
-</tr>
-<tr class="even">
-<td>⏰ Time</td>
-<td>TBD</td>
-</tr>
-</tbody>
-</table>
+<section id="intro-to-github-jupyterhub" class="level1">
+<h1>Intro to GitHub &amp; JupyterHub</h1>
+<p>GitHub &amp; Jupyter are two core platforms in our course and across data science. Over the course of this semester we will becoming very familiar with both, beginning with the most commonly used features and progressing to leveraging the more advanced corners of each.</p>
+<section id="cloud-platforms" class="level3">
+<h3 class="anchored" data-anchor-id="cloud-platforms">Cloud Platforms</h3>
+<p>Both GitHub and JupyterHub are <em>cloud</em> based platforms. The term “cloud” is a fanciful way of saying that this software is running on “someone else’s computer,” usually (but not always), this means in a massive data center with rack upon rack of computers. Many of these data centers are owned by one of only a handful of ‘cloud providers’ – such as Amazon Web Services (AWS), Google, Microsoft, or IBM, among others. In both cases, we will access these platforms through a web browser.</p>
+<p>A key concept that takes some getting used to is thinking about where our data ‘lives’ when working on these platforms. Remember that with each of these platforms, we are working on ‘someone else’s computer’. The browser only gives us a window into that computer. Documents you create on JupyterHub don’t automatically exist on your laptop. If your laptop completely died and you logged into JupyterHub on another platform, your work would still be there. However, if your partner logs into their JupyterHub, they are allocated their own separate computer. To share your work with your partner, your instructors, or the larger world, we will be using GitHub. GitHub is running on yet another computer (actually many connected computers), and we must <em>push</em> our work from the JupyterHub machine to GitHub, or <em>pull</em> changes from GitHub into JupyterHub. While many cloud-based services (like DropBox) automate some of these steps, data science tools such as <code>git</code> give us much more control of what and when we share.</p>
 </section>
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>Welcome to ESPM-288: Reproducible &amp; Collaborative Data Science!</p>
-<p>Course materials for Spring 2026 are coming soon. Check the <a href="./2026/index.html">2026 section</a> for updates.</p>
-<hr>
-</section>
-<section id="previous-years" class="level2">
-<h2 class="anchored" data-anchor-id="previous-years">Previous Years</h2>
+<section id="github" class="level3">
+<h3 class="anchored" data-anchor-id="github">GitHub</h3>
+<p>GitHub is a commercial website platform acquired by Microsoft and widely used by software developers for collaborative work on both public and private code bases. GitHub is built <code>git</code>, an open-source software for version control orginally created by Linus Torvalds, the creator of Linux. Many other open and proprietary platforms also use <code>git</code> as their foundation (notably GitLab and HuggingFace). While many other open source version control utilities exist besides <code>git</code>, <code>git</code> is easily the most widely used today. GitHub is a primary mechanism for ‘publishing’ or distributing software source-code, notebooks and much else. We will be using GitHub as a way of sharing code with your partner and submitting your assignments. While GitHub’s web interface is quite user friendly, the underlying technology of <code>git</code> has a reputation for being quite complex – in fact based on precisely the same technological ideas as the “block-chain”, although it has existed long before anyone decided to apply those ideas to currency. Many instructors therefore avoid teaching GitHub and <code>git</code> in courses!</p>
 <ul>
-<li><a href="./2025/index.html">Spring 2025 Archive</a> - Introduction to Python, LLMs in data science, git/GitHub, relational databases, and geospatial data</li>
+<li>Create an acount on <a href="https://github.com">GitHub</a></li>
+<li>Use the GitHub Classroom magic link distributed in class to create a GitHub repository under the course’s GitHub Organization <a href="https://github.com/espm-157">espm-157</a>.</li>
 </ul>
+<p>Continue below. As we progress, we will learn more about how to use <code>git</code> and GitHub – how to recover earlier versions, create branches and pull requests, leverage automation in GitHub Actions and much else.</p>
+</section>
+<section id="jupyterhub" class="level3">
+<h3 class="anchored" data-anchor-id="jupyterhub">JupyterHub</h3>
+<p>The <a href="https://en.wikipedia.org/wiki/Project_Jupyter">Project Jupyter</a> is an open-source initiative created and led by our own <a href="https://en.wikipedia.org/wiki/Fernando_P%C3%A9rez_(software_developer)">Fernando Perez</a> and collaborators around the world. JupyterHub will be our home platform for the most of our work, where we will write and run code to perform tasks. Because we are running ‘on the cloud’ – on someone else’s computer, this avoids the requirement of having to install all the necessary software used in this course on your laptop. This also means that the computational heavy-lifting is all performed by the remote computer – so we will not rely on students having powerful new laptops to complete computationally intensive tasks. This does not mean that it is <em>necessary</em> to use a cloud provider to do things we do. All the software we are using is free and open source and can be installed on your own computer. Indeed, it is even possible for your computer to act like it’s own data center, talking to itself over precisely the same network protocols we would use to talk to a distant machine. In this way, JupyterHub ‘abstracts’ the computational environment away from the physical hardware, making it easy to deploy a workflow on machine of the appropriate size for the task at hand – be it a tiny application or massive job for a supercomputing center.</p>
+<ul>
+<li>Log in to our JupyterHub, <a href="https://nature.datahub.berkeley.edu" class="uri">https://nature.datahub.berkeley.edu</a></li>
+</ul>
+<p>JupyterHub, JupyterLab, and Jupyter Notebooks – the Jupyter ecosystem is a rich and changing landscape, which can often be confusing! A JupyterHub (such as ours, <a href="https://nature.datahub.berkeley.edu" class="uri">https://nature.datahub.berkeley.edu</a>, sometimes refered to at Berkeley as a DataHub) can serve many users with individual instances of the JupyterLab (a web-based <a href="https://en.wikipedia.org/wiki/Integrated_development_environment">IDE</a>), which can in turn allow a user to work with many Jupyter Notebooks (and many other file formats and interfaces, including RStudio and the open-source Visual Studio Code Server). Jupyter Notebooks are individual files (previously known as ipython notebooks, and still indicated with <code>ipynb</code> extension), a JSON-based serialization combining code, code outputs, and markdown text. These notebooks are used throughout the data science community in industry and academia, and can be used not only in a JupyterLab IDE but in a wide variety of IDEs that have shamelessly copied it, including Google Colab, Microsoft VSCode, and Amazon SageMaker.</p>
+</section>
+<section id="initial-setup" class="level3">
+<h3 class="anchored" data-anchor-id="initial-setup">Initial setup</h3>
+<p><strong>Authentication</strong></p>
+<p>There’s a few one-time setup steps we need to work with Git and GitHub from Jupyterhub. First, in order to access <em>private</em> repositories, we need a way for our JupyterHub instance to authenticate our identity when trying to access our private stuff on GitHub, or when trying to share (write) stuff to our GitHub account. For security purposes, we will use a token-based authentication process to authenticate with GitHub.</p>
+<p>Try to <code>clone</code> our “authentication” repo, <a href="https://github.com/espm-157-f24/auth" class="uri">https://github.com/espm-157-f24/auth</a> into your Jupyterhub using the Clone Repository button from the Git menu (left side). (We will review this together in class).</p>
+<p><img src="https://github.com/espm-157/website/blob/main/_static/img/git-clone.png?raw=true" class="img-fluid"></p>
+<p>Then use the “File” menu on the left side to open the <code>auth</code> folder and then opn the Jupyter Notebook, <code>github-login.ipynb</code>. Try running the cell in that notebook.</p>
+<p><img src="https://github.com/espm-157/website/blob/main/_static/img/file-menu.png?raw=true" class="img-fluid"></p>
+<p>Tada! You have authenticated with GitHub on your Jupyterhub. In future, you will only need to re-open this login notebook to authenticate, as it will remain on your JupyterHub.</p>
+<p>You can now clone private repositories. Note that before you can clone a new repository, you will need to navigate your file-pane out of the current <code>auth/</code> repo and back to the home directory by clicking the folder icon.</p>
+<p><strong>Introduce yourself to git</strong></p>
+<p>Commits in Git are ‘signed’ to indicate who made the changes. The first time git is set up it needs to know the user’s name and email by running the following commands in a terminal. Use the “launcher” menu in Jupyter to open a new terminal and run the following commands.</p>
+<pre><code>git config --global user.name "Your Name"
+git config --global user.email "you@berkeley.edu"</code></pre>
+<p>Some users perfer to use pseudonyms. The email does not have to be valid, though using the same address as you registered with GitHub will let it display your commits as comming from you. Now that git knows who you are, we are ready to start making our own commits.</p>
 
 
+</section>
 </section>
 </div>
 </div>
@@ -514,7 +515,7 @@
 </div>
 
 </main> <!-- /main -->
-<script src="./assets/js/material-kit.js"></script>
+<script src="../../../assets/js/material-kit.js"></script>
 <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -925,6 +926,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../../2025/tutorials/python/00-preface.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../../2025/tutorials/python/02-visualization-basics.html" class="pagination-link" aria-label="Visualization Basics">
+        <span class="nav-page-text">Visualization Basics</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -933,7 +946,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/espm-288/website/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/espm-288/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/espm-288/website/edit/main/2025/tutorials/python/01-github-jupyter.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/espm-288/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><meta charset="utf-8">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../2025/tutorials/R/2-earthdata.html" rel="next">
+<link href="../../../2025/index.html" rel="prev">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>ESPM-288: Reproducible &amp; Collaborative Data Science</title>
+  <meta name="description" content="Cloud-native geospatial data in R">
+  <title>Introduction</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -31,10 +34,44 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
   </style>
-  <link rel="stylesheet" href="assets/css/nucleo-icons.css">
-  <link rel="stylesheet" href="assets/css/quarto-material-kit.css">
-  <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel="stylesheet" href="../../../assets/css/nucleo-icons.css">
+  <link rel="stylesheet" href="../../../assets/css/quarto-material-kit.css">
+  <link rel="stylesheet" href="../../../assets/css/custom.css">
   <script id="quarto-search-options" type="application/json">{
     "location": "navbar",
     "copy-button": false,
@@ -65,7 +102,7 @@
   <style>
 
         .quarto-title-block .quarto-title-banner {
-          background-image: url(assets/img/methane_bubbles.jpg);
+          background-image: url(../../../assets/img/methane_bubbles.jpg);
   background-size: cover;
         }
   </style>
@@ -87,7 +124,7 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> <i class="bi bi-house" role="img">
+    <a class="nav-link active" href="../../../index.html" aria-current="page"> <i class="bi bi-house" role="img">
 </i> 
 <span class="menu-text">Home</span></a>
   </li>  
@@ -136,7 +173,7 @@
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Home</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../2025/index.html">📁 2025 Archive</a></li><li class="breadcrumb-item"><a href="../../../2025/tutorials/R/1-intro-R.html">Tutorials in R</a></li><li class="breadcrumb-item"><a href="../../../2025/tutorials/R/1-intro-R.html">Introduction</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -144,13 +181,13 @@
 </header>
 <!-- content -->
 <header id="title-block-header" class="bg-gradient-dark">
-<div class="page-header min-vh-85" style="background-image: url(assets/img/methane_bubbles.jpg);">
+<div class="page-header min-vh-85" style="background-image: url(../../../assets/img/methane_bubbles.jpg);">
 <span class="mask bg-gradient-dark opacity-3"></span>
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-lg-8 text-center mx-auto my-auto">
-<h1 class="text-white">ESPM-288: Reproducible &amp; Collaborative Data Science</h1>
-<p class="lead mb-4 text-white opacity-8"></p>
+<h1 class="text-white">Introduction</h1>
+<p class="lead mb-4 text-white opacity-8">Cloud-native geospatial data in R</p>
 </div>
 </div>
 </div>
@@ -161,7 +198,7 @@
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><i class="bi bi-house" role="img">
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-house" role="img">
 </i> 
  <span class="menu-text">Home</span></a>
   </div>
@@ -179,7 +216,7 @@
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2026/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2026/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -194,7 +231,7 @@
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2026/tabular-data/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2026/tabular-data/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -211,7 +248,7 @@
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2026/local-llms/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2026/local-llms/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -228,7 +265,7 @@
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2026/spatial-data/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2026/spatial-data/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -245,7 +282,7 @@
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2026/cloud-compute/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2026/cloud-compute/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -266,28 +303,28 @@
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
  <span class="menu-text">Tutorials in R</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/R/1-intro-R.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/R/1-intro-R.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/R/2-earthdata.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/R/2-earthdata.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">NASA EarthData</span></a>
   </div>
 </li>
@@ -304,91 +341,91 @@
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/00-preface.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/00-preface.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/01-github-jupyter.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/01-github-jupyter.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Intro to GitHub &amp; JupyterHub</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/02-visualization-basics.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/02-visualization-basics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualization Basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/03-data-access.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/03-data-access.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Accessing Real World Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/04-transform.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/04-transform.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Transforming Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/04b-gh-actions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/04b-gh-actions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GitHub Actions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/05-ibis-1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/05-ibis-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><code>ibis</code> Single Table Verbs</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/06-ibis-2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/06-ibis-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><code>ibis</code> Table Joins</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/06-ibis-3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/06-ibis-3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><code>ibis</code> mutates and aggregates</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/07-ibis-4.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/07-ibis-4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><code>ibis</code> + <code>seaborn.objects</code>: Data Exploration</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/spatial-1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/spatial-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Intro to Spatial Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/spatial-2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/spatial-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Mapping 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/spatial-3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/spatial-3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Processing Satellite Imagery</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/spatial-4.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/spatial-4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Zonal Statistics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2025/tutorials/python/spatial-5.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../2025/tutorials/python/spatial-5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Mapping and publishing</span></a>
   </div>
 </li>
@@ -409,7 +446,7 @@
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tutorials/computing-environment.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../tutorials/computing-environment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Computing Environments</span></a>
   </div>
 </li>
@@ -462,50 +499,156 @@
 <div class="container">
 <div class="row">
 <div class="col-12 mx-auto">
-<p><img align="right" src="./assets/img/espm-288.png" width="150" alt="logo"></p>
-<hr>
-<section id="spring-2026" class="level2">
-<h2 class="anchored" data-anchor-id="spring-2026">Spring 2026</h2>
-<table class="table">
+<section id="exploring-the-legacy-of-redlining" class="level2">
+<h2 class="anchored" data-anchor-id="exploring-the-legacy-of-redlining">Exploring the Legacy of Redlining</h2>
+<p>This executable notebook provides an opening example to illustrate a cloud-native workflow in both R and python. Pedagogy research emphasizes the importance of “playing the whole game” before breaking down every pitch and hit. We intentionally focus on powerful high-level tools (STAC API, COGs, datacubes) to illustrate how a few chunks of code can perform a task that would be far slower and more verbose in a traditional file-based, download-first workflow. Note the close parallels between R and Python syntax. This arises because both languages wrap the same underlying tools (the STAC API and GDAL warper) and handle many of the nuisances of spatial data – from re-projections and resampling to mosaic tiles – without us noticing.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rstac)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gdalcubes)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stars)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>gdalcubes<span class="sc">::</span><span class="fu">gdalcubes_options</span>(<span class="at">parallel =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="data-discovery" class="level2">
+<h2 class="anchored" data-anchor-id="data-discovery">Data discovery</h2>
+<!--
+Large geospatial data comes in many different formats and is frequently divided into many individual files or "assets" which may represent different points in space, time, sensor bands or variables. Many users are familiar with file-based workflows, where each file type is read into the computational environment by a specific tool and that workflows proceed file-by-file. However, the same data can be represented in many different formats (ncdf or tiff, say) and subdivided in different ways. Importantly, the file-based-divisions often do not reflect the way a user might want to work with the data.  For instance, a NASA ncdf product may provide sea-surface-temperature as one file per day, with each file covering the entire global extent, while a user wants to examine trends in the data over time but only in a certain regional area. In such cases, it is inefficient to download data for the whole globe over many files.  Just as end-users in high level languages are not expected to manage very low-level concepts like memory block sizes, geospatial data scientists need not worry about these file serialization details when they have good high-level abstractions that can do it for them.  
+-->
+<p>The first step in many workflows involves discovering individual spatial data files covering the space, time, and variables of interest. Here we use a <a href="https://stacspec.org/en">STAC</a> Catalog API to recover a list of candidate data. We dig deeper into how this works and what it returns in later recipes. This example searches for images in a lon-lat bounding box from a collection of Cloud-Optimized-GeoTIFF (COG) images taken by Sentinel2 satellite mission. This function will not download any imagery, it merely gives us a list of metadata about available images, including the access URLs.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>box <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">xmin=</span><span class="sc">-</span><span class="fl">122.51</span>, <span class="at">ymin=</span><span class="fl">37.71</span>, <span class="at">xmax=</span><span class="sc">-</span><span class="fl">122.36</span>, <span class="at">ymax=</span><span class="fl">37.81</span>) </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>start_date <span class="ot">&lt;-</span> <span class="st">"2022-06-01"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>end_date <span class="ot">&lt;-</span> <span class="st">"2022-08-01"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>items <span class="ot">&lt;-</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stac</span>(<span class="st">"https://earth-search.aws.element84.com/v0/"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stac_search</span>(<span class="at">collections =</span> <span class="st">"sentinel-s2-l2a-cogs"</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">bbox =</span> box,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>              <span class="at">datetime =</span> <span class="fu">paste</span>(start_date, end_date, <span class="at">sep=</span><span class="st">"/"</span>),</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">limit =</span> <span class="dv">100</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ext_query</span>(<span class="st">"eo:cloud_cover"</span> <span class="sc">&lt;</span> <span class="dv">20</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">post_request</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We pass this list of images to a high-level utilty (<code>gdalcubes</code> in R, <code>odc.stac</code> in python) that will do all of the heavy lifting. Using the URLs and metadata provided by STAC, these functions can extract only our data of interest (given by the bounding box) without downloading unnecessary regions or bands. While streaming the data, these functions will also reproject it into the desired coordinate reference system – (an often costly operation to perform in R) and can potentially resample or aggregate the data to a desired spatial resolution. (The R code will also resample from images in overlapping areas to replace pixels masked by clouds)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>col <span class="ot">&lt;-</span> <span class="fu">stac_image_collection</span>(items<span class="sc">$</span>features, <span class="at">asset_names =</span> <span class="fu">c</span>(<span class="st">"B08"</span>, <span class="st">"B04"</span>, <span class="st">"SCL"</span>))</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>cube <span class="ot">&lt;-</span> <span class="fu">cube_view</span>(<span class="at">srs =</span><span class="st">"EPSG:4326"</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">extent =</span> <span class="fu">list</span>(<span class="at">t0 =</span> start_date, <span class="at">t1 =</span> end_date,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                                <span class="at">left =</span> box[<span class="dv">1</span>], <span class="at">right =</span> box[<span class="dv">3</span>],</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>                                <span class="at">top =</span> box[<span class="dv">4</span>], <span class="at">bottom =</span> box[<span class="dv">2</span>]),</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">dx =</span> <span class="fl">0.0001</span>, <span class="at">dy =</span> <span class="fl">0.0001</span>, <span class="at">dt =</span> <span class="st">"P1D"</span>,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">aggregation =</span> <span class="st">"median"</span>, <span class="at">resampling =</span> <span class="st">"average"</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>mask <span class="ot">&lt;-</span> <span class="fu">image_mask</span>(<span class="st">"SCL"</span>, <span class="at">values=</span><span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">8</span>, <span class="dv">9</span>)) <span class="co"># mask clouds and cloud shadows</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span>  <span class="fu">raster_cube</span>(col, cube, <span class="at">mask =</span> mask)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We can do arbitrary calculations on this data as well. Here we calculate NDVI, a widely used measure of greenness that can be used to determine tree cover. (Note that the R example uses lazy evaluation, and can thus perform these calculations while streaming)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ndvi <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select_bands</span>(<span class="fu">c</span>(<span class="st">"B04"</span>, <span class="st">"B08"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">apply_pixel</span>(<span class="st">"(B08-B04)/(B08+B04)"</span>, <span class="st">"NDVI"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">reduce_time</span>(<span class="fu">c</span>(<span class="st">"mean(NDVI)"</span>))</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>ndvi_stars <span class="ot">&lt;-</span> <span class="fu">st_as_stars</span>(ndvi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>And we plot the result. The long rectangle of Golden Gate Park is clearly visible in the North-West.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mako <span class="ot">&lt;-</span> <span class="fu">tm_scale_continuous</span>(<span class="at">values =</span> viridisLite<span class="sc">::</span><span class="fu">mako</span>(<span class="dv">30</span>))</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>fill <span class="ot">&lt;-</span> <span class="fu">tm_scale_continuous</span>(<span class="at">values =</span> <span class="st">"Greens"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(ndvi_stars) <span class="sc">+</span> <span class="fu">tm_raster</span>(<span class="at">col.scale =</span> mako)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="1-intro-R_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="from-ndvi-to-environmental-justice" class="level1">
+<h1>From NDVI to Environmental Justice</h1>
+<p>We examine the present-day impact of historic “red-lining” of US cities during the Great Depression using data from the <a href="https://dsl.richmond.edu/panorama/redlining">Mapping Inequality</a> project. All though this racist practice was banned by federal law under the Fair Housing Act of 1968, the systemic scars of that practice are still so deeply etched on our landscape that the remain visible from space – “red-lined” areas (graded “D” under the racist HOLC scheme) show systematically lower greenness than predominately-white neighborhoods (Grade “A”). Trees provide many benefits, from mitigating urban heat to biodiversity, real-estate value, to health.</p>
+<section id="zonal-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="zonal-statistics">Zonal statistics</h2>
+<p>In addition to large scale raster data such as satellite imagery, the analysis of vector shapes such as polygons showing administrative regions is a central component of spatial analysis, and particularly important to spatial social sciences. The red-lined areas of the 1930s are one example of spatial vectors. One common operation is to summarise the values of all pixels falling within a given polygon, e.g.&nbsp;computing the average greenness (NDVI)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sf <span class="ot">&lt;-</span> <span class="st">"/vsicurl/https://dsl.richmond.edu/panorama/redlining/static/citiesData/CASanFrancisco1937/geojson.json"</span> <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_read</span>() <span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_make_valid</span>() <span class="sc">|&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>label_coords)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>poly <span class="ot">&lt;-</span> ndvi <span class="sc">|&gt;</span> <span class="fu">extract_geom</span>(sf, <span class="at">FUN =</span> mean, <span class="at">reduce_time =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>sf<span class="sc">$</span>NDVI <span class="ot">&lt;-</span> poly<span class="sc">$</span>NDVI</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We plot the underlying NDVI as well as the average NDVI of each polygon, along with it’s textual grade, using <code>tmap</code>. Note that “A” grades tend to be darkest green (high NDVI) while “D” grades are frequently the least green. (Regions not zoned for housing at the time of the 1937 housing assessment are not displayed as polygons.)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(ndvi_stars) <span class="sc">+</span> <span class="fu">tm_raster</span>(<span class="at">col.scale =</span> mako) <span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_shape</span>(sf) <span class="sc">+</span> <span class="fu">tm_polygons</span>(<span class="st">'NDVI'</span>, <span class="at">fill.scale =</span> fill) <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_shape</span>(sf) <span class="sc">+</span> <span class="fu">tm_text</span>(<span class="st">"grade"</span>, <span class="at">col=</span><span class="st">"darkblue"</span>, <span class="at">size=</span><span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_legend_hide</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="1-intro-R_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Are historically redlined areas still less green?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sf <span class="sc">|&gt;</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(grade) <span class="sc">|&gt;</span> </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">ndvi =</span> <span class="fu">mean</span>(NDVI), </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd =</span> <span class="fu">sd</span>(NDVI)) <span class="sc">|&gt;</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th>Logistics</th>
-<th>ℹ️</th>
+<th style="text-align: left;">grade</th>
+<th style="text-align: right;">ndvi</th>
+<th style="text-align: right;">sd</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>👤 Instructor</td>
-<td><a href="https://carlboettiger.info">Carl Boettiger</a></td>
+<td style="text-align: left;">A</td>
+<td style="text-align: right;">0.3201204</td>
+<td style="text-align: right;">0.0611414</td>
 </tr>
 <tr class="even">
-<td>🏛 Location</td>
-<td>TBD</td>
+<td style="text-align: left;">B</td>
+<td style="text-align: right;">0.2138501</td>
+<td style="text-align: right;">0.0783221</td>
 </tr>
 <tr class="odd">
-<td>📅 Days</td>
-<td>TBD</td>
+<td style="text-align: left;">C</td>
+<td style="text-align: right;">0.1956334</td>
+<td style="text-align: right;">0.0564822</td>
 </tr>
 <tr class="even">
-<td>⏰ Time</td>
-<td>TBD</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: right;">0.1949736</td>
+<td style="text-align: right;">0.0385805</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">0.0962092</td>
+<td style="text-align: right;">NA</td>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>Welcome to ESPM-288: Reproducible &amp; Collaborative Data Science!</p>
-<p>Course materials for Spring 2026 are coming soon. Check the <a href="./2026/index.html">2026 section</a> for updates.</p>
-<hr>
-</section>
-<section id="previous-years" class="level2">
-<h2 class="anchored" data-anchor-id="previous-years">Previous Years</h2>
-<ul>
-<li><a href="./2025/index.html">Spring 2025 Archive</a> - Introduction to Python, LLMs in data science, git/GitHub, relational databases, and geospatial data</li>
-</ul>
+</div>
+</div>
 
 
+</section>
 </section>
 </div>
 </div>
@@ -514,7 +657,7 @@
 </div>
 
 </main> <!-- /main -->
-<script src="./assets/js/material-kit.js"></script>
+<script src="../../../assets/js/material-kit.js"></script>
 <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -925,6 +1068,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../../2025/index.html" class="pagination-link" aria-label="Overview">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Overview</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../../2025/tutorials/R/2-earthdata.html" class="pagination-link" aria-label="NASA EarthData">
+        <span class="nav-page-text">NASA EarthData</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -933,7 +1088,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/espm-288/website/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/espm-288/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/espm-288/website/edit/main/2025/tutorials/R/1-intro-R.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/espm-288/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
