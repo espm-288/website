@@ -808,5 +808,95 @@
       "Tutorials in Python",
       "Accessing Real World Data"
     ]
+  },
+  {
+    "objectID": "2025/tutorials/computing-environment.html",
+    "href": "2025/tutorials/computing-environment.html",
+    "title": "",
+    "section": "",
+    "text": "Good reproducibility is like an onion – it comes in many layers. There’s a purpose to containerized environments deployed on cloud-hosted virtual machines. And we believe students should be able to leverage those things, easily and rapidly deploying cloud-hosted images, and will get to that here. But most of the time, we just want to copy-paste a few lines of code and expect it to work. Many layers of the onion can be found between these two extremes – from package dependencies and system dependencies to containers, orchestration, metadata, even hardware requirements.\nIn the examples here, copy-pasting the code blocks into your preferred environment should work in most cases. Sometimes it may be necessary to install specific libraries or specific versions of those libraries. And for fastest setup and maximum reproducibility, users can deploy the fully containerized environment. It should be as easy as possible to grab the whole onion and take it where you want it – be that a local VSCode editor on your laptop, or an RStudio Server instance running up on Microsoft Azure cloud.\n\n\n\nEach of the recipes on this site correspond to a Quarto or Jupyter notebook in a GitHub repository (see contents/ directory or footer links). Such notebooks form the basis of technical documentation and publishing to a wide array of formats. A _quarto.yml configuration file in the repository root determines the website layout. Notebooks can be run interactively in any appropriate environment (RStudio, JupyterLab, VSCode, etc, see below for free online platforms). Type quarto render from the bash command line or use quarto::quarto_preview() from the R console to preview the entire site.\n\n\n\n\n\n\n \nBoth GitHub Codespaces and Gitpod provide a fast and simple way to enter into integrated development environments such as VSCode, RStudio, or JupyterLab on free, cloud-based virtual machines. Codespaces has a free tier of 60 hours/month, Gitpod of 50 hours a month, both offer paid plans for additional use and larger compute instances. Small codespace instances are also free to instructors\nBy clicking on one of the buttons in GitHub, users will be placed into a free cloud-based virtual machine running a VSCode editor in their web browser. The first setup can take a few minutes to complete.\nAdditionally, this also provides access to an RStudio environment on an embedded port for users who prefer that editor to VSCode. Once the Codespace has fully completed loading, it will include a link in a second welcome message in the Terminal to access RStudio like so:\n\nThe RStudio link can also always be accessed from the Ports tab under the port labeled “Rstudio” (8787). (Gitpod will show a pop-up message to open this port instead.)\nBoth Codespaces and Gitpod can be configured with custom compute environments by supplying a docker image. Both the VSCode and RStudio editors run in the same underlying custom Docker container. This repository includes a Dockerfile defining this compute environment which includes specific versions of R and python packages, the latest releases of the OSGeo C libraries GDAL, PROJ, and GEOS that power many spatial operations in both languages. These elements are pre-compiled in a Docker container based on the latest Ubuntu LTS release (22.04 at the time of writing), which itself is build according to the Dockerfile found in this repository using a GitHub Action. The devcontainer.json configuration will also set up relevant VSCode extensions for both both Jupyter and Quarto notebooks, with each supporting both R and Python.\n\n\n\nOpen this repository in a local Visual Studio Code editor on a Mac, Linux, or Windows laptop and you will probably be prompted “Do you want to open this in project in a Dev Container?” If you agree, VSCode will attempt to use a local Docker installation to pull a container with much of the required software already installed. This uses the same Docker container and enables all the same extensions in VSCode, including RStudio server on the embedded port.\nOf course, users can open this project in a local VSCode or any other favorite editor without opening in the devcontainer. The user assumes responsibility to install necessary software, i.e. the packages listed in requirements.txt or install.R. Note that doing so does not ensure that the same version of system libraries like GDAL, PROJ, or GEOS will necessarily be used. For most operations this should not matter, but users on older versions of GDAL may encounter worse performance or other difficulties.\n\n\n\nWe can sidesteps elements specific to the VSCode editor defined in the devcontainer.json configuration while still leveraging the same system libraries and pre-built packages. For example, a user could also choose to run (or extend) the underlying docker container independently, e.g.\ndocker run --rm -ti ghcr.io/boettiger-lab/nasa-tops:latest bash\nwhich opens a bash terminal inside the container. This approach is also compatible with most HPC setups using singularity instead of docker.\nSome users may not be familiar with editing and running code entirely from a bash shell, so the container also includes RStudio server and thus can be run to launch RStudio in an open port instead,\ndocker run -d -p 8787:8787 --user root -e DISABLE_AUTH=true \\\n  ghcr.io/boettiger-lab/nasa-tops:latest\nand visit http://localhost:8787 to connect.",
+    "crumbs": [
+      "Home",
+      "2025 Archive",
+      "Platforms",
+      "Computing Environments"
+    ]
+  },
+  {
+    "objectID": "2025/tutorials/computing-environment.html#portable-reproducibility",
+    "href": "2025/tutorials/computing-environment.html#portable-reproducibility",
+    "title": "",
+    "section": "",
+    "text": "Good reproducibility is like an onion – it comes in many layers. There’s a purpose to containerized environments deployed on cloud-hosted virtual machines. And we believe students should be able to leverage those things, easily and rapidly deploying cloud-hosted images, and will get to that here. But most of the time, we just want to copy-paste a few lines of code and expect it to work. Many layers of the onion can be found between these two extremes – from package dependencies and system dependencies to containers, orchestration, metadata, even hardware requirements.\nIn the examples here, copy-pasting the code blocks into your preferred environment should work in most cases. Sometimes it may be necessary to install specific libraries or specific versions of those libraries. And for fastest setup and maximum reproducibility, users can deploy the fully containerized environment. It should be as easy as possible to grab the whole onion and take it where you want it – be that a local VSCode editor on your laptop, or an RStudio Server instance running up on Microsoft Azure cloud.",
+    "crumbs": [
+      "Home",
+      "2025 Archive",
+      "Platforms",
+      "Computing Environments"
+    ]
+  },
+  {
+    "objectID": "2025/tutorials/computing-environment.html#notebooks-on-github",
+    "href": "2025/tutorials/computing-environment.html#notebooks-on-github",
+    "title": "",
+    "section": "",
+    "text": "Each of the recipes on this site correspond to a Quarto or Jupyter notebook in a GitHub repository (see contents/ directory or footer links). Such notebooks form the basis of technical documentation and publishing to a wide array of formats. A _quarto.yml configuration file in the repository root determines the website layout. Notebooks can be run interactively in any appropriate environment (RStudio, JupyterLab, VSCode, etc, see below for free online platforms). Type quarto render from the bash command line or use quarto::quarto_preview() from the R console to preview the entire site.",
+    "crumbs": [
+      "Home",
+      "2025 Archive",
+      "Platforms",
+      "Computing Environments"
+    ]
+  },
+  {
+    "objectID": "2025/tutorials/computing-environment.html#on-the-cloud-gitpod-or-codespaces",
+    "href": "2025/tutorials/computing-environment.html#on-the-cloud-gitpod-or-codespaces",
+    "title": "",
+    "section": "",
+    "text": "Both GitHub Codespaces and Gitpod provide a fast and simple way to enter into integrated development environments such as VSCode, RStudio, or JupyterLab on free, cloud-based virtual machines. Codespaces has a free tier of 60 hours/month, Gitpod of 50 hours a month, both offer paid plans for additional use and larger compute instances. Small codespace instances are also free to instructors\nBy clicking on one of the buttons in GitHub, users will be placed into a free cloud-based virtual machine running a VSCode editor in their web browser. The first setup can take a few minutes to complete.\nAdditionally, this also provides access to an RStudio environment on an embedded port for users who prefer that editor to VSCode. Once the Codespace has fully completed loading, it will include a link in a second welcome message in the Terminal to access RStudio like so:\n\nThe RStudio link can also always be accessed from the Ports tab under the port labeled “Rstudio” (8787). (Gitpod will show a pop-up message to open this port instead.)\nBoth Codespaces and Gitpod can be configured with custom compute environments by supplying a docker image. Both the VSCode and RStudio editors run in the same underlying custom Docker container. This repository includes a Dockerfile defining this compute environment which includes specific versions of R and python packages, the latest releases of the OSGeo C libraries GDAL, PROJ, and GEOS that power many spatial operations in both languages. These elements are pre-compiled in a Docker container based on the latest Ubuntu LTS release (22.04 at the time of writing), which itself is build according to the Dockerfile found in this repository using a GitHub Action. The devcontainer.json configuration will also set up relevant VSCode extensions for both both Jupyter and Quarto notebooks, with each supporting both R and Python.",
+    "crumbs": [
+      "Home",
+      "2025 Archive",
+      "Platforms",
+      "Computing Environments"
+    ]
+  },
+  {
+    "objectID": "2025/tutorials/computing-environment.html#locally-vscode",
+    "href": "2025/tutorials/computing-environment.html#locally-vscode",
+    "title": "",
+    "section": "",
+    "text": "Open this repository in a local Visual Studio Code editor on a Mac, Linux, or Windows laptop and you will probably be prompted “Do you want to open this in project in a Dev Container?” If you agree, VSCode will attempt to use a local Docker installation to pull a container with much of the required software already installed. This uses the same Docker container and enables all the same extensions in VSCode, including RStudio server on the embedded port.\nOf course, users can open this project in a local VSCode or any other favorite editor without opening in the devcontainer. The user assumes responsibility to install necessary software, i.e. the packages listed in requirements.txt or install.R. Note that doing so does not ensure that the same version of system libraries like GDAL, PROJ, or GEOS will necessarily be used. For most operations this should not matter, but users on older versions of GDAL may encounter worse performance or other difficulties.",
+    "crumbs": [
+      "Home",
+      "2025 Archive",
+      "Platforms",
+      "Computing Environments"
+    ]
+  },
+  {
+    "objectID": "2025/tutorials/computing-environment.html#anywhere-docker",
+    "href": "2025/tutorials/computing-environment.html#anywhere-docker",
+    "title": "",
+    "section": "",
+    "text": "We can sidesteps elements specific to the VSCode editor defined in the devcontainer.json configuration while still leveraging the same system libraries and pre-built packages. For example, a user could also choose to run (or extend) the underlying docker container independently, e.g.\ndocker run --rm -ti ghcr.io/boettiger-lab/nasa-tops:latest bash\nwhich opens a bash terminal inside the container. This approach is also compatible with most HPC setups using singularity instead of docker.\nSome users may not be familiar with editing and running code entirely from a bash shell, so the container also includes RStudio server and thus can be run to launch RStudio in an open port instead,\ndocker run -d -p 8787:8787 --user root -e DISABLE_AUTH=true \\\n  ghcr.io/boettiger-lab/nasa-tops:latest\nand visit http://localhost:8787 to connect.",
+    "crumbs": [
+      "Home",
+      "2025 Archive",
+      "Platforms",
+      "Computing Environments"
+    ]
+  },
+  {
+    "objectID": "2026/compute-setup.html",
+    "href": "2026/compute-setup.html",
+    "title": "",
+    "section": "",
+    "text": "This guide covers the initial setup for our 2026 computing environment, focusing on VS Code, GitHub Copilot, and R.\n\n1. Create a GitHub Account\nIf you don’t already have one, sign up at github.com/signup.\n\n\n2. Enable Two-Factor Authentication\nRequired before applying for the Student Developer Pack. 1. Go to github.com/settings/security 2. Enable two-factor authentication (2FA). 3. Use an authenticator app (like Google Authenticator) or SMS.\n\n\n3. Add Your Name & Address to Billing\nThis helps verify your identity — no payment info required. 1. Go to github.com/settings/billing/payment_information 2. Add your name as it appears on your student ID. 3. For address, you can use the university address: Wellman Hall, Berkeley, CA 94720\n\n\n4. Apply for GitHub Student Developer Pack\nThe Student Developer Pack gives you free access to GitHub Copilot and other tools. Apply at: education.github.com/pack\n\nBerkeley-Specific Tips\n\nSchool: Select “UC Berkeley” from the list.\nEmail: Use your @berkeley.edu address.\nLocation: Enable location sharing when prompted.\nBrowser: Use Firefox or Chrome (Safari often blocks location sharing).\nStudent ID photo: As long as your billing info name matches your ID, you’ll be approved.\n\n\n\n\n5. Install VS Code\nDownload from code.visualstudio.com and install it for your operating system.\n\n\n6. Install Extensions\n\nGitHub Copilot\nOnce your Student Developer Pack is approved: 1. Open VS Code. 2. Press Ctrl+Shift+X (Windows/Linux) or Cmd+Shift+X (Mac) to open Extensions. 3. Search for “GitHub Copilot” and click Install. 4. Sign in with your GitHub account when prompted.\n\n\nR Extension\nTo work with R in VS Code: 1. Search for “R” in the Extensions view (by Yuki Ueda). 2. Click Install. 3. It’s also recommended to install the languageserver package in R: r    install.packages(\"languageserver\")\n\n\n\n7. R Setup\nEnsure you have R installed on your machine. You can download it from cran.r-project.org.\n\n\nSummary Checklist\n\nGitHub account created\n2FA enabled\nBilling info updated\nStudent Developer Pack application submitted\nVS Code installed\nGitHub Copilot extension installed\nR and R extension installed",
+    "crumbs": [
+      "Home",
+      "2026 (Current)",
+      "Compute Setup"
+    ]
   }
 ]
