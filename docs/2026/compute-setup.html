@@ -33,6 +33,40 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
   </style>
   <link rel="stylesheet" href="../assets/css/nucleo-icons.css">
   <link rel="stylesheet" href="../assets/css/quarto-material-kit.css">
@@ -447,6 +481,102 @@
       </ul>
   </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true"><i class="bi bi-archive" role="img">
+</i> 
+ <span class="menu-text">2024 Archive</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2024/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false">
+ <span class="menu-text">Contents</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2024/contents/ace.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ACE Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2024/contents/computing-environment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Computing Environments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2024/contents/earthdata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NASA EarthData</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2024/contents/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Examining Environmental Justice through Open Source, Cloud-Native Tools</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2024/contents/multifile_raster.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multifile raster arrays</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2024/contents/python-ex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python Ex</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2024/contents/R-ex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Examining Environmental Justice through Open Source, Cloud-Native Tools: R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2024/contents/sst.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EarthData strategies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2024/contents/sst-gdal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">—</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2024/contents/sst-xarray.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Using fsspec virtual filesystem</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2024/contents/xarray-benchmark.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cloud-native EarthData Access</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://espm-288.zulipchat.com" class="sidebar-item-text sidebar-link"><i class="bi bi-chat" role="img">
@@ -506,18 +636,34 @@
 </section>
 <section id="install-extensions" class="level3">
 <h3 class="anchored" data-anchor-id="install-extensions">6. Install Extensions</h3>
-<section id="github-copilot" class="level4">
-<h4 class="anchored" data-anchor-id="github-copilot">GitHub Copilot</h4>
-<p>Once your Student Developer Pack is approved: 1. Open VS Code. 2. Press <code>Ctrl+Shift+X</code> (Windows/Linux) or <code>Cmd+Shift+X</code> (Mac) to open Extensions. 3. Search for “GitHub Copilot” and click <strong>Install</strong>. 4. Sign in with your GitHub account when prompted.</p>
-</section>
-<section id="r-extension" class="level4">
-<h4 class="anchored" data-anchor-id="r-extension">R Extension</h4>
-<p>To work with R in VS Code: 1. Search for “R” in the Extensions view (by Yuki Ueda). 2. Click <strong>Install</strong>. 3. It’s also recommended to install the <code>languageserver</code> package in R: <code>r    install.packages("languageserver")</code></p>
+<p>The following VS Code extensions are required or highly recommended for this course. To install them, open the Extensions view in VS Code (<code>Ctrl+Shift+X</code> or <code>Cmd+Shift+X</code>), search for the extension, and click <strong>Install</strong>.</p>
+<ul>
+<li><strong>R</strong> (by Yuki Ueda): Support for the R language.</li>
+<li><strong>Air (Posit)</strong>: The next-generation extension for R and Python from Posit.</li>
+<li><strong>Quarto</strong>: Support for Quarto documents (<code>.qmd</code>).</li>
+<li><strong>Shiny</strong>: Tools for developing Shiny applications.</li>
+<li><strong>Docker</strong>: Support for working with containers.</li>
+<li><strong>GitHub Copilot</strong>: AI-powered coding assistance. (Requires GitHub Student Pack approval).</li>
+<li><strong>Continue</strong>: An open-source AI assistant for VS Code.</li>
+</ul>
+<section id="additional-setup-for-r" class="level4">
+<h4 class="anchored" data-anchor-id="additional-setup-for-r">Additional Setup for R</h4>
+<p>After installing the R extension, it’s recommended to install the <code>languageserver</code> package in R:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"languageserver"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="r-setup" class="level3">
 <h3 class="anchored" data-anchor-id="r-setup">7. R Setup</h3>
 <p>Ensure you have R installed on your machine. You can download it from <a href="https://cran.r-project.org/">cran.r-project.org</a>.</p>
+</section>
+<section id="python-setup-miniconda" class="level3">
+<h3 class="anchored" data-anchor-id="python-setup-miniconda">8. Python Setup (Miniconda)</h3>
+<p>Some R packages and many AI tools require a Python environment. We recommend installing <strong>Miniconda</strong>, a minimal installer for conda.</p>
+<ol type="1">
+<li>Download the installer for your OS from the <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda website</a>.</li>
+<li>Run the installer and follow the prompts.</li>
+<li>When asked, we recommend letting the installer initialize Miniconda by running <code>conda init</code>.</li>
+</ol>
 </section>
 <section id="summary-checklist" class="level3">
 <h3 class="anchored" data-anchor-id="summary-checklist">Summary Checklist</h3>
@@ -527,8 +673,18 @@
 <li><label><input type="checkbox">Billing info updated</label></li>
 <li><label><input type="checkbox">Student Developer Pack application submitted</label></li>
 <li><label><input type="checkbox">VS Code installed</label></li>
-<li><label><input type="checkbox">GitHub Copilot extension installed</label></li>
-<li><label><input type="checkbox">R and R extension installed</label></li>
+<li><label><input type="checkbox"><strong>Extensions Installed:</strong></label>
+<ul class="task-list">
+<li><label><input type="checkbox">R</label></li>
+<li><label><input type="checkbox">Air (Posit)</label></li>
+<li><label><input type="checkbox">Quarto</label></li>
+<li><label><input type="checkbox">Shiny</label></li>
+<li><label><input type="checkbox">Docker</label></li>
+<li><label><input type="checkbox">GitHub Copilot</label></li>
+<li><label><input type="checkbox">Continue</label></li>
+</ul></li>
+<li><label><input type="checkbox">R installed</label></li>
+<li><label><input type="checkbox">Miniconda (Python) installed</label></li>
 </ul>
 
 

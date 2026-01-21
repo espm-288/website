@@ -36,24 +36,31 @@ Download from [code.visualstudio.com](https://code.visualstudio.com/) and instal
 
 ### 6. Install Extensions
 
-#### GitHub Copilot
-Once your Student Developer Pack is approved:
-1. Open VS Code.
-2. Press `Ctrl+Shift+X` (Windows/Linux) or `Cmd+Shift+X` (Mac) to open Extensions.
-3. Search for "GitHub Copilot" and click **Install**.
-4. Sign in with your GitHub account when prompted.
+The following VS Code extensions are required or highly recommended for this course. To install them, open the Extensions view in VS Code (`Ctrl+Shift+X` or `Cmd+Shift+X`), search for the extension, and click **Install**.
 
-#### R Extension
-To work with R in VS Code:
-1. Search for "R" in the Extensions view (by Yuki Ueda).
-2. Click **Install**.
-3. It's also recommended to install the `languageserver` package in R:
-   ```r
-   install.packages("languageserver")
-   ```
+*   **R** (by Yuki Ueda): Support for the R language.
+*   **Air (Posit)**: The next-generation extension for R and Python from Posit.
+*   **Quarto**: Support for Quarto documents (`.qmd`).
+*   **Shiny**: Tools for developing Shiny applications.
+*   **Docker**: Support for working with containers.
+*   **GitHub Copilot**: AI-powered coding assistance. (Requires GitHub Student Pack approval).
+*   **Continue**: An open-source AI assistant for VS Code.
+
+#### Additional Setup for R
+After installing the R extension, it's recommended to install the `languageserver` package in R:
+```r
+install.packages("languageserver")
+```
 
 ### 7. R Setup
 Ensure you have R installed on your machine. You can download it from [cran.r-project.org](https://cran.r-project.org/).
+
+### 8. Python Setup (Miniconda)
+Some R packages and many AI tools require a Python environment. We recommend installing **Miniconda**, a minimal installer for conda.
+
+1. Download the installer for your OS from the [Miniconda website](https://docs.conda.io/en/latest/miniconda.html).
+2. Run the installer and follow the prompts.
+3. When asked, we recommend letting the installer initialize Miniconda by running `conda init`.
 
 ### Summary Checklist
 - [ ] GitHub account created
@@ -61,5 +68,15 @@ Ensure you have R installed on your machine. You can download it from [cran.r-pr
 - [ ] Billing info updated
 - [ ] Student Developer Pack application submitted
 - [ ] VS Code installed
-- [ ] GitHub Copilot extension installed
-- [ ] R and R extension installed
+- [ ] **Extensions Installed:**
+    - [ ] R
+    - [ ] Air (Posit)
+    - [ ] Quarto
+    - [ ] Shiny
+    - [ ] Docker
+    - [ ] GitHub Copilot
+    - [ ] Continue
+- [ ] R installed
+- [ ] Miniconda (Python) installed
+
+
