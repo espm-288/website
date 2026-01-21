@@ -45,29 +45,33 @@ website:
         icon: house
         text: Home
       - text: "---"
-      - section: '📅 2026 (Current)'
+      - section: '2026 (Current)'
         icon: calendar-check
         contents:
           - file: 2026/index.qmd
             text: Overview
-          - section: '📊 Tabular Data'
+          - section: 'Tabular Data'
+            icon: table
             contents:
               - file: 2026/tabular-data/index.qmd
                 text: Overview
-          - section: '🤖 Local LLMs'
+          - section: 'Local LLMs'
+            icon: cpu
             contents:
               - file: 2026/local-llms/index.qmd
                 text: Overview
-          - section: '🗺️ Spatial Data'
+          - section: 'Spatial Data'
+            icon: geo-alt
             contents:
               - file: 2026/spatial-data/index.qmd
                 text: Overview
-          - section: '☁️ Cloud Compute'
+          - section: 'Cloud Compute'
+            icon: cloud
             contents:
               - file: 2026/cloud-compute/index.qmd
                 text: Overview
       - text: "---"
-      - section: '📁 2025 Archive'
+      - section: '2025 Archive'
         icon: archive
         contents:
           - file: 2025/index.qmd
