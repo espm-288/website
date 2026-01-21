@@ -82,20 +82,19 @@ website:
           - section: 'Tutorials in Python'
             contents:
               - auto: "2025/tutorials/python/*"
+          - section: Platforms
+            contents:
+              - file: 2025/tutorials/computing-environment.qmd
+              - text: Codespaces
+                icon: github
+                href: https://codespaces.new/espm-288/website?quickstart=1
+              - text: GitPod
+                icon: app
+                href: https://gitpod.io/#https://github.com/espm-288/website
+              - text: Containers
+                icon: box
+                href: https://github.com/orgs/espm-288/packages
       - text: "---"
-      - section: Platforms
-        icon: pc-display-horizontal
-        contents:
-        - href: tutorials/computing-environment.qmd
-        - text: Codespaces
-          icon: github
-          href: https://codespaces.new/espm-288/website?quickstart=1
-        - text: GitPod
-          icon: app
-          href: https://gitpod.io/#https://github.com/espm-288/website
-        - text: Containers
-          icon: box
-          href: https://github.com/orgs/espm-288/packages
       - text: Forum
         icon: chat
         href: https://espm-288.zulipchat.com
