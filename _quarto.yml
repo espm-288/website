@@ -15,7 +15,6 @@ website:
   repo-actions: [edit, issue]
   page-navigation: true
   navbar:
-    background: "#333333"
     search: true
     right:
       - file: index.qmd
