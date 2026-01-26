@@ -1,0 +1,111 @@
+---
+title: "Syllabus"
+format: html
+---
+
+> [!NOTE]
+> This syllabus is a living document and subject to change as the course progresses.
+
+**Instructor:** Carl Boettiger  
+**Location:** Room 166 - Social Sciences Building  
+**Time:** M/W 10:00 - 11:30  
+
+## Course Overview
+
+This course explores the cutting edge of data science for environmental problem solving, with a focus on reproducible, collaborative, and scalable workflows. In Spring 2026, we adopt an **AI-augmented, agent-first methodology**, moving beyond syntax memorization to architecting, prompting, auditing, and deploying solutions.
+
+The curriculum is structured around **5 Core Modules** over 15 weeks, allowing us to go deep into technical stacks and theoretical frameworks. We will leverage the R ecosystem, integrating modern tools for high-performance computing and AI.
+
+Before we begin, please ensure you have completed the [Compute Setup](compute-setup.qmd).
+
+## The Agent-First Methodology
+*   **Architect:** Design data flows and system architecture.
+*   **Prompt:** Direct AI implementation effectively.
+*   **Audit:** Verify outputs and ensure reproducibility.
+*   **Deploy:** Ship robust, scalable solutions.
+
+## Course Modules
+
+### Module 1: The AI-Data Analyst
+**Duration:** Weeks 1-4  
+**Focus:** AI-assisted coding, high-performance tabular data, visualization.
+
+*   **Core Concepts:**
+    *   Reproducible environments (DevContainers, Codespaces).
+    *   High-performance queries with **DuckDB** and **Parquet** via **`duckdbfs`** within the **tidyverse**.
+    *   Interactive dashboards with **Shiny**.
+    *   Data cleaning and visualization pipelines.
+*   **Deep Dive:** Advanced SQL strategies, optimization of data pipelines, and implementing rigorous data validation frameworks using `pointblank` or similar R tools.
+*   **Project:** Build an interactive emissions dashboard.
+
+### Module 2: Spatial Data & Environmental Justice
+**Duration:** Weeks 5-7  
+**Focus:** Geospatial analysis, cloud-native formats, EJ lens.
+
+*   **Core Concepts:**
+    *   **Vector Data:** Analysis with **DuckDB Spatial**.
+    *   **Raster Data:** Scalable processing with **`gdalcubes`**.
+    *   Cloud-native geospatial formats (COG, GeoParquet).
+    *   Mapping environmental impacts (e.g., data centers, biodiversity).
+    *   Introduction to **Geospatial Foundation Models**.
+*   **Deep Dive:** Handling massive geospatial datasets, custom coordinate reference systems discussions, and critical data studies applied to Environmental Justice.
+*   **Project:** Map and analyze environmental impacts of infrastructure.
+
+### Module 3: Working with LLMs & Unstructured Data
+**Duration:** Weeks 8-10  
+**Focus:** R-based LLM tools, Structured Outputs, Unstructured data extraction.
+
+*   **Core Concepts:**
+    *   Leading edge of R LLMs using **Posit PBC** tools:
+        *   **`ellmer`** for programmatic LLM interaction.
+        *   **`mcptools`** for Model Context Protocol integration.
+        *   **`ragnar`** (RAG implementations).
+        *   **`vitals`** (https://vitals.tidyverse.org/) for model evaluation.
+    *   Extracting structured data (JSON) from unstructured text (PDFs, reports).
+*   **Deep Dive:** Comparing local vs. cloud models, fine-tuning considerations, and evaluating LLM outputs for scientific rigor.
+*   **Project:** Extract and analyze data from corporate sustainability reports.
+
+### Module 4: Scaling & Cloud Computing
+**Duration:** Weeks 11-12  
+**Focus:** Container orchestration, Kubernetes, Cloud architecture.
+
+*   **Core Concepts:**
+    *   Introduction to Cloud Infrastructure (AWS/Azure/GCP).
+    *   Containerization beyond local Docker.
+    *   **Kubernetes (K8s):** Concepts (Pods, Deployments, Services) and practice.
+    *   Scaling R-based data analysis workflows on the cloud.
+*   **Project:** Deploy a scalable data application or analysis pipeline to a Kubernetes cluster.
+
+### Module 5: Capstone Project
+**Duration:** Weeks 13-15  
+**Focus:** Synthesis, Innovation, Deployment.
+
+*   **Goal:** Students work individually or in small teams to conceptualize, build, and deploy a significant data science project applying techniques from the previous modules.
+*   **Stages:**
+    *   **Scope:** Proposal and architectural design.
+    *   **Sprint:** Agile development of an MVP.
+    *   **Refine:** User experience and documentation.
+    *   **Demo:** Live presentation of the deployed application.
+
+## Tech Stack
+*   **IDE:** VS Code / Antigravity
+*   **Language:** R (primary)
+*   **Data:** DuckDB, `duckdbfs`, GeoParquet, `gdalcubes`
+*   **AI:** `ellmer`, `mcptools`, `vitals`
+*   **Compute:** GitHub Codespaces, Kubernetes
+*   **Web:** Quarto, Shiny
+
+## Evaluation
+
+The course grade is based on 5 Core Modules. Each module is worth 20 points, for a total of 100 points. Participation and engagement are assessed as part of the score for each module.
+
+| Component | Points |
+|-----------|--------|
+| Module 1: The AI-Data Analyst | 20 |
+| Module 2: Spatial Data & Environmental Justice | 20 |
+| Module 3: Working with LLMs & Unstructured Data | 20 |
+| Module 4: Scaling & Cloud Computing | 20 |
+| Module 5: Capstone Project | 20 |
+| **Total** | **100** |
+
+See [Policies](../policies.qmd) for full details on grading, participation, and attendance.

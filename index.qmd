@@ -16,17 +16,22 @@ format: html
 Logistics     | ℹ️ 
 --------------|-----------------------------------------------
 👤 Instructor | [Carl Boettiger](https://carlboettiger.info)
-🏛 Location   | TBD
-📅 Days       | TBD
-⏰ Time       | TBD
+🏛 Location   | Room 166 - Social Sciences Building
+📅 Days       | Monday / Wednesday
+⏰ Time       | 10:00 - 11:30
 
 
 
 ## Overview
 
-Welcome to ESPM-288: Reproducible & Collaborative Data Science!
+Welcome to **ESPM-288: Reproducible & Collaborative Data Science**. 
 
-Course materials for Spring 2026 are coming soon. Check the [2026 section](2026/index.qmd) for updates.
+This Spring 2026 semester, we explore the **Agent-First Methodology** for environmental data science. We will leverage the **R ecosystem** (including `duckdbfs`, `tidyverse`, `mapgl`, `gdalcubes` `ellmer`, `vitals`, `mcptools`, `ragnar`, & `shiny`) to architect, audit, and deploy robust data solutions for complex environmental problems.  We will focus on high-performance pipelines for larger-than-RAM data (e.g. parquet/geoparquet, COGs), interactive visualizations (`mapbox`/`maplibre`), high-throughput analysis and app deployments (e.g. `docker`, `kubernetes`, GitHub Actions/GH Package Registry). 
+
+We will explore essential and emerging components of LLM coding ecosystem, including open/local models, retrieval-augmented generation (RAG), structured data, tool use, Model Context Protocol (MCP) servers and clients. In the process we will examine and compare the energy use and other environmental footprints of various LLM models, as well as other considerations for responsible AI including security, privacy, reliability, and bias.  
+
+
+Access the [Current 2026 Course Materials](2026/index.qmd).
 
 ---
 

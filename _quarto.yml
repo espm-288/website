@@ -21,6 +21,9 @@ website:
       - file: index.qmd
         icon: house
         text: Home
+      - file: policies.qmd
+        icon: file-text
+        text: Policies
       - text: Platforms
         icon: pc-display-horizontal
         menu:

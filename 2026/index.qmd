@@ -12,18 +12,16 @@ format: html
 Logistics     | ℹ️ 
 --------------|-----------------------------------------------
 👤 Instructor | [Carl Boettiger](https://carlboettiger.info)
-🏛 Location   | TBD
-📅 Days       | TBD
-⏰ Time       | TBD
+🏛 Location   | Room 166 - Social Sciences Building
+📅 Days       | Monday / Wednesday
+⏰ Time       | 10:00 - 11:30
 
 ## Overview
 
-Welcome to the Spring 2026 semester of ESPM-288: Reproducible & Collaborative Data Science!
-
-*Course materials coming soon.*
+Welcome to the Spring 2026 semester of **ESPM-288: Reproducible & Collaborative Data Science**. This year, we are diving deep into the **Agent-First Methodology**, exploring how AI agents can augment our ability to solve complex environmental problems. We will be using the R ecosystem (`duckdbfs`, `ellmer`, `shiny`) to architect, prompt, audit, and deploy robust data solutions.
 
 ### Course Materials
 
-- Overview (coming soon)
+- [Syllabus](syllabus.qmd)
+- [Compute Setup](compute-setup.qmd)
 - Schedule (coming soon)
-- Syllabus (coming soon)

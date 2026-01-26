@@ -7,7 +7,6 @@
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../2026/compute-setup.html" rel="next">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -19,7 +18,7 @@
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>ESPM-288: Spring 2026</title>
+  <title>Syllabus</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -142,7 +141,7 @@
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../2026/index.html">2026 (Current)</a></li><li class="breadcrumb-item"><a href="../2026/index.html">Overview</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -155,7 +154,7 @@
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-lg-8 text-center mx-auto my-auto">
-<h1 class="text-white">ESPM-288: Spring 2026</h1>
+<h1 class="text-white">Syllabus</h1>
 <p class="lead mb-4 text-white opacity-8"></p>
 </div>
 </div>
@@ -185,7 +184,7 @@
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../2026/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../2026/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -573,50 +572,164 @@
 <div class="container">
 <div class="row">
 <div class="col-12 mx-auto">
-<p><img align="right" src="../assets/img/espm-288.png" width="150" alt="logo"></p>
-<hr>
-<section id="spring-2026" class="level2">
-<h2 class="anchored" data-anchor-id="spring-2026">Spring 2026</h2>
+<blockquote class="blockquote">
+<p>[!NOTE] This syllabus is a living document and subject to change as the course progresses.</p>
+</blockquote>
+<p><strong>Instructor:</strong> Carl Boettiger<br>
+<strong>Location:</strong> Room 166 - Social Sciences Building<br>
+<strong>Time:</strong> M/W 10:00 - 11:30</p>
+<section id="course-overview" class="level2">
+<h2 class="anchored" data-anchor-id="course-overview">Course Overview</h2>
+<p>This course explores the cutting edge of data science for environmental problem solving, with a focus on reproducible, collaborative, and scalable workflows. In Spring 2026, we adopt an <strong>AI-augmented, agent-first methodology</strong>, moving beyond syntax memorization to architecting, prompting, auditing, and deploying solutions.</p>
+<p>The curriculum is structured around <strong>5 Core Modules</strong> over 15 weeks, allowing us to go deep into technical stacks and theoretical frameworks. We will leverage the R ecosystem, integrating modern tools for high-performance computing and AI.</p>
+<p>Before we begin, please ensure you have completed the <a href="../2026/compute-setup.html">Compute Setup</a>.</p>
+</section>
+<section id="the-agent-first-methodology" class="level2">
+<h2 class="anchored" data-anchor-id="the-agent-first-methodology">The Agent-First Methodology</h2>
+<ul>
+<li><strong>Architect:</strong> Design data flows and system architecture.</li>
+<li><strong>Prompt:</strong> Direct AI implementation effectively.</li>
+<li><strong>Audit:</strong> Verify outputs and ensure reproducibility.</li>
+<li><strong>Deploy:</strong> Ship robust, scalable solutions.</li>
+</ul>
+</section>
+<section id="course-modules" class="level2">
+<h2 class="anchored" data-anchor-id="course-modules">Course Modules</h2>
+<section id="module-1-the-ai-data-analyst" class="level3">
+<h3 class="anchored" data-anchor-id="module-1-the-ai-data-analyst">Module 1: The AI-Data Analyst</h3>
+<p><strong>Duration:</strong> Weeks 1-4<br>
+<strong>Focus:</strong> AI-assisted coding, high-performance tabular data, visualization.</p>
+<ul>
+<li><strong>Core Concepts:</strong>
+<ul>
+<li>Reproducible environments (DevContainers, Codespaces).</li>
+<li>High-performance queries with <strong>DuckDB</strong> and <strong>Parquet</strong> via <strong><code>duckdbfs</code></strong> within the <strong>tidyverse</strong>.</li>
+<li>Interactive dashboards with <strong>Shiny</strong>.</li>
+<li>Data cleaning and visualization pipelines.</li>
+</ul></li>
+<li><strong>Deep Dive:</strong> Advanced SQL strategies, optimization of data pipelines, and implementing rigorous data validation frameworks using <code>pointblank</code> or similar R tools.</li>
+<li><strong>Project:</strong> Build an interactive emissions dashboard.</li>
+</ul>
+</section>
+<section id="module-2-spatial-data-environmental-justice" class="level3">
+<h3 class="anchored" data-anchor-id="module-2-spatial-data-environmental-justice">Module 2: Spatial Data &amp; Environmental Justice</h3>
+<p><strong>Duration:</strong> Weeks 5-7<br>
+<strong>Focus:</strong> Geospatial analysis, cloud-native formats, EJ lens.</p>
+<ul>
+<li><strong>Core Concepts:</strong>
+<ul>
+<li><strong>Vector Data:</strong> Analysis with <strong>DuckDB Spatial</strong>.</li>
+<li><strong>Raster Data:</strong> Scalable processing with <strong><code>gdalcubes</code></strong>.</li>
+<li>Cloud-native geospatial formats (COG, GeoParquet).</li>
+<li>Mapping environmental impacts (e.g., data centers, biodiversity).</li>
+<li>Introduction to <strong>Geospatial Foundation Models</strong>.</li>
+</ul></li>
+<li><strong>Deep Dive:</strong> Handling massive geospatial datasets, custom coordinate reference systems discussions, and critical data studies applied to Environmental Justice.</li>
+<li><strong>Project:</strong> Map and analyze environmental impacts of infrastructure.</li>
+</ul>
+</section>
+<section id="module-3-working-with-llms-unstructured-data" class="level3">
+<h3 class="anchored" data-anchor-id="module-3-working-with-llms-unstructured-data">Module 3: Working with LLMs &amp; Unstructured Data</h3>
+<p><strong>Duration:</strong> Weeks 8-10<br>
+<strong>Focus:</strong> R-based LLM tools, Structured Outputs, Unstructured data extraction.</p>
+<ul>
+<li><strong>Core Concepts:</strong>
+<ul>
+<li>Leading edge of R LLMs using <strong>Posit PBC</strong> tools:
+<ul>
+<li><strong><code>ellmer</code></strong> for programmatic LLM interaction.</li>
+<li><strong><code>mcptools</code></strong> for Model Context Protocol integration.</li>
+<li><strong><code>ragnar</code></strong> (RAG implementations).</li>
+<li><strong><code>vitals</code></strong> (https://vitals.tidyverse.org/) for model evaluation.</li>
+</ul></li>
+<li>Extracting structured data (JSON) from unstructured text (PDFs, reports).</li>
+</ul></li>
+<li><strong>Deep Dive:</strong> Comparing local vs.&nbsp;cloud models, fine-tuning considerations, and evaluating LLM outputs for scientific rigor.</li>
+<li><strong>Project:</strong> Extract and analyze data from corporate sustainability reports.</li>
+</ul>
+</section>
+<section id="module-4-scaling-cloud-computing" class="level3">
+<h3 class="anchored" data-anchor-id="module-4-scaling-cloud-computing">Module 4: Scaling &amp; Cloud Computing</h3>
+<p><strong>Duration:</strong> Weeks 11-12<br>
+<strong>Focus:</strong> Container orchestration, Kubernetes, Cloud architecture.</p>
+<ul>
+<li><strong>Core Concepts:</strong>
+<ul>
+<li>Introduction to Cloud Infrastructure (AWS/Azure/GCP).</li>
+<li>Containerization beyond local Docker.</li>
+<li><strong>Kubernetes (K8s):</strong> Concepts (Pods, Deployments, Services) and practice.</li>
+<li>Scaling R-based data analysis workflows on the cloud.</li>
+</ul></li>
+<li><strong>Project:</strong> Deploy a scalable data application or analysis pipeline to a Kubernetes cluster.</li>
+</ul>
+</section>
+<section id="module-5-capstone-project" class="level3">
+<h3 class="anchored" data-anchor-id="module-5-capstone-project">Module 5: Capstone Project</h3>
+<p><strong>Duration:</strong> Weeks 13-15<br>
+<strong>Focus:</strong> Synthesis, Innovation, Deployment.</p>
+<ul>
+<li><strong>Goal:</strong> Students work individually or in small teams to conceptualize, build, and deploy a significant data science project applying techniques from the previous modules.</li>
+<li><strong>Stages:</strong>
+<ul>
+<li><strong>Scope:</strong> Proposal and architectural design.</li>
+<li><strong>Sprint:</strong> Agile development of an MVP.</li>
+<li><strong>Refine:</strong> User experience and documentation.</li>
+<li><strong>Demo:</strong> Live presentation of the deployed application.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="tech-stack" class="level2">
+<h2 class="anchored" data-anchor-id="tech-stack">Tech Stack</h2>
+<ul>
+<li><strong>IDE:</strong> VS Code / Antigravity</li>
+<li><strong>Language:</strong> R (primary)</li>
+<li><strong>Data:</strong> DuckDB, <code>duckdbfs</code>, GeoParquet, <code>gdalcubes</code></li>
+<li><strong>AI:</strong> <code>ellmer</code>, <code>mcptools</code>, <code>vitals</code></li>
+<li><strong>Compute:</strong> GitHub Codespaces, Kubernetes</li>
+<li><strong>Web:</strong> Quarto, Shiny</li>
+</ul>
+</section>
+<section id="evaluation" class="level2">
+<h2 class="anchored" data-anchor-id="evaluation">Evaluation</h2>
+<p>The course grade is based on 5 Core Modules. Each module is worth 20 points, for a total of 100 points. Participation and engagement are assessed as part of the score for each module.</p>
 <table class="table">
 <thead>
 <tr class="header">
-<th>Logistics</th>
-<th>ℹ️</th>
+<th>Component</th>
+<th>Points</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>👤 Instructor</td>
-<td><a href="https://carlboettiger.info">Carl Boettiger</a></td>
+<td>Module 1: The AI-Data Analyst</td>
+<td>20</td>
 </tr>
 <tr class="even">
-<td>🏛 Location</td>
-<td>Room 166 - Social Sciences Building</td>
+<td>Module 2: Spatial Data &amp; Environmental Justice</td>
+<td>20</td>
 </tr>
 <tr class="odd">
-<td>📅 Days</td>
-<td>Monday / Wednesday</td>
+<td>Module 3: Working with LLMs &amp; Unstructured Data</td>
+<td>20</td>
 </tr>
 <tr class="even">
-<td>⏰ Time</td>
-<td>10:00 - 11:30</td>
+<td>Module 4: Scaling &amp; Cloud Computing</td>
+<td>20</td>
+</tr>
+<tr class="odd">
+<td>Module 5: Capstone Project</td>
+<td>20</td>
+</tr>
+<tr class="even">
+<td><strong>Total</strong></td>
+<td><strong>100</strong></td>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>Welcome to the Spring 2026 semester of <strong>ESPM-288: Reproducible &amp; Collaborative Data Science</strong>. This year, we are diving deep into the <strong>Agent-First Methodology</strong>, exploring how AI agents can augment our ability to solve complex environmental problems. We will be using the R ecosystem (<code>duckdbfs</code>, <code>ellmer</code>, <code>shiny</code>) to architect, prompt, audit, and deploy robust data solutions.</p>
-<section id="course-materials" class="level3">
-<h3 class="anchored" data-anchor-id="course-materials">Course Materials</h3>
-<ul>
-<li><a href="../2026/syllabus.html">Syllabus</a></li>
-<li><a href="../2026/compute-setup.html">Compute Setup</a></li>
-<li>Schedule (coming soon)</li>
-</ul>
+<p>See <a href="../policies.html">Policies</a> for full details on grading, participation, and attendance.</p>
 
 
-</section>
 </section>
 </div>
 </div>
@@ -1036,15 +1149,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../2026/compute-setup.html" class="pagination-link" aria-label="Compute Setup">
-        <span class="nav-page-text">Compute Setup</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1053,7 +1157,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/espm-288/website/edit/main/2026/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/espm-288/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/espm-288/website/edit/main/2026/syllabus.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/espm-288/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
