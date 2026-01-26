@@ -50,8 +50,9 @@ website:
       - section: '2026 (Current)'
         icon: calendar-check
         contents:
-          - file: 2026/index.qmd
-            text: Overview
+
+          - file: 2026/syllabus.qmd
+            text: Syllabus
           - file: 2026/compute-setup.qmd
             text: Compute Setup
           - section: 'Tabular Data'

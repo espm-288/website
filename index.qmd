@@ -31,7 +31,11 @@ This Spring 2026 semester, we explore the **Agent-First Methodology** for enviro
 We will explore essential and emerging components of LLM coding ecosystem, including open/local models, retrieval-augmented generation (RAG), structured data, tool use, Model Context Protocol (MCP) servers and clients. In the process we will examine and compare the energy use and other environmental footprints of various LLM models, as well as other considerations for responsible AI including security, privacy, reliability, and bias.  
 
 
-Access the [Current 2026 Course Materials](2026/index.qmd).
+### Course Materials
+
+- [Syllabus](2026/syllabus.qmd)
+- [Compute Setup](2026/compute-setup.qmd)
+- Schedule (coming soon)
 
 ---
 
