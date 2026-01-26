@@ -7,9 +7,6 @@
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../2024/contents/ace.html" rel="next">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -21,7 +18,7 @@
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>2024: NASA TOPS-T: Cloud Native Geospatial in R &amp; Python</title>
+  <title>Syllabus</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -58,35 +55,6 @@
       "search-label": "Search"
     }
   }</script>
-  <script>
-
-    window.document.addEventListener("DOMContentLoaded", function (_event) {
-      const listingTargetEl = window.document.querySelector('#listing-listing .list');
-      if (!listingTargetEl) {
-        // No listing discovered, do not attach.
-        return; 
-      }
-
-      const options = {
-        valueNames: ['listing-title','listing-author','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-        
-        searchColumns: ["listing-title","listing-author"],
-      };
-
-      window['quarto-listings'] = window['quarto-listings'] || {};
-      window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-      if (window['quarto-listing-loaded']) {
-        window['quarto-listing-loaded']();
-      }
-    });
-
-    window.addEventListener('hashchange',() => {
-      if (window['quarto-listing-loaded']) {
-        window['quarto-listing-loaded']();
-      }
-    })
-    </script>
   <style>
 
         .quarto-title-block .quarto-title-banner {
@@ -94,8 +62,6 @@
   background-size: cover;
         }
   </style>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -169,7 +135,7 @@
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../2024/index.html">2024 Archive</a></li><li class="breadcrumb-item"><a href="../2024/index.html">Overview</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -182,7 +148,7 @@
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-lg-8 text-center mx-auto my-auto">
-<h1 class="text-white">2024: NASA TOPS-T: Cloud Native Geospatial in R &amp; Python</h1>
+<h1 class="text-white">Syllabus</h1>
 <p class="lead mb-4 text-white opacity-8"></p>
 </div>
 </div>
@@ -490,7 +456,7 @@
       <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../2024/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../2024/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -600,199 +566,172 @@
 <div class="container">
 <div class="row">
 <div class="col-12 mx-auto">
-<p><img align="right" src="https://zenodo.org/record/7742997/files/Tops_Badge_Nasa.png" width="150" alt="Transform to Open Science Logo that shows a top as a rocket taking off and the text Transform to Open Science in the white vapor plume around the launch site"></p>
-<p><a href="https://www.repostatus.org/#wip"><img src="https://www.repostatus.org/badges/latest/wip.svg" class="img-fluid" alt="Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public."></a> <a href="https://github.com/boettiger-lab/nasa-topst-env-justice/actions/workflows/docker-image.yml"><img src="https://github.com/boettiger-lab/nasa-topst-env-justice/actions/workflows/docker-image.yml/badge.svg" class="img-fluid" alt="Docker Image :whale2:"></a> <a href="https://codespaces.new/espm-157/nasa-topst-env-justice?quickstart=1"><img src="https://github.com/codespaces/badge.svg" class="img-fluid"></a></p>
-<hr>
-<p>This project seeks to introduce cloud-native approaches to geospatial analysis in R &amp; Python through the lens of environmental justice applications. This is not meant as a complete course in geospatial analysis – though we encourage interested readers to consider <a href="https://geocompx.org/">Geocomputation in R or Python</a> as an excellent resource. We present opinionated recipes meant to empower users with the following design goals:</p>
+<blockquote class="blockquote">
+<p>[!NOTE] This syllabus is a living document and subject to change as the course progresses.</p>
+</blockquote>
+<p><strong>Instructor:</strong> Carl Boettiger<br>
+<strong>Location:</strong> Room 166 - Social Sciences Building<br>
+<strong>Time:</strong> M/W 10:00 - 11:30</p>
+<section id="course-overview" class="level2">
+<h2 class="anchored" data-anchor-id="course-overview">Course Overview</h2>
+<p>This course explores the cutting edge of data science for environmental problem solving, with a focus on reproducible, collaborative, and scalable workflows. In Spring 2026, we adopt an <strong>AI-augmented, agent-first methodology</strong>, moving beyond syntax memorization to architecting, prompting, auditing, and deploying solutions.</p>
+<p>The curriculum is structured around <strong>5 Core Modules</strong> over 15 weeks, allowing us to go deep into technical stacks and theoretical frameworks. We will leverage the R ecosystem, integrating modern tools for high-performance computing and AI.</p>
+<p>Before we begin, please ensure you have completed the <a href="../2026/compute-setup.html">Compute Setup</a>.</p>
+</section>
+<section id="the-agent-first-methodology" class="level2">
+<h2 class="anchored" data-anchor-id="the-agent-first-methodology">The Agent-First Methodology</h2>
 <ul>
-<li>Open science: open source software, open data, open standards, and reproducibility are emphasized.</li>
-<li>Recipes are presented as reproducible computational notebooks (Quarto and Jupyter) set in narrative analysis.</li>
-<li>Access to cloud-based <em>compute</em> is not required. The high speed networks of commercial cloud providers can accelerate network-bound operations, but can run from anywhere.</li>
-<li>Access to a powerful laptop or desktop is not required either. Examples can run from a browser interface on free compute resources such as Codespaces.</li>
-<li>Portable software environments: a Docker container with precise software used to produce these examples. The container is build from the included Dockerfile using the included GitHub Action and is deployed by the Codespaces instance.</li>
-<li>Alignment between R and Python: recipes will try to show approaches in both languages and seek to utilize common interfaces (such as STAC and GDAL) that can be shared across these platforms.</li>
+<li><strong>Architect:</strong> Design data flows and system architecture.</li>
+<li><strong>Prompt:</strong> Direct AI implementation effectively.</li>
+<li><strong>Audit:</strong> Verify outputs and ensure reproducibility.</li>
+<li><strong>Deploy:</strong> Ship robust, scalable solutions.</li>
 </ul>
-<p><strong>This is a work in progress!</strong> Check back often, and feedback welcome! Test these modules, file an <a href="https://github.com/boettiger-lab/nasa-topst-env-justice/issues">issue</a> or <a href="https://github.com/boettiger-lab/nasa-topst-env-justice/pulls">pull request</a>, launch into a Codespaces environment, or reach out on the <a href="https://github.com/boettiger-lab/nasa-topst-env-justice/discussions/7">discussion board</a>.</p>
-<p><strong><em>What is “cloud-native” anyway?</em></strong> We define cloud-native to mean simply that data is accessed over http range request methods, rather than downloading entire files. Code-based examples will develop why this is important and how it differs from renting cloud-based compute. The core philosophy is that what many users already know how to do locally translates pretty seamlessly here, and then a bit extra is required to coerce certain software to stay in ‘range request’ mode and not get greedy trying to download everything. Some authors define this concept somewhat differently, and certainly not all range requests give the same performance, nor are http range requests best in all cases.</p>
-<section id="acknowledgements" class="level2">
-<h2 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
-<p>Thanks to input, suggestions, feedback and ideas from so many amazing folks in the OpenScapes community and input and financial support from the NASA TOPS community.</p>
-<p><img align="right" src="https://zenodo.org/record/7742997/files/Tops_Badge_Nasa.png" width="50" alt="Transform to Open Science Logo that shows a top as a rocket taking off and the text Transform to Open Science in the white vapor plume around the launch site"></p>
-<p><img align="right" src="https://openscapes.org/images/logo/openscapes_hex_badge.png" width="60" alt="OpenScapes Hex Logo"></p>
-
-
-
 </section>
-</div>
-</div>
-</div>
+<section id="course-modules" class="level2">
+<h2 class="anchored" data-anchor-id="course-modules">Course Modules</h2>
+<section id="module-1-the-ai-data-analyst" class="level3">
+<h3 class="anchored" data-anchor-id="module-1-the-ai-data-analyst">Module 1: The AI-Data Analyst</h3>
+<p><strong>Duration:</strong> Weeks 1-4<br>
+<strong>Focus:</strong> AI-assisted coding, high-performance tabular data, visualization.</p>
+<ul>
+<li><strong>Core Concepts:</strong>
+<ul>
+<li>Reproducible environments (DevContainers, Codespaces).</li>
+<li>High-performance queries with <strong>DuckDB</strong> and <strong>Parquet</strong> via <strong><code>duckdbfs</code></strong> within the <strong>tidyverse</strong>.</li>
+<li>Interactive dashboards with <strong>Shiny</strong>.</li>
+<li>Data cleaning and visualization pipelines.</li>
+</ul></li>
+<li><strong>Deep Dive:</strong> Advanced SQL strategies, optimization of data pipelines, and implementing rigorous data validation frameworks using <code>pointblank</code> or similar R tools.</li>
+<li><strong>Project:</strong> Build an interactive emissions dashboard.</li>
+</ul>
 </section>
-</div>
-
-<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-title-sort" data-direction="asc">
-          Title
-        </option>
-         <option value="listing-author" data-direction="asc">
-          Author
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-
-<table class="quarto-listing-table table">
+<section id="module-2-spatial-data-environmental-justice" class="level3">
+<h3 class="anchored" data-anchor-id="module-2-spatial-data-environmental-justice">Module 2: Spatial Data &amp; Environmental Justice</h3>
+<p><strong>Duration:</strong> Weeks 5-7<br>
+<strong>Focus:</strong> Geospatial analysis, cloud-native formats, EJ lens.</p>
+<ul>
+<li><strong>Core Concepts:</strong>
+<ul>
+<li><strong>Vector Data:</strong> Analysis with <strong>DuckDB Spatial</strong>.</li>
+<li><strong>Raster Data:</strong> Scalable processing with <strong><code>gdalcubes</code></strong>.</li>
+<li>Cloud-native geospatial formats (COG, GeoParquet).</li>
+<li>Mapping environmental impacts (e.g., data centers, biodiversity).</li>
+<li>Introduction to <strong>Geospatial Foundation Models</strong>.</li>
+</ul></li>
+<li><strong>Deep Dive:</strong> Handling massive geospatial datasets, custom coordinate reference systems discussions, and critical data studies applied to Environmental Justice.</li>
+<li><strong>Project:</strong> Map and analyze environmental impacts of infrastructure.</li>
+</ul>
+</section>
+<section id="module-3-working-with-llms-unstructured-data" class="level3">
+<h3 class="anchored" data-anchor-id="module-3-working-with-llms-unstructured-data">Module 3: Working with LLMs &amp; Unstructured Data</h3>
+<p><strong>Duration:</strong> Weeks 8-10<br>
+<strong>Focus:</strong> R-based LLM tools, Structured Outputs, Unstructured data extraction.</p>
+<ul>
+<li><strong>Core Concepts:</strong>
+<ul>
+<li>Leading edge of R LLMs using <strong>Posit PBC</strong> tools:
+<ul>
+<li><strong><code>ellmer</code></strong> for programmatic LLM interaction.</li>
+<li><strong><code>mcptools</code></strong> for Model Context Protocol integration.</li>
+<li><strong><code>ragnar</code></strong> (RAG implementations).</li>
+<li><strong><code>vitals</code></strong> (https://vitals.tidyverse.org/) for model evaluation.</li>
+</ul></li>
+<li>Extracting structured data (JSON) from unstructured text (PDFs, reports).</li>
+</ul></li>
+<li><strong>Deep Dive:</strong> Comparing local vs.&nbsp;cloud models, fine-tuning considerations, and evaluating LLM outputs for scientific rigor.</li>
+<li><strong>Project:</strong> Extract and analyze data from corporate sustainability reports.</li>
+</ul>
+</section>
+<section id="module-4-scaling-cloud-computing" class="level3">
+<h3 class="anchored" data-anchor-id="module-4-scaling-cloud-computing">Module 4: Scaling &amp; Cloud Computing</h3>
+<p><strong>Duration:</strong> Weeks 11-12<br>
+<strong>Focus:</strong> Container orchestration, Kubernetes, Cloud architecture.</p>
+<ul>
+<li><strong>Core Concepts:</strong>
+<ul>
+<li>Introduction to Cloud Infrastructure (AWS/Azure/GCP).</li>
+<li>Containerization beyond local Docker.</li>
+<li><strong>Kubernetes (K8s):</strong> Concepts (Pods, Deployments, Services) and practice.</li>
+<li>Scaling R-based data analysis workflows on the cloud.</li>
+</ul></li>
+<li><strong>Project:</strong> Deploy a scalable data application or analysis pipeline to a Kubernetes cluster.</li>
+</ul>
+</section>
+<section id="module-5-capstone-project" class="level3">
+<h3 class="anchored" data-anchor-id="module-5-capstone-project">Module 5: Capstone Project</h3>
+<p><strong>Duration:</strong> Weeks 13-15<br>
+<strong>Focus:</strong> Synthesis, Innovation, Deployment.</p>
+<ul>
+<li><strong>Goal:</strong> Students work individually or in small teams to conceptualize, build, and deploy a significant data science project applying techniques from the previous modules.</li>
+<li><strong>Stages:</strong>
+<ul>
+<li><strong>Scope:</strong> Proposal and architectural design.</li>
+<li><strong>Sprint:</strong> Agile development of an MVP.</li>
+<li><strong>Refine:</strong> User experience and documentation.</li>
+<li><strong>Demo:</strong> Live presentation of the deployed application.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="tech-stack" class="level2">
+<h2 class="anchored" data-anchor-id="tech-stack">Tech Stack</h2>
+<ul>
+<li><strong>IDE:</strong> VS Code / Antigravity</li>
+<li><strong>Language:</strong> R (primary)</li>
+<li><strong>Data:</strong> DuckDB, <code>duckdbfs</code>, GeoParquet, <code>gdalcubes</code></li>
+<li><strong>AI:</strong> <code>ellmer</code>, <code>mcptools</code>, <code>vitals</code></li>
+<li><strong>Compute:</strong> GitHub Codespaces, Kubernetes</li>
+<li><strong>Web:</strong> Quarto, Shiny</li>
+</ul>
+</section>
+<section id="evaluation" class="level2">
+<h2 class="anchored" data-anchor-id="evaluation">Evaluation</h2>
+<p>The course grade is based on 5 Core Modules. Each module is worth 20 points, for a total of 100 points. Participation and engagement are assessed as part of the score for each module.</p>
+<table class="table">
 <thead>
-<tr>
-<th>
-<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
-</th>
-<th>
-<a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Author</a>
-</th>
-<th>
-Reading Time
-</th>
+<tr class="header">
+<th>Component</th>
+<th>Points</th>
 </tr>
 </thead>
-<tbody class="list">
-<tr data-index="0" data-listing-file-modified-sort="1769387401141" data-listing-reading-time-sort="1" data-listing-title-sort="---" data-listing-filename-sort="sst-gdal.qmd">
-<td>
-<a href="../2024/contents/sst-gdal.html" class="title listing-title">—</a>
-</td>
-<td>
-<span class="listing-author"></span>
-</td>
-<td>
-<span class="listing-reading-time">1 min</span>
-</td>
+<tbody>
+<tr class="odd">
+<td>Module 1: The AI-Data Analyst</td>
+<td>20</td>
 </tr>
-<tr data-index="1" data-listing-file-modified-sort="1769387400968" data-listing-reading-time-sort="4" data-listing-title-sort="ACE Data" data-listing-filename-sort="ace.qmd">
-<td>
-<a href="../2024/contents/ace.html" class="title listing-title">ACE Data</a>
-</td>
-<td>
-<span class="listing-author"></span>
-</td>
-<td>
-<span class="listing-reading-time">4 min</span>
-</td>
+<tr class="even">
+<td>Module 2: Spatial Data &amp; Environmental Justice</td>
+<td>20</td>
 </tr>
-<tr data-index="2" data-listing-file-modified-sort="1769387401145" data-listing-reading-time-sort="7" data-listing-title-sort="Cloud-native EarthData Access" data-listing-filename-sort="xarray-benchmark.ipynb">
-<td>
-<a href="../2024/contents/xarray-benchmark.html" class="title listing-title">Cloud-native EarthData Access</a>
-</td>
-<td>
-<span class="listing-author"></span>
-</td>
-<td>
-<span class="listing-reading-time">7 min</span>
-</td>
+<tr class="odd">
+<td>Module 3: Working with LLMs &amp; Unstructured Data</td>
+<td>20</td>
 </tr>
-<tr data-index="3" data-listing-file-modified-sort="1769387401139" data-listing-reading-time-sort="5" data-listing-title-sort="Computing Environments" data-listing-filename-sort="computing-environment.qmd">
-<td>
-<a href="../2024/contents/computing-environment.html" class="title listing-title">Computing Environments</a>
-</td>
-<td>
-<span class="listing-author"></span>
-</td>
-<td>
-<span class="listing-reading-time">5 min</span>
-</td>
+<tr class="even">
+<td>Module 4: Scaling &amp; Cloud Computing</td>
+<td>20</td>
 </tr>
-<tr data-index="4" data-listing-file-modified-sort="1769387401143" data-listing-reading-time-sort="5" data-listing-title-sort="EarthData strategies" data-listing-filename-sort="sst.qmd">
-<td>
-<a href="../2024/contents/sst.html" class="title listing-title">EarthData strategies</a>
-</td>
-<td>
-<span class="listing-author"></span>
-</td>
-<td>
-<span class="listing-reading-time">5 min</span>
-</td>
+<tr class="odd">
+<td>Module 5: Capstone Project</td>
+<td>20</td>
 </tr>
-<tr data-index="5" data-listing-file-modified-sort="1769387401139" data-listing-reading-time-sort="7" data-listing-title-sort="Examining Environmental Justice through Open Source, Cloud-Native Tools" data-listing-filename-sort="intro.qmd">
-<td>
-<a href="../2024/contents/intro.html" class="title listing-title">Examining Environmental Justice through Open Source, Cloud-Native Tools</a>
-</td>
-<td>
-<span class="listing-author"></span>
-</td>
-<td>
-<span class="listing-reading-time">7 min</span>
-</td>
-</tr>
-<tr data-index="6" data-listing-file-modified-sort="1769387400968" data-listing-reading-time-sort="1" data-listing-title-sort="Examining Environmental Justice through Open Source, Cloud-Native Tools: R" data-listing-filename-sort="R-ex.ipynb">
-<td>
-<a href="../2024/contents/R-ex.html" class="title listing-title">Examining Environmental Justice through Open Source, Cloud-Native Tools: R</a>
-</td>
-<td>
-<span class="listing-author"></span>
-</td>
-<td>
-<span class="listing-reading-time">1 min</span>
-</td>
-</tr>
-<tr data-index="7" data-listing-file-modified-sort="1769387401139" data-listing-reading-time-sort="2" data-listing-title-sort="Multifile raster arrays" data-listing-filename-sort="multifile_raster.qmd">
-<td>
-<a href="../2024/contents/multifile_raster.html" class="title listing-title">Multifile raster arrays</a>
-</td>
-<td>
-<span class="listing-author">Eli Holmes &amp; Carl Boettiger</span>
-</td>
-<td>
-<span class="listing-reading-time">2 min</span>
-</td>
-</tr>
-<tr data-index="8" data-listing-file-modified-sort="1769387401139" data-listing-reading-time-sort="1" data-listing-title-sort="NASA EarthData" data-listing-filename-sort="earthdata.qmd">
-<td>
-<a href="../2024/contents/earthdata.html" class="title listing-title">NASA EarthData</a>
-</td>
-<td>
-<span class="listing-author"></span>
-</td>
-<td>
-<span class="listing-reading-time">1 min</span>
-</td>
-</tr>
-<tr data-index="9" data-listing-file-modified-sort="1769387401143" data-listing-reading-time-sort="4" data-listing-title-sort="Using fsspec virtual filesystem" data-listing-filename-sort="sst-xarray.ipynb">
-<td>
-<a href="../2024/contents/sst-xarray.html" class="title listing-title">Using fsspec virtual filesystem</a>
-</td>
-<td>
-<span class="listing-author"></span>
-</td>
-<td>
-<span class="listing-reading-time">4 min</span>
-</td>
-</tr>
-<tr data-index="10" data-listing-file-modified-sort="1769387401141" data-listing-reading-time-sort="1" data-listing-filename-sort="python-ex.ipynb">
-<td>
-<span class="listing-title">undefined</span>
-</td>
-<td>
-<span class="listing-author"></span>
-</td>
-<td>
-<span class="listing-reading-time">1 min</span>
-</td>
+<tr class="even">
+<td><strong>Total</strong></td>
+<td><strong>100</strong></td>
 </tr>
 </tbody>
-
 </table>
-<div class="listing-no-matching d-none">
-No matching items
+<p>See <a href="../policies.html">Policies</a> for full details on grading, participation, and attendance.</p>
+
+
+</section>
 </div>
-</div></main> <!-- /main -->
+</div>
+</div>
+</section>
+</div>
+
+</main> <!-- /main -->
 <script src="../assets/js/material-kit.js"></script>
 <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1028,15 +967,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../2024/contents/ace.html" class="pagination-link">
-        <span class="nav-page-text">ACE Data</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1045,7 +975,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/espm-288/website/edit/main/2024/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/espm-288/website/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
+    <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/espm-288/website/edit/main/2026/syllabus.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/espm-288/website/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

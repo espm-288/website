@@ -210,32 +210,18 @@
     "text": "# Examining Environmental Justice through Open Source, Cloud-Native Tools: R\nThis Jupyter (ipynb) notebook provides a brief introduction to a cloud-native workflow. A more complete version of this example can be found in the intro.qmd Quarto notebook. Here, we merely include an ipynb version to demonstrate how Jupyter notebooks may be included in quarto.\nNote: in Codespaces editor, choose “Select Kernel” -&gt; “Jupyter Kernels” to get started.\nDeveloper note: At this time, Gitpod VSCode editor will not detect the default python environment (VIRTUAL_ENV variable, pointing to /opt/venv/bin/python), or any other kernelspec added with ipykernel.\n\nfrom pystac_client import Client\nimport odc.stac\nimport pystac_client\nimport numpy as np\n\nimport warnings\nwarnings.filterwarnings('ignore')\n\n\nbox = [-122.51006, 37.70801, -122.36268, 37.80668]\nclient = Client.open(\"https://earth-search.aws.element84.com/v1\")\nsearch = client.search(\n    collections = ['sentinel-2-l2a'],\n    bbox = box,\n    datetime = \"2022-06-01/2022-08-01\",\n    query={\"eo:cloud_cover\": {\"lt\": 20}}\n)\n\n\nitems = search.get_all_items()\n# items[0]  # peak at an item\n\n\ndata = odc.stac.load(\n    items,\n    crs=\"EPSG:32610\",\n    bands=[\"nir08\", \"red\"],\n    resolution=30,\n    bbox=box\n)\n\n\nred = data.red\nnir = data.nir08\n\n# summarize over time. \n# quite probably better to use resampling strategy in odc.stac.load though.\nimport dask.diagnostics\nwith dask.diagnostics.ProgressBar():\n    ndvi = ( ((nir - red) / (red + nir)).\n            resample(time=\"MS\").\n            median(\"time\", keep_attrs=True).\n            compute()\n    )\n\n# mask out bad pixels\nndvi = ndvi.where(ndvi &lt;= 1)\n\n\nimport matplotlib as plt\ncmap = plt.colormaps.get_cmap('viridis')  # viridis is the default colormap for imshow\ncmap.set_bad(color='black')\n\nndvi.plot.imshow(row=\"time\", cmap=cmap, add_colorbar=False, size=4)\n\n&lt;xarray.plot.facetgrid.FacetGrid at 0x7fec26fd96c0&gt;"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
+    "objectID": "policies.html",
+    "href": "policies.html",
     "title": "",
     "section": "",
-    "text": "Logistics\nℹ️\n\n\n\n\n👤 Instructor\nCarl Boettiger\n\n\n🏛 Location\nTBD\n\n\n📅 Days\nTBD\n\n\n⏰ Time\nTBD\n\n\n\n\n\n\nWelcome to ESPM-288: Reproducible & Collaborative Data Science!\nCourse materials for Spring 2026 are coming soon. Check the 2026 section for updates.\n\n\n\n\n\nSpring 2025 Archive - Introduction to Python, LLMs in data science, git/GitHub, relational databases, and geospatial data"
+    "text": "Grading\nThe course grade is based on 5 Core Modules. Each module is worth 20 points, for a total of 100 points. Participation and engagement are assessed as part of the score for each module.\n\n\n\nComponent\nPoints\n\n\n\n\nModule 1: The AI-Data Analyst\n20\n\n\nModule 2: Spatial Data & Environmental Justice\n20\n\n\nModule 3: Working with LLMs & Unstructured Data\n20\n\n\nModule 4: Scaling & Cloud Computing\n20\n\n\nModule 5: Capstone Project\n20\n\n\nTotal\n100\n\n\n\n\n\nParticipation & Engagement\nParticipation and engagement is a holistic assessment across all aspects of the course and reflects meeting the expectations of the course. Active engagement is expected both in class and online. This includes engagement with the instructional team, classmates, and teammates. A core tenant of our course is the opportunity for one-on-one and small group discussion with Berkeley faculty, GSIs, and fellow students; the chance to build rapport and get to know each other through dialogue (both in-person and online).\nParticipation is not based on attendance. Participation will be assessed as part of each module grade, based on: - Fully engaged: Active contributor to team work, class discussions, and online interactions - Partially engaged: Some contributions but inconsistent engagement - Minimally engaged: Rare contributions and limited interaction - Disengaged: Little to no participation or engagement\n\n\nAttendance Policy\nThis is a hands-on, team-based course rooted in experiential learning and in-person attendance is required. We operate on a flipped-classroom model in which video lectures and reading and simple practice problems must be consumed and prepared prior to class. Class time focuses on active learning around solving hard and open-ended problems in climate solutions by applying data science tools creatively in small teams with the assistance of instructors and classmates; participating in classroom discussion or debate; or in presenting finished work to the class for feedback.\nIf you anticipate an absence, you must: 1. Notify the instructor and your team prior to the absence if possible 2. Propose a plan for making up missed work with your team 3. Submit this plan to the instructor\n\n\nLate Assignment Policy\nLate assignments may be docked 20% and will not be accepted more than 48 hours late except in cases of genuine emergencies or in cases where this has been discussed and approved by the faculty instructor in advance. If you need an extension due to extenuating circumstances, contact the instructor as early as possible to discuss options.\n\n\nCommunity, Diversity, and Inclusion\nIntegrating and honoring a diverse set of experiences, knowledges, and histories is essential for a comprehensive understanding of environmental science. Additionally, scientific research and the process of science can contribute to a more equitable and just society when pursued intentionally. Thus, as part of this course, we would like to discuss, practice, and critically evaluate diversity, representation, and equity in environmental science and resource management.\nFurthermore, we would like to create a learning environment for all of us that supports a diversity of thoughts, perspectives and experiences and that honors your identities (including race, gender, class, sexuality, religion, and ability), with an understanding that systems of privilege and oppression have influenced all of us and may appear in the classroom. To help accomplish this: - If you have a name and/or set of pronouns that differ from those that appear in your official Cal records, please let the teaching team know. - If something is said in class (by anyone) that makes you feel uncomfortable or targeted, please talk to an instructor or GSI about it. Anonymous feedback is always an option. - As a participant in this class, you should strive to honor the identities and histories of your classmates. Consider how your speech connects or alienates. We recommend that you speak from your own experience, avoid generalizations, and acknowledge both the intent and actual impact of your words.\n\n\nAcademic Integrity\n\nGenerative AI Policy\nYou may use AI programs to generate ideas and/or refine your work or brainstorm. We encourage the use of AI tools as a core part of the workflow in this class! However, you must be transparent about your use of AI. If you include any material generated by an AI, it must be cited and a note included explaining its role. You should also be aware that existing tools make significant mistakes and are often incomplete and inaccurate. You remain responsible for all work you submit.\n\n\nAcademic Community Values\nYou are a member of an academic community at one of the world’s leading research universities. Universities like Berkeley create knowledge that has a lasting impact in the world of ideas and on the lives of others; such knowledge can come from an undergraduate paper as well as the lab of an internationally known professor. One of the most important values of an academic community is the balance between the free flow of ideas and the respect for the intellectual property of others. Researchers don’t use one another’s research without permission; scholars and students always use proper citations in papers; professors may not circulate or publish student papers without the writer’s permission; and students may not circulate or post materials (handouts, exams, syllabi–any class materials) from their classes without the written permission of the instructor.\n\n\nCollaboration and Independence\nReviewing lecture and reading materials and studying for exams can be enjoyable and enriching things to do together with one’s fellow students. We recommend this. However, homework assignments should be completed independently and materials turned in as homework should be the result of one’s own independent work. Some assignments, namely the preparation for the debate arguments, are meant to be done together in a group.\n\n\nConsequences of Academic Dishonesty\nThe consequences of cheating and academic dishonesty—including a formal discipline file, possible loss of future internship, scholarship, or employment opportunities, and denial of admission to graduate school—are simply not worth it.\n\n\nPlagiarism\nYou must be original in composing the writing assignments in this class. To copy text or ideas from another source (including your own previously, or concurrently, submitted course work) without appropriate reference is plagiarism and will result in a failing grade for your assignment and usually further disciplinary action. For additional information on plagiarism, self-plagiarism, and how to avoid it, see: - UC Berkeley Library - Plagiarism Guide - GSI Teaching Guide - Preventing Plagiarism\n\n\nAdditional Resources\n\nBerkeley Campus Code of Student Conduct\nResources on Promoting Academic Integrity\nTurnitin at UC Berkeley\n\n\n\n\nAcademic Accommodations\nThe purpose of academic accommodations is to ensure that all students have a fair chance at academic success. If you have Letters of Accommodations from the Disabled Students’ Program or another authorized office, please share them with me as soon as possible, and we will work out the necessary arrangements. While individual circumstances can vary, requests for accommodations often fall into the categories listed on the Academic Calendar and Accommodations website. The campus has well-developed processes in place for students to request accommodations, and you are encouraged to contact the relevant campus offices listed on the Academic Accommodations Hub. These offices, some of which are confidential, can offer support, answer questions about your eligibility and rights, and request accommodations on your behalf, while maintaining your privacy."
   },
   {
-    "objectID": "index.html#spring-2026",
-    "href": "index.html#spring-2026",
+    "objectID": "2026/tabular-data/index.html",
+    "href": "2026/tabular-data/index.html",
     "title": "",
     "section": "",
-    "text": "Logistics\nℹ️\n\n\n\n\n👤 Instructor\nCarl Boettiger\n\n\n🏛 Location\nTBD\n\n\n📅 Days\nTBD\n\n\n⏰ Time\nTBD"
-  },
-  {
-    "objectID": "index.html#overview",
-    "href": "index.html#overview",
-    "title": "",
-    "section": "",
-    "text": "Welcome to ESPM-288: Reproducible & Collaborative Data Science!\nCourse materials for Spring 2026 are coming soon. Check the 2026 section for updates."
-  },
-  {
-    "objectID": "index.html#previous-years",
-    "href": "index.html#previous-years",
-    "title": "",
-    "section": "",
-    "text": "Spring 2025 Archive - Introduction to Python, LLMs in data science, git/GitHub, relational databases, and geospatial data"
+    "text": "Content coming soon"
   },
   {
     "objectID": "2026/spatial-data/index.html",
@@ -249,21 +235,21 @@
     "href": "2026/index.html",
     "title": "",
     "section": "",
-    "text": "Logistics\nℹ️\n\n\n\n\n👤 Instructor\nCarl Boettiger\n\n\n🏛 Location\nTBD\n\n\n📅 Days\nTBD\n\n\n⏰ Time\nTBD\n\n\n\n\n\n\nWelcome to the Spring 2026 semester of ESPM-288: Reproducible & Collaborative Data Science!\nCourse materials coming soon.\n\n\n\nOverview (coming soon)\nSchedule (coming soon)\nSyllabus (coming soon)"
+    "text": "Logistics\nℹ️\n\n\n\n\n👤 Instructor\nCarl Boettiger\n\n\n🏛 Location\nRoom 166 - Social Sciences Building\n\n\n📅 Days\nMonday / Wednesday\n\n\n⏰ Time\n10:00 - 11:30\n\n\n\n\n\n\nWelcome to the Spring 2026 semester of ESPM-288: Reproducible & Collaborative Data Science. This year, we are diving deep into the Agent-First Methodology, exploring how AI agents can augment our ability to solve complex environmental problems. We will be using the R ecosystem (duckdbfs, ellmer, shiny) to architect, prompt, audit, and deploy robust data solutions.\n\n\n\nSyllabus\nCompute Setup\nSchedule (coming soon)"
   },
   {
     "objectID": "2026/index.html#spring-2026",
     "href": "2026/index.html#spring-2026",
     "title": "",
     "section": "",
-    "text": "Logistics\nℹ️\n\n\n\n\n👤 Instructor\nCarl Boettiger\n\n\n🏛 Location\nTBD\n\n\n📅 Days\nTBD\n\n\n⏰ Time\nTBD"
+    "text": "Logistics\nℹ️\n\n\n\n\n👤 Instructor\nCarl Boettiger\n\n\n🏛 Location\nRoom 166 - Social Sciences Building\n\n\n📅 Days\nMonday / Wednesday\n\n\n⏰ Time\n10:00 - 11:30"
   },
   {
     "objectID": "2026/index.html#overview",
     "href": "2026/index.html#overview",
     "title": "",
     "section": "",
-    "text": "Welcome to the Spring 2026 semester of ESPM-288: Reproducible & Collaborative Data Science!\nCourse materials coming soon.\n\n\n\nOverview (coming soon)\nSchedule (coming soon)\nSyllabus (coming soon)"
+    "text": "Welcome to the Spring 2026 semester of ESPM-288: Reproducible & Collaborative Data Science. This year, we are diving deep into the Agent-First Methodology, exploring how AI agents can augment our ability to solve complex environmental problems. We will be using the R ecosystem (duckdbfs, ellmer, shiny) to architect, prompt, audit, and deploy robust data solutions.\n\n\n\nSyllabus\nCompute Setup\nSchedule (coming soon)"
   },
   {
     "objectID": "2026/cloud-compute/index.html",
@@ -532,11 +518,74 @@
     "text": "Content coming soon"
   },
   {
-    "objectID": "2026/tabular-data/index.html",
-    "href": "2026/tabular-data/index.html",
+    "objectID": "2026/syllabus.html",
+    "href": "2026/syllabus.html",
     "title": "",
     "section": "",
-    "text": "Content coming soon"
+    "text": "[!NOTE] This syllabus is a living document and subject to change as the course progresses.\n\nInstructor: Carl Boettiger\nLocation: Room 166 - Social Sciences Building\nTime: M/W 10:00 - 11:30\n\n\nThis course explores the cutting edge of data science for environmental problem solving, with a focus on reproducible, collaborative, and scalable workflows. In Spring 2026, we adopt an AI-augmented, agent-first methodology, moving beyond syntax memorization to architecting, prompting, auditing, and deploying solutions.\nThe curriculum is structured around 5 Core Modules over 15 weeks, allowing us to go deep into technical stacks and theoretical frameworks. We will leverage the R ecosystem, integrating modern tools for high-performance computing and AI.\nBefore we begin, please ensure you have completed the Compute Setup.\n\n\n\n\nArchitect: Design data flows and system architecture.\nPrompt: Direct AI implementation effectively.\nAudit: Verify outputs and ensure reproducibility.\nDeploy: Ship robust, scalable solutions.\n\n\n\n\n\n\nDuration: Weeks 1-4\nFocus: AI-assisted coding, high-performance tabular data, visualization.\n\nCore Concepts:\n\nReproducible environments (DevContainers, Codespaces).\nHigh-performance queries with DuckDB and Parquet via duckdbfs within the tidyverse.\nInteractive dashboards with Shiny.\nData cleaning and visualization pipelines.\n\nDeep Dive: Advanced SQL strategies, optimization of data pipelines, and implementing rigorous data validation frameworks using pointblank or similar R tools.\nProject: Build an interactive emissions dashboard.\n\n\n\n\nDuration: Weeks 5-7\nFocus: Geospatial analysis, cloud-native formats, EJ lens.\n\nCore Concepts:\n\nVector Data: Analysis with DuckDB Spatial.\nRaster Data: Scalable processing with gdalcubes.\nCloud-native geospatial formats (COG, GeoParquet).\nMapping environmental impacts (e.g., data centers, biodiversity).\nIntroduction to Geospatial Foundation Models.\n\nDeep Dive: Handling massive geospatial datasets, custom coordinate reference systems discussions, and critical data studies applied to Environmental Justice.\nProject: Map and analyze environmental impacts of infrastructure.\n\n\n\n\nDuration: Weeks 8-10\nFocus: R-based LLM tools, Structured Outputs, Unstructured data extraction.\n\nCore Concepts:\n\nLeading edge of R LLMs using Posit PBC tools:\n\nellmer for programmatic LLM interaction.\nmcptools for Model Context Protocol integration.\nragnar (RAG implementations).\nvitals (https://vitals.tidyverse.org/) for model evaluation.\n\nExtracting structured data (JSON) from unstructured text (PDFs, reports).\n\nDeep Dive: Comparing local vs. cloud models, fine-tuning considerations, and evaluating LLM outputs for scientific rigor.\nProject: Extract and analyze data from corporate sustainability reports.\n\n\n\n\nDuration: Weeks 11-12\nFocus: Container orchestration, Kubernetes, Cloud architecture.\n\nCore Concepts:\n\nIntroduction to Cloud Infrastructure (AWS/Azure/GCP).\nContainerization beyond local Docker.\nKubernetes (K8s): Concepts (Pods, Deployments, Services) and practice.\nScaling R-based data analysis workflows on the cloud.\n\nProject: Deploy a scalable data application or analysis pipeline to a Kubernetes cluster.\n\n\n\n\nDuration: Weeks 13-15\nFocus: Synthesis, Innovation, Deployment.\n\nGoal: Students work individually or in small teams to conceptualize, build, and deploy a significant data science project applying techniques from the previous modules.\nStages:\n\nScope: Proposal and architectural design.\nSprint: Agile development of an MVP.\nRefine: User experience and documentation.\nDemo: Live presentation of the deployed application.\n\n\n\n\n\n\n\nIDE: VS Code / Antigravity\nLanguage: R (primary)\nData: DuckDB, duckdbfs, GeoParquet, gdalcubes\nAI: ellmer, mcptools, vitals\nCompute: GitHub Codespaces, Kubernetes\nWeb: Quarto, Shiny\n\n\n\n\nThe course grade is based on 5 Core Modules. Each module is worth 20 points, for a total of 100 points. Participation and engagement are assessed as part of the score for each module.\n\n\n\nComponent\nPoints\n\n\n\n\nModule 1: The AI-Data Analyst\n20\n\n\nModule 2: Spatial Data & Environmental Justice\n20\n\n\nModule 3: Working with LLMs & Unstructured Data\n20\n\n\nModule 4: Scaling & Cloud Computing\n20\n\n\nModule 5: Capstone Project\n20\n\n\nTotal\n100\n\n\n\nSee Policies for full details on grading, participation, and attendance."
+  },
+  {
+    "objectID": "2026/syllabus.html#course-overview",
+    "href": "2026/syllabus.html#course-overview",
+    "title": "",
+    "section": "",
+    "text": "This course explores the cutting edge of data science for environmental problem solving, with a focus on reproducible, collaborative, and scalable workflows. In Spring 2026, we adopt an AI-augmented, agent-first methodology, moving beyond syntax memorization to architecting, prompting, auditing, and deploying solutions.\nThe curriculum is structured around 5 Core Modules over 15 weeks, allowing us to go deep into technical stacks and theoretical frameworks. We will leverage the R ecosystem, integrating modern tools for high-performance computing and AI.\nBefore we begin, please ensure you have completed the Compute Setup."
+  },
+  {
+    "objectID": "2026/syllabus.html#the-agent-first-methodology",
+    "href": "2026/syllabus.html#the-agent-first-methodology",
+    "title": "",
+    "section": "",
+    "text": "Architect: Design data flows and system architecture.\nPrompt: Direct AI implementation effectively.\nAudit: Verify outputs and ensure reproducibility.\nDeploy: Ship robust, scalable solutions."
+  },
+  {
+    "objectID": "2026/syllabus.html#course-modules",
+    "href": "2026/syllabus.html#course-modules",
+    "title": "",
+    "section": "",
+    "text": "Duration: Weeks 1-4\nFocus: AI-assisted coding, high-performance tabular data, visualization.\n\nCore Concepts:\n\nReproducible environments (DevContainers, Codespaces).\nHigh-performance queries with DuckDB and Parquet via duckdbfs within the tidyverse.\nInteractive dashboards with Shiny.\nData cleaning and visualization pipelines.\n\nDeep Dive: Advanced SQL strategies, optimization of data pipelines, and implementing rigorous data validation frameworks using pointblank or similar R tools.\nProject: Build an interactive emissions dashboard.\n\n\n\n\nDuration: Weeks 5-7\nFocus: Geospatial analysis, cloud-native formats, EJ lens.\n\nCore Concepts:\n\nVector Data: Analysis with DuckDB Spatial.\nRaster Data: Scalable processing with gdalcubes.\nCloud-native geospatial formats (COG, GeoParquet).\nMapping environmental impacts (e.g., data centers, biodiversity).\nIntroduction to Geospatial Foundation Models.\n\nDeep Dive: Handling massive geospatial datasets, custom coordinate reference systems discussions, and critical data studies applied to Environmental Justice.\nProject: Map and analyze environmental impacts of infrastructure.\n\n\n\n\nDuration: Weeks 8-10\nFocus: R-based LLM tools, Structured Outputs, Unstructured data extraction.\n\nCore Concepts:\n\nLeading edge of R LLMs using Posit PBC tools:\n\nellmer for programmatic LLM interaction.\nmcptools for Model Context Protocol integration.\nragnar (RAG implementations).\nvitals (https://vitals.tidyverse.org/) for model evaluation.\n\nExtracting structured data (JSON) from unstructured text (PDFs, reports).\n\nDeep Dive: Comparing local vs. cloud models, fine-tuning considerations, and evaluating LLM outputs for scientific rigor.\nProject: Extract and analyze data from corporate sustainability reports.\n\n\n\n\nDuration: Weeks 11-12\nFocus: Container orchestration, Kubernetes, Cloud architecture.\n\nCore Concepts:\n\nIntroduction to Cloud Infrastructure (AWS/Azure/GCP).\nContainerization beyond local Docker.\nKubernetes (K8s): Concepts (Pods, Deployments, Services) and practice.\nScaling R-based data analysis workflows on the cloud.\n\nProject: Deploy a scalable data application or analysis pipeline to a Kubernetes cluster.\n\n\n\n\nDuration: Weeks 13-15\nFocus: Synthesis, Innovation, Deployment.\n\nGoal: Students work individually or in small teams to conceptualize, build, and deploy a significant data science project applying techniques from the previous modules.\nStages:\n\nScope: Proposal and architectural design.\nSprint: Agile development of an MVP.\nRefine: User experience and documentation.\nDemo: Live presentation of the deployed application."
+  },
+  {
+    "objectID": "2026/syllabus.html#tech-stack",
+    "href": "2026/syllabus.html#tech-stack",
+    "title": "",
+    "section": "",
+    "text": "IDE: VS Code / Antigravity\nLanguage: R (primary)\nData: DuckDB, duckdbfs, GeoParquet, gdalcubes\nAI: ellmer, mcptools, vitals\nCompute: GitHub Codespaces, Kubernetes\nWeb: Quarto, Shiny"
+  },
+  {
+    "objectID": "2026/syllabus.html#evaluation",
+    "href": "2026/syllabus.html#evaluation",
+    "title": "",
+    "section": "",
+    "text": "The course grade is based on 5 Core Modules. Each module is worth 20 points, for a total of 100 points. Participation and engagement are assessed as part of the score for each module.\n\n\n\nComponent\nPoints\n\n\n\n\nModule 1: The AI-Data Analyst\n20\n\n\nModule 2: Spatial Data & Environmental Justice\n20\n\n\nModule 3: Working with LLMs & Unstructured Data\n20\n\n\nModule 4: Scaling & Cloud Computing\n20\n\n\nModule 5: Capstone Project\n20\n\n\nTotal\n100\n\n\n\nSee Policies for full details on grading, participation, and attendance."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "",
+    "section": "",
+    "text": "Logistics\nℹ️\n\n\n\n\n👤 Instructor\nCarl Boettiger\n\n\n🏛 Location\nRoom 166 - Social Sciences Building\n\n\n📅 Days\nMonday / Wednesday\n\n\n⏰ Time\n10:00 - 11:30\n\n\n\n\n\n\nWelcome to ESPM-288: Reproducible & Collaborative Data Science.\nThis Spring 2026 semester, we explore the Agent-First Methodology for environmental data science. We will leverage the R ecosystem (including duckdbfs, tidyverse, mapgl, gdalcubes ellmer, vitals, mcptools, ragnar, & shiny) to architect, audit, and deploy robust data solutions for complex environmental problems. We will focus on high-performance pipelines for larger-than-RAM data (e.g. parquet/geoparquet, COGs), interactive visualizations (mapbox/maplibre), high-throughput analysis and app deployments (e.g. docker, kubernetes, GitHub Actions/GH Package Registry).\nWe will explore essential and emerging components of LLM coding ecosystem, including open/local models, retrieval-augmented generation (RAG), structured data, tool use, Model Context Protocol (MCP) servers and clients. In the process we will examine and compare the energy use and other environmental footprints of various LLM models, as well as other considerations for responsible AI including security, privacy, reliability, and bias.\nAccess the Current 2026 Course Materials.\n\n\n\n\n\nSpring 2025 Archive - Introduction to Python, LLMs in data science, git/GitHub, relational databases, and geospatial data"
+  },
+  {
+    "objectID": "index.html#spring-2026",
+    "href": "index.html#spring-2026",
+    "title": "",
+    "section": "",
+    "text": "Logistics\nℹ️\n\n\n\n\n👤 Instructor\nCarl Boettiger\n\n\n🏛 Location\nRoom 166 - Social Sciences Building\n\n\n📅 Days\nMonday / Wednesday\n\n\n⏰ Time\n10:00 - 11:30"
+  },
+  {
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "",
+    "section": "",
+    "text": "Welcome to ESPM-288: Reproducible & Collaborative Data Science.\nThis Spring 2026 semester, we explore the Agent-First Methodology for environmental data science. We will leverage the R ecosystem (including duckdbfs, tidyverse, mapgl, gdalcubes ellmer, vitals, mcptools, ragnar, & shiny) to architect, audit, and deploy robust data solutions for complex environmental problems. We will focus on high-performance pipelines for larger-than-RAM data (e.g. parquet/geoparquet, COGs), interactive visualizations (mapbox/maplibre), high-throughput analysis and app deployments (e.g. docker, kubernetes, GitHub Actions/GH Package Registry).\nWe will explore essential and emerging components of LLM coding ecosystem, including open/local models, retrieval-augmented generation (RAG), structured data, tool use, Model Context Protocol (MCP) servers and clients. In the process we will examine and compare the energy use and other environmental footprints of various LLM models, as well as other considerations for responsible AI including security, privacy, reliability, and bias.\nAccess the Current 2026 Course Materials."
+  },
+  {
+    "objectID": "index.html#previous-years",
+    "href": "index.html#previous-years",
+    "title": "",
+    "section": "",
+    "text": "Spring 2025 Archive - Introduction to Python, LLMs in data science, git/GitHub, relational databases, and geospatial data"
   },
   {
     "objectID": "2024/contents/R-ex.html",

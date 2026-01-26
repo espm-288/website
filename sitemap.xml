@@ -2,166 +2,174 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://espm-288.carlboettiger.info/2025/tutorials/python/04b-gh-actions.html</loc>
-    <lastmod>2026-01-21T20:26:25.452Z</lastmod>
+    <lastmod>2026-01-26T00:30:24.908Z</lastmod>
   </url>
   <url>
     <loc>https://espm-288.carlboettiger.info/2025/tutorials/python/01-github-jupyter.html</loc>
-    <lastmod>2026-01-21T20:26:24.886Z</lastmod>
+    <lastmod>2026-01-26T00:30:24.372Z</lastmod>
   </url>
   <url>
     <loc>https://espm-288.carlboettiger.info/2025/overview/syllabus.html</loc>
-    <lastmod>2026-01-21T20:26:24.112Z</lastmod>
+    <lastmod>2026-01-26T00:30:23.631Z</lastmod>
   </url>
   <url>
     <loc>https://espm-288.carlboettiger.info/2025/overview/pedagogy.html</loc>
-    <lastmod>2026-01-21T20:26:23.227Z</lastmod>
+    <lastmod>2026-01-26T00:30:22.814Z</lastmod>
   </url>
   <url>
     <loc>https://espm-288.carlboettiger.info/2025/tutorials/python/spatial-4.html</loc>
-    <lastmod>2026-01-21T20:26:22.637Z</lastmod>
+    <lastmod>2026-01-26T00:30:22.239Z</lastmod>
   </url>
   <url>
     <loc>https://espm-288.carlboettiger.info/2025/tutorials/python/spatial-2.html</loc>
-    <lastmod>2026-01-21T20:26:19.960Z</lastmod>
+    <lastmod>2026-01-26T00:30:19.833Z</lastmod>
   </url>
   <url>
     <loc>https://espm-288.carlboettiger.info/2025/tutorials/python/07-ibis-4.html</loc>
-    <lastmod>2026-01-21T20:26:18.933Z</lastmod>
+    <lastmod>2026-01-26T00:30:18.843Z</lastmod>
   </url>
   <url>
     <loc>https://espm-288.carlboettiger.info/2025/tutorials/python/06-ibis-2.html</loc>
-    <lastmod>2026-01-21T20:26:18.050Z</lastmod>
+    <lastmod>2026-01-26T00:30:18.004Z</lastmod>
   </url>
   <url>
     <loc>https://espm-288.carlboettiger.info/2025/tutorials/python/04-transform.html</loc>
-    <lastmod>2026-01-21T20:26:16.723Z</lastmod>
+    <lastmod>2026-01-26T00:30:16.673Z</lastmod>
   </url>
   <url>
     <loc>https://espm-288.carlboettiger.info/2024/contents/xarray-benchmark.html</loc>
-    <lastmod>2026-01-21T20:26:15.748Z</lastmod>
+    <lastmod>2026-01-26T00:30:15.731Z</lastmod>
   </url>
   <url>
     <loc>https://espm-288.carlboettiger.info/2024/contents/python-ex.html</loc>
-    <lastmod>2026-01-21T20:26:14.784Z</lastmod>
+    <lastmod>2026-01-26T00:30:14.791Z</lastmod>
   </url>
   <url>
-    <loc>https://espm-288.carlboettiger.info/index.html</loc>
-    <lastmod>2026-01-21T20:26:14.130Z</lastmod>
-  </url>
-  <url>
-    <loc>https://espm-288.carlboettiger.info/2026/spatial-data/index.html</loc>
-    <lastmod>2026-01-21T20:26:13.548Z</lastmod>
-  </url>
-  <url>
-    <loc>https://espm-288.carlboettiger.info/2026/index.html</loc>
-    <lastmod>2026-01-21T20:26:12.995Z</lastmod>
-  </url>
-  <url>
-    <loc>https://espm-288.carlboettiger.info/2026/cloud-compute/index.html</loc>
-    <lastmod>2026-01-21T20:26:12.152Z</lastmod>
-  </url>
-  <url>
-    <loc>https://espm-288.carlboettiger.info/2025/tutorials/R/2-earthdata.html</loc>
-    <lastmod>2026-01-21T20:26:11.460Z</lastmod>
-  </url>
-  <url>
-    <loc>https://espm-288.carlboettiger.info/2025/index.html</loc>
-    <lastmod>2026-01-21T20:26:10.274Z</lastmod>
-  </url>
-  <url>
-    <loc>https://espm-288.carlboettiger.info/2024/contents/sst.html</loc>
-    <lastmod>2026-01-21T20:26:09.395Z</lastmod>
-  </url>
-  <url>
-    <loc>https://espm-288.carlboettiger.info/2024/contents/multifile_raster.html</loc>
-    <lastmod>2026-01-21T20:26:08.317Z</lastmod>
-  </url>
-  <url>
-    <loc>https://espm-288.carlboettiger.info/2024/contents/earthdata.html</loc>
-    <lastmod>2026-01-21T20:26:06.965Z</lastmod>
-  </url>
-  <url>
-    <loc>https://espm-288.carlboettiger.info/2024/contents/ace.html</loc>
-    <lastmod>2026-01-21T20:26:05.764Z</lastmod>
-  </url>
-  <url>
-    <loc>https://espm-288.carlboettiger.info/2024/contents/computing-environment.html</loc>
-    <lastmod>2026-01-21T20:26:06.490Z</lastmod>
-  </url>
-  <url>
-    <loc>https://espm-288.carlboettiger.info/2024/contents/intro.html</loc>
-    <lastmod>2026-01-21T20:26:07.763Z</lastmod>
-  </url>
-  <url>
-    <loc>https://espm-288.carlboettiger.info/2024/contents/sst-gdal.html</loc>
-    <lastmod>2026-01-21T20:26:08.812Z</lastmod>
-  </url>
-  <url>
-    <loc>https://espm-288.carlboettiger.info/2024/index.html</loc>
-    <lastmod>2026-01-21T20:26:09.923Z</lastmod>
-  </url>
-  <url>
-    <loc>https://espm-288.carlboettiger.info/2025/tutorials/R/1-intro-R.html</loc>
-    <lastmod>2026-01-21T20:26:10.854Z</lastmod>
-  </url>
-  <url>
-    <loc>https://espm-288.carlboettiger.info/2025/tutorials/computing-environment.html</loc>
-    <lastmod>2026-01-21T20:26:11.876Z</lastmod>
-  </url>
-  <url>
-    <loc>https://espm-288.carlboettiger.info/2026/compute-setup.html</loc>
-    <lastmod>2026-01-21T20:26:12.680Z</lastmod>
-  </url>
-  <url>
-    <loc>https://espm-288.carlboettiger.info/2026/local-llms/index.html</loc>
-    <lastmod>2026-01-21T20:26:13.273Z</lastmod>
+    <loc>https://espm-288.carlboettiger.info/policies.html</loc>
+    <lastmod>2026-01-26T00:30:14.144Z</lastmod>
   </url>
   <url>
     <loc>https://espm-288.carlboettiger.info/2026/tabular-data/index.html</loc>
-    <lastmod>2026-01-21T20:26:13.822Z</lastmod>
+    <lastmod>2026-01-26T00:30:13.353Z</lastmod>
+  </url>
+  <url>
+    <loc>https://espm-288.carlboettiger.info/2026/spatial-data/index.html</loc>
+    <lastmod>2026-01-26T00:30:12.617Z</lastmod>
+  </url>
+  <url>
+    <loc>https://espm-288.carlboettiger.info/2026/index.html</loc>
+    <lastmod>2026-01-26T00:30:12.062Z</lastmod>
+  </url>
+  <url>
+    <loc>https://espm-288.carlboettiger.info/2026/cloud-compute/index.html</loc>
+    <lastmod>2026-01-26T00:30:11.212Z</lastmod>
+  </url>
+  <url>
+    <loc>https://espm-288.carlboettiger.info/2025/tutorials/R/2-earthdata.html</loc>
+    <lastmod>2026-01-26T00:30:10.528Z</lastmod>
+  </url>
+  <url>
+    <loc>https://espm-288.carlboettiger.info/2025/index.html</loc>
+    <lastmod>2026-01-26T00:30:09.324Z</lastmod>
+  </url>
+  <url>
+    <loc>https://espm-288.carlboettiger.info/2024/contents/sst.html</loc>
+    <lastmod>2026-01-26T00:30:08.470Z</lastmod>
+  </url>
+  <url>
+    <loc>https://espm-288.carlboettiger.info/2024/contents/multifile_raster.html</loc>
+    <lastmod>2026-01-26T00:30:07.444Z</lastmod>
+  </url>
+  <url>
+    <loc>https://espm-288.carlboettiger.info/2024/contents/earthdata.html</loc>
+    <lastmod>2026-01-26T00:30:06.142Z</lastmod>
+  </url>
+  <url>
+    <loc>https://espm-288.carlboettiger.info/2024/contents/ace.html</loc>
+    <lastmod>2026-01-26T00:30:04.955Z</lastmod>
+  </url>
+  <url>
+    <loc>https://espm-288.carlboettiger.info/2024/contents/computing-environment.html</loc>
+    <lastmod>2026-01-26T00:30:05.662Z</lastmod>
+  </url>
+  <url>
+    <loc>https://espm-288.carlboettiger.info/2024/contents/intro.html</loc>
+    <lastmod>2026-01-26T00:30:06.918Z</lastmod>
+  </url>
+  <url>
+    <loc>https://espm-288.carlboettiger.info/2024/contents/sst-gdal.html</loc>
+    <lastmod>2026-01-26T00:30:07.891Z</lastmod>
+  </url>
+  <url>
+    <loc>https://espm-288.carlboettiger.info/2024/index.html</loc>
+    <lastmod>2026-01-26T00:30:08.977Z</lastmod>
+  </url>
+  <url>
+    <loc>https://espm-288.carlboettiger.info/2025/tutorials/R/1-intro-R.html</loc>
+    <lastmod>2026-01-26T00:30:09.944Z</lastmod>
+  </url>
+  <url>
+    <loc>https://espm-288.carlboettiger.info/2025/tutorials/computing-environment.html</loc>
+    <lastmod>2026-01-26T00:30:10.936Z</lastmod>
+  </url>
+  <url>
+    <loc>https://espm-288.carlboettiger.info/2026/compute-setup.html</loc>
+    <lastmod>2026-01-26T00:30:11.743Z</lastmod>
+  </url>
+  <url>
+    <loc>https://espm-288.carlboettiger.info/2026/local-llms/index.html</loc>
+    <lastmod>2026-01-26T00:30:12.336Z</lastmod>
+  </url>
+  <url>
+    <loc>https://espm-288.carlboettiger.info/2026/syllabus.html</loc>
+    <lastmod>2026-01-26T00:30:13.062Z</lastmod>
+  </url>
+  <url>
+    <loc>https://espm-288.carlboettiger.info/index.html</loc>
+    <lastmod>2026-01-26T00:30:13.668Z</lastmod>
   </url>
   <url>
     <loc>https://espm-288.carlboettiger.info/2024/contents/R-ex.html</loc>
-    <lastmod>2026-01-21T20:26:14.444Z</lastmod>
+    <lastmod>2026-01-26T00:30:14.464Z</lastmod>
   </url>
   <url>
     <loc>https://espm-288.carlboettiger.info/2024/contents/sst-xarray.html</loc>
-    <lastmod>2026-01-21T20:26:15.228Z</lastmod>
+    <lastmod>2026-01-26T00:30:15.231Z</lastmod>
   </url>
   <url>
     <loc>https://espm-288.carlboettiger.info/2025/tutorials/python/02-visualization-basics.html</loc>
-    <lastmod>2026-01-21T20:26:16.209Z</lastmod>
+    <lastmod>2026-01-26T00:30:16.184Z</lastmod>
   </url>
   <url>
     <loc>https://espm-288.carlboettiger.info/2025/tutorials/python/05-ibis-1.html</loc>
-    <lastmod>2026-01-21T20:26:17.441Z</lastmod>
+    <lastmod>2026-01-26T00:30:17.408Z</lastmod>
   </url>
   <url>
     <loc>https://espm-288.carlboettiger.info/2025/tutorials/python/06-ibis-3.html</loc>
-    <lastmod>2026-01-21T20:26:18.544Z</lastmod>
+    <lastmod>2026-01-26T00:30:18.458Z</lastmod>
   </url>
   <url>
     <loc>https://espm-288.carlboettiger.info/2025/tutorials/python/spatial-1.html</loc>
-    <lastmod>2026-01-21T20:26:19.519Z</lastmod>
+    <lastmod>2026-01-26T00:30:19.397Z</lastmod>
   </url>
   <url>
     <loc>https://espm-288.carlboettiger.info/2025/tutorials/python/spatial-3.html</loc>
-    <lastmod>2026-01-21T20:26:22.200Z</lastmod>
+    <lastmod>2026-01-26T00:30:21.814Z</lastmod>
   </url>
   <url>
     <loc>https://espm-288.carlboettiger.info/2025/tutorials/python/spatial-5.html</loc>
-    <lastmod>2026-01-21T20:26:22.939Z</lastmod>
+    <lastmod>2026-01-26T00:30:22.518Z</lastmod>
   </url>
   <url>
     <loc>https://espm-288.carlboettiger.info/2025/overview/schedule.html</loc>
-    <lastmod>2026-01-21T20:26:23.619Z</lastmod>
+    <lastmod>2026-01-26T00:30:23.186Z</lastmod>
   </url>
   <url>
     <loc>https://espm-288.carlboettiger.info/2025/tutorials/python/00-preface.html</loc>
-    <lastmod>2026-01-21T20:26:24.432Z</lastmod>
+    <lastmod>2026-01-26T00:30:23.945Z</lastmod>
   </url>
   <url>
     <loc>https://espm-288.carlboettiger.info/2025/tutorials/python/03-data-access.html</loc>
-    <lastmod>2026-01-21T20:26:25.175Z</lastmod>
+    <lastmod>2026-01-26T00:30:24.647Z</lastmod>
   </url>
 </urlset>
