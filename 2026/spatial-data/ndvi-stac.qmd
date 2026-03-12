@@ -1,0 +1,243 @@
+---
+title: "NDVI and Redlining — Los Angeles"
+subtitle: "Cloud-native zonal statistics via Planetary Computer, gdalcubes, and mapgl"
+---
+
+## Setup
+
+```{r}
+#| message: false
+library(rstac)
+library(gdalcubes)
+library(duckdbfs)
+library(sf)
+library(dplyr)
+library(mapgl)
+
+gdalcubes_options(parallel = TRUE)
+```
+
+## 1. Load Los Angeles HOLC polygons
+
+```{r}
+holc <- open_dataset(
+    "https://data.source.coop/cboettig/mappinginequality/mappinginequality.parquet"
+) |>
+    filter(city == "Los Angeles") |>
+    select(-geom_bbox) |>
+    rename(holc_fid = fid) |>
+    to_sf(crs = 4326)
+
+bbox <- st_bbox(holc)
+bbox
+```
+
+## 2. Query Sentinel-2 via Planetary Computer STAC
+
+Planetary Computer hosts Sentinel-2 L2A; items must be signed before use.
+
+```{r}
+items <- stac("https://planetarycomputer.microsoft.com/api/stac/v1/") |>
+    stac_search(
+        collections = "sentinel-2-l2a",
+        bbox = as.numeric(bbox),
+        datetime = "2025-06-01/2025-08-31",
+        limit = 200
+    ) |>
+    ext_query("eo:cloud_cover" < 20) |>
+    post_request() |>
+    items_fetch() |>
+    items_sign(sign_planetary_computer())
+
+cat(length(items$features), "scenes found\n")
+```
+
+## 3. Build image collection
+
+Planetary Computer Sentinel-2 L2A uses uppercase band names (`B04`, `B08`, `SCL`).
+
+```{r}
+col <- stac_image_collection(
+    items$features,
+    asset_names = c("B04", "B08", "SCL")
+)
+```
+
+## 4. Define cube view and compute NDVI
+
+```{r}
+v <- cube_view(
+    srs = "EPSG:4326",
+    extent = list(
+        t0 = "2025-06-01",
+        t1 = "2025-08-31",
+        left = bbox["xmin"],
+        right = bbox["xmax"],
+        bottom = bbox["ymin"],
+        top = bbox["ymax"]
+    ),
+    dx = 0.0020,
+    dy = 0.0020,
+    dt = "P1M",
+    aggregation = "median",
+    resampling = "bilinear"
+)
+```
+
+
+```{r}
+
+# SCL values: 3 = cloud shadow, 8 = cloud medium, 9 = cloud high
+S2.mask <- image_mask("SCL", values = c(3, 8, 9))
+
+ndvi <- raster_cube(col, v, mask = S2.mask) |>
+    select_bands(c("B04", "B08")) |>
+    apply_pixel("(B08 - B04) / (B08 + B04)", "NDVI") |>
+    reduce_time("mean(NDVI)")
+```
+
+
+
+```{r}
+ndvi |>
+    write_tif(
+        dir = ".",
+        prefix = "ndvi_la"
+    )
+
+```
+
+::: {.callout-note}
+`write_tif()` saves a GeoTIFF (e.g. `ndvi_la2025-06-01.tif`) to the current directory.
+The file is ~2 MB and well within GitHub's 100 MB limit.
+After rendering, commit and push the `.tif` alongside the notebook so the raster map below can load it via the GitHub Pages URL.
+:::
+
+
+```{r}
+center <- c(mean(bbox[c("xmin", "xmax")]), mean(bbox[c("ymin", "ymax")]))
+
+cog_url <- "https://espm-288.github.io/spatial-cboettig/ndvi_la2025-06-01.tif"
+tilejson_url <- paste0(
+    "https://titiler.nrp-nautilus.io/cog/WebMercatorQuad/tilejson.json",
+    "?url=",
+    URLencode(cog_url, reserved = TRUE),
+    "&bidx=1&rescale=0,0.3&colormap_name=rdylgn"
+)
+
+maplibre(style = carto_style("positron"), center = center, zoom = 9) |>
+    add_raster_source(
+        id = "ndvi-raster",
+        url = tilejson_url
+    ) |>
+    add_raster_layer(
+        id = "ndvi-layer",
+        source = "ndvi-raster",
+        raster_opacity = 0.8
+    ) |>
+    add_legend(
+        "Mean NDVI",
+        values = c(0, 0.3),
+        colors = c("#d73027", "#1a9850")
+    )
+```
+
+## 5. Zonal statistics per HOLC parcel
+
+```{r}
+zonal <- ndvi |> extract_geom(holc, FUN = mean)
+```
+
+```{r}
+holc$NDVI <- zonal$NDVI_mean
+
+holc |>
+    st_drop_geometry() |>
+    group_by(grade) |>
+    summarise(
+        mean_NDVI = mean(NDVI, na.rm = TRUE),
+        n = n()
+    ) |>
+    arrange(grade)
+```
+
+## 6. HOLC grade choropleth
+
+```{r}
+center <- c(mean(bbox[c("xmin", "xmax")]), mean(bbox[c("ymin", "ymax")]))
+
+maplibre(style = carto_style("positron"), center = center, zoom = 10) |>
+    add_fill_layer(
+        id = "redlining",
+        source = holc,
+        fill_color = match_expr(
+            column = "grade",
+            values = list("A", "B", "C", "D"),
+            stops = list("#76a865", "#7cb5bd", "#ffff00", "#d9838d")
+        ),
+        fill_opacity = 0.65,
+        fill_outline_color = "white"
+    ) |>
+    add_legend(
+        "HOLC Grade",
+        values = c("A", "B", "C", "D"),
+        colors = c("#76a865", "#7cb5bd", "#ffff00", "#d9838d"),
+        type = "categorical"
+    )
+```
+
+## 7. NDVI choropleth
+
+```{r}
+maplibre(style = carto_style("positron"), center = center, zoom = 10) |>
+    add_fill_layer(
+        id = "ndvi",
+        source = holc,
+        fill_color = interpolate(
+            column = "NDVI",
+            values = c(0, 0.14, 0.3),
+            stops = c("#d73027", "#ffffbf", "#1a9850")
+        ),
+        fill_opacity = 0.8
+    ) |>
+    add_symbol_layer(
+        id = "ndvi-labels",
+        source = holc,
+        text_field = get_column("grade"),
+        text_size = 11,
+        text_color = "white",
+        text_halo_color = "rgba(0,0,0,0.6)",
+        text_halo_width = 1.5
+    ) |>
+    add_legend(
+        "Mean NDVI (summer 2023)",
+        values = c(0, 0.3),
+        colors = c("#d73027", "#1a9850")
+    )
+```
+
+## 8. 3-D extrusion
+
+```{r}
+maplibre(
+    style = carto_style("dark-matter"),
+    center = center,
+    zoom = 10,
+    pitch = 50
+) |>
+    add_fill_extrusion_layer(
+        id = "ndvi-3d",
+        source = holc,
+        fill_extrusion_color = interpolate(
+            column = "NDVI",
+            values = c(0, 0.6),
+            stops = c("#d73027", "#1a9850")
+        ),
+        fill_extrusion_height = interpolate(
+            column = "NDVI",
+            values = c(0, 0.6),
+            stops = c(0, 800)
+        ),
+        fill_extrusion_opacity = 0.85
+    )
+```

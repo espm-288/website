@@ -70,6 +70,10 @@ website:
             contents:
               - file: 2026/spatial-data/index.qmd
                 text: Overview
+              - file: 2026/spatial-data/redlining-map.qmd
+                text: "Redlining Map"
+              - file: 2026/spatial-data/ndvi-stac.qmd
+                text: "NDVI — Los Angeles"
           - section: 'Cloud Compute'
             icon: cloud
             contents:

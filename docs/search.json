@@ -1344,5 +1344,135 @@
       "2026 (Current)",
       "Syllabus"
     ]
+  },
+  {
+    "objectID": "2026/spatial-data/redlining-map.html",
+    "href": "2026/spatial-data/redlining-map.html",
+    "title": "Redlining Map",
+    "section": "",
+    "text": "Load libraries\n\nlibrary(duckdbfs)\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(jsonlite)\nlibrary(sf)\n\nLinking to GEOS 3.12.1, GDAL 3.8.4, PROJ 9.4.0; sf_use_s2() is TRUE\n\n\nLoad data\n\nholc &lt;- open_dataset(\n    \"https://data.source.coop/cboettig/mappinginequality/mappinginequality.parquet\"\n)\ndatacenters &lt;-\n    \"https://s3-west.nrp-nautilus.io/public-datacenters/data_centers.geojson\"\n\n\nholc &lt;- holc |&gt;\n    mutate(area_ha = sql(\"ROUND(ST_Area_Spheroid(ST_FlipCoordinates(geom)) / 10000.0, 2)\"))\n\nholc |&gt;\n    select(-geom_bbox) |&gt;\n    write_geo(\"holc.geojson\")\n\n[1] 10154\n\n\n\nlibrary(mapgl)\n\n\nm &lt;- maplibre(\n    center = c(-118.35, 34.05),\n    zoom = 8\n) |&gt;\n    add_source(\n        id = \"holc\",\n        data = \"https://espm-288.github.io/spatial-cboettig/holc.geojson\"\n    ) |&gt;\n    add_fill_layer(\n        id = \"redlining\",\n        source = \"holc\",\n        fill_color = match_expr(\n            column = \"grade\",\n            values = c(\"A\", \"B\", \"C\", \"D\"),\n            stops = c(\"#76a865\", \"#7cb5bd\", \"#ffff00\", \"#d9838d\")\n        ),\n        fill_opacity = 0.65,\n        tooltip = \"area_ha\"\n    )\n\nm",
+    "crumbs": [
+      "Home",
+      "2026 (Current)",
+      "Spatial Data",
+      "Redlining Map"
+    ]
+  },
+  {
+    "objectID": "2026/spatial-data/ndvi-stac.html#setup",
+    "href": "2026/spatial-data/ndvi-stac.html#setup",
+    "title": "NDVI and Redlining — Los Angeles",
+    "section": "Setup",
+    "text": "Setup\n\nlibrary(rstac)\nlibrary(gdalcubes)\nlibrary(duckdbfs)\nlibrary(sf)\nlibrary(dplyr)\nlibrary(mapgl)\n\ngdalcubes_options(parallel = TRUE)",
+    "crumbs": [
+      "Home",
+      "2026 (Current)",
+      "Spatial Data",
+      "NDVI — Los Angeles"
+    ]
+  },
+  {
+    "objectID": "2026/spatial-data/ndvi-stac.html#load-los-angeles-holc-polygons",
+    "href": "2026/spatial-data/ndvi-stac.html#load-los-angeles-holc-polygons",
+    "title": "NDVI and Redlining — Los Angeles",
+    "section": "1. Load Los Angeles HOLC polygons",
+    "text": "1. Load Los Angeles HOLC polygons\n\nholc &lt;- open_dataset(\n    \"https://data.source.coop/cboettig/mappinginequality/mappinginequality.parquet\"\n) |&gt;\n    filter(city == \"Los Angeles\") |&gt;\n    select(-geom_bbox) |&gt;\n    rename(holc_fid = fid) |&gt;\n    to_sf(crs = 4326)\n\nbbox &lt;- st_bbox(holc)\nbbox\n\n      xmin       ymin       xmax       ymax \n-118.61036   33.70563 -117.70285   34.30388",
+    "crumbs": [
+      "Home",
+      "2026 (Current)",
+      "Spatial Data",
+      "NDVI — Los Angeles"
+    ]
+  },
+  {
+    "objectID": "2026/spatial-data/ndvi-stac.html#query-sentinel-2-via-planetary-computer-stac",
+    "href": "2026/spatial-data/ndvi-stac.html#query-sentinel-2-via-planetary-computer-stac",
+    "title": "NDVI and Redlining — Los Angeles",
+    "section": "2. Query Sentinel-2 via Planetary Computer STAC",
+    "text": "2. Query Sentinel-2 via Planetary Computer STAC\nPlanetary Computer hosts Sentinel-2 L2A; items must be signed before use.\n\nitems &lt;- stac(\"https://planetarycomputer.microsoft.com/api/stac/v1/\") |&gt;\n    stac_search(\n        collections = \"sentinel-2-l2a\",\n        bbox = as.numeric(bbox),\n        datetime = \"2025-06-01/2025-08-31\",\n        limit = 200\n    ) |&gt;\n    ext_query(\"eo:cloud_cover\" &lt; 20) |&gt;\n    post_request() |&gt;\n    items_fetch() |&gt;\n    items_sign(sign_planetary_computer())\n\ncat(length(items$features), \"scenes found\\n\")\n\n68 scenes found",
+    "crumbs": [
+      "Home",
+      "2026 (Current)",
+      "Spatial Data",
+      "NDVI — Los Angeles"
+    ]
+  },
+  {
+    "objectID": "2026/spatial-data/ndvi-stac.html#build-image-collection",
+    "href": "2026/spatial-data/ndvi-stac.html#build-image-collection",
+    "title": "NDVI and Redlining — Los Angeles",
+    "section": "3. Build image collection",
+    "text": "3. Build image collection\nPlanetary Computer Sentinel-2 L2A uses uppercase band names (B04, B08, SCL).\n\ncol &lt;- stac_image_collection(\n    items$features,\n    asset_names = c(\"B04\", \"B08\", \"SCL\")\n)",
+    "crumbs": [
+      "Home",
+      "2026 (Current)",
+      "Spatial Data",
+      "NDVI — Los Angeles"
+    ]
+  },
+  {
+    "objectID": "2026/spatial-data/ndvi-stac.html#define-cube-view-and-compute-ndvi",
+    "href": "2026/spatial-data/ndvi-stac.html#define-cube-view-and-compute-ndvi",
+    "title": "NDVI and Redlining — Los Angeles",
+    "section": "4. Define cube view and compute NDVI",
+    "text": "4. Define cube view and compute NDVI\n\nv &lt;- cube_view(\n    srs = \"EPSG:4326\",\n    extent = list(\n        t0 = \"2025-06-01\",\n        t1 = \"2025-08-31\",\n        left = bbox[\"xmin\"],\n        right = bbox[\"xmax\"],\n        bottom = bbox[\"ymin\"],\n        top = bbox[\"ymax\"]\n    ),\n    dx = 0.0020,\n    dy = 0.0020,\n    dt = \"P1M\",\n    aggregation = \"median\",\n    resampling = \"bilinear\"\n)\n\n\n# SCL values: 3 = cloud shadow, 8 = cloud medium, 9 = cloud high\nS2.mask &lt;- image_mask(\"SCL\", values = c(3, 8, 9))\n\nndvi &lt;- raster_cube(col, v, mask = S2.mask) |&gt;\n    select_bands(c(\"B04\", \"B08\")) |&gt;\n    apply_pixel(\"(B08 - B04) / (B08 + B04)\", \"NDVI\") |&gt;\n    reduce_time(\"mean(NDVI)\")\n\n\nndvi |&gt;\n    write_tif(\n        dir = \".\",\n        prefix = \"ndvi_la\"\n    )\n\n\n\n\n\n\n\nNote\n\n\n\nwrite_tif() saves a GeoTIFF (e.g. ndvi_la2025-06-01.tif) to the current directory. The file is ~2 MB and well within GitHub’s 100 MB limit. After rendering, commit and push the .tif alongside the notebook so the raster map below can load it via the GitHub Pages URL.\n\n\n\ncenter &lt;- c(mean(bbox[c(\"xmin\", \"xmax\")]), mean(bbox[c(\"ymin\", \"ymax\")]))\n\ncog_url &lt;- \"https://espm-288.github.io/spatial-cboettig/ndvi_la2025-06-01.tif\"\ntilejson_url &lt;- paste0(\n    \"https://titiler.nrp-nautilus.io/cog/WebMercatorQuad/tilejson.json\",\n    \"?url=\",\n    URLencode(cog_url, reserved = TRUE),\n    \"&bidx=1&rescale=0,0.3&colormap_name=rdylgn\"\n)\n\nmaplibre(style = carto_style(\"positron\"), center = center, zoom = 9) |&gt;\n    add_raster_source(\n        id = \"ndvi-raster\",\n        url = tilejson_url\n    ) |&gt;\n    add_raster_layer(\n        id = \"ndvi-layer\",\n        source = \"ndvi-raster\",\n        raster_opacity = 0.8\n    ) |&gt;\n    add_legend(\n        \"Mean NDVI\",\n        values = c(0, 0.3),\n        colors = c(\"#d73027\", \"#1a9850\")\n    )",
+    "crumbs": [
+      "Home",
+      "2026 (Current)",
+      "Spatial Data",
+      "NDVI — Los Angeles"
+    ]
+  },
+  {
+    "objectID": "2026/spatial-data/ndvi-stac.html#zonal-statistics-per-holc-parcel",
+    "href": "2026/spatial-data/ndvi-stac.html#zonal-statistics-per-holc-parcel",
+    "title": "NDVI and Redlining — Los Angeles",
+    "section": "5. Zonal statistics per HOLC parcel",
+    "text": "5. Zonal statistics per HOLC parcel\n\nzonal &lt;- ndvi |&gt; extract_geom(holc, FUN = mean)\n\n\nholc$NDVI &lt;- zonal$NDVI_mean\n\nholc |&gt;\n    st_drop_geometry() |&gt;\n    group_by(grade) |&gt;\n    summarise(\n        mean_NDVI = mean(NDVI, na.rm = TRUE),\n        n = n()\n    ) |&gt;\n    arrange(grade)\n\n\u001b[90m# A tibble: 5 x 3\u001b[39m\n  grade mean_NDVI     n\n  \u001b[3m\u001b[90m&lt;chr&gt;\u001b[39m\u001b[23m     \u001b[3m\u001b[90m&lt;dbl&gt;\u001b[39m\u001b[23m \u001b[3m\u001b[90m&lt;int&gt;\u001b[39m\u001b[23m\n\u001b[90m1\u001b[39m A        0.235     57\n\u001b[90m2\u001b[39m B        0.180    121\n\u001b[90m3\u001b[39m C        0.142    167\n\u001b[90m4\u001b[39m D        0.123     71\n\u001b[90m5\u001b[39m \u001b[31mNA\u001b[39m       0.088\u001b[4m0\u001b[24m     1",
+    "crumbs": [
+      "Home",
+      "2026 (Current)",
+      "Spatial Data",
+      "NDVI — Los Angeles"
+    ]
+  },
+  {
+    "objectID": "2026/spatial-data/ndvi-stac.html#holc-grade-choropleth",
+    "href": "2026/spatial-data/ndvi-stac.html#holc-grade-choropleth",
+    "title": "NDVI and Redlining — Los Angeles",
+    "section": "6. HOLC grade choropleth",
+    "text": "6. HOLC grade choropleth\n\ncenter &lt;- c(mean(bbox[c(\"xmin\", \"xmax\")]), mean(bbox[c(\"ymin\", \"ymax\")]))\n\nmaplibre(style = carto_style(\"positron\"), center = center, zoom = 10) |&gt;\n    add_fill_layer(\n        id = \"redlining\",\n        source = holc,\n        fill_color = match_expr(\n            column = \"grade\",\n            values = list(\"A\", \"B\", \"C\", \"D\"),\n            stops = list(\"#76a865\", \"#7cb5bd\", \"#ffff00\", \"#d9838d\")\n        ),\n        fill_opacity = 0.65,\n        fill_outline_color = \"white\"\n    ) |&gt;\n    add_legend(\n        \"HOLC Grade\",\n        values = c(\"A\", \"B\", \"C\", \"D\"),\n        colors = c(\"#76a865\", \"#7cb5bd\", \"#ffff00\", \"#d9838d\"),\n        type = \"categorical\"\n    )",
+    "crumbs": [
+      "Home",
+      "2026 (Current)",
+      "Spatial Data",
+      "NDVI — Los Angeles"
+    ]
+  },
+  {
+    "objectID": "2026/spatial-data/ndvi-stac.html#ndvi-choropleth",
+    "href": "2026/spatial-data/ndvi-stac.html#ndvi-choropleth",
+    "title": "NDVI and Redlining — Los Angeles",
+    "section": "7. NDVI choropleth",
+    "text": "7. NDVI choropleth\n\nmaplibre(style = carto_style(\"positron\"), center = center, zoom = 10) |&gt;\n    add_fill_layer(\n        id = \"ndvi\",\n        source = holc,\n        fill_color = interpolate(\n            column = \"NDVI\",\n            values = c(0, 0.14, 0.3),\n            stops = c(\"#d73027\", \"#ffffbf\", \"#1a9850\")\n        ),\n        fill_opacity = 0.8\n    ) |&gt;\n    add_symbol_layer(\n        id = \"ndvi-labels\",\n        source = holc,\n        text_field = get_column(\"grade\"),\n        text_size = 11,\n        text_color = \"white\",\n        text_halo_color = \"rgba(0,0,0,0.6)\",\n        text_halo_width = 1.5\n    ) |&gt;\n    add_legend(\n        \"Mean NDVI (summer 2023)\",\n        values = c(0, 0.3),\n        colors = c(\"#d73027\", \"#1a9850\")\n    )",
+    "crumbs": [
+      "Home",
+      "2026 (Current)",
+      "Spatial Data",
+      "NDVI — Los Angeles"
+    ]
+  },
+  {
+    "objectID": "2026/spatial-data/ndvi-stac.html#d-extrusion",
+    "href": "2026/spatial-data/ndvi-stac.html#d-extrusion",
+    "title": "NDVI and Redlining — Los Angeles",
+    "section": "8. 3-D extrusion",
+    "text": "8. 3-D extrusion\n\nmaplibre(\n    style = carto_style(\"dark-matter\"),\n    center = center,\n    zoom = 10,\n    pitch = 50\n) |&gt;\n    add_fill_extrusion_layer(\n        id = \"ndvi-3d\",\n        source = holc,\n        fill_extrusion_color = interpolate(\n            column = \"NDVI\",\n            values = c(0, 0.6),\n            stops = c(\"#d73027\", \"#1a9850\")\n        ),\n        fill_extrusion_height = interpolate(\n            column = \"NDVI\",\n            values = c(0, 0.6),\n            stops = c(0, 800)\n        ),\n        fill_extrusion_opacity = 0.85\n    )\n\nWarning: Fill-extrusion layers may have rendering artifacts in globe\nprojection. Consider using projection = \"mercator\" in maplibre() for better\nperformance. See https://github.com/maplibre/maplibre-gl-js/issues/5025",
+    "crumbs": [
+      "Home",
+      "2026 (Current)",
+      "Spatial Data",
+      "NDVI — Los Angeles"
+    ]
   }
 ]

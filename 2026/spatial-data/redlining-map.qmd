@@ -1,0 +1,63 @@
+---
+title: "Redlining Map"
+subtitle: "Cloud-native vector data with duckdbfs and mapgl"
+---
+
+Load libraries
+
+```{r}
+library(duckdbfs)
+library(dplyr)
+library(jsonlite)
+library(sf)
+```
+
+
+Load data
+
+```{r}
+holc <- open_dataset(
+    "https://data.source.coop/cboettig/mappinginequality/mappinginequality.parquet"
+)
+datacenters <-
+    "https://s3-west.nrp-nautilus.io/public-datacenters/data_centers.geojson"
+```
+
+
+
+```{r}
+holc <- holc |>
+    mutate(area_ha = sql("ROUND(ST_Area_Spheroid(ST_FlipCoordinates(geom)) / 10000.0, 2)"))
+
+holc |>
+    select(-geom_bbox) |>
+    write_geo("holc.geojson")
+```
+
+```{r}
+library(mapgl)
+
+
+m <- maplibre(
+    center = c(-118.35, 34.05),
+    zoom = 8
+) |>
+    add_source(
+        id = "holc",
+        data = "https://espm-288.github.io/spatial-cboettig/holc.geojson"
+    ) |>
+    add_fill_layer(
+        id = "redlining",
+        source = "holc",
+        fill_color = match_expr(
+            column = "grade",
+            values = c("A", "B", "C", "D"),
+            stops = c("#76a865", "#7cb5bd", "#ffff00", "#d9838d")
+        ),
+        fill_opacity = 0.65,
+        tooltip = "area_ha"
+    )
+
+m
+```
+
