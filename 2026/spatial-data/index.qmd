@@ -1,5 +1,5 @@
 ---
-title: "Module 3: Spatial Data"
+title: "Module 2: Spatial Data"
 ---
 
 *Content coming soon*

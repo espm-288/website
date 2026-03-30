@@ -6,3 +6,5 @@
 blogdown
 .ipynb_checkpoints
 /.quarto/
+
+**/*.quarto_ipynb

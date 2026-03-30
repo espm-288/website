@@ -60,11 +60,6 @@ website:
             contents:
               - file: 2026/tabular-data/index.qmd
                 text: Overview
-          - section: 'Local LLMs'
-            icon: cpu
-            contents:
-              - file: 2026/local-llms/index.qmd
-                text: Overview
           - section: 'Spatial Data'
             icon: geo-alt
             contents:
@@ -74,6 +69,11 @@ website:
                 text: "Redlining Map"
               - file: 2026/spatial-data/ndvi-stac.qmd
                 text: "NDVI — Los Angeles"
+          - section: 'Local LLMs'
+            icon: cpu
+            contents:
+              - file: 2026/local-llms/index.qmd
+                text: Overview
           - section: 'Cloud Compute'
             icon: cloud
             contents:

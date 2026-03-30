@@ -1,5 +1,98 @@
 ---
-title: "Module 2: Local LLMs"
+title: "Module 3: Local LLMs"
 ---
 
-*Content coming soon*
+## Overview
+
+This module introduces working with large language models (LLMs) in R, with an emphasis on
+open-weights models accessible through the National Research Platform (NRP) rather than
+proprietary cloud APIs. We will use the [**ellmer**](https://ellmer.tidyverse.org/) package
+as our primary interface, and explore three core capabilities: **thinking** (extended
+reasoning), **structured data extraction**, and **tool calling**.
+
+## Primary Tools
+
+### ellmer
+
+[ellmer](https://ellmer.tidyverse.org/) is a tidyverse-style R package for interacting with
+LLMs from 20+ providers through a unified interface. Install from CRAN:
+
+```r
+install.packages("ellmer")
+```
+
+A chat session is created with a provider function and interacted with via `$chat()`:
+
+```r
+library(ellmer)
+chat <- chat_openai_compatible(
+  base_url = "https://ellm.nrp-nautilus.io/v1",
+  api_key  = Sys.getenv("NRP_API_KEY"),
+  model    = "qwen3"
+)
+chat$chat("Explain the difference between a raster and a vector dataset.")
+```
+
+### NRP Managed LLMs
+
+The [NRP LLM service](https://nrp.ai/documentation/userdocs/ai/llm-managed/) hosts
+open-weights models on NRP-Nautilus infrastructure, accessible via an OpenAI-compatible API:
+
+| Model | Description |
+|---|---|
+| `qwen3` | Qwen3.5-397B — 1M context, multimodal, tool calling |
+| `qwen3-small` | Qwen3.5-27B — efficient, multimodal, agentic |
+| `gpt-oss` | OpenAI GPT-OSS-120B — 131K context, strong at agentic tasks |
+| `minimax-m2` | MiniMax-M2.5 — 196K context, tool support |
+
+**Base URL:** `https://ellm.nrp-nautilus.io/v1`
+**Authentication:** Bearer token — generate yours at `/llmtoken` on the NRP portal.
+
+## Topics Covered
+
+### Thinking / Extended Reasoning
+
+Some models support an internal "thinking" step before producing a final answer. We will
+examine how to enable and interpret chain-of-thought reasoning, and when it improves output
+quality on complex or multi-step problems.
+
+### Structured Data Extraction
+
+ellmer's structured extraction returns typed, schema-conforming R objects rather than raw
+text. This makes LLMs useful as data-wrangling tools — e.g., extracting entities, tabular
+records, or classifications from unstructured documents.
+
+```r
+library(ellmer)
+type_species <- type_object(
+  common_name  = type_string(),
+  latin_name   = type_string(),
+  habitat      = type_string()
+)
+chat$extract_data("The American black bear (Ursus americanus) lives in forests.", type_species)
+```
+
+### Tool Calling
+
+Tool calling (function calling) lets a model invoke R functions during a conversation —
+useful for querying databases, fetching live data, or running analyses. We will define
+tools with `tool()` and register them with a chat object.
+
+## Other Entry Points
+
+Beyond the NRP service, there are several other ways to access open-weights models:
+
+**[OpenRouter](https://openrouter.ai/)** — A routing layer providing a single API key for
+hundreds of open and proprietary models. Useful for comparing models or accessing models
+not hosted on NRP. ellmer supports it via `chat_openai_compatible()` with the OpenRouter
+base URL.
+
+**Ollama** — Run models locally on your own machine. Install from
+[ollama.com](https://ollama.com/), pull a model with `ollama pull llama3`, and connect
+from ellmer with `chat_ollama()`. Good for offline or privacy-sensitive work; model size
+is constrained by your hardware.
+
+**vLLM + HuggingFace** — For production deployments or larger models, [vLLM](https://github.com/vllm-project/vllm)
+serves any HuggingFace model behind an OpenAI-compatible API. This is what the NRP
+service itself uses under the hood. You can also deploy your own vLLM instance on NRP
+Kubernetes for custom model needs.
