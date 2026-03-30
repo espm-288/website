@@ -7,8 +7,8 @@
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../2026/spatial-data/index.html" rel="next">
-<link href="../../2026/tabular-data/index.html" rel="prev">
+<link href="../../2026/cloud-compute/index.html" rel="next">
+<link href="../../2026/spatial-data/ndvi-stac.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -20,7 +20,7 @@
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Module 2: Local LLMs</title>
+  <title>Module 3: Local LLMs</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -32,6 +32,40 @@
       width: 0.8em;
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
     }
   </style>
   <link rel="stylesheet" href="../../assets/css/nucleo-icons.css">
@@ -150,7 +184,7 @@
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-lg-8 text-center mx-auto my-auto">
-<h1 class="text-white">Module 2: Local LLMs</h1>
+<h1 class="text-white">Module 3: Local LLMs</h1>
 <p class="lead mb-4 text-white opacity-8"></p>
 </div>
 </div>
@@ -210,32 +244,14 @@
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true"><i class="bi bi-cpu" role="img">
-</i> 
- <span class="menu-text">Local LLMs</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../2026/local-llms/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Overview</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false"><i class="bi bi-geo-alt" role="img">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false"><i class="bi bi-geo-alt" role="img">
 </i> 
  <span class="menu-text">Spatial Data</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../2026/spatial-data/index.html" class="sidebar-item-text sidebar-link">
@@ -252,6 +268,24 @@
   <div class="sidebar-item-container"> 
   <a href="../../2026/spatial-data/ndvi-stac.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">NDVI — Los Angeles</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true"><i class="bi bi-cpu" role="img">
+</i> 
+ <span class="menu-text">Local LLMs</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2026/local-llms/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Overview</span></a>
   </div>
 </li>
       </ul>
@@ -580,9 +614,92 @@
 <div class="container">
 <div class="row">
 <div class="col-12 mx-auto">
-<p><em>Content coming soon</em></p>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This module introduces working with large language models (LLMs) in R, with an emphasis on open-weights models accessible through the National Research Platform (NRP) rather than proprietary cloud APIs. We will use the <a href="https://ellmer.tidyverse.org/"><strong>ellmer</strong></a> package as our primary interface, and explore three core capabilities: <strong>thinking</strong> (extended reasoning), <strong>structured data extraction</strong>, and <strong>tool calling</strong>.</p>
+</section>
+<section id="primary-tools" class="level2">
+<h2 class="anchored" data-anchor-id="primary-tools">Primary Tools</h2>
+<section id="ellmer" class="level3">
+<h3 class="anchored" data-anchor-id="ellmer">ellmer</h3>
+<p><a href="https://ellmer.tidyverse.org/">ellmer</a> is a tidyverse-style R package for interacting with LLMs from 20+ providers through a unified interface. Install from CRAN:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ellmer"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>A chat session is created with a provider function and interacted with via <code>$chat()</code>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ellmer)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>chat <span class="ot">&lt;-</span> <span class="fu">chat_openai_compatible</span>(</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">base_url =</span> <span class="st">"https://ellm.nrp-nautilus.io/v1"</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">api_key  =</span> <span class="fu">Sys.getenv</span>(<span class="st">"NRP_API_KEY"</span>),</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">model    =</span> <span class="st">"qwen3"</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>chat<span class="sc">$</span><span class="fu">chat</span>(<span class="st">"Explain the difference between a raster and a vector dataset."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="nrp-managed-llms" class="level3">
+<h3 class="anchored" data-anchor-id="nrp-managed-llms">NRP Managed LLMs</h3>
+<p>The <a href="https://nrp.ai/documentation/userdocs/ai/llm-managed/">NRP LLM service</a> hosts open-weights models on NRP-Nautilus infrastructure, accessible via an OpenAI-compatible API:</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>qwen3</code></td>
+<td>Qwen3.5-397B — 1M context, multimodal, tool calling</td>
+</tr>
+<tr class="even">
+<td><code>qwen3-small</code></td>
+<td>Qwen3.5-27B — efficient, multimodal, agentic</td>
+</tr>
+<tr class="odd">
+<td><code>gpt-oss</code></td>
+<td>OpenAI GPT-OSS-120B — 131K context, strong at agentic tasks</td>
+</tr>
+<tr class="even">
+<td><code>minimax-m2</code></td>
+<td>MiniMax-M2.5 — 196K context, tool support</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Base URL:</strong> <code>https://ellm.nrp-nautilus.io/v1</code> <strong>Authentication:</strong> Bearer token — generate yours at <code>/llmtoken</code> on the NRP portal.</p>
+</section>
+</section>
+<section id="topics-covered" class="level2">
+<h2 class="anchored" data-anchor-id="topics-covered">Topics Covered</h2>
+<section id="thinking-extended-reasoning" class="level3">
+<h3 class="anchored" data-anchor-id="thinking-extended-reasoning">Thinking / Extended Reasoning</h3>
+<p>Some models support an internal “thinking” step before producing a final answer. We will examine how to enable and interpret chain-of-thought reasoning, and when it improves output quality on complex or multi-step problems.</p>
+</section>
+<section id="structured-data-extraction" class="level3">
+<h3 class="anchored" data-anchor-id="structured-data-extraction">Structured Data Extraction</h3>
+<p>ellmer’s structured extraction returns typed, schema-conforming R objects rather than raw text. This makes LLMs useful as data-wrangling tools — e.g., extracting entities, tabular records, or classifications from unstructured documents.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ellmer)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>type_species <span class="ot">&lt;-</span> <span class="fu">type_object</span>(</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">common_name  =</span> <span class="fu">type_string</span>(),</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">latin_name   =</span> <span class="fu">type_string</span>(),</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">habitat      =</span> <span class="fu">type_string</span>()</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>chat<span class="sc">$</span><span class="fu">extract_data</span>(<span class="st">"The American black bear (Ursus americanus) lives in forests."</span>, type_species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="tool-calling" class="level3">
+<h3 class="anchored" data-anchor-id="tool-calling">Tool Calling</h3>
+<p>Tool calling (function calling) lets a model invoke R functions during a conversation — useful for querying databases, fetching live data, or running analyses. We will define tools with <code>tool()</code> and register them with a chat object.</p>
+</section>
+</section>
+<section id="other-entry-points" class="level2">
+<h2 class="anchored" data-anchor-id="other-entry-points">Other Entry Points</h2>
+<p>Beyond the NRP service, there are several other ways to access open-weights models:</p>
+<p><strong><a href="https://openrouter.ai/">OpenRouter</a></strong> — A routing layer providing a single API key for hundreds of open and proprietary models. Useful for comparing models or accessing models not hosted on NRP. ellmer supports it via <code>chat_openai_compatible()</code> with the OpenRouter base URL.</p>
+<p><strong>Ollama</strong> — Run models locally on your own machine. Install from <a href="https://ollama.com/">ollama.com</a>, pull a model with <code>ollama pull llama3</code>, and connect from ellmer with <code>chat_ollama()</code>. Good for offline or privacy-sensitive work; model size is constrained by your hardware.</p>
+<p><strong>vLLM + HuggingFace</strong> — For production deployments or larger models, <a href="https://github.com/vllm-project/vllm">vLLM</a> serves any HuggingFace model behind an OpenAI-compatible API. This is what the NRP service itself uses under the hood. You can also deploy your own vLLM instance on NRP Kubernetes for custom model needs.</p>
 
 
+</section>
 </div>
 </div>
 </div>
@@ -827,12 +944,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../2026/tabular-data/index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Overview</span>
+      <a href="../../2026/spatial-data/ndvi-stac.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">NDVI — Los Angeles</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../2026/spatial-data/index.html" class="pagination-link">
+      <a href="../../2026/cloud-compute/index.html" class="pagination-link">
         <span class="nav-page-text">Overview</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
