@@ -74,6 +74,8 @@ website:
             contents:
               - file: 2026/local-llms/index.qmd
                 text: Overview
+              - file: 2026/local-llms/ellmer-nrp.qmd
+                text: "ellmer and NRP"
           - section: 'Cloud Compute'
             icon: cloud
             contents:
