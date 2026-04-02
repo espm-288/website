@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../2026/cloud-compute/index.html" rel="next">
+<link href="../../2026/local-llms/index.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Using LLMs in R with ellmer and NRP</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+  </style>
+  <link rel="stylesheet" href="../../assets/css/nucleo-icons.css">
+  <link rel="stylesheet" href="../../assets/css/quarto-material-kit.css">
+  <link rel="stylesheet" href="../../assets/css/custom.css">
+  <script id="quarto-search-options" type="application/json">{
+    "location": "navbar",
+    "copy-button": false,
+    "collapse-after": 3,
+    "panel-placement": "end",
+    "type": "overlay",
+    "limit": 20,
+    "language": {
+      "search-no-results-text": "No results",
+      "search-matching-documents-text": "matching documents",
+      "search-copy-link-title": "Copy link to search",
+      "search-hide-matches-text": "Hide additional matches",
+      "search-more-match-text": "more match in this document",
+      "search-more-matches-text": "more matches in this document",
+      "search-clear-button-title": "Clear",
+      "search-detached-cancel-button-title": "Cancel",
+      "search-submit-button-title": "Submit",
+      "search-label": "Search"
+    }
+  }</script>
+  <style>
+
+        .quarto-title-block .quarto-title-banner {
+          background-image: url(../../assets/img/methane_bubbles.jpg);
+  background-size: cover;
+        }
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../../index.html" rel="" target="" aria-current="page"><i class="bi bi-house" role="img">
+</i> 
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../policies.html" rel="" target=""><i class="bi bi-file-text" role="img">
+</i> 
+ <span class="menu-text">Policies</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-platforms" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+      <i class="bi bi-pc-display-horizontal" role="img">
+</i> 
+ <span class="menu-text">Platforms</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-platforms">    
+        <li>
+    <a class="dropdown-item" href="https://codespaces.new/espm-288/website?quickstart=1" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="dropdown-text">Codespaces</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://gitpod.io/#https://github.com/espm-288/website" rel="" target=""><i class="bi bi-app" role="img">
+</i> 
+ <span class="dropdown-text">GitPod</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://github.com/orgs/boettiger-lab/packages?repo_name=espm-288" rel="" target=""><i class="bi bi-box" role="img">
+</i> 
+ <span class="dropdown-text">Containers</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://espm-288.zulipchat.com" rel="" target=""><i class="bi bi-chat" role="img">
+</i> 
+ <span class="menu-text">Forum</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/espm-288" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../2026/syllabus.html">2026 (Current)</a></li><li class="breadcrumb-item"><a href="../../2026/local-llms/index.html">Local LLMs</a></li><li class="breadcrumb-item"><a href="../../2026/local-llms/ellmer-nrp.html">ellmer and NRP</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="bg-gradient-dark">
+<div class="page-header min-vh-85" style="background-image: url(../../assets/img/methane_bubbles.jpg);">
+<span class="mask bg-gradient-dark opacity-3"></span>
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-lg-8 text-center mx-auto my-auto">
+<h1 class="text-white">Using LLMs in R with ellmer and NRP</h1>
+<p class="lead mb-4 text-white opacity-8"></p>
+</div>
+</div>
+</div>
+</div></header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-house" role="img">
+</i> 
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true"><i class="bi bi-calendar-check" role="img">
+</i> 
+ <span class="menu-text">2026 (Current)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2026/syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2026/compute-setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Compute Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false"><i class="bi bi-table" role="img">
+</i> 
+ <span class="menu-text">Tabular Data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2026/tabular-data/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false"><i class="bi bi-geo-alt" role="img">
+</i> 
+ <span class="menu-text">Spatial Data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2026/spatial-data/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2026/spatial-data/redlining-map.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Redlining Map</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2026/spatial-data/ndvi-stac.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NDVI — Los Angeles</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true"><i class="bi bi-cpu" role="img">
+</i> 
+ <span class="menu-text">Local LLMs</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2026/local-llms/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2026/local-llms/ellmer-nrp.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">ellmer and NRP</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false"><i class="bi bi-cloud" role="img">
+</i> 
+ <span class="menu-text">Cloud Compute</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2026/cloud-compute/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true"><i class="bi bi-archive" role="img">
+</i> 
+ <span class="menu-text">2025 Archive</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2025/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+ <span class="menu-text">Tutorials in R</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2025/tutorials/R/1-intro-R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2025/tutorials/R/2-earthdata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NASA EarthData</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+ <span class="menu-text">Tutorials in Python</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2025/tutorials/python/00-preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2025/tutorials/python/01-github-jupyter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Intro to GitHub &amp; JupyterHub</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2025/tutorials/python/02-visualization-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Visualization Basics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2025/tutorials/python/03-data-access.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Accessing Real World Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2025/tutorials/python/04-transform.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Transforming Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2025/tutorials/python/04b-gh-actions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GitHub Actions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2025/tutorials/python/05-ibis-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><code>ibis</code> Single Table Verbs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2025/tutorials/python/06-ibis-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><code>ibis</code> Table Joins</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2025/tutorials/python/06-ibis-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><code>ibis</code> mutates and aggregates</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2025/tutorials/python/07-ibis-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><code>ibis</code> + <code>seaborn.objects</code>: Data Exploration</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2025/tutorials/python/spatial-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Intro to Spatial Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2025/tutorials/python/spatial-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mapping 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2025/tutorials/python/spatial-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Processing Satellite Imagery</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2025/tutorials/python/spatial-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Zonal Statistics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2025/tutorials/python/spatial-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mapping and publishing</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">
+ <span class="menu-text">Platforms</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2025/tutorials/computing-environment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Computing Environments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://codespaces.new/espm-288/website?quickstart=1" class="sidebar-item-text sidebar-link"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text">Codespaces</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://gitpod.io/#https://github.com/espm-288/website" class="sidebar-item-text sidebar-link"><i class="bi bi-app" role="img">
+</i> 
+ <span class="menu-text">GitPod</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://github.com/orgs/espm-288/packages" class="sidebar-item-text sidebar-link"><i class="bi bi-box" role="img">
+</i> 
+ <span class="menu-text">Containers</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true"><i class="bi bi-archive" role="img">
+</i> 
+ <span class="menu-text">2024 Archive</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2024/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false">
+ <span class="menu-text">Contents</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2024/contents/ace.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ACE Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2024/contents/computing-environment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Computing Environments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2024/contents/earthdata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NASA EarthData</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2024/contents/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Examining Environmental Justice through Open Source, Cloud-Native Tools</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2024/contents/multifile_raster.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multifile raster arrays</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2024/contents/python-ex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python Ex</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2024/contents/R-ex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Examining Environmental Justice through Open Source, Cloud-Native Tools: R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2024/contents/sst.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EarthData strategies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2024/contents/sst-gdal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">—</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2024/contents/sst-xarray.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Using fsspec virtual filesystem</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2024/contents/xarray-benchmark.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cloud-native EarthData Access</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://espm-288.zulipchat.com" class="sidebar-item-text sidebar-link"><i class="bi bi-chat" role="img">
+</i> 
+ <span class="menu-text">Forum</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+<h2 id="toc-title">On this page</h2>
+<ul>
+<li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">Setup</a></li>
+<li><a href="#connecting-to-the-nrp-endpoint" id="toc-connecting-to-the-nrp-endpoint" class="nav-link" data-scroll-target="#connecting-to-the-nrp-endpoint">Connecting to the NRP endpoint</a></li>
+<li><a href="#basic-chat" id="toc-basic-chat" class="nav-link" data-scroll-target="#basic-chat">Basic chat</a></li>
+<li><a href="#tool-calling" id="toc-tool-calling" class="nav-link" data-scroll-target="#tool-calling">Tool calling</a></li>
+<li><a href="#structured-data-extraction" id="toc-structured-data-extraction" class="nav-link" data-scroll-target="#structured-data-extraction">Structured data extraction</a>
+<ul class="collapse">
+<li><a href="#extracting-a-single-record" id="toc-extracting-a-single-record" class="nav-link" data-scroll-target="#extracting-a-single-record">Extracting a single record</a></li>
+<li><a href="#extracting-a-table" id="toc-extracting-a-table" class="nav-link" data-scroll-target="#extracting-a-table">Extracting a table</a></li>
+<li><a href="#extracting-from-many-prompts-in-parallel" id="toc-extracting-from-many-prompts-in-parallel" class="nav-link" data-scroll-target="#extracting-from-many-prompts-in-parallel">Extracting from many prompts in parallel</a></li>
+</ul></li>
+<li><a href="#thinking-mode" id="toc-thinking-mode" class="nav-link" data-scroll-target="#thinking-mode">Thinking mode</a></li>
+<li><a href="#vision-image-input" id="toc-vision-image-input" class="nav-link" data-scroll-target="#vision-image-input">Vision (image input)</a>
+<ul class="collapse">
+<li><a href="#image-from-a-file" id="toc-image-from-a-file" class="nav-link" data-scroll-target="#image-from-a-file">Image from a file</a></li>
+<li><a href="#image-from-a-plot" id="toc-image-from-a-plot" class="nav-link" data-scroll-target="#image-from-a-plot">Image from a plot</a></li>
+</ul></li>
+</ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/espm-288/website/edit/main/2026/local-llms/ellmer-nrp.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/espm-288/website/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+
+<div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6 mb-4">
+
+<section class="position-relative">
+<div class="container">
+<div class="row">
+<div class="col-12 mx-auto">
+<p>This tutorial introduces <a href="https://ellmer.tidyverse.org/">ellmer</a>, the tidyverse R package for working with large language models, using the <a href="https://nrp.ai/documentation/userdocs/ai/llm-managed/">NRP managed LLM service</a> as our backend. The NRP endpoint is OpenAI-compatible, provides access to several frontier open-weight models, and is free to use for researchers.</p>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<p>You’ll need an API key for the NRP endpoint. Store it as <code>ESPM_288_KEY</code> in your environment (e.g.&nbsp;in <code>~/.bashrc</code>):</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">ESPM_288_KEY</span><span class="op">=</span>your_key_here</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Install ellmer if needed:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ellmer"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ellmer)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>api_key <span class="ot">&lt;-</span> <span class="fu">Sys.getenv</span>(<span class="st">"ESPM_288_KEY"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">nchar</span>(api_key) <span class="sc">==</span> <span class="dv">0</span>) <span class="fu">stop</span>(<span class="st">"ESPM_288_KEY not set"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="connecting-to-the-nrp-endpoint" class="level2">
+<h2 class="anchored" data-anchor-id="connecting-to-the-nrp-endpoint">Connecting to the NRP endpoint</h2>
+<p>The NRP LLM service runs at <code>https://ellm.nrp-nautilus.io/v1</code> and exposes an OpenAI-compatible API, so we use <code>chat_openai_compatible()</code>. We’ll wrap it in a helper that keeps the connection details in one place:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>nrp_chat <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">model =</span> <span class="st">"qwen3-small"</span>, ...) {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">chat_openai_compatible</span>(</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">base_url =</span> <span class="st">"https://ellm.nrp-nautilus.io/v1"</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">model =</span> model,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">credentials =</span> <span class="cf">function</span>() api_key,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    ...</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Available models include <code>qwen3</code>, <code>qwen3-small</code>, <code>gpt-oss</code>, <code>minimax-m2</code>, and <code>kimi</code>. We’ll use <code>qwen3-small</code> (Qwen 3.5 27B) throughout — it’s fast and capable.</p>
+</section>
+<section id="basic-chat" class="level2">
+<h2 class="anchored" data-anchor-id="basic-chat">Basic chat</h2>
+<p>Create a chat object and call <code>$chat()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>chat <span class="ot">&lt;-</span> <span class="fu">nrp_chat</span>(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">system_prompt =</span> <span class="st">"You are a helpful assistant. Be concise."</span>,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">echo =</span> <span class="st">"output"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>chat<span class="sc">$</span><span class="fu">chat</span>(<span class="st">"What is R, in one sentence?"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+
+R is an open-source programming language and environment specifically designed 
+for statistical computing and data visualization.</code></pre>
+</div>
+</div>
+<p>The chat object is stateful — each call to <code>$chat()</code> appends to the conversation history, so follow-up questions have context:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>chat<span class="sc">$</span><span class="fu">chat</span>(<span class="st">"What packages does it use for data visualization?"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+
+R primarily uses the **ggplot2** package for static graphics, **lattice** for 
+complex multivariate data, and **plotly** for interactive visualizations, 
+alongside built-in base functions.</code></pre>
+</div>
+</div>
+</section>
+<section id="tool-calling" class="level2">
+<h2 class="anchored" data-anchor-id="tool-calling">Tool calling</h2>
+<p>Tool calling lets the model invoke R functions to answer questions it couldn’t otherwise answer — live data, computations, database lookups, etc. You define a function, register it with <code>register_tool()</code>, and the model decides when to call it.</p>
+<p>Here we give the model a function that looks up approximate species counts by ecosystem:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>get_species_count <span class="ot">&lt;-</span> <span class="cf">function</span>(ecosystem) {</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  counts <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">rainforest =</span> <span class="dv">40000</span>, <span class="at">coral_reef =</span> <span class="dv">4000</span>, <span class="at">temperate_forest =</span> <span class="dv">6000</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  n <span class="ot">&lt;-</span> counts[<span class="fu">tolower</span>(<span class="fu">gsub</span>(<span class="st">" "</span>, <span class="st">"_"</span>, ecosystem))]</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">is.na</span>(n)) <span class="st">"unknown"</span> <span class="cf">else</span> <span class="fu">paste</span>(n, <span class="st">"species"</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>chat2 <span class="ot">&lt;-</span> <span class="fu">nrp_chat</span>(<span class="at">echo =</span> <span class="st">"output"</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>chat2<span class="sc">$</span><span class="fu">register_tool</span>(<span class="fu">tool</span>(</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  get_species_count,</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">description =</span> <span class="st">"Returns approximate species count for a named ecosystem type."</span>,</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">arguments =</span> <span class="fu">list</span>(</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">ecosystem =</span> <span class="fu">type_string</span>(<span class="st">"The ecosystem type, e.g. 'rainforest', 'coral reef'."</span>)</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>chat2<span class="sc">$</span><span class="fu">chat</span>(<span class="st">"How many species live in a coral reef compared to a rainforest?"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>◯ [tool call] get_species_count(ecosystem = "coral reef")</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>● #&gt; 4000 species</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>◯ [tool call] get_species_count(ecosystem = "rainforest")</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>● #&gt; 40000 species</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+
+According to the data:
+
+*   **Coral Reefs** have approximately **4,000 species**.
+*   **Rainforests** have approximately **40,000 species**.
+
+This means that, in this approximation, rainforests support about **10 times 
+more species** than coral reefs.</code></pre>
+</div>
+</div>
+<p>The model called <code>get_species_count()</code> twice — once per ecosystem — then synthesized the results. The <code>◯</code> and <code>●</code> markers show the tool call and its return value.</p>
+</section>
+<section id="structured-data-extraction" class="level2">
+<h2 class="anchored" data-anchor-id="structured-data-extraction">Structured data extraction</h2>
+<p><code>$chat_structured()</code> guarantees the response matches a schema you define using <code>type_*</code> functions. This is useful for parsing text into data structures you can work with programmatically.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Most open-weight models need an explicit system prompt for extraction tasks. Without it, models respond <em>conversationally</em> (“Hi, I’m an AI assistant!”) instead of extracting from the text — producing hallucinated names, function-style identifiers, or their own model name in the output fields. Adding a short extraction system prompt fixes this reliably across all NRP models.</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>extraction_prompt <span class="ot">&lt;-</span> <span class="st">"Extract the requested fields from the user's text. Do not respond conversationally."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="extracting-a-single-record" class="level3">
+<h3 class="anchored" data-anchor-id="extracting-a-single-record">Extracting a single record</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>chat3 <span class="ot">&lt;-</span> <span class="fu">nrp_chat</span>(<span class="at">system_prompt =</span> extraction_prompt)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> chat3<span class="sc">$</span><span class="fu">chat_structured</span>(</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"The golden poison dart frog (Phyllobates terribilis) lives in Colombian</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="st">   rainforests, grows to about 5.5 cm, and is listed as endangered."</span>,</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="fu">type_object</span>(</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">common_name     =</span> <span class="fu">type_string</span>(<span class="st">"Common name of the species"</span>),</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">scientific_name =</span> <span class="fu">type_string</span>(<span class="st">"Scientific (Latin) name"</span>),</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">habitat         =</span> <span class="fu">type_string</span>(<span class="st">"Primary habitat"</span>),</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">length_cm       =</span> <span class="fu">type_number</span>(<span class="st">"Body length in centimetres"</span>),</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">status          =</span> <span class="fu">type_enum</span>(</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>      <span class="st">"IUCN conservation status"</span>,</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"least concern"</span>, <span class="st">"vulnerable"</span>, <span class="st">"endangered"</span>, <span class="st">"critically endangered"</span>)</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>List of 5
+ $ common_name    : chr "The golden poison dart frog"
+ $ scientific_name: chr "Phyllobates terribilis"
+ $ habitat        : chr "Colombian rainforests"
+ $ length_cm      : num 5.5
+ $ status         : chr "endangered"</code></pre>
+</div>
+</div>
+</section>
+<section id="extracting-a-table" class="level3">
+<h3 class="anchored" data-anchor-id="extracting-a-table">Extracting a table</h3>
+<p>For tabular output, define the schema as an array of objects — ellmer will return a data frame:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>chat4 <span class="ot">&lt;-</span> <span class="fu">nrp_chat</span>(<span class="at">system_prompt =</span> extraction_prompt)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>species_type <span class="ot">&lt;-</span> <span class="fu">type_array</span>(</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"A list of species"</span>,</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">items =</span> <span class="fu">type_object</span>(</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">common_name     =</span> <span class="fu">type_string</span>(<span class="st">"Common name"</span>),</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">scientific_name =</span> <span class="fu">type_string</span>(<span class="st">"Scientific name"</span>),</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">habitat         =</span> <span class="fu">type_string</span>(<span class="st">"Primary habitat"</span>),</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">endangered      =</span> <span class="fu">type_boolean</span>(<span class="st">"Whether the species is endangered"</span>)</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> chat4<span class="sc">$</span><span class="fu">chat_structured</span>(</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"List three well-known endangered amphibian species with their habitats."</span>,</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> species_type</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 4
+  common_name       scientific_name     habitat                       endangered
+  &lt;chr&gt;             &lt;chr&gt;               &lt;chr&gt;                         &lt;lgl&gt;     
+1 Golden Toad       Incilius periglenes Cloud forests of Monteverde,… TRUE      
+2 Amphibian Species N/A                 N/A                           TRUE      </code></pre>
+</div>
+</div>
+</section>
+<section id="extracting-from-many-prompts-in-parallel" class="level3">
+<h3 class="anchored" data-anchor-id="extracting-from-many-prompts-in-parallel">Extracting from many prompts in parallel</h3>
+<p><code>parallel_chat_structured()</code> runs the same schema extraction across a list of prompts concurrently, returning a tidy data frame where each row corresponds to one input:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>prompts <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"I go by Alex. 42 years on this planet and counting."</span>,</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Pleased to meet you! I'm Jamal, age 27."</span>,</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"They call me Li Wei. Nineteen years young."</span>,</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Fatima here. Just celebrated my 35th birthday last week."</span>,</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"The name's Robert - 51 years old and proud of it."</span>,</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Kwame here - just hit the big 5-0 this year."</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>type_person <span class="ot">&lt;-</span> <span class="fu">type_object</span>(</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">name =</span> <span class="fu">type_string</span>(<span class="st">"The person's name"</span>),</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">age  =</span> <span class="fu">type_number</span>(<span class="st">"The person's age in years"</span>)</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>chat5 <span class="ot">&lt;-</span> <span class="fu">nrp_chat</span>(<span class="at">system_prompt =</span> extraction_prompt)</span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a><span class="fu">parallel_chat_structured</span>(chat5, prompts, <span class="at">type =</span> type_person)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>[working] (0 + 0) -&gt; 5 -&gt; 1 | ■■■■■■                            17%</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>[working] (0 + 0) -&gt; 4 -&gt; 2 | ■■■■■■■■■■■                       33%</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>[working] (0 + 0) -&gt; 3 -&gt; 3 | ■■■■■■■■■■■■■■■■                  50%</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>[working] (0 + 0) -&gt; 0 -&gt; 6 | ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100%</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 2
+  name     age
+  &lt;chr&gt;  &lt;dbl&gt;
+1 Alex      42
+2 Jamal     27
+3 Li Wei    19
+4 Fatima    35
+5 Robert    51
+6 Kwame     50</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The extraction system prompt is essential here. Without it, models answer <em>as</em> an AI assistant rather than extracting from each prompt — substituting their own name and a default age, or inventing function-style identifiers like <code>greet_user</code>. This behaviour was confirmed across minimax-m2, gpt-oss, kimi, and qwen3 on the NRP endpoint; <code>qwen3-small</code> is the only model that extracts correctly without the prompt.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="thinking-mode" class="level2">
+<h2 class="anchored" data-anchor-id="thinking-mode">Thinking mode</h2>
+<p>Several NRP models — including <code>qwen3-small</code> — have extended reasoning (“thinking”) enabled by default. The model works through the problem internally before responding, which improves accuracy on complex tasks but adds latency.</p>
+<p>You can disable thinking by passing <code>chat_template_kwargs</code> via <code>api_args</code>. This maps directly to the <code>extra_body</code> parameter in the Python OpenAI client:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Python equivalent</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>client.chat.completions.create(</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  model<span class="op">=</span><span class="st">"qwen3-small"</span>,</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  extra_body<span class="op">=</span>{<span class="st">"chat_template_kwargs"</span>: {<span class="st">"enable_thinking"</span>: <span class="va">False</span>}},</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  ...</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>prompt <span class="ot">&lt;-</span> <span class="st">"How many times does the letter r appear in 'strawberry'?"</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"--- Thinking ON (default) ---</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>--- Thinking ON (default) ---</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>chat_think <span class="ot">&lt;-</span> <span class="fu">nrp_chat</span>(<span class="at">echo =</span> <span class="st">"output"</span>)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>chat_think<span class="sc">$</span><span class="fu">chat</span>(prompt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+
+The letter "r" appears **3** times in the word "strawberry".
+
+Here is the breakdown:
+s - t - **r** - a - w - b - e - **r** - **r** - y</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"--- Thinking OFF ---</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>--- Thinking OFF ---</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>chat_no_think <span class="ot">&lt;-</span> <span class="fu">nrp_chat</span>(</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">echo =</span> <span class="st">"output"</span>,</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">api_args =</span> <span class="fu">list</span>(<span class="at">chat_template_kwargs =</span> <span class="fu">list</span>(<span class="at">enable_thinking =</span> <span class="cn">FALSE</span>))</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>chat_no_think<span class="sc">$</span><span class="fu">chat</span>(prompt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>To find the number of times the letter **r** appears in the word "strawberry", 
+let's break down the word letter by letter:
+
+1.  s
+2.  t
+3.  **r** (1)
+4.  a
+5.  w
+6.  b
+7.  e
+8.  **r** (2)
+9.  **r** (3)
+10. y
+
+The letter **r** appears **3** times in "strawberry".</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Thinking tokens are returned in a separate <code>reasoning_content</code> field in the raw API response. ellmer does not currently display them, but their effect is visible in response latency and (often) answer quality on harder problems.</p>
+</div>
+</div>
+<p>The <code>kimi</code> model uses a slightly different parameter name:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For kimi model</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nrp_chat</span>(</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">model =</span> <span class="st">"kimi"</span>,</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">api_args =</span> <span class="fu">list</span>(<span class="at">chat_template_kwargs =</span> <span class="fu">list</span>(<span class="at">thinking =</span> <span class="cn">FALSE</span>))</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="vision-image-input" class="level2">
+<h2 class="anchored" data-anchor-id="vision-image-input">Vision (image input)</h2>
+<p>Several NRP models including <code>qwen3-small</code> are multimodal — they accept images alongside text. ellmer provides three helper functions for supplying image content:</p>
+<ul>
+<li><code>content_image_url()</code> — a remote image URL</li>
+<li><code>content_image_file()</code> — a local file path</li>
+<li><code>content_image_plot()</code> — the current R plot device</li>
+</ul>
+<p>Pass them as extra arguments to <code>$chat()</code>:</p>
+<section id="image-from-a-file" class="level3">
+<h3 class="anchored" data-anchor-id="image-from-a-file">Image from a file</h3>
+<p>Use <code>content_image_file()</code> for local images — ellmer base64-encodes the file and sends it inline. Use <code>content_image_url()</code> when the model server can reach the URL directly.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ellmer ships a sample PNG we can use for demonstration</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>sample_img <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">"httr2.png"</span>, <span class="at">package =</span> <span class="st">"ellmer"</span>)</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>chat_vis <span class="ot">&lt;-</span> <span class="fu">nrp_chat</span>(<span class="at">echo =</span> <span class="st">"output"</span>)</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>chat_vis<span class="sc">$</span><span class="fu">chat</span>(</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"What does this image show?"</span>,</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">content_image_file</span>(sample_img, <span class="at">resize =</span> <span class="st">"none"</span>)</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+
+This image shows the logo for **httr2**, which is a popular package used in the
+**R programming language**.
+
+Here is a breakdown of the visual elements:
+
+*   **Text:** The white, cursive text "httr2" is prominent at the top.
+*   **Imagery:** Below the text is a red silhouette of a baseball player 
+swinging a bat. To the left is a small red baseball with "www" written on it.
+*   **Background:** The design is set inside a dark blue hexagon.
+
+**The Context:**
+The name "httr" is a pun on "hit 'er." Therefore, the logo uses a baseball 
+theme where the batter is "hitting" the "www" ball. This package is used to 
+handle HTTP requests (like connecting to websites or APIs) within R. This 
+specific image is the logo for the newer, second version of that package 
+(httr2).</code></pre>
+</div>
+</div>
+</section>
+<section id="image-from-a-plot" class="level3">
+<h3 class="anchored" data-anchor-id="image-from-a-plot">Image from a plot</h3>
+<p><code>content_image_plot()</code> captures whatever is currently on the R graphics device, making it easy to ask the model to interpret your data visualisations:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a plot, then ask the model to interpret it</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1950</span>, <span class="dv">1960</span>, <span class="dv">1970</span>, <span class="dv">1980</span>, <span class="dv">1990</span>, <span class="dv">2000</span>, <span class="dv">2010</span>, <span class="dv">2020</span>),</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="fl">2.5</span>,  <span class="fl">3.0</span>,  <span class="fl">3.7</span>,  <span class="fl">4.4</span>,  <span class="fl">5.3</span>,  <span class="fl">6.1</span>,  <span class="fl">6.9</span>,  <span class="fl">7.8</span>),</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">"b"</span>, <span class="at">pch =</span> <span class="dv">19</span>,</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">"Year"</span>, <span class="at">ylab =</span> <span class="st">"Population (billions)"</span>,</span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">"World Population Growth"</span></span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="ellmer-nrp_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>chat_plot <span class="ot">&lt;-</span> <span class="fu">nrp_chat</span>(<span class="at">echo =</span> <span class="st">"output"</span>)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>chat_plot<span class="sc">$</span><span class="fu">chat</span>(</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Describe the trend shown in this plot and comment on what may have driven it."</span>,</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">content_image_plot</span>()</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+
+Based on the provided plot, here is a description of the trend and an analysis 
+of the likely drivers behind it.
+
+### **Description of the Trend**
+
+The plot illustrates a **steady, consistent, and nearly linear increase** in 
+the world's population over a 70-year period (1950–2020).
+
+*   **Starting Point:** In 1950, the global population was approximately **2.5 
+billion**.
+*   **Ending Point:** By 2020, the population had risen to just under **8 
+billion**.
+*   **Rate of Growth:** The line climbs upwards at a remarkably constant rate 
+throughout the decades shown. There are no visible dips or plateaus; it is a 
+continuous march of growth, adding roughly 100 million to 150 million people 
+every decade during this specific timeframe.
+
+### **Drivers of the Trend**
+
+Several major historical and technological shifts occurred during this period 
+that drove this population boom, primarily by reducing death rates while birth 
+rates remained relatively high:
+
+1.  **The Decline in Mortality (Death Rates):** This is the single biggest 
+factor.
+    *   **Medical Advances:** The widespread introduction of antibiotics (like 
+penicillin in the 1940s) and vaccines (for diseases like polio, smallpox, and 
+measles) drastically reduced deaths from infectious diseases.
+    *   **Sanitation and Public Health:** Improvements in clean water access, 
+sewage systems, and hygiene practices reduced the spread of fatal illnesses.
+    *   **Reduced Infant Mortality:** Better healthcare for mothers and babies 
+meant that far more children survived to adulthood compared to previous 
+centuries.
+
+2.  **The Green Revolution (Food Security):**
+    *   Beginning in the 1950s and 60s, agricultural productivity skyrocketed 
+due to the development of high-yield crop varieties, synthetic fertilizers, and
+pesticides. This allowed the Earth to support a much larger population without 
+suffering the widespread famines that previously acted as a population "check."
+
+3.  **Increased Life Expectancy:**
+    *   As conditions improved, the average human lifespan increased 
+significantly. In 1950, global life expectancy was around 46 years; by 2020, it
+had risen to nearly 73 years. This means people are staying alive longer, 
+adding to the total count.
+
+4.  **Demographic Transition:**
+    *   The world was in a specific phase of the "Demographic Transition 
+Model." While birth rates eventually began to drop in developed nations, they 
+remained high in developing nations for a longer period. This created a 
+"population momentum" where the number of births significantly outnumbered 
+deaths for several decades.</code></pre>
+</div>
+</div>
+
+
+</section>
+</section>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+</main> <!-- /main -->
+<script src="../../assets/js/material-kit.js"></script>
+<script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../2026/local-llms/index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Overview</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../2026/cloud-compute/index.html" class="pagination-link">
+        <span class="nav-page-text">Overview</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/espm-288/website">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://carlboettiger.info">
+      <i class="bi bi-globe-americas" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>
